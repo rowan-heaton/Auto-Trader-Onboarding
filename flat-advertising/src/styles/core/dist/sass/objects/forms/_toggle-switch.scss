@@ -1,0 +1,101 @@
+/*Toggle Specific styles*/
+input[type='checkbox']{
+  &.toggle{
+    display:inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    width:43px;
+    height:9px;
+    background-color: #dee4e9;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: none;
+    cursor: pointer;
+    margin-right: 15px;
+    &:hover:after{
+      box-shadow: 0 0 2px rgba(38, 126, 200, 0.8);
+    }
+    &:focus {
+      outline: none;
+    }
+    &:after{
+      content:'';
+      display:inline-block;
+      position:absolute;
+      width:24px;
+      height:24px;
+      background-color: #ffffff;
+      border:1px solid #267ec8;
+      top: -7px;
+      left: 0;
+      border-radius: 50%;
+    }
+    &[disabled=disabled] {
+      cursor: not-allowed;
+      &:after{
+        border-color: #dfdfdf;
+      }
+      &:hover:after{
+        box-shadow: none;
+      }
+    }
+  }
+  &:checked.toggle{
+    box-shadow: inset 0 0 0 15px #00a504;
+    &:hover:after{
+      box-shadow: 0 0 2px rgba(38, 156, 4, 0.8);
+    }
+    &:after{
+      left:19px;
+      background-color:#fff;
+      border:1px solid #00a504;
+    }
+    &[disabled=disabled] {
+      box-shadow: none;
+      &:hover:after{
+        box-shadow: none;
+      }
+      &:after {
+        border-color: #dfdfdf;
+      }
+    }
+
+    &--blue {
+      box-shadow: inset 0 0 0 15px #267EC8;
+      &:hover:after{
+        box-shadow: 0 0 2px rgba(38, 126, 200, 0.8);
+      }
+      &:after{
+        left:19px;
+        background-color:#fff;
+        border:1px solid #267EC8;
+      }
+    }
+
+    &--red {
+      box-shadow: inset 0 0 0 15px #F22727;
+      &:hover:after{
+        box-shadow: 0 0 2px rgba(242, 39, 39, 0.8);
+      }
+      &:after{
+        left:19px;
+        background-color:#fff;
+        border:1px solid #F22727;
+      }
+    }
+
+    &--orange {
+      box-shadow: inset 0 0 0 15px #ff9c06;
+      &:hover:after{
+        box-shadow: 0 0 2px rgba(255, 156, 6, 0.8);
+      }
+      &:after{
+        left:19px;
+        background-color:#fff;
+        border:1px solid #ff9c06;
+      }
+    }
+
+  }
+}

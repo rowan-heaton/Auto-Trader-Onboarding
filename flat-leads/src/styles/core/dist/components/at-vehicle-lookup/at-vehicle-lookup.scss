@@ -1,0 +1,684 @@
+.at-modal-window {
+  &.is-vrm-lookup {
+    background-color: $at-grey-light;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: $at-modal-zindex;
+
+    // Align close icon position
+    .c-at-modal__header-icon--x {
+      position: fixed;
+
+      @include bp('md') {
+        position: static;
+      }
+    }
+
+    .modal-dialog {
+      background-color: $at-grey-light;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      transform: translate3d(0, 0, 0);
+      width: 100%;
+    }
+
+    // Position fixed in order to make the 'manual add' nav at top fixed
+    .c-at-modal__content {
+      margin-top: 0;
+      padding: 0 0 48px;
+    }
+
+
+    &.show {
+      .modal-dialog {
+        animation: default-modal-animation .25s 1;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+
+// Vehicle Lookup entry page
+.c-at-vrm-lookup {
+  border-radius: $default-radius;
+  lost-column: 12/12;
+  lost-offset: 0/12;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include bp('md'){
+    @include modal-box-shadow(0 50px 55px 0 rgba(0, 0, 0, 0.3), 0 1px 15px 0 rgba(0, 0, 0, 0.1));
+    min-height: 0;
+  }
+
+
+  // Hides Lookup box when going to another step
+  &.is-hidden {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__title {
+    color: $at-white;
+    font-size: $at-font-size-16;
+    line-height: 2;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  &__intro {
+    float: left;
+    line-height: 3;
+    margin-right: 20px;
+
+    @include respond-to('phone') {
+      float: none;
+      font-size: $at-font-size-36;
+      line-height: normal;
+      margin: 20px 0 0;
+      text-align: center;
+    }
+  }
+
+  // Close icon
+  &__icon {
+    display: block;
+    float: right;
+    height: 50px;
+    margin-left: 20px;
+    position: relative;
+    width: 30px;
+
+    @include respond-to('phone') {
+      margin-right: 20px;
+    }
+  }
+
+  // Form layout for entry
+  &__label {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    text-align: left;
+    width: 185px;
+
+    &:after {
+      @include clearfix;
+    }
+
+    @media (max-width: $screen-lg-desktop) {
+      display: block;
+      margin: 0 0 15px;
+      width: 100%;
+    }
+  }
+
+  &__form-container {
+    margin: 24px auto 0;
+    width: 288px;
+
+    .c-at-preloader {
+      margin: 0 auto;
+    }
+  }
+
+  &__lookup-button {
+    background: $at-yellow;
+    border: 0;
+    border-radius: 0;
+    color: $at-blue;
+    fill: $at-blue;
+    height: 56px;
+    margin-left: 10px;
+    min-width: 56px;
+    position: relative;
+    text-align: right;
+    vertical-align: top;
+
+    @media (min-width: $screen-desktop) and (max-width: $screen-lg-desktop) {
+      min-width: 46px;
+    }
+
+    &-text {
+      display: none;
+    }
+
+    &-label {
+      display: block;
+      font-size: $at-font--sm;
+      text-align: center;
+    }
+
+    &-icon {
+      position: relative;
+      display: block;
+      width: 34px;
+      height: 34px;
+      margin: 0 auto;
+    }
+  }
+
+  &__label-text {
+    display: none;
+  }
+
+  &__or-text {
+    font-size: $at-font-size-18;
+    line-height: 1;
+    margin: 16px 0;
+    text-align: center;
+    width: 100%;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    @media (max-width: 992px) and (min-width: 768px) {
+      clear: both;
+      text-align: center;
+    }
+  }
+
+  &__button-container {
+    margin-top: 24px;
+
+    @include bp('lg') {
+      float: none;
+      height: auto;
+      width: 100%;
+    }
+
+    .c-at-preloader {
+      margin: 0 auto;
+    }
+  }
+
+  &__button {
+    &--find-vehicle {
+      margin-top: $at-base-unit * 2;
+      min-width: 100%;
+      overflow: visible;
+
+      @include  bp('md') {
+        clear: both;
+        width: 100%;
+        margin: $at-base-unit * 2 auto $at-base-unit * 3;
+      }
+
+      @include  bp('lg') {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    &--manual-lookup {
+      margin: 0;
+      min-height: 48px;
+      min-width: 100%;
+      overflow: visible;
+
+      @include  bp('lg') {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+
+  &__manual-link {
+    line-height: 3.5;
+  }
+
+  &__reg-lookup {
+    float: left;
+
+    @media (max-width: $screen-lg-desktop) {
+      float: none;
+    }
+  }
+
+  &__reg-lookup-title {
+    color: $at-white;
+    font-size: $at-font-size-18;
+    font-weight: $at-regular-font;
+    padding: 0 36px 0 0;
+    position: relative;
+    text-align: center;
+
+    @media (max-width: $screen-lg-desktop) {
+      float: none;
+      margin: 30px auto 40px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &__reg-lookup-buttons {
+    margin: 24px  auto;
+    width: 288px;
+  }
+
+  &__reg-lookup-search {
+    float: left;
+
+    @media (max-width: $screen-lg-desktop) {
+      float: none;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+// Vehicle Lookup Results
+.c-at-vrm-lookup-result {
+  border-radius: 0;
+  margin-bottom: $at-base-unit * 6;
+
+  @media screen and (orientation:landscape) {
+    min-height: $at-bp-sm;
+  }
+
+  @include bp('md') {
+    border-radius: $default-radius;
+    margin-bottom: 0;
+    min-height: 0;
+  }
+
+  &__vehicle-info {
+    margin: 0 auto $at-base-unit * 4;
+    width: 288px;
+
+    @include bp('md') {
+      width: 450px;
+    }
+  }
+
+  &__title {
+    font-size: $at-font-size-32;
+    font-weight: normal;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  &.is-visible {
+    animation: fade-in-content-and-height  0.3s ease-in-out 1;
+    animation-fill-mode: forwards;
+
+    &--height {
+      animation: fade-in-content-and-height  0.3s ease-in-out 1;
+      animation-fill-mode: forwards;
+      max-height: 590px;
+      position: static;
+    }
+  }
+
+  &__price-info {
+    font-size: 24px;
+
+    @include respond-to('phone') {
+      text-align: center;
+
+      > li {
+        padding: 0;
+        margin: 10px 0 0;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: $at-light-font;
+  }
+
+  &__price {
+    font-weight: $at-regular-font; }
+
+  // Place buttons in a list
+  &__buttons {
+    margin: $at-base-unit * 3 auto $at-base-unit * 4;
+    width: 288px;
+
+    & .c-at-preloader {
+      margin-right: -15px;
+      position: absolute;
+      right: 50%;
+      top: calc(50% - 12px);
+    }
+  }
+
+  &__pw-by-experian {
+    width: 170px;
+    height: auto;
+    position: relative;
+    margin: 10px auto 0;
+    font-size: $at-xs-font;
+
+    &-logo {
+      display: inline;
+      float: right;
+      height: 40px;
+      position: absolute;
+      right: 5px;
+      width: 92px;
+    }
+
+    &-txt {
+      line-height: $at-font-size-42;
+    }
+  }
+
+  &__manual-link {
+    margin: 0 auto;
+    text-align: center;
+    width: 288px;
+
+    @include bp('md') {
+      margin: 24px auto 32px;
+    }
+  }
+
+  &__unable-to-retail-check {
+    margin: 24px auto 0;
+    text-align: center;
+    width: 320px;
+
+    @include bp('md') {
+      width: 400px;
+    }
+
+    &-title {
+      font-weight: $at-regular-font;
+      font-size: $at-body-font;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    &-message {
+      font-size: $at-xs-font;
+      text-align: center;
+      line-height: 1.35;
+      margin: 0;
+      word-spacing: 1px;
+    }
+  }
+
+  &__error-icon {
+    fill:$at-red;
+    position:relative;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    display: block;
+    margin:  24px auto 8px;
+  }
+}
+
+// Vehicle lookup manual entry page
+.c-at-vrm-manual-entry {
+  background-color: transparent;
+  border-radius: $default-radius;
+  margin-bottom: 0;
+
+  .c-at-card {
+    border-radius: 0;
+
+    @include bp('md') {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+
+  .c-at-card__header {
+    border-radius: 0;
+    bottom: 0;
+    height: 124px;
+    left: 0;
+    min-height: 64px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    @include bp('md') {
+      border-top-left-radius: $default-radius;
+      border-top-right-radius: $default-radius;
+      height: auto;
+      position: static;
+    }
+
+  }
+
+  &__content {
+    background-color: $at-grey-light;
+    margin: 124px 0 0;
+
+    @include bp('md') {
+      margin: 0;
+      padding: $at-base-unit * 3 $at-base-unit * 6 $at-base-unit * 4;
+    }
+  }
+
+  &__title {
+    font-size: $at-font-size-26;
+    font-weight: $at-light-font;
+    line-height: 1.13;
+    margin: $at-base-unit * 6 0 $at-base-unit * 3;
+    text-align: center;
+
+    &-user-name {
+      text-transform: capitalize;
+    }
+  }
+
+  .c-at-side-nav {
+    margin-right: 0;
+  }
+
+  .c-at-side-nav__content {
+    padding: 0 0 0 30px;
+
+    @include respond-to('phone') {
+      padding: 0;
+      margin-top: 132px;
+    }
+  }
+
+  .c-at-side-nav__list {
+    background-color: $at-grey-light;
+    height: auto;
+    left: 0;
+    max-height: 200px;
+    min-height: 125px;
+    overflow: auto;
+    padding: 8px 0 24px;
+    position: fixed;
+    right: 0;
+    top: auto;
+    width: 100%;
+    z-index: 1;
+
+    @include bp('md') {
+      max-height: none;
+      min-height: 0;
+      padding: 0 0 15px;
+      position: static;
+    }
+  }
+
+  .c-at-side-nav__link {
+    background-color: transparent;
+    border-right: 0;
+    padding: 0 0 7px;
+
+    @include respond-to('phone') {
+      padding: 5px 24px;
+      text-align: left;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .c-at-scroll-box--md {
+    margin: 5px 0;
+    max-height: 100%;
+    padding: 10px;
+    transform: translate3d(0, 0, 0);
+    width: 100%;
+
+    @include bp('md') {
+      max-height: 375px;
+    }
+  }
+
+  .at-radio-button-list__header {
+    @include respond-to('phone') {
+      padding: 10px 5px 0;
+      margin: 0 0 15px;
+    }
+  }
+
+  &__mileage-container {
+    clear: both;
+    margin: 56px auto;
+    max-width: 288px;
+  }
+
+  // Show results button for mobile
+  &__btn {
+    margin: 15px 0 10px;
+
+    &:hover,
+    &:focus {
+      margin: 15px 0 10px;
+    }
+  }
+
+  &__loading-makes {
+    display: block;
+    margin: 120px auto;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+
+    .c-at-preloader {
+      margin: 0 auto;
+    }
+  }
+
+  &__no-options-found {
+    display: block;
+    font-size: $at-xs-font;
+    font-weight: $at-light-font;
+    line-height: 1.3;
+  }
+}
+
+// modal specific
+.c-at-modal {
+
+  .c-at-vrm-lookup {
+    &__lookup-button {
+      background: transparent;
+      float: none;
+      line-height: 50px;
+      margin: 0 auto;
+      width: 170px;
+
+      @include bp('lg') {
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.c-opt-in {
+  background-color: $at-blue-dark;
+  color: $at-white;
+  display: block;
+  margin: 0;
+  min-height: 100vh;
+
+  @include bp('md') {
+    min-height: 0;
+  }
+
+  &__content {
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 0 $at-base-unit * 2;
+
+    @include bp('md') {
+      padding: 0 0 $at-base-unit * 4;
+    }
+  }
+
+  &__illustration {
+    lost-column: 3/10;
+    position: relative;
+  }
+
+  &__hands-key {
+    display: none;
+    height: 100%;
+    min-height: 160px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include bp('md') {
+      display: block;
+    }
+
+    @include bp('lg') {
+      height: 254px;
+    }
+  }
+
+  &__message {
+    font-size: $at-sm-font;
+    line-height: 1.71;
+    margin: 0;
+    padding: $at-base-unit * 3 0 0;
+
+    @include bp('md') {
+      lost-column: 7/10;
+      lost-move: 3/10;
+      padding-bottom: $at-base-unit * 2;
+    }
+
+    &-text {
+      margin: 0 0 $at-base-unit * 2;
+    }
+  }
+
+  &__btn-container {
+    width: 100%;
+
+    @include bp('md') {
+      lost-column: 7/10;
+      lost-move: 3/10;
+    }
+  }
+
+  &__button {
+    margin: 0 0 $at-base-unit * 2;
+    width: 100%;
+  }
+}

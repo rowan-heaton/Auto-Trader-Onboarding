@@ -1,0 +1,23 @@
+.c-at-valuation {
+  min-height: 48px;
+  &__error {
+    margin: 0 auto;
+    width: 288px;
+    text-align: center;
+    @include bp('md') {
+      width: 50%;
+    }
+    &-title {
+      margin: 0;
+    }
+    &-message {
+      font-size: $at-xs-font;
+      line-height: 1.35;
+      margin: 0;
+    }
+  }
+  .c-at-tooltip__icon-info {
+    top: 3px;
+    left: 0;
+  }
+}

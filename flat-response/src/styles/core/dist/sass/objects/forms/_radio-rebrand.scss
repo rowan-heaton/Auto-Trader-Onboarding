@@ -1,0 +1,220 @@
+.o-at-radio-button {
+  display: block;
+
+  & input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    display: inline-block;
+
+    &+.o-at-radio-button__label {
+      border-radius: 4px;
+      font-size: $at-sm-font;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      color: $at-copy-light;
+      padding: 14px 8px 14px 44px;
+      line-height: $at-font-size-20;
+      background-color: $at-grey-light;
+      min-width: 128px;
+      @include bp('md') {
+        padding: 10px 8px 10px 44px;
+      }
+
+      &:hover {
+        background-color: $at-grey;
+        color: $at-blue;
+
+        &:before {
+          box-shadow: none;
+        }
+
+        &:after {
+          color: $at-aqua-dark;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: calc(50% - 12px);
+        width: 24px;
+        height: 24px;
+        border: 2px solid $at-grey-dark;
+        border-radius: 100%;
+        background: $at-white;
+        @include bp('md') {
+          left: 8px;
+        }
+      }
+
+      &:after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background: $at-aqua-dark;
+        position: absolute;
+        border-radius: 100%;
+        transition: all 0.2s ease;
+        top: calc(50% - 6px);
+        left: 16px;
+        @include bp('md') {
+          left: 14px;
+        }
+      }
+    }
+    &:focus {
+      ~ .o-at-radio-button__label {
+        &:before {
+          box-shadow: inset 0 0 0 0.25rem rgba($at-focus, .6);
+          border: none;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    // Disabled State for Checkbox and Radio Buttons
+    [disabled="disabled"] + span {
+      cursor: not-allowed;
+      color: $at-btn-disabled;
+      &:before, &:after {
+        border-color: $at-btn-disabled;
+        box-shadow: 0 0 0;
+
+        &:hover {
+          color: $at-btn-disabled;
+          border-color: $at-btn-disabled;
+          box-shadow: 0 0 0;
+        }
+      }
+
+      &:hover {
+        color: $at-btn-disabled;
+        border-color: $at-btn-disabled;
+        box-shadow: 0 0 0;
+      }
+    }
+
+    &-count {
+      color: $at-btn-disabled;
+    }
+  }
+
+
+  [type="radio"]:checked + span:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+
+  [type="radio"]:not(:checked) + span:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  [type="radio"]:checked + span:before {
+    border-color: transparent;
+  }
+
+
+  &__count {
+    @extend .u-at-xs-font;
+    font-weight: $at-regular-font;
+    font-style: italic;
+    color: $at-aqua;
+
+  }
+
+  // List version.
+  &-list {
+    padding: 5px;
+    @include bp('md') {
+      padding: 0 20px;
+      width: 100%;
+    }
+    & .c-at-preloader {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+    &__header {
+      width: 100%;
+      margin: 16px auto;
+      @include respond-to('md') {
+        margin: 20px 0;
+        float: left;
+        padding: 0;
+      }
+    }
+
+    &__title {
+      text-transform: capitalize;
+      font-size: $at-body-font;
+      line-height: normal;
+      margin: 0;
+      @include bp('md') {
+        line-height: $at-sm-font;
+      }
+    }
+
+    &__sub-title {
+      color: $at-blue;
+      font-size: $at-sm-font;
+    }
+
+    &__divider {
+      padding: 5px 15px;
+      background: $at-grey-light;
+      font-weight: $at-semibold-font;
+    }
+
+    & input[type='radio'] {
+      &:checked + .o-at-radio-button__label {
+        &-add-tick {
+          background: url('images/svgs/tick.svg') 95% center no-repeat;
+          fill: $at-aqua;
+          background-size: 22px;
+        }
+      }
+      & + .o-at-radio-button__label {
+        width: 100%;
+      }
+      // Disabled state for Radio button
+      &:disabled + .o-at-radio-button-list__label,
+      &:disabled + .o-at-radio-button-list__label:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Scroll box
+// Animation when revealing new boxes media query - just for mobile? http://jsfiddle.net/SO_AMK/VV2ek/
+.c-at-scroll-box {
+  background: $at-white;
+  overflow-y: auto;
+  border-radius: $default-radius;
+  height: auto;
+  @include respond-to('phone') {
+    background: $at-white;
+    border-radius: 5px;
+    clear: both;
+    margin-top: 15px;
+    float: left;
+  }
+  &--no-padding {
+    @include respond-to('phone') {
+      padding: 0;
+    }
+  }
+  &--md {
+    min-height: 375px;
+    max-height: 375px;
+    @include respond-to('phone') {
+      min-height: 100%;
+      max-height: 100%;
+    }
+  }
+}

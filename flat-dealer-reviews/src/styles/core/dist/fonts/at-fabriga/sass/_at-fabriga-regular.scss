@@ -1,0 +1,8 @@
+// BEGIN Regular
+@font-face {
+  font-family: 'ATFabriga';
+  @include fontdef($FabrigaPath, $FabrigaVersion, "Regular");
+  font-weight: normal;
+  font-style: normal;
+}
+// END Regular

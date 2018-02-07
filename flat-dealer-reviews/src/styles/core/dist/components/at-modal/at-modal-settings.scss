@@ -1,0 +1,31 @@
+//
+// Modal settings
+// --------------------------------------------------
+
+$at-modal-backdrop:          #000 !default;  // Not part of the palette, but agreed this should be black with design
+$at-modal-backdrop-zindex:   1040 !default;
+$at-modal-backdrop-opacity:  .5 !default;
+
+$at-modal-zindex:            1050 !default;
+$at-modal-background:        $at-grey-light !default;
+$at-modal-max-width:         820px;
+$at-modal-shadow: 0 50px 55px 0 rgba(0, 0, 0, 0.3), 0 1px 15px 0 rgba(0, 0, 0, 0.1);
+
+
+@keyframes default-modal-animation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+
+  90% {
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=1024,height=device-height,initial-scale=1,user-scalable=yes,minimum-scale=0">
+        <link rel="shortcut icon" href="./assets/favicon.ico">
+        <title>Dealer Portal - response/home</title>
+        <link href="./assets/main.css" rel="stylesheet">
+
+		<!--[if IE 8]>
+			<link href="/portal/201801191022/css/ie8.css" rel="stylesheet" />
+		<![endif]-->
+
+		<!--[if IE 7]>
+			<link href="/portal/201801191022/css/ie7.css" rel="stylesheet" />
+		<![endif]-->
+
+<body>
+
+<div class="headerContainer">
+	<header>
+		<nav>
+			<div class="blackBar">
+				<div class="header">
+
+					<div class="nav">
+
+                       <ul class="list-inline text-right hidden-xs cb fl listSeperator">
+                            <li><a data-bind="attr: {href: getExploreHomeHref}" href="#">Explore</a></li>
+                            <li><a target="_blank" data-bind="attr: {href: getSupportHref }" href="#">Contact</a></li>
+                        </ul>
+
+						<a data-bind="attr: {href: portalHomeHref}" href="#">
+							<span class="logo at">Auto Trader Portal</span>
+						</a>
+
+						<div data-component="header/topnav" data-bind="visible: visible" style=""><span class="headerLinksContainer hide-for-small">
+    <ul class="list-inline text-right hidden-xs cb fr listSeperator" style="position: relative; right:0">
+        <li class="hidden-xs userFirstAndLastName">Welcome back <span data-hj-masked="" data-bind="text: user.firstName">stuart</span>&nbsp;<span data-bind="text: user.lastName">ridgway</span></li>
+        <li class="dropLink">
+            <a data-bind="visible : user.isTolaUser" href="#" style="display: none;">My Account</a>
+        </li>
+        <li class="dropLink" data-bind="visible : user.isPayGoUser" style="display: none;">
+            <a data-bind="visible : user.isPayGoUser" href="#" style="display: none;">Payment History</a>
+        </li>
+        <li class="signOut"><a data-bind="attr: {href: logoutUrl}" href="#">Sign out</a></li>
+    </ul>
+
+
+    <ul class="list-inline text-right hidden-xs cb fr listSeperator" style="padding-top: 5px;">
+
+        <li>
+            <div data-bind="visible: user.hasRazsor" style="display: none;">
+                <a class="dealerWebsite" data-bind="attr: {href: websitePerformanceUrl}, click : function(){recordClickEvent(&#39;my-website&#39;); return true;}" href="#"><span class="raz">My website</span></a>
+            </div>
+        </li>
+
+        <li class="dealershipName truncate" data-bind="attr: {title: user.dealership.dealershipName}" title="Ange&#39;s Stock Export Dealer"><span>Dealership: </span>&nbsp;-&nbsp;<span data-bind="text: user.dealership.dealershipName">Ange's Stock Export Dealer</span></li>
+
+        <li class="dealershipId"><span>DID: </span><span data-bind="text: user.dealership.did">20380</span>
+            <a class="changeDealerIdLink" data-bind="visible: user.groupDealerships.length &gt; 0, click: toggleChangeDidVisibility" href="#">Change Dealer ID</a>
+            <div class="didChange" data-bind="visible: changeDidIsVisible() == true" style="display: none;">
+
+                <div class="didSwitchListTitle">Change Dealer ID</div>
+                <p>Here you can switch between the Dealer IDs you have access to</p>
+
+                <h4>Available Dealer IDs</h4>
+
+                <ul class="didScroll" data-bind="foreach: user.groupDealerships">
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="alt">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did -->
+                        <a href="#"><span data-bind="text: did">7902</span> - <span data-bind="text: dealershipName">Dealer 491289</span></a>
+                        <!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did -->
+                        <a href="#"><span data-bind="text: did">10011722</span> - <span data-bind="text: dealershipName">Head Office 556434</span></a>
+                        <!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="alt">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did -->
+                        <a href="#"><span data-bind="text: did">10009340</span> - <span data-bind="text: dealershipName">Dealer 543147</span></a>
+                        <!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did -->
+                        <a href="#"><span data-bind="text: did">10008480</span> - <span data-bind="text: dealershipName">Dealer 471487</span></a>
+                        <!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="alt">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did -->
+                        <span class="nonLinkDidSwitchItem badAccountLink" title="Bad account status"><span data-bind="text: did">10006675</span> - <span data-bind="text: dealershipName">Agency 518325</span></span>
+                        <!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did -->
+                        <span class="nonLinkDidSwitchItem badAccountLink" title="Bad account status"><span data-bind="text: did">675066</span> - <span data-bind="text: dealershipName">Locog</span></span>
+                        <!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="alt">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did -->
+                        <span class="nonLinkDidSwitchItem" title="Current Dealer ID"><span data-bind="text: did">20380</span> - <span data-bind="text: dealershipName">Ange's Stock Export Dealer</span></span>
+                        <!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did -->
+                        <a href="#"><span data-bind="text: did">110</span> - <span data-bind="text: dealershipName">Dealer 492424</span></a>
+                        <!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="alt">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did -->
+                        <span class="nonLinkDidSwitchItem badAccountLink" title="Bad account status"><span data-bind="text: did">18018</span> - <span data-bind="text: dealershipName">Dealer 463232</span></span>
+                        <!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                
+                    <li data-bind="css: { alt: ($index() % 2 === 0)}" class="">
+
+                        <!-- ko if: dealershipGood === false && did !== $parent.user.dealership.did -->
+                        <span class="nonLinkDidSwitchItem badAccountLink" title="Bad account status"><span data-bind="text: did">8876</span> - <span data-bind="text: dealershipName">Dealer 400273</span></span>
+                        <!-- /ko -->
+                        <!-- ko if: dealershipGood === true && did !== $parent.user.dealership.did --><!-- /ko -->
+                        <!-- ko if: did === $parent.user.dealership.did --><!-- /ko -->
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</span></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="header blueNav">
+		  		<ul class="pNav relative">
+                    <li>
+                        <a data-bind="attr: {href: portalHomeHref}" href="#"><span class="fa-icon"></span></a>
+                    </li>
+
+                    <li data-bind="css: {selected: lastNavigation() === &#39;home&#39;}" class="">
+		  				<a href="#">Dashboard</a>
+		  			</li>
+                    <!-- ko if: !user.isPayGoUser -->
+                    <li data-bind="css: {selected: lastNavigation() === &#39;vehiclevaluation&#39;}, visible : appraisalTool() === &#39;nextGen&#39;" class="">
+						<a href="#" data-bind="analyticsOnClick: {
+           							category:&#39;standard-link&#39;,
+           							label:&#39;header-nav-valuations&#39;,
+           							trackingId:&#39;portal/header&#39;}">Valuation</a>
+		  			</li>
+                    <li data-bind="css: {selected: lastNavigation() === &#39;retail-check&#39;}, visible : appraisalTool() === &#39;retailCheck&#39;" class="" style="display: none;">
+		  				<a href="#">Retail Check</a>
+		  			</li>
+                    <!-- /ko -->
+		  			<li data-bind="css: {selected: lastNavigation() === &#39;stock&#39;}" class="">
+		  				<a data-bind="attr: {href: stockHref}" href="#">Stock &amp; Adverts</a>
+		  			</li>
+				    <li data-bind="css: {selected: lastNavigation() === &#39;enquiries&#39;}" class="">
+					    <!-- ko if: !user.isPayGoUser -->
+					    <a class="fl" href="#">
+					        <div class="fl">Enquiries</div>
+                            <div class="fr" data-component="header/enquiriesNotifier" data-bind="visible: visible" style=""><span class="alertNotification badge bg-whiteBadge" data-bind="fadeVisible: hasUnreadEnquiries" style="opacity: 0; display: none;">
+	<span data-bind="number: unreadEnquiries">0</span>
+	<!--<span class="fr icons email unread"></span>-->
+</span></div>
+					    </a>
+					    <!-- /ko -->
+				    </li>
+		  			<li data-bind="css: {selected: lastNavigation() === &#39;response&#39;}" class="selected">
+		  				<a href="#">Response</a>
+		  			</li>
+					<!-- ko if: !user.isPayGoUser -->
+					<li class="relative">
+						<a data-bind="attr: {href: dealerRatingsHref}" target="_blank" href="#">Dealer Reviews</a>
+					</li>
+					<!-- /ko -->
+					<li>
+						<a data-bind="attr: {href: getMerlinTraderConnectHref}, visible: hasMerlinTraderConnect()" href="#" style="display: none;">Trader Connect</a>
+					</li>
+					<li>
+						<a data-bind="attr: {href: getMercuryTraderConnectHref}, visible: hasMercuryTraderConnect()" href="#" style="display: none;">Trader Connect</a>
+					</li>
+		  		</ul>
+			</div>
+
+            <div class="vrmContainer">
+                <div class="vrmContainerInner">
+                    <div class="vrmWidgetContainer" data-component="header/vrmwidget/container" data-bind="visible: visible" style="">            <div class="vrmSearch" data-bind="css: {vrmOpen: currentView() === &#39;ENTER_VRM&#39;, hidden: user.isPayGoUser}">
+                <div data-component="header/vrmwidget/vrmSearch" data-bind="visible: visible" style=""><form data-bind="submit: parent.performVrmSearch.bind(parent)">
+	<div class="fr vrmLbl">Enter reg to find or add a vehicle</div>
+	<input type="text" id="vrmSearch" name="vrmSearch" class="vrmInput ukNumberPlate vrmTip" placeholder="Enter VRM" maxlength="8" data-bind="valueUpdate: &#39;afterkeydown&#39;, value: vrmSearchData.registration , click: clickVrmSearchBox">
+	<div class="vrmOptions">
+		<input type="text" class="vrmMileage" maxlength="8" placeholder="Enter Mileage" data-bind="valueUpdate: &#39;afterkeydown&#39;, value: vrmSearchData.mileage">
+		<button class="vrmDropBut disabled" type="submit" data-bind="disable: vrmSearchData.registration().length === 0, css:{disabled: vrmSearchData.registration().length === 0}" disabled="">Search</button>
+		<div class="cb"></div>
+		<a class="noReg" data-bind="click : clickNoRegistration">No registration?</a>
+	</div>
+</form>
+<div data-bind="css: {loadvrm: showLoader} " class=""></div></div>
+            </div>
+
+            <div class="vrmAdd" data-bind="visible: (currentView() === &#39;MATCHED_VEHICLE&#39;)" style="display: none;">
+                <div data-component="header/vrmwidget/matchedVehicle" data-bind="visible: visible" style="">	<div class="vrmClosed fr">
+		<a class="vrmCloseBut" data-bind="click : publish.bind($data, &#39;vrm.widget.close&#39;)">
+			<span class="vrmCloseTxt">close</span>
+			<span class="vrmCloseX" style="">X</span>
+		</a>
+	</div>
+	<div class="cb"></div>
+	<div class="foundVehicle">
+		<div class="vrmMakeMod truncate" data-bind="text: vehicleData() ? vehicleData().make + &#39; &#39; + vehicleData().model : &#39;&#39;"></div>
+		<div class="vrmDeriv truncate" data-bind="text: vehicleData()  ? vehicleData().derivative : &#39;&#39;"></div>
+		<a data-bind="click : publish.bind($data, &#39;vrm.widget.manual.add&#39;)" class="vrmWrong">Not right?</a>
+
+        <div class="selVrmType fl" data-bind="visible: (experianProductListVisible() === false)">
+            <div class="bodyFontS">Confirm the type of vehicle:</div>
+			<div class="bodyFontXS errorMsg" data-bind="visible: selectedVehicleType() === &#39;crossover&#39; " style="display: none;">Required</div>
+            <div class="fl vehicleIcons">
+                <label class="fl">
+                    <input type="radio" name="type" class="fl" value="car" data-bind="checked: selectedVehicleType">
+                    <div class="fl vehicleEditSprite carIcon" data-bind="css:{selected: selectedVehicleType() === &#39;car&#39;}"></div>
+                </label>
+                <label class="fl">
+                    <input type="radio" name="type" class="fl" value="bike" data-bind="checked: selectedVehicleType">
+                    <div class="fl vehicleEditSprite bikeIcon" data-bind="css:{selected: selectedVehicleType() === &#39;bike&#39;}"></div>
+                </label>
+                <label class="fl">
+                    <input type="radio" name="type" class="fl" value="van" data-bind="checked: selectedVehicleType">
+                    <div class="fl vehicleEditSprite vanIcon" data-bind="css:{selected: selectedVehicleType() === &#39;van&#39;}"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+	<div class="fr vrmVrmMile">		
+		 <form data-bind="submit: parent.performVrmSearch.bind(parent)">
+			<input type="text" id="vrmSearch" name="vrmSearch" class="vrmInput ukNumberPlate" placeholder="Enter VRM" maxlength="8" data-bind="valueUpdate: &#39;afterkeydown&#39;, value: vrmSearchData.registration">
+			<div class="vrmOptions">
+				<input type="text" class="vrmMileage" maxlength="8" placeholder="Enter Mileage" data-bind="valueUpdate: &#39;afterkeydown&#39;, value: vrmSearchData.mileage">
+            	<button class="vrmDropBut disabled" type="submit" data-bind="disable: vrmSearchData.registration().length === 0, css: {disabled: vrmSearchData.registration().length === 0}" disabled="">Search</button>		  			
+			</div>
+		</form>
+	</div>
+	<div class="vrmSep"></div>
+	<div class="vrmQuest">&nbsp;</div>
+
+	<div class="vrmActions__disabled" data-bind="visible: selectedVehicleType() === &#39;crossover&#39; " style="display: none;"></div>
+
+	<div data-bind="visible: (experianProductListVisible() === false)">
+		
+		<ul class="vrmActions" data-bind="visible : appraisalTool() === &#39;nextGen&#39;">
+			<li class="alt">
+				<a href="#" data-bind="click : appraiseVehicle" class="vrmAction vrmLeftPad"><span class="vrmDelta"></span><span class="vrmSmTxt">free retail valuations</span><span class="vrmCta">Value Vehicle</span></a>
+			</li>
+		</ul>
+		<ul class="vrmActions" data-bind="visible : appraisalTool() === &#39;icontrol&#39;" style="display: none;">
+			<li class="alt">
+				<a data-bind="click : icontrolAppraisal" class="vrmAction vrmLeftPad">
+                    <img class="vrmAppraisalImg" src="./assets/managing-lg.png">
+                    <span class="vrmSmTxt">Full vehicle Appraisal.<br>Value and competitor check</span>
+                    <span class="vrmCta">Appraise Vehicle</span></a>
+			</li>
+		</ul>
+        <ul class="vrmActions" data-bind="visible : appraisalTool() === &#39;appraisal&#39;" style="display: none;">
+			<li class="alt">
+				<a data-bind="click : retailCheck" class="vrmAction vrmLeftPad">
+                    <img class="vrmAppraisalImg" src="./assets/retail-check.png">
+                    <span class="vrmSmTxt"><strong>More than just a valuation.</strong><br>See the live retail market.</span>
+                    <span class="vrmCta">Retail check</span></a>
+			</li>
+		</ul>
+		<ul class="vrmActions">
+			<li>
+				<a href="#" data-bind="click : experianCheck" class="vrmAction vrmLeftPad" name="vrmWidgetCheckVehicle">
+					<span class="vrmExperian"></span>
+					<span class="vrmSmTxt">AutoCheck <br> from Experian</span>
+					<span class="frameworkIconSprite freeStar" data-bind="visible: user.hasExperianCheckTrial" style="display: none;"></span>
+					<span class="vrmCta">Check vehicle</span></a>
+			</li>
+		</ul>
+		<ul class="vrmActions">
+			<li class="alt">
+				<span class="showLoading cb hidden fr" data-bind="css : {&#39;smSavingProgress&#39; : addToForecourtInitiated}"></span>
+				<a href="#" class="vrmAction vrmLeftPad" name="vrmWidgetAddToForecourt" data-bind="click: addToForecourt, css : {&#39;forecourtProgress&#39; : addToForecourtInitiated, &#39;disabled&#39; : addToForecourtInitiated}, disable :addToForecourtInitiated"><span class="vrmAddStock"></span><span class="vrmSmTxt">place vehicle in stock or advertise</span><span class="vrmCta">Add to forecourt</span></a>
+			</li>
+	
+			<div class="errMessage noMarginFix vehicleAddFailure" data-bind="visible: vehicleAddFailure" style="display: none;">
+				A system error has occurred. Please try again later.
+			</div>
+			
+		</ul>
+		<ul class="vrmActions" data-bind="capability_read: &#39;BUYING&#39;, visible: true" style=""></ul> 
+	</div>
+
+	<div class="vrmExperianAutoCheck" data-bind="visible: (experianProductListVisible() === true)" style="display: none;">
+		<span class="frameworkIconSprite freeStar" data-bind="visible: user.hasExperianCheckTrial" style="display: none;"></span>
+		<div data-component="stock/item/experianAutoCheck" data-bind="visible: visible" style=""><div class="infoBox fl cb mtTen">
+	<!-- Purchase Now Container -->
+	<!-- Would prefer to use an 'if' binding so the markup isn't generated when not visible.
+		 This cause a problem with the checkbox group where it doesn't retain it checked state
+		 when returned from the confirm purchase view.  I think this is a bug in knockout
+	 -->
+	<div class="purchaseNow" data-bind="visible: (currentView() === &#39;selectOptions&#39;)">
+		<h3 class="advertSubHeadingFlex boxHeading fl">Select Experian AutoCheck Options:</h3>
+		<span class="fr bodyFontS pFive noContractText">No contract needed, pay for only what you purchase</span>
+		
+		<div class="cb cbSeperator"></div>
+	
+		<div class="col2 vDetailsMargin">
+				<label>Level of Data Guarantee:</label>
+				<ul class="experianList"><li>£10,000</li></ul>
+		</div>
+		
+		<div class="col2 vDetailsMargin">
+				<label>Term of Cover:</label>
+				<ul class="experianList"><li>12 months</li></ul>
+		</div>
+		
+		<div class="col2 vDetailsMargin">
+			<img class="fr" src="./assets/experian_new.png" width="115" height="40">
+		</div>
+		
+		<div class="cb cbSeperator"></div>
+		<div class="smSavingProgress submitLoading fr" style="margin-left: auto; margin-right: auto; width: 55%; display: none;" data-bind="style:{display: wsState() === &#39;loading&#39; ? &#39;block&#39; : &#39;none&#39;}"></div>
+		<div data-bind="visible: wsState() !== &#39;loading&#39; " style="">
+			<a name="ExperianAutoCheck_Options"></a>
+			<div class="autoCheckExtrasContainer">
+				<div data-bind="foreach: experianProducts"></div>
+			</div>
+		
+			<div class="successNotBox iconNotBox cb" data-bind="text: totalCost()">Cost: £0.00</div>
+			
+			<div class="cb cbSeperator"></div>
+			
+			<div class="experianArea cb">
+			
+				<div class="fl">
+					<label class="fl option-group label">
+						<input type="checkbox" name="terms-checkbox" data-bind="checked: termsAccepted">
+						<span data-bind="text: &#39;I agree to the&#39;">I agree to the</span><a class="cursorPointer label_a_override" data-bind="click: openTerms">terms and conditions</a>
+					</label>		
+					
+					<div class="cb"></div>						
+				</div>
+				
+				<div class="fr"><button class="experianPurchase blueBut disabled" data-bind="enable: canPurchase, css:{ disabled: !canPurchase()}, click:function(data, event) {changeStatus(&#39;confirmOptions&#39;);}" disabled="">Purchase Now</button></div>
+				<div class="fr" data-bind="visible: previousCheckId() !== undefined" style="display: none;"><button class="previousCheck greyBut" data-bind="click: changeStatus.bind($data,&#39;showCheckResults&#39;)">Back to Previous AutoCheck</button></div>
+				
+			</div>
+		
+			<div class="cb cbSeperator"></div>
+		</div>
+	</div>
+	
+	<!-- Confirm Purchases -->
+	<div class="confirmPurchase" data-bind="if: (currentView() === &#39;confirmOptions&#39;)"></div>
+			
+	<!-- Experian Auto Check Results -->
+	<div data-bind="if: (currentView() === &#39;showCheckResults&#39;)"></div>
+	<div class="bottom" data-bind=" if: errorMessage() !== &#39;&#39;">
+		<div class=" errDialogSm  tr mtTen width100" data-bind="html: errorMessage()">Please enter a VRM and mileage to perform a check.</div>
+	</div>
+	
+</div></div>
+	</div></div>
+            </div>
+
+            <div class="vrmManual clearTileNoMargin" data-bind="css: {vrmManualDisplayed: currentView() === &#39;MANUAL_ADD&#39;}">
+                <div class="manual">
+                    <div data-component="header/vrmwidget/manualMmvdSelection" data-bind="visible: visible" style=""><div data-bind="css: {loadvrm: updating}" class=""></div>
+
+<div class="vrmClosed fr">
+    <a class="vrmCloseBut" data-bind="click: publish.bind($data, &#39;vrm.widget.close&#39;)"> <span class="vrmCloseTxt">close</span> <span class="vrmCloseX">X</span>
+    </a>
+</div>
+
+<div class="cb"></div>
+<div class="unableToFind" data-bind="visible: showRedInfoMessage" style="display: none;">
+    <div data-bind="text:vrmText()">We have been unable to find your details.
+ Please provide them below</div>
+</div>
+<div class="errMessage mmvdLookupSystemError" data-bind="visible: systemError" style="display: none;">
+    A system error has occurred. Please try again later.
+</div>
+<div class="clearTile">
+    <label>Type</label> <select name="vehicletypes" class="formSel inputSmall" data-bind="options: vehicleTypes, value: selectedVehicleType">
+<option value="Car">Car</option><option value="Bike">Bike</option><option value="Van">Van</option></select>
+</div>
+
+<div class="clearTile" data-bind="visible : mileageVisible()">
+    <label>Mileage</label> <input type="number" class="formTxt" value="" data-bind="value: vrmSearchData.mileage">
+</div>
+
+<div class="cb"></div>
+
+<div data-bind="foreach: selectionData">
+    <div data-bind="visible: ($data.name !== &#39;Derivative&#39; || $parent.manualDerivativeDisabled() == true)">
+        <div class="clearTileFullWidth" data-bind="visible: $data.options.length &gt; 1">
+            <label data-bind="text: $data.name">Make</label>
+            <select class="formSel input3" data-bind="options: $data.options, value: $data.selection,
+                            visible: $data.options.length &gt; 1,
+                            attr: {name: ($data.name + &#39;Select&#39;)},
+                            event: {change: function(data) { $parent.updateSelectBox(data)}.bind($parent) }" name="MakeSelect"><option value="Please select">Please select</option><option value="AC">AC</option><option value="ARO">ARO</option><option value="Abarth">Abarth</option><option value="Aixam">Aixam</option><option value="Alfa Romeo">Alfa Romeo</option><option value="Allard">Allard</option><option value="Alpine">Alpine</option><option value="Alvis">Alvis</option><option value="Anzani">Anzani</option><option value="Ariel">Ariel</option><option value="Arm Siddeley">Arm Siddeley</option><option value="Arnolt-Bristol">Arnolt-Bristol</option><option value="Ascari">Ascari</option><option value="Asia">Asia</option><option value="Aston Martin">Aston Martin</option><option value="Auburn">Auburn</option><option value="Audi">Audi</option><option value="Austin">Austin</option><option value="Auto Union">Auto Union</option><option value="BAC">BAC</option><option value="BMW">BMW</option><option value="Beauford">Beauford</option><option value="Bedford">Bedford</option><option value="Belsize">Belsize</option><option value="Bentley">Bentley</option><option value="Bitter">Bitter</option><option value="Bond">Bond</option><option value="Borgward">Borgward</option><option value="Bowler">Bowler</option><option value="Bramwith">Bramwith</option><option value="Bristol">Bristol</option><option value="Brooke">Brooke</option><option value="Buckingham">Buckingham</option><option value="Bugatti">Bugatti</option><option value="Buick">Buick</option><option value="Cadillac">Cadillac</option><option value="Caparo">Caparo</option><option value="Carbodies">Carbodies</option><option value="Caterham">Caterham</option><option value="Chesil">Chesil</option><option value="Chevrolet">Chevrolet</option><option value="Chevron">Chevron</option><option value="Chrys Aus">Chrys Aus</option><option value="Chrysler">Chrysler</option><option value="Citroen">Citroen</option><option value="Coleman Milne">Coleman Milne</option><option value="Connaught">Connaught</option><option value="Corvette">Corvette</option><option value="Crossley">Crossley</option><option value="Custom Vehicle">Custom Vehicle</option><option value="DAF">DAF</option><option value="Dacia">Dacia</option><option value="Daewoo">Daewoo</option><option value="Daihatsu">Daihatsu</option><option value="Daimler">Daimler</option><option value="Dallas">Dallas</option><option value="Datsun">Datsun</option><option value="Dax">Dax</option><option value="De Tomaso">De Tomaso</option><option value="Delorean">Delorean</option><option value="Dodge">Dodge</option><option value="ERA">ERA</option><option value="Edel">Edel</option><option value="Effedi">Effedi</option><option value="Eurobrun">Eurobrun</option><option value="Excalibur">Excalibur</option><option value="FRS">FRS</option><option value="FSO">FSO</option><option value="Facel Vega">Facel Vega</option><option value="Fairthorpe">Fairthorpe</option><option value="Farbio">Farbio</option><option value="Ferrari">Ferrari</option><option value="Fiat">Fiat</option><option value="Fisher">Fisher</option><option value="Fisker">Fisker</option><option value="Ford">Ford</option><option value="Ford Dutton">Ford Dutton</option><option value="Furore">Furore</option><option value="GBS">GBS</option><option value="GMC">GMC</option><option value="Gardener">Gardener</option><option value="Gilbern">Gilbern</option><option value="Ginetta">Ginetta</option><option value="Goggomobil">Goggomobil</option><option value="GoinGreen">GoinGreen</option><option value="Great Wall">Great Wall</option><option value="Griffon">Griffon</option><option value="Grinnall">Grinnall</option><option value="Gumpert">Gumpert</option><option value="Hennessey">Hennessey</option><option value="Herald Motor Co">Herald Motor Co</option><option value="Hillman">Hillman</option><option value="Holden">Holden</option><option value="Honda">Honda</option><option value="Hotchkiss">Hotchkiss</option><option value="Hudson">Hudson</option><option value="Humber">Humber</option><option value="Hummer">Hummer</option><option value="Hyundai">Hyundai</option><option value="ISO">ISO</option><option value="Infiniti">Infiniti</option><option value="Isuzu">Isuzu</option><option value="JBA">JBA</option><option value="Jaguar">Jaguar</option><option value="Jeep">Jeep</option><option value="Jensen">Jensen</option><option value="Jowett">Jowett</option><option value="KTM">KTM</option><option value="Khaleej">Khaleej</option><option value="Kia">Kia</option><option value="Koenigsegg">Koenigsegg</option><option value="Lada">Lada</option><option value="Lamborghini">Lamborghini</option><option value="Lanchester">Lanchester</option><option value="Lancia">Lancia</option><option value="Land Rover">Land Rover</option><option value="Lea Francis">Lea Francis</option><option value="Lexus">Lexus</option><option value="Ligier">Ligier</option><option value="Lincoln">Lincoln</option><option value="Lister">Lister</option><option value="Lobini">Lobini</option><option value="Locust">Locust</option><option value="London Taxis International">London Taxis International</option><option value="Lonsdale">Lonsdale</option><option value="Lotus">Lotus</option><option value="MG">MG</option><option value="MINI">MINI</option><option value="MK">MK</option><option value="MNR">MNR</option><option value="MP Lafer">MP Lafer</option><option value="MacNeillie">MacNeillie</option><option value="Mahindra">Mahindra</option><option value="Marcos">Marcos</option><option value="Marlin">Marlin</option><option value="Maserati">Maserati</option><option value="Maybach">Maybach</option><option value="Mazda">Mazda</option><option value="McLaren">McLaren</option><option value="Mercedes-Benz">Mercedes-Benz</option><option value="Mercury">Mercury</option><option value="Merlin">Merlin</option><option value="Messerschmitt">Messerschmitt</option><option value="Mev">Mev</option><option value="Mia">Mia</option><option value="Microcar">Microcar</option><option value="Minardi">Minardi</option><option value="Mitsubishi">Mitsubishi</option><option value="Mitsuoka">Mitsuoka</option><option value="Morgan">Morgan</option><option value="Morris">Morris</option><option value="Mosler">Mosler</option><option value="Mycar">Mycar</option><option value="NG">NG</option><option value="NSU">NSU</option><option value="Nash">Nash</option><option value="Naylor">Naylor</option><option value="Nissan">Nissan</option><option value="Noble">Noble</option><option value="OKA">OKA</option><option value="Oldsmobile">Oldsmobile</option><option value="Opel">Opel</option><option value="Packard">Packard</option><option value="Pagani">Pagani</option><option value="Panhard">Panhard</option><option value="Panther">Panther</option><option value="Perodua">Perodua</option><option value="Peugeot">Peugeot</option><option value="Pilgrim">Pilgrim</option><option value="Plymouth">Plymouth</option><option value="Pontiac">Pontiac</option><option value="Porsche">Porsche</option><option value="Portaro">Portaro</option><option value="Proton">Proton</option><option value="Prova">Prova</option><option value="Quantum">Quantum</option><option value="RCR">RCR</option><option value="Radical">Radical</option><option value="Rage">Rage</option><option value="Rayvolution">Rayvolution</option><option value="Reliant">Reliant</option><option value="Renault">Renault</option><option value="Reva">Reva</option><option value="Reynard">Reynard</option><option value="Riley">Riley</option><option value="Robin Hood">Robin Hood</option><option value="Rolls-Royce">Rolls-Royce</option><option value="Rover">Rover</option><option value="Royale">Royale</option><option value="SEAT">SEAT</option><option value="SSC">SSC</option><option value="Saab">Saab</option><option value="San">San</option><option value="Santana">Santana</option><option value="Sao">Sao</option><option value="Saturn">Saturn</option><option value="Sebring">Sebring</option><option value="Secma">Secma</option><option value="Simca">Simca</option><option value="Singer">Singer</option><option value="Skoda">Skoda</option><option value="Smart">Smart</option><option value="Spectre">Spectre</option><option value="Spyker">Spyker</option><option value="SsangYong">SsangYong</option><option value="Standard">Standard</option><option value="Star">Star</option><option value="Startins">Startins</option><option value="Studebaker">Studebaker</option><option value="Subaru">Subaru</option><option value="Sunbeam">Sunbeam</option><option value="Supermarine">Supermarine</option><option value="Suzuki">Suzuki</option><option value="Swallow Sidecar">Swallow Sidecar</option><option value="Sylva">Sylva</option><option value="TVR">TVR</option><option value="Talbot">Talbot</option><option value="Tata">Tata</option><option value="Tesla">Tesla</option><option value="Tiger">Tiger</option><option value="Toniq">Toniq</option><option value="Toyota">Toyota</option><option value="Trabant">Trabant</option><option value="Triumph">Triumph</option><option value="Tuk Tuk">Tuk Tuk</option><option value="Ultima">Ultima</option><option value="Vauxhall">Vauxhall</option><option value="Venturi">Venturi</option><option value="Vexel">Vexel</option><option value="Volkswagen">Volkswagen</option><option value="Volvo">Volvo</option><option value="Weismann">Weismann</option><option value="Westfield">Westfield</option><option value="Wiesmann">Wiesmann</option><option value="Willys Knight">Willys Knight</option><option value="Wolseley">Wolseley</option><option value="Yamaha">Yamaha</option><option value="Yugo">Yugo</option><option value="Zenos">Zenos</option></select>
+        </div>
+        <div class="cb" data-bind="visible: $data.options.length &gt; 1"></div>
+
+        <div class="option-group check" data-bind="visible : $data.name === &#39;Model&#39; &amp;&amp; $parent.selectedVehicleType() === &#39;Car&#39;" style="display: none;">
+            <input type="checkbox" name="ukVehicleCreateCB" id="ukVehicleCreateCB" data-bind="checked: $parent.manualDerivativeDisabled">
+            <label for="ukVehicleCreateCB" class="noMargin">This is a UK vehicle</label>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="clearTileFullWidth" data-bind="visible: !manualDerivativeDisabled()" style="display: none;">
+        <label>Derivative</label>
+        <input class="formTxt manualAddDerivativeInputBox inputManualAdd" name="manualAddDerivativeInputBoxCreate" data-bind="value : manualDerivativeText, valueUpdate: &#39;afterkeydown&#39;" placeholder="Manually enter a Derivative"><div class="validationMessage" style="display: none;"></div>
+        
+    </div>
+
+    <a class="manualAddDerivativeToggle captureMM" data-bind="visible : (selectedVehicleType() === &#39;Van&#39; &amp;&amp; manualDerivativeDisabled()),
+       click : toggleManualDerivativeEntry" style="display: none;">
+        Click here to manually enter a derivative
+    </a>
+
+    <a class="manualAddDerivativeToggle captureMM" data-bind="visible : (selectedVehicleType() === &#39;Van&#39; &amp;&amp; !manualDerivativeDisabled()),
+       click : toggleManualDerivativeEntry" style="display: none;">
+        Click here to select a derivative
+    </a>
+</div>
+
+
+<div class="clearTileFullWidth noVrmReason" data-bind="visible: vrmSearchData.registration() === &#39;&#39;">
+    <label>Please specify why you cannot supply a VRM</label>
+    <div class="option-group radio">
+        <div class="fl">
+            <input type="radio" name="reg" id="unreg" value="unregistered" data-bind="checked : whyNoVRM"> <label class="radioLabel" for="unreg">Unregistered</label>
+        </div>
+        <div class="fl">
+            <input type="radio" name="reg" id="reg" value="offroad" data-bind="checked : whyNoVRM"> <label class="radioLabel" for="reg">Off road vehicle</label>
+        </div>
+    </div>
+    <div class="errorDesc">Please select one of the above buttons</div>
+</div>
+
+<div class="cb"></div>
+
+<div class="clearTileFullWidth disabled" data-bind="css : {disabled : isContinueEnabled() === false}, disable : isContinueEnabled === false">
+    <div class="saveSeperator">
+        <a class="blueBut fr" title="" data-bind="click: function() { trackContinueClickEvent(); clickContinue();}">Continue</a>
+    </div>
+</div></div>
+                </div>
+            </div>
+
+            <div class="blkOver" data-bind="visible: (currentView() !== &#39;NONE&#39;), click: publish.bind($data, &#39;vrm.widget.close&#39;)" style="display: none;"></div></div>
+                </div>
+            </div>
+
+		</nav>
+	</header>
+</div>
+</div>
+<div data-component="infoBar" data-bind="visible: visible" style=""><div class="info-bar" data-bind="visible: displayInfoBar, css: { &#39;info-bar--lg&#39; : isLarge  } " style="display: none;">
+    <div class="info-bar__close-icon" data-bind="click: hideInfoBarSession, visible: displayCloseInfoBar" style="display: none;"></div>
+    <div class="info-bar__content">
+        <span data-bind="css: { &#39;info-bar__icon-part-ex&#39; : showPartExIcon  }, visible: showPartExIcon " class="" style="display: none;"></span>
+        <span class="info-bar__text" data-bind="html: infoBarText, css: { &#39;info-bar--text-with-icon&#39; : showPartExIcon, &#39;info-bar--extra-padding&#39; : infoBarTextPadding, &#39;info-bar--lg-font&#39; : infoBarLgFont }"></span>
+
+        <!-- ko if: infoBarHref --><!-- /ko -->
+
+        <!-- ko if: infoBarButton --><!-- /ko -->
+    </div>
+    <!-- ko if: showFooter --><!-- /ko -->
+</div>
+</div>
+<div class="content" data-component="mainContent" data-bind="visible: visible" style="margin-bottom: 93px;"><div data-component="response/home" data-bind="visible: visible" style=""><div class="topTitle" data-component="response/responseSecondaryNav" data-bind="visible: visible" style=""><ol class="secondaryNav">
+    <li data-bind="css: {selected: selectedItem() === &#39;dashboard&#39;}" class="selected">
+        <a href="#" data-bind="analyticsOnClick: {
+           			category:&#39;standard-link&#39;,
+           			label: &#39;response-dashboard&#39;,
+           			trackingId:&#39;response/dashboard&#39;}">
+            Dashboard
+        </a>
+    </li>
+    
+    <li data-bind="visible: isResponseTrackerAvailableForUser() &amp;&amp; user.hasLegacyResponseTracker" style="display: none;">
+        <a target="_blank" data-bind="attr: {href: responseToolLocation.getResponseTrackerUrl()}" class="nWinIcon" href="#">
+            Response Tracker
+        </a>
+    </li>
+
+    <li data-bind="visible: isResponseTrackerAvailableForUser() &amp;&amp; !user.hasLegacyResponseTracker">
+        <a href="#" data-bind="analyticsOnClick: {
+           			category:&#39;standard-link&#39;,
+           			label: &#39;response-advert-response&#39;,
+           			trackingId:&#39;response/dashboard&#39;}">
+            Advert Response
+        </a>
+    </li>
+
+    <li data-bind="visible: user.hasPPCReports" style="display: none;">
+      <a href="#" data-bind="attr: {href: responseToolLocation.getLeadGenUrl()},
+                analyticsOnClick: {
+           			category:&#39;standard-link&#39;,
+           			label: &#39;response-lead-generator&#39;,
+           			trackingId:&#39;response/dashboard&#39;}" target="_blank" class="nWinIcon">
+          Lead Generator
+      </a>
+    </li>
+</ol></div>
+<div data-component="response/dashboard" data-bind="visible: visible" style=""><div class="topToolBar">
+	<div class="respFilterBox fullWidth">
+
+			<div class="col noBdr ">
+				<h4 class="fl mtFive mlTen">Showing Response for :</h4>
+
+				<div class=" fl  timePeriod ">
+		           <select id="response_time_period_combo" class="formSel fl" data-bind="value: responseTimePeriod, valueUpdate: &#39;afterkeydown&#39;">
+
+	                    <option value="7_days">Last 7 Days</option>
+	                    <option value="30_days">Last 30 Days</option>
+	                    <option value="date_range">Date Range</option>
+                	</select>
+				</div>
+
+				<div class="vDetailsMargin dateRange" data-bind=" visible : dateRangeVisible()" style="display: none;">
+					<div class="vDetailsMargin" id="fromdateDiv">
+							<input type="text" data-bind="value: filterFromDate" placeholder="From dd/mm/yyyy" class="formTxt filterSideBySide small datePicker hasDatepicker" id="fromDateId" readonly=""><div class="validationMessage" style="display: none;"></div>
+					</div>
+
+					<div class="dateRange mlTen fl" id="todateDiv">
+							<input type="text" data-bind="value: filterToDate" placeholder="To dd/mm/yyyy" class="formTxt small datePicker hasDatepicker" id="toDateId" readonly=""><div class="validationMessage" style="display: none;"></div>
+					</div>
+				</div>
+
+			</div>
+
+			 <div class="fl">
+                <button id="applyButton" class="blueBut sideBySide approvedOff" data-bind="click: responseFilterApply,
+                        	enable : filterApplyEnabled,
+                        	css: {disabled: filterApplyEnabled() !== true},
+                        	analyticsOnClick: {
+								category:&#39;standard-link&#39;,
+								label: &#39;response-show-response-apply&#39;,
+								trackingId:&#39;response/dashboard&#39;,
+								additionalDimensions: [
+									{dimension: &#39;dimension136&#39;, value: getResponseTimePeriodTagging(responseTimePeriod())}
+								]
+							}">
+					Apply
+				</button>
+            </div>
+            <span class="smSavingProgress mlTen fl" id="loadingSpan" data-bind="visible: componentsLoaded() === false" style="display: none;"></span>
+
+		</div>
+</div>
+
+
+<div class="col2h by3h colTile noShdw noOverflow dataTile" data-component="tiles/response/adViewBenchmarking" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="background: #fff;">
+    <div class="dashTitle">
+        <span class="responseIcons overview fl"></span>
+        <span class="fl">Overview</span>
+    </div>
+	<div class="cb"></div>
+
+    <div class="cont adViewBenchmarking">
+		<div class="data">
+			<div class="noTileDataOverlay tc" data-bind="visible: states[&#39;no-data&#39;].active" style="">
+				<span class="tileIcons mInfoDk"></span>
+				<span class="cb bodyFontXL">information not available</span>
+			</div>
+			<div class="head">
+				<span class="name" data-bind="text: dealerName">stuart</span>,
+				compare your daily ad views
+			</div>
+			<div data-bind="visible: adViews" style="display: none;">
+				<div class="cars finance" data-bind="visible: newFinancePanel" style="display: none;">
+					<table>
+						<tbody><tr><th class="category" colspan="3">Car ads vs similar ads</th></tr>
+						<tr>
+							<th style="padding-top:6px;">Total price search</th>
+							<th></th>
+							<th>Monthly price search</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="you circle" data-bind="css: carNonFinanceCssClass()">
+									<span class="stat" data-bind="text: carNonFinanceAdviews"></span>
+								</div>
+							</td>
+							<td>
+							</td>
+							<td>
+								<div class="you circle" data-bind="css: carFinanceCssClass()">
+									<span class="stat" data-bind="text: carFinanceAdviews"></span>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="cars" data-bind="visible: !newFinancePanel">
+					<table>
+						<tbody><tr><th class="category">Car ads</th></tr>
+						<tr><th>Your adverts</th><th></th><th>Similar adverts</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="you circle" data-bind="css: comparisonToBenchmark()">
+									<span class="stat" data-bind="text: adViews"></span>
+								</div>
+							</td>
+							<td class="vs-circle">
+								<div>VS</div>
+							</td>
+							<td>
+								<div class="benchmark circle">
+									<span class="stat" data-bind="text: benchmarkAdViews"></span>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+			</div>
+			<div data-bind="visible: vansAdViews" style="display: none;">
+				<div class="vans" data-bind="visible: !newFinancePanel">
+					<table>
+						<tbody><tr><th class="category">Van ads</th></tr>
+						<tr><th>Your adverts</th><th></th><th>Similar adverts</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="you circle" data-bind="css: vansComparisonToBenchmark()">
+									<span class="stat" data-bind="text: vansAdViews"></span>
+								</div>
+							</td>
+							<td class="vs-circle">
+								<div>VS</div>
+							</td>
+							<td>
+								<div class="benchmark circle">
+									<span class="stat" data-bind="text: vansBenchmarkAdViews"></span>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="vans finance" data-bind="visible: newFinancePanel" style="display: none;">
+					<table>
+						<tbody><tr><th class="category" colspan="3">Van ads vs similar ads</th></tr>
+						<tr>
+							<th style="padding-top:6px;">Total Price Search</th>
+							<th></th>
+							<th>Monthly Price Search</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="you circle" data-bind="css: vansNonFinanceCssClass()">
+									<span class="stat" data-bind="text: vansNonFinanceAdviews"></span>
+								</div>
+							</td>
+							<td>
+							</td>
+							<td>
+								<div class="you circle" data-bind="css: vansFinanceCssClass()">
+									<span class="stat" data-bind="text: vansFinanceAdviews"></span>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+			</div>
+			<div class="bikes" data-bind="visible: bikesAdViews" style="display: none;">
+				<table>
+					<tbody><tr><th class="category">Bike ads</th></tr>
+					<tr><th>Your adverts</th><th></th><th>Similar adverts</th>
+					</tr>
+					<tr>
+						<td>
+							<div class="you circle" data-bind="css: bikesComparisonToBenchmark()">
+								<span class="stat" data-bind="text: bikesAdViews"></span>
+							</div>
+						</td>
+						<td class="vs-circle">
+							<div>VS</div>
+						</td>
+						<td>
+							<div class="benchmark circle">
+								<span class="stat" data-bind="text: bikesBenchmarkAdViews"></span>
+							</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+
+		</div>
+		<div class="foot" data-bind="visible: states[&#39;show-adviewbenchmark&#39;].active" style="display: none;">
+			<a href="#" target="_blank">Why is this important?</a>
+		</div>
+	</div>
+</div></div></div>
+<div class="col5h by1h colTile dataTile" data-component="tiles/response/summary" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink">
+	<div class="dashTitle">
+		<span class="col fl">
+			<span class="responseIcons adSummary fl"></span>
+			<span>Advertising Summary</span>
+		</span>
+
+		<span class="col">
+			<span class="responseIcons payClick fl"></span>
+			<span class="ppcHeading">Lead Generator</span>
+		</span>
+	</div>
+
+	<div class="cb"></div>
+	<div class="cont advertSummary">
+		<ul class="floatHolder">
+
+			<li class="dkSep fill" data-bind="css:{&#39;unAvailPPC&#39;: totalStockOnForecourt().status !== &#39;ok&#39;}">
+				<div data-bind="if : totalStockOnForecourt().status === &#39;ok&#39;">
+					<span class="largeValue" data-bind="number: totalStockOnForecourt().count">20,983</span>
+					<span class="lowercase">TOTAL STOCK <br>ON FORECOURT</span>
+				</div>
+				<div data-bind="if : totalStockOnForecourt().status !== &#39;ok&#39;"></div>
+			</li>
+
+			<li class="dkSep fill seperator" data-bind="css:{&#39;unAvailPPC&#39;: totalAdvertsOnAutoTrader().status !== &#39;ok&#39;}">
+				<div data-bind="if : totalAdvertsOnAutoTrader().status === &#39;ok&#39;">
+					<span class="largeValue" data-bind="number: totalAdvertsOnAutoTrader().count">3,443</span>
+					<span class="lowercase">TOTAL ADVERTS <br>ON AUTO TRADER</span>
+				</div>
+				<div data-bind="if : totalAdvertsOnAutoTrader().status !== &#39;ok&#39;"></div>
+			</li>
+
+			<li class="dkSep fill" data-bind="css:{&#39;unAvailPPC&#39;: totalAdvertsOnWebsite().status !== &#39;ok&#39;}">
+				<div data-bind="if : totalAdvertsOnWebsite().status === &#39;ok&#39;">
+					<span class="largeValue" data-bind="number: totalAdvertsOnWebsite().count">178</span>
+					<span class="lowercase">TOTAL ADVERTS<br>ON WEBSITE</span>
+				</div>
+				<div data-bind="if : totalAdvertsOnWebsite().status !== &#39;ok&#39;"></div>
+			</li>
+
+			<li class="fill" data-bind="css:{&#39;unAvailPPC&#39;: averageStockNotAdvertised().status !== &#39;ok&#39;}">
+				<div data-bind="if : averageStockNotAdvertised().status === &#39;ok&#39;">
+					<span class="largeValue" data-bind="text: averageStockNotAdvertised().count + &#39;%&#39;">84%</span>
+					<span class="lowercase">AVG STOCK <br>NOT ADVERTISED</span>
+				</div>
+				<div data-bind="if : averageStockNotAdvertised().status !== &#39;ok&#39;"></div>
+			</li>
+
+			<li class="fill seperator" data-bind="css:{&#39;unAvailPPC&#39;: averageWithoutImages().status !== &#39;ok&#39;}">
+				<div data-bind="if : averageWithoutImages().status === &#39;ok&#39;">
+					<span class="largeValue" data-bind="text: averageWithoutImages().count + &#39;%&#39;">85%</span>
+					<span class="lowercase">AVG W/O <br>IMAGES</span>
+				</div>
+				<div data-bind="if : averageWithoutImages().status !== &#39;ok&#39;"></div>
+			</li>
+
+			<li class="fill" data-bind="css:{&#39;unAvailPPC&#39;: averageWithoutAttentionGrabber().status !== &#39;ok&#39;}">
+				<div data-bind="if : averageWithoutAttentionGrabber().status === &#39;ok&#39;">
+					<span class="largeValue" data-bind="text: averageWithoutAttentionGrabber().count + &#39;%&#39;">29%</span>
+					<span class="lowercase">AVG W/O <br>ATT. GRABBER</span>
+				</div>
+				<div data-bind="if : averageWithoutAttentionGrabber().status !== &#39;ok&#39;"></div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="cont payPerClick">
+		<ul class="floatHolder">
+			<li class="fill ppc" data-bind="css:{&#39;ppc&#39;: !user.hasPPCReports, &#39;unAvailPPC&#39;: user.hasPPCReports &amp;&amp; payPerClickSearchAppearances().status !== &#39;ok&#39;}">
+				<a class="inlineLink" data-bind="if : !user.hasPPCReports,
+						attr: {href: responseToolLocation.getLeadGenPerformanceUrl()},
+						analyticsOnClick: {
+							category:&#39;standard-link&#39;,
+							label: &#39;response-lead-generator&#39;,
+							trackingId:&#39;response/dashboard&#39;}" target="_blank" href="#">
+					<span class="responseIcons payClickSearch"></span>
+					<span class="innerTileValue noInfoTxt">Pay Per Click<br>Search Listings</span>
+				</a>
+
+				<div data-bind="if : payPerClickSearchAppearances().status === &#39;ok&#39; &amp;&amp; user.hasPPCReports"></div>
+				<div data-bind="if : payPerClickSearchAppearances().status !== &#39;ok&#39; &amp;&amp; user.hasPPCReports"></div>
+			</li>
+
+			<li class="fill ppc" data-bind="css:{&#39;ppc&#39;: !user.hasPPCReports, &#39;unAvailPPC&#39;: user.hasPPCReports &amp;&amp; payPerClickAdvertViews().status !== &#39;ok&#39;}">
+				<div data-bind="if : !user.hasPPCReports">
+					<a class="inlineLink" data-bind="attr: {href: responseToolLocation.getLeadGenPerformanceUrl()},
+							analyticsOnClick: {
+							category:&#39;standard-link&#39;,
+							label: &#39;response-lead-generator&#39;,
+							trackingId:&#39;response/dashboard&#39;}" target="_blank" href="#">
+						<span class="responseIcons payClickAdvert"></span>
+						<span class="innerTileValue noInfoTxt">Pay Per Click<br>Adverts</span>
+					</a>
+				</div>
+				<div data-bind="if : user.hasPPCReports &amp;&amp; payPerClickAdvertViews().status === &#39;ok&#39;"></div>
+				<div data-bind="if : user.hasPPCReports &amp;&amp; payPerClickAdvertViews().status !== &#39;ok&#39;"></div>
+			</li>
+		</ul>
+	</div>
+</div>
+</div></div>
+<div class="col4h by2 colTile noBdr noShdw dataTile" data-component="tiles/response/responseGraphContainer" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div>
+	<div class="noLink">
+		<div class="dashTitle floatHolder">
+			<span class="responseIcons adPerformance fl"></span>
+			<span class="performanceTxt">Advert Performance</span>
+
+		</div>
+		<div class="cb cont graphCont">
+			<ul class="graphTileList floatHolder">
+			    <li class="atGraphContent">
+				    <div data-component="tiles/response/atResponseGraph" data-bind="visible: visible" style=""><span class="noTileDataOverlay tc  graphBg atGraBg" data-bind="visible:  state() === &#39;no-data&#39; || state() === &#39;error&#39;" style="display: none;">
+	<span class="tileIcons mInfoDk"></span>
+	<span class="cb bodyFontXL">information not available</span>
+</span>
+<a class="noLink">
+	<div class="oVisible atResponseGraph" data-bind="visible: state() === &#39;loaded&#39;" style="width: 460px; height: 165px; padding: 0px; position: relative;"><canvas class="flot-base" width="920" height="330" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 460px; height: 165px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 1px; text-align: center;">12 Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 68px; text-align: center;">13 Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 136px; text-align: center;">14 Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 204px; text-align: center;">15 Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 272px; text-align: center;">16 Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 340px; text-align: center;">17 Jan</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 65px; top: 140px; left: 408px; text-align: center;">18 Jan</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 131px; left: 1px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 88px; left: 1px; text-align: right;">1</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 45px; left: 1px; text-align: right;">2</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 2px; left: 1px; text-align: right;">3</div></div><div class="flot-y-axis flot-y2-axis yAxis y2Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 131px; left: 431px;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 99px; left: 431px;">1,000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 67px; left: 431px;">2,000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 34px; left: 431px;">3,000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 2px; left: 431px;">4,000</div></div></div><canvas class="flot-overlay" width="920" height="330" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 460px; height: 165px;"></canvas></div>
+	<span class="atResponseLegendHolder legendholder" data-bind="visible: state() === &#39;loaded&#39;" style=""><table style="font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid transparent;padding:1px"><div style="width:4px;height:0;border:5px solid #A0C2DE;overflow:hidden"></div></div></td><td class="legendLabel"><span> Advert Count </span></td></tr><tr><td class="legendColorBox"><div style="border:1px solid transparent;padding:1px"><div style="width:4px;height:0;border:5px solid #0066CC;overflow:hidden"></div></div></td><td class="legendLabel"><span> Advert Views </span></td></tr></tbody></table></span>
+</a></div>
+		        </li>
+			</ul>
+		</div>
+
+	</div>
+</div></div></div>
+<div class="col1 by2 colTile relative infoTile" data-component="tiles/response/pricing" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><span class="noLink">
+   <span data-bind="click : goToStockListSortedByAdvertPrice,
+   			attr : {&#39;class&#39; : !pricingInfoError() ? &#39;cursorPointer&#39; : &#39;&#39; },
+   			analyticsOnClick: {
+							category:&#39;standard-link&#39;,
+							label: &#39;response-pricing&#39;,
+							trackingId:&#39;response/dashboard&#39;}" class="">
+	    <div class="dashTitle transBg" data-bind="css : {&#39;transBg&#39;: pricingInfoError() }">
+	        <span class="responseIcons pricing fl"></span>
+	        <span>Pricing</span>
+	    </div>	    
+	    
+	
+	
+	     <div class="cb cont" data-bind="visible : !pricingInfoError()" style="display: none;">
+	        <span class="pricingBox">
+	            <span class="top">
+	                <span class="pricingBoxText" data-bind="style : { height : overPricedHeight() ? overPricedHeight() + &#39;px&#39; : 0}"><em>Over Priced </em></span>
+	                <span class="pricingBoxValue" data-bind="style : { height : overPricedHeight() ? overPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : overPricedPercentage() ? overPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
+	            </span>
+	            <span class="middle">
+	                <span class="pricingBoxText" data-bind="style : { height : neutrallyPricedHeight() ? neutrallyPricedHeight() + &#39;px&#39; : 0}"><em>Well Priced </em></span>
+	                <span class="pricingBoxValue" data-bind="style : { height : neutrallyPricedHeight() ? neutrallyPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : neutrallyPricedPercentage() ? neutrallyPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
+	            </span>
+	            <span class="bottom">
+	                <span class="pricingBoxText" data-bind="style : { height : underPricedHeight() ? underPricedHeight() + &#39;px&#39; : 0}"><em>Under Priced</em></span> <!---->
+	                <span class="pricingBoxValue" data-bind="style : { height : underPricedHeight() ? underPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : underPricedPercentage() ? underPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
+	            </span>
+	        </span>
+	        <span class="cb tileCav mtTen fr ">Your Stock</span>
+	    </div>
+    
+    </span>
+    <span class="unAvail noInfoBox" data-bind="visible : pricingInfoError()" style="">
+		<span class="unAvail tileIcons mInfoDk"></span>							
+		<span class="unAvail cb bodyFontS tc">information <br>not available</span>
+	</span> 
+</span>
+
+</div></div>
+<div class="col4 by1 colTile dataTile" data-component="tiles/response/leads" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="display: block;
+width: 934px;
+padding: 7px 7px 3px 7px;">
+	<div class="dashTitle">
+		<span class="responseIcons hardLeads fl"></span>
+		<span>Leads</span>
+	</div>
+
+	<div class="cb cont iconLayout leads">
+		<ul class="floatHolder">
+			<li>
+				<div data-bind="visible: userHasCallsProduct()" style="display: none;">
+					<a target="_blank" class="inlineLink" data-bind="visible: isCallStatsClickable(), attr: {href: leadsToolLocation.getCallTrackerUrl()}" href="#">
+						<div data-htmlinclude="tiles/response/leadsCallStats"><span>CALLS</span>
+<span>
+	<!-- ko if: call().status !== 'error' -->
+	<span class="data responseIcons calls" data-bind="css: {hidden: call().count &gt; 9999 }"></span>
+	<span class="data innerTileValue" data-bind="visible: call().status !== &#39;loading&#39;, number: call().count" style="">0</span>
+	<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: call().status === &#39;loading&#39;" style="display: none;"></span>
+	<!-- /ko -->
+	<!-- ko if: call().status === 'error'  --><!-- /ko -->
+</span></div>
+					</a>
+					<div class="nonClickableCalls" data-bind="visible: !isCallStatsClickable()" data-htmlinclude="tiles/response/leadsCallStats" style="display: none;"><span>CALLS</span>
+<span>
+	<!-- ko if: call().status !== 'error' -->
+	<span class="data responseIcons calls" data-bind="css: {hidden: call().count &gt; 9999 }"></span>
+	<span class="data innerTileValue" data-bind="visible: call().status !== &#39;loading&#39;, number: call().count" style="">0</span>
+	<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: call().status === &#39;loading&#39;" style="display: none;"></span>
+	<!-- /ko -->
+	<!-- ko if: call().status === 'error'  --><!-- /ko -->
+</span></div>
+				</div>
+				<a target="_blank" class="inlineLink" data-bind="visible: !userHasCallsProduct(), attr: {href: leadsToolLocation.getCallTrackerUrl()}" href="#">
+					<span class="innerTileTitle">CALLS</span>
+					<span>
+						<span class="responseIcons calls"></span>
+						<span class="innerTileValue noInfoTxt innerTileValue">Track calls <br>for FREE</span>
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<span>EMAILS</span>
+				<span>
+					<!-- ko if: email().status !== 'error' -->
+					<span class="data responseIcons emails" data-bind="css: {hidden: email().count &gt; 9999 }"></span>
+					<span class="data innerTileValue" data-bind="visible: email().status !== &#39;loading&#39;, number: email().count" style="">0</span>
+					<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: email().status === &#39;loading&#39;" style="display: none;"></span>
+						<!-- /ko -->
+						<!-- ko if: email().status === 'error'  --><!-- /ko -->
+				</span>
+			</li>
+
+			<li>
+				<a target="_blank" class="inlineLink" data-bind="visible: hasLiveChat,
+				   		attr: {href: leadsToolLocation.getLiveChatUrl()},
+						analyticsOnClick: {
+							category:&#39;standard-link&#39;,
+							label: &#39;response-answerable-chats&#39;,
+							trackingId:&#39;response/dashboard&#39;}" href="#">
+					<span class="noPadding">ANSWERABLE CHATS</span>
+					<span>
+						<!-- ko if: chat().status !== 'error' -->
+						<span class="data responseIcons chats" data-bind="css: {hidden: chat().count &gt; 9999 }"></span>
+						<span class="data innerTileValue" data-bind="visible: chat().status !== &#39;loading&#39;, number: chat().count" style="">0</span>
+						<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: chat().status === &#39;loading&#39;" style="display: none;"></span>
+						<!-- /ko -->
+						<!-- ko if: chat().status === 'error'  --><!-- /ko -->
+					</span>
+				</a>
+				<a target="_blank" class="inlineLink" data-bind="visible: !hasLiveChat,
+				   		attr: {href: leadsToolLocation.getLiveChatUrl()},
+						analyticsOnClick: {
+							category:&#39;standard-link&#39;,
+							label: &#39;response-answerable-chats&#39;,
+							trackingId:&#39;response/dashboard&#39;}" href="#" style="display: none;">
+					<span class="innerTileTitle noPadding">ANSWERABLE CHATS</span>
+					<span>
+						<span class="responseIcons chats"></span>
+						<span class="innerTileValue noInfoTxt innerTileValue">Live chat<br>find out more</span>
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<span class="noPadding">CLICK TO CALL</span>
+				<span>
+					<!-- ko if: clickToCall().status !== 'error' -->
+					<span class="data responseIcons clickCall" data-bind="css: {hidden: clickToCall().count &gt; 9999 }"></span>
+					<span class="data innerTileValue" data-bind="visible: clickToCall().status !== &#39;loading&#39;, number: clickToCall().count" style="">0</span>
+					<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: clickToCall().status === &#39;loading&#39;" style="display: none;"></span>
+					<!-- /ko -->
+					<!-- ko if: clickToCall().status === 'error'  --><!-- /ko -->
+				</span>
+			</li>
+
+			<li>
+				<span class="noPadding">WEBSITE CLICKS</span>
+				<span class="floatHolder">
+					 <!-- ko if: websiteVisit().status !== 'error' -->
+					<span class="data responseIcons webVisits" data-bind="css: {hidden: websiteVisit().count &gt; 9999 }"></span>
+					<span class="data innerTileValue" data-bind="visible: websiteVisit().status !== &#39;loading&#39;, number: websiteVisit().count" style="">0</span>
+					<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: websiteVisit().status === &#39;loading&#39;" style="display: none;"></span>
+					<!-- /ko -->
+					<!-- ko if: websiteVisit().status === 'error'  --><!-- /ko -->
+				</span>
+			</li>
+
+			<li>
+				<span class="noPadding">SAVES TO GARAGE</span>
+				<span class="floatHolder ">
+					<!-- ko if: saveToGarage().status !== 'error' -->
+					<span class="data responseIcons saves" data-bind="css: {hidden: saveToGarage().count &gt; 9999 }"></span>
+					<span class="data innerTileValue" data-bind="visible: saveToGarage().status !== &#39;loading&#39;, number: saveToGarage().count" style="">0</span>
+					<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: saveToGarage().status === &#39;loading&#39;" style="display: none;"></span>
+					<!-- /ko -->
+					<!-- ko if: saveToGarage().status === 'error'  --><!-- /ko -->
+				</span>
+			</li>
+
+			<li>
+				<span>MAP VIEWS</span>
+				<span class="floatHolder ">
+					 <!-- ko if: mapView().status !== 'error' -->
+					<span class="data responseIcons maps" data-bind="css: {hidden: mapView().count &gt; 9999 }"></span>
+					<span class="data innerTileValue" data-bind="visible: mapView().status !== &#39;loading&#39;, number: mapView().count" style="">0</span>
+					<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: mapView().status === &#39;loading&#39;" style="display: none;"></span>
+					<!-- /ko -->
+					<!-- ko if: mapView().status === 'error'  --><!-- /ko -->
+				</span>
+			</li>
+
+			<!-- ko ifnot: user.hasPartExProduct -->
+			<li class="printOuts">
+				<span>PRINT OUTS</span>
+				<span>
+					<!-- ko if: printOut().status !== 'error' -->
+					<span class="responseIcons printOuts" data-bind="css: {hidden: printOut().count &gt; 9999 }"></span>
+					<span class="data innerTileValue" data-bind="visible: printOut().status !== &#39;loading&#39;, number: printOut().count" style="">0</span>
+					<span class="noInfoTxt innerTileValue subTileLoading" data-bind="visible: printOut().status === &#39;loading&#39;" style="display: none;"></span>
+					<!-- /ko -->
+					<!-- ko if: printOut().status === 'error'  --><!-- /ko -->
+				</span>
+			</li>
+			<!-- /ko -->
+
+			<!-- ko if: user.hasPartExProduct --><!-- /ko -->
+		</ul>
+	</div>
+</div></div></div>
+</div></div></div>
+<div data-component="sidebar/sidebar" data-bind="visible: visible" style=""><div class="utilBar helpBar utilClosed" data-bind="sidebarSlide: isOpen, css: {utilClosed: !isOpen()}, style : {height: sideBarHeight()+ &#39;px&#39;}" style="right: -542px; height: 1005px;">
+	<div class="utilContentSpace" data-bind="style : {height: sideBarHeight()+ &#39;px&#39;}" style="height: 1005px;">
+		<div class="utilContentSpaceInner" data-component="sidebar/sidebarContent" data-bind="visible: visible" style=""><!-- Components added dynamically by sidebar/sidebarContent.js --></div>
+	</div>
+	<div class="utilFollow">
+		<div class="utilItem utilBasket sideBarTab basketTab" data-bind="css: {selected: selectedItem() === &#39;basket&#39;}, click: toggleSidebar.bind($data, &#39;basket&#39;), visible: userHasTraderClubBeta()" style="display: none;">
+			<span class="utilButton">
+				<span data-bind="html: basketSize(), css: { bskNumSm : basketSize() &gt; 9, bskNum : basketSize() &lt;= 9 }" class="bskNum">0</span>
+				basket
+			</span>
+		</div>
+	</div>
+</div></div>
+<div data-component="dialogs/dialogs" data-bind="visible: visible" style=""><div data-component="dialogs/customers/add" data-bind="visible: visible" style=""><div data-bind="visible: enquiryDialogDisplayed" id="addCustomerDialog" class="dialogComponent" style="display: none;">
+
+	<div class="dialogHeader">
+		<span class="dialogTitle">Add a New Contact</span> 
+		<span data-bind="click: closeEnquiryDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+	</div>
+	
+	<div class="modalInnerContainer ">
+		<div class="fl">
+
+			<div class="fl">
+				<div data-component="dialogs/customers/components/leadsCustomerDetails" data-bind="visible: visible" style=""><div id="leadsCustomer" data-htmlinclude="dialogs/components/customerDetails"><div class="customerDetailsPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Contact Type:</label> <select class="sideBySideSelect formSel modal contactTypeFld" data-bind="options: customerTypeOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTypeValue">
+			<option value="Please select">Please select</option><option value="Private Buyer">Private Buyer</option><option value="Private Seller">Private Seller</option><option value="Private Prospect">Private Prospect</option><option value="Private Servicing">Private Servicing</option><option value="Trade Buyer">Trade Buyer</option><option value="Trade Seller">Trade Seller</option><option value="Finance">Finance</option><option value="Warranty">Warranty</option><option value="Parts">Parts</option><option value="Servicing">Servicing</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Title:</label> <select data-hj-masked="" class="sideBySideSelect formSel modalSmall contactTitleFld" data-bind="options: customerTitleOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTitleValue">
+			<option value="Mr.">Mr.</option><option value="Mrs.">Mrs.</option><option value="Ms.">Ms.</option><option value="Miss">Miss</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads">* </span>First name:</label> <input data-hj-masked="" data-bind="value: forename, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal forenameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads">* </span>Surname:</label> <input data-hj-masked="" data-bind="value: surname, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal surnameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">House no./name:</label> <input data-hj-masked="" data-bind="value: houseNum, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal houseNumberFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div id="enterManualAddress" data-bind="visible : showAddressDetails" style="display: none;">
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 1:</label> <input data-hj-masked="" data-bind="value: address1, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine1Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 2:</label> <input data-hj-masked="" data-bind="value: address2, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine2Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Town/City:</label> <input data-hj-masked="" data-bind="value: city, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal townFld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Postcode:</label> 
+			<input data-hj-masked="" data-bind="value: postcode, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modalPostCodeLookup postcodeFld">
+			<a class="dkGreyBut medRdBut postCodeLookup fr" data-bind="click: doPostcodeLookupAction"> 
+				<em class="icons bluSearchSm fr"></em>
+				<span>Lookup</span>
+			</a><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+		<div name="savingProgressImg" class="smSavingProgress fr" data-bind="visible: isBusy" style="display: none;"></div>
+		<div data-bind="visible: showToggleAddressDetails" class="addAddressManualContainer">
+			<a data-bind="click : toggleAddressDetails" id="addressManual" class="bodyFontXS addAddressManual" title="click to add your address">Enter address manually</a>			
+		</div>
+		
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Telephone:</label> <input data-hj-masked="" data-bind="value: telephone, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal telephoneFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Email:</label> <input data-hj-masked="" data-bind="value: email, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal emailFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Lead source:</label> <select class="sideBySideSelect formSel modal contactLeadSourceFld" data-hj-masked="" data-bind="options: customerLeadSourceOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerLeadSourceValue">
+			<option value="Please select">Please select</option><option value="Autotrader.co.uk">Autotrader.co.uk</option><option value="My website">My website</option><option value="Other online classified sites">Other online classified sites</option><option value="Regional/national newspapers">Regional/national newspapers</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	<div class="fr">
+		<label class="sideBySide">Exclude from my dealership marketing</label> <input type="checkbox" class="excludeFromMyDealershipMarketing" data-bind="booleanChecked: receiveMarketing">
+	</div>
+</div>
+</div></div>
+				<div data-component="dialogs/customers/components/leadsCustomerInfo" data-bind="visible: visible" style=""><div id="leadsCustomerInfo" data-htmlinclude="dialogs/components/customerInfo"><div class="customerInfoPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Contact Type:</label><span class="customerInfo truncate contactTypeFld" data-bind="text : customerTypeValue, attr : { title : customerTypeValue() }" title=""></span>
+		</fieldset>
+		<button id="resetContactBtn" data-bind="click: reset, visible: allowReset" class="greyBut">Reset</button>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Title:</label><span class="customerInfo truncate contactTitleFld" data-bind="text : customerTitleValue, attr : { title : customerTitleValue() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">First name:</label><span class="customerInfo truncate forenameFld" data-bind="text : forename, attr : { title : forename() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Surname:</label><span class="customerInfo truncate surnameFld" data-bind="text : surname, attr : { title : surname() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">House no./name:</label><span class="customerInfo truncate houseNumberFld" data-bind="text : houseNum, attr : { title : houseNum() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Address line 1:</label> <span class="customerInfo truncate addressLine1Fld" data-bind="text : address1, attr : { title : address1() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Address line 2:</label> <span class="customerInfo truncate addressLine2Fld" data-bind="text : address2, attr : { title : address2() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Town/City:</label> <span class="customerInfo truncate townFld" data-bind="text : city, attr : { title : city() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Postcode:</label> <span class="customerInfo postcodeFld" data-bind="text : postcode"></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Telephone:</label> <span class="customerInfo truncate telephoneFld" data-bind="text : telephone, attr : { title : telephone() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Email:</label> <span class="customerInfo truncate emailFld" data-bind="text : email, attr : { title : email() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Lead source:</label><span class="customerInfo truncate contactLeadSourceFld" data-bind="text : customerLeadSourceValue"></span>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	
+	<div class="modalCol">
+		<fieldset class="fr">
+			<label class="sideBySide excludeMarketing">Exclude from my dealership marketing</label><input type="checkbox" class="customerInfo excludeFromMyDealershipMarketing" data-bind="disable : true, booleanChecked: receiveMarketing" disabled=""> 
+		</fieldset>
+	</div>
+
+</div>
+</div></div>
+			</div>
+			
+			<div class="fl customerLookupPanel modalRightPanel infoPanel" data-bind="visible: displayLookup() === false">
+				<div class="selectedUpgradedMsg iconNotBox infoNotBox">
+					<span class="infoNotIcon"></span><span class="infoNotIcon__text">Enter your contact name or add a new contact on the left</span>
+				</div>
+			</div>
+			<div class="fl" data-bind="visible: displayLookup() === true" style="display: none;">
+				<div data-component="dialogs/customers/components/leadsCustomerLookup" class="bgGrey" data-bind="visible: visible" style=""><div id="leadsCustomerLookup" data-htmlinclude="dialogs/components/customerLookup"><div class="customerLookupPanel modalRightPanel infoPanel fl" data-bind="visible: isDisplayed" style="display: none;">
+		<p>Are you entering one of these contacts?
+			<a href="#" title="Close contact list" data-bind="click : clickCloseButton, visible : hasCloseButton" style="display: none;">
+				<span class="closeContactSearch bold fr">X</span>
+			</a>
+		</p>
+		<ul class="sassiVehicleList">
+			<!-- ko foreach: customerList --><!-- /ko -->
+		</ul>
+</div>
+</div></div>
+			</div>
+		</div>
+		
+        <div class="errDialog newContactSystemFailure" data-bind="visible : displaySystemError, text: errorMessage" style="display: none;"></div>
+
+		<div class="cb"></div>
+
+		<div class="fl dialogFooter">
+			<div class="fr">
+				<button data-bind="click: closeEnquiryDialog" class="fl modal-close greyBut">Cancel</button>
+				<div data-bind="visible : savingProgress" class="saveContactProgress" style="display: none;"></div>
+				<button id="saveContactBtn" data-bind="enable: isValid, css:{disabled: !isValid()}, click: save" class="associateContactVehicle fl modal-close blueBut disabled" style="display: initial; margin: 0;" disabled="">Done</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</div>
+<div data-component="dialogs/customers/edit" data-bind="visible: visible" style=""><div data-bind="visible: editContactDialogDisplayed" id="editCustomerDialog" class="editDialog" style="display: none;">
+
+	<div class="dialogHeader">
+		<span class="dialogTitle">Edit Contact</span> 
+		<span data-bind="click: closeEditContactDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+	</div>
+	
+	<div class="modalInnerContainer">
+		<div class="cloneModalContents">
+			<div class="cb"></div>
+
+			<div class="fl">
+				<div data-component="dialogs/customers/components/editCustomer" data-bind="visible: visible" style=""><div id="EditCustomer" data-htmlinclude="dialogs/components/customerDetails"><div class="customerDetailsPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Contact Type:</label> <select class="sideBySideSelect formSel modal contactTypeFld" data-bind="options: customerTypeOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTypeValue">
+			<option value="Please select">Please select</option><option value="Private Buyer">Private Buyer</option><option value="Private Seller">Private Seller</option><option value="Private Prospect">Private Prospect</option><option value="Private Servicing">Private Servicing</option><option value="Trade Buyer">Trade Buyer</option><option value="Trade Seller">Trade Seller</option><option value="Finance">Finance</option><option value="Warranty">Warranty</option><option value="Parts">Parts</option><option value="Servicing">Servicing</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Title:</label> <select data-hj-masked="" class="sideBySideSelect formSel modalSmall contactTitleFld" data-bind="options: customerTitleOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTitleValue">
+			<option value="Mr.">Mr.</option><option value="Mrs.">Mrs.</option><option value="Ms.">Ms.</option><option value="Miss">Miss</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads">* </span>First name:</label> <input data-hj-masked="" data-bind="value: forename, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal forenameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads">* </span>Surname:</label> <input data-hj-masked="" data-bind="value: surname, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal surnameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">House no./name:</label> <input data-hj-masked="" data-bind="value: houseNum, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal houseNumberFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div id="enterManualAddress" data-bind="visible : showAddressDetails" style="display: none;">
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 1:</label> <input data-hj-masked="" data-bind="value: address1, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine1Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 2:</label> <input data-hj-masked="" data-bind="value: address2, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine2Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Town/City:</label> <input data-hj-masked="" data-bind="value: city, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal townFld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Postcode:</label> 
+			<input data-hj-masked="" data-bind="value: postcode, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modalPostCodeLookup postcodeFld">
+			<a class="dkGreyBut medRdBut postCodeLookup fr" data-bind="click: doPostcodeLookupAction"> 
+				<em class="icons bluSearchSm fr"></em>
+				<span>Lookup</span>
+			</a><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+		<div name="savingProgressImg" class="smSavingProgress fr" data-bind="visible: isBusy" style="display: none;"></div>
+		<div data-bind="visible: showToggleAddressDetails" class="addAddressManualContainer">
+			<a data-bind="click : toggleAddressDetails" id="addressManual" class="bodyFontXS addAddressManual" title="click to add your address">Enter address manually</a>			
+		</div>
+		
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Telephone:</label> <input data-hj-masked="" data-bind="value: telephone, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal telephoneFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Email:</label> <input data-hj-masked="" data-bind="value: email, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal emailFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Lead source:</label> <select class="sideBySideSelect formSel modal contactLeadSourceFld" data-hj-masked="" data-bind="options: customerLeadSourceOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerLeadSourceValue">
+			<option value="Please select">Please select</option><option value="Autotrader.co.uk">Autotrader.co.uk</option><option value="My website">My website</option><option value="Other online classified sites">Other online classified sites</option><option value="Regional/national newspapers">Regional/national newspapers</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	<div class="fr">
+		<label class="sideBySide">Exclude from my dealership marketing</label> <input type="checkbox" class="excludeFromMyDealershipMarketing" data-bind="booleanChecked: receiveMarketing">
+	</div>
+</div>
+</div></div>
+			</div>
+		</div>
+
+		<div class="errDialog editContactSystemFailure" data-bind="visible : displaySystemError, text: errorMessage" style="display: none;"></div>
+
+		<div class="cb"></div>
+
+		<div class="fl" style="border-top:2px solid #aaa; width:99%; padding:10px 0 15px 0;">
+			<div class="fr">
+				<div data-bind="visible : savingProgress" class="saveContactProgress" style="display: none;"></div>
+				<button data-bind="click: closeEditContactDialog" id="cancelButton" class="fl modal-close greyBut">Cancel
+				</button>
+				<button data-bind="enable: isValid, css:{disabled: !isValid()}, click: save" id="doneButton" class="fl modal-close blueBut disabled" style="display:initial; margin:0;" disabled="">Done
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div data-component="dialogs/lifecycle/initiate" data-bind="visible: visible" style=""><div data-bind="visible: enquiryDialogDisplayed, style : {right: getStockGridXPosition(), top : getStockGridTop()}" id="initiateSaleDialog" class="initiateSaleDialogComponent" style="position: absolute; display: none; right: 587px; top: 0px;">
+    <div class="dialogHeader">
+        <span class="dialogTitle" data-bind="text: title"></span>
+        <span data-bind="enable: enableCancelButton, css:{disabled: !enableCancelButton()}, click: cancelDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+    </div>
+
+    <div class="modalInnerContainer">
+		<div class="cb"></div>
+		<div class="modalVehicleHeader">
+			<span class="vehMMP block"></span>
+			<div class="fl vehicleEditSprite vrmIcon ukNumberPlate tc" data-bind="text:registration"></div>
+			<div class="truncate" data-bind="text:mmd"></div>
+	</div>
+        <div class="cloneModalContents">
+            <div class="cb"></div>
+
+            <div class="selectedUpgradedMsg iconNotBox infoLarge" id="noValueDataMessage">
+                <span data-bind="html: infoMsgHtml"></span>
+            </div>
+
+            <div class="fl mtTen">
+                <div data-component="dialogs/lifecycle/components/lifecycleCustomerDetails" data-bind="visible: visible" style=""><div id="lifecycleCustomerDetails" data-htmlinclude="dialogs/components/customerDetails"><div class="customerDetailsPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Contact Type:</label> <select class="sideBySideSelect formSel modal contactTypeFld" data-bind="options: customerTypeOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTypeValue">
+			<option value="Please select">Please select</option><option value="Private Buyer">Private Buyer</option><option value="Private Seller">Private Seller</option><option value="Private Prospect">Private Prospect</option><option value="Private Servicing">Private Servicing</option><option value="Trade Buyer">Trade Buyer</option><option value="Trade Seller">Trade Seller</option><option value="Finance">Finance</option><option value="Warranty">Warranty</option><option value="Parts">Parts</option><option value="Servicing">Servicing</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Title:</label> <select data-hj-masked="" class="sideBySideSelect formSel modalSmall contactTitleFld" data-bind="options: customerTitleOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTitleValue">
+			<option value="Mr.">Mr.</option><option value="Mrs.">Mrs.</option><option value="Ms.">Ms.</option><option value="Miss">Miss</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset class="">
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads" style="display: none;">* </span>First name:</label> <input data-hj-masked="" data-bind="value: forename, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal forenameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset class="">
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads" style="display: none;">* </span>Surname:</label> <input data-hj-masked="" data-bind="value: surname, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal surnameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">House no./name:</label> <input data-hj-masked="" data-bind="value: houseNum, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal houseNumberFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div id="enterManualAddress" data-bind="visible : showAddressDetails" style="display: none;">
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 1:</label> <input data-hj-masked="" data-bind="value: address1, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine1Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 2:</label> <input data-hj-masked="" data-bind="value: address2, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine2Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Town/City:</label> <input data-hj-masked="" data-bind="value: city, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal townFld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Postcode:</label> 
+			<input data-hj-masked="" data-bind="value: postcode, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modalPostCodeLookup postcodeFld">
+			<a class="dkGreyBut medRdBut postCodeLookup fr" data-bind="click: doPostcodeLookupAction"> 
+				<em class="icons bluSearchSm fr"></em>
+				<span>Lookup</span>
+			</a><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+		<div name="savingProgressImg" class="smSavingProgress fr" data-bind="visible: isBusy" style="display: none;"></div>
+		<div data-bind="visible: showToggleAddressDetails" class="addAddressManualContainer">
+			<a data-bind="click : toggleAddressDetails" id="addressManual" class="bodyFontXS addAddressManual" title="click to add your address">Enter address manually</a>			
+		</div>
+		
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Telephone:</label> <input data-hj-masked="" data-bind="value: telephone, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal telephoneFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Email:</label> <input data-hj-masked="" data-bind="value: email, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal emailFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Lead source:</label> <select class="sideBySideSelect formSel modal contactLeadSourceFld" data-hj-masked="" data-bind="options: customerLeadSourceOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerLeadSourceValue">
+			<option value="Please select">Please select</option><option value="Autotrader.co.uk">Autotrader.co.uk</option><option value="My website">My website</option><option value="Other online classified sites">Other online classified sites</option><option value="Regional/national newspapers">Regional/national newspapers</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	<div class="fr">
+		<label class="sideBySide">Exclude from my dealership marketing</label> <input type="checkbox" class="excludeFromMyDealershipMarketing" data-bind="booleanChecked: receiveMarketing">
+	</div>
+</div>
+</div></div>
+                <div data-component="dialogs/lifecycle/components/lifecycleCustomerInfo" data-bind="visible: visible" style=""><div id="lifecycleCustomerInfo" data-htmlinclude="dialogs/components/customerInfo"><div class="customerInfoPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Contact Type:</label><span class="customerInfo truncate contactTypeFld" data-bind="text : customerTypeValue, attr : { title : customerTypeValue() }" title=""></span>
+		</fieldset>
+		<button id="resetContactBtn" data-bind="click: reset, visible: allowReset" class="greyBut">Reset</button>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Title:</label><span class="customerInfo truncate contactTitleFld" data-bind="text : customerTitleValue, attr : { title : customerTitleValue() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">First name:</label><span class="customerInfo truncate forenameFld" data-bind="text : forename, attr : { title : forename() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Surname:</label><span class="customerInfo truncate surnameFld" data-bind="text : surname, attr : { title : surname() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">House no./name:</label><span class="customerInfo truncate houseNumberFld" data-bind="text : houseNum, attr : { title : houseNum() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Address line 1:</label> <span class="customerInfo truncate addressLine1Fld" data-bind="text : address1, attr : { title : address1() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Address line 2:</label> <span class="customerInfo truncate addressLine2Fld" data-bind="text : address2, attr : { title : address2() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Town/City:</label> <span class="customerInfo truncate townFld" data-bind="text : city, attr : { title : city() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Postcode:</label> <span class="customerInfo postcodeFld" data-bind="text : postcode"></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Telephone:</label> <span class="customerInfo truncate telephoneFld" data-bind="text : telephone, attr : { title : telephone() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Email:</label> <span class="customerInfo truncate emailFld" data-bind="text : email, attr : { title : email() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Lead source:</label><span class="customerInfo truncate contactLeadSourceFld" data-bind="text : customerLeadSourceValue"></span>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	
+	<div class="modalCol">
+		<fieldset class="fr">
+			<label class="sideBySide excludeMarketing">Exclude from my dealership marketing</label><input type="checkbox" class="customerInfo excludeFromMyDealershipMarketing" data-bind="disable : true, booleanChecked: receiveMarketing" disabled=""> 
+		</fieldset>
+	</div>
+
+</div>
+</div></div>
+            </div>
+            <div class="fl mtTen">
+                <div data-component="dialogs/lifecycle/components/lifecycleSale" data-bind="visible: visible" style=""><div id="lifecycleSale" data-htmlinclude="dialogs/components/saleDetails"><div class="sassiSaleInfo infoPanel salesInfoPanel modalRightPanel fl">
+
+    <div class="fl">
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsPriceFld">Sale price (£):</label>
+                <input data-bind="value: price, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal" id="saleDetailsPriceFld"><div class="validationMessage" style="display: none;"></div>
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsExtrasFld">Extras (£):</label>
+                <input data-bind="value: extras, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal" id="saleDetailsExtrasFld"><div class="validationMessage" style="display: none;"></div>
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsTotalFld">Total (£):</label>
+                <span data-bind="text: total" class="bodyFontL bold sideBySide" id="saleDetailsTotalFld"></span>
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsDepositFld">Deposit (£):</label>
+                <input data-bind="value: deposit, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal" id="saleDetailsDepositFld"><div class="validationMessage" style="display: none;"></div>
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsPartExFld">Part-ex (£):</label>
+                <input data-bind="value: partEx, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal" id="saleDetailsPartExFld"><div class="validationMessage" style="display: none;"></div>
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsBalanceFld">Balance (£):</label>
+                <span data-bind="text: balance" class="bodyFontL bold sideBySide" id="saleDetailsBalanceFld"></span>
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsBalancePaidFld">Balance paid:</label>
+                <input data-bind="booleanChecked: balancePaid" type="checkbox" checked="checked" name="cgrp" id="saleDetailsBalancePaidFld">
+            </fieldset>
+        </div>
+
+        <div class="modalCol">
+            <fieldset>
+                <label class="sideBySide modal" for="saleDetailsNotesFld">Notes/Extras:</label>
+                <textarea data-hj-masked="" data-bind="value: notes, valueUpdate: &#39;afterkeydown&#39;" class="sideBySideSelect formTxt modelTextArea" id="saleDetailsNotesFld"></textarea><div class="validationMessage" style="display: none;"></div>
+            </fieldset>
+        </div>
+
+    </div>
+</div>
+</div></div>
+                <div data-component="dialogs/lifecycle/components/lifecycleCustomerLookup" data-bind="visible: visible" style=""><div id="lifecycleCustomerLookup" data-htmlinclude="dialogs/components/customerLookup"><div class="customerLookupPanel modalRightPanel infoPanel fl" data-bind="visible: isDisplayed" style="display: none;">
+		<p>Are you entering one of these contacts?
+			<a href="#" title="Close contact list" data-bind="click : clickCloseButton, visible : hasCloseButton">
+				<span class="closeContactSearch bold fr">X</span>
+			</a>
+		</p>
+		<ul class="sassiVehicleList">
+			<!-- ko foreach: customerList --><!-- /ko -->
+		</ul>
+</div>
+</div></div>
+            </div>
+        </div>
+
+        <div class="errDialog newContactSystemFailure" data-bind="visible : displaySystemError, text: errorMessage" style="display: none;"></div>
+
+        <div data-bind="visible: hasAdverts" class="infoPanel alt modalFullPanel fl keepAdvertsPanel" style="display: none;">
+            <div class="col2 vDetailsMargin clubHide">
+                <label class="bold hasAdvertsQuestion" data-bind="text : hasAdvertsQuestion"></label>
+                <div class="option-group radio">
+                    <div class="fl">
+                        <input type="radio" name="keepAdvertsLive" id="keepAdvertsLiveYes" value="true" data-bind="radioChecked: keepAdvertsLive">
+                        <label class="labelYesNo" for="keepAdvertsLiveYes">Yes</label>
+                    </div>
+                    <div class="fl">
+                        <input type="radio" name="keepAdvertsLive" id="keepAdvertsLiveNo" value="false" data-bind="radioChecked: keepAdvertsLive">
+                        <label class="labelYesNo" for="keepAdvertsLiveNo">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cb"></div>
+
+        <div class="fl dialogFooter">
+            <div class="fr">
+                <div data-bind="visible : savingProgress" class="saveContactProgress" style="display: none;"></div>
+                <button name="cancelBtn" data-bind="enable: enableCancelButton, css:{disabled: !enableCancelButton()}, click: cancelDialog" class="associateContactVehicle fl greyBut">Cancel</button>
+                <button name="invoiceBtn" data-bind="enable: enableViewInvoiceButton, css:{disabled: !enableViewInvoiceButton()}, click: generateInvoice, text: invoiceBtnText" class="associateContactVehicle fl dkGreyBut"></button>
+                <button name="doneBtn" data-bind="enable: enableDoneButton, css:{disabled: !enableDoneButton()}, click: done, text: doneBtnText" class="associateContactVehicle fl dkGreyBut"></button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div data-component="dialogs/enquiries/add" data-bind="visible: visible" style=""><!-- Modal for Enquiries -->
+<div data-bind="visible: newEnquiryDialogDisplayed" id="sassiNewEnquiryModal" class="dialogComponent" style="display: none;">
+
+	<div class="dialogHeader">
+		<span class="dialogTitle">Add New Enquiry</span> 
+		<span data-bind="click: closeEnquiryDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+	</div>
+		
+	<div class="modalInnerContainer">
+	    <div class="cloneModalContents">
+	    <div class="cb"></div>
+		
+	<!--<div class="fl" style="width:349px;">-->
+    <div class="infoPanel modalEnquiry fl">
+   		<p>Active Stock:</p>
+    	<div data-bind="visible : loadingVehiclesProgress" class="loadVehiclesEnquiryProgress" style="display: none;"></div>
+		<ul class="sassiVehicleList" data-bind="foreach: stockItems"></ul>
+ 	</div><!-- end of fl -->
+	    
+    <div class="fl">
+	    <div class="infoPanel modalEnquirySelected">
+	    	<p>Selected vehicles from my stock:</p>
+			<ul class="sassiVehicleList" data-bind="foreach: selectedStockItems"></ul>
+	    </div><!-- end of sales info -->
+	    
+	    <div class="cb"></div>
+	    
+	    <div class="modalOuterCol">
+	    	<label>Notes:</label>
+	    	<textarea data-hj-masked="" data-bind="value: notes, valueUpdate: &#39;afterkeydown&#39;" class="formTxt modalHalfTextArea"></textarea><div class="validationMessage" style="display: none;"></div>
+	    </div>
+    </div> <!-- end of fl-->
+	    
+    <div class="errDialog newEnquirySystemFailure" data-bind="visible : displaySystemError" style="display: none;">
+		There has been an error creating the contact. Please try again later.
+	</div>
+		
+    <div class="cb"></div>
+    </div><!-- end of clone -->
+    
+    <div class="fl dialogFooter">
+	    <div class="fr">
+			<button data-bind="click: closeEnquiryDialog" class="fl modal-close greyBut">Cancel</button>
+	    	<div data-bind="visible : savingProgress" class="saveEnquiryProgress" style="display: none;"></div>
+	    	<button data-bind="enable: isValidToSave, css:{disabled: !isValidToSave()}, click: saveNewEnquiry" id="goToSassiFullContact" class="fl blueBut disabled" style="display:initial; margin:0;" disabled="">Done</button>
+	    </div>
+    </div>
+   
+    </div><!-- end of modalInnerContainer -->
+</div></div>
+<div data-component="dialogs/enquiries/addWithCustomer" data-bind="visible: visible" style=""><div data-bind="visible: enquiryDialogDisplayed" name="addEnquiryWithCustomerDialog" class="dialogComponent" style="display: none;">
+
+	<div class="dialogHeader">
+		<span class="dialogTitle">Add New Enquiry</span> 
+		<span data-bind="click: closeEnquiryDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+	</div>
+	
+	<div class="modalInnerContainer ">
+		<div class="fl">
+
+			<div class="fl">
+				<div data-component="dialogs/enquiries/components/itemCustomerDetails" data-bind="visible: visible" style=""><div id="leadsCustomer" data-htmlinclude="dialogs/components/customerDetails"><div class="customerDetailsPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Contact Type:</label> <select class="sideBySideSelect formSel modal contactTypeFld" data-bind="options: customerTypeOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTypeValue">
+			<option value="Please select">Please select</option><option value="Private Buyer">Private Buyer</option><option value="Private Seller">Private Seller</option><option value="Private Prospect">Private Prospect</option><option value="Private Servicing">Private Servicing</option><option value="Trade Buyer">Trade Buyer</option><option value="Trade Seller">Trade Seller</option><option value="Finance">Finance</option><option value="Warranty">Warranty</option><option value="Parts">Parts</option><option value="Servicing">Servicing</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Title:</label> <select data-hj-masked="" class="sideBySideSelect formSel modalSmall contactTitleFld" data-bind="options: customerTitleOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerTitleValue">
+			<option value="Mr.">Mr.</option><option value="Mrs.">Mrs.</option><option value="Ms.">Ms.</option><option value="Miss">Miss</option></select>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads">* </span>First name:</label> <input data-hj-masked="" data-bind="value: forename, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal forenameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal"><span data-bind="visible :  isEmptyFormValid() === false" class="requiredMarker hardLeads">* </span>Surname:</label> <input data-hj-masked="" data-bind="value: surname, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal surnameFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">House no./name:</label> <input data-hj-masked="" data-bind="value: houseNum, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal houseNumberFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div id="enterManualAddress" data-bind="visible : showAddressDetails" style="display: none;">
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 1:</label> <input data-hj-masked="" data-bind="value: address1, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine1Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Address line 2:</label> <input data-hj-masked="" data-bind="value: address2, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal addressLine2Fld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+
+		<div class="modalCol">
+			<label class="sideBySide modal">Town/City:</label> <input data-hj-masked="" data-bind="value: city, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal townFld"><div class="validationMessage" style="display: none;"></div>
+		</div>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Postcode:</label> 
+			<input data-hj-masked="" data-bind="value: postcode, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modalPostCodeLookup postcodeFld">
+			<a class="dkGreyBut medRdBut postCodeLookup fr" data-bind="click: doPostcodeLookupAction"> 
+				<em class="icons bluSearchSm fr"></em>
+				<span>Lookup</span>
+			</a><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+		<div name="savingProgressImg" class="smSavingProgress fr" data-bind="visible: isBusy" style="display: none;"></div>
+		<div data-bind="visible: showToggleAddressDetails" class="addAddressManualContainer">
+			<a data-bind="click : toggleAddressDetails" id="addressManual" class="bodyFontXS addAddressManual" title="click to add your address">Enter address manually</a>			
+		</div>
+		
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Telephone:</label> <input data-hj-masked="" data-bind="value: telephone, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal telephoneFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Email:</label> <input data-hj-masked="" data-bind="value: email, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal emailFld"><div class="validationMessage" style="display: none;"></div>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide modal">Lead source:</label> <select class="sideBySideSelect formSel modal contactLeadSourceFld" data-hj-masked="" data-bind="options: customerLeadSourceOptions,  optionsText: &#39;text&#39;, optionsValue: &#39;text&#39;, value : customerLeadSourceValue">
+			<option value="Please select">Please select</option><option value="Autotrader.co.uk">Autotrader.co.uk</option><option value="My website">My website</option><option value="Other online classified sites">Other online classified sites</option><option value="Regional/national newspapers">Regional/national newspapers</option><option value="Other">Other</option></select>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	<div class="fr">
+		<label class="sideBySide">Exclude from my dealership marketing</label> <input type="checkbox" class="excludeFromMyDealershipMarketing" data-bind="booleanChecked: receiveMarketing">
+	</div>
+</div>
+</div>
+</div>
+				<div data-component="dialogs/enquiries/components/itemCustomerInfo" data-bind="visible: visible" style=""><div id="leadsCustomerInfo" data-htmlinclude="dialogs/components/customerInfo"><div class="customerInfoPanel infoPanel modalLeftPanel">
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Contact Type:</label><span class="customerInfo truncate contactTypeFld" data-bind="text : customerTypeValue, attr : { title : customerTypeValue() }" title=""></span>
+		</fieldset>
+		<button id="resetContactBtn" data-bind="click: reset, visible: allowReset" class="greyBut">Reset</button>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Title:</label><span class="customerInfo truncate contactTitleFld" data-bind="text : customerTitleValue, attr : { title : customerTitleValue() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">First name:</label><span class="customerInfo truncate forenameFld" data-bind="text : forename, attr : { title : forename() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">Surname:</label><span class="customerInfo truncate surnameFld" data-bind="text : surname, attr : { title : surname() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>
+			<label class="sideBySide">House no./name:</label><span class="customerInfo truncate houseNumberFld" data-bind="text : houseNum, attr : { title : houseNum() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Address line 1:</label> <span class="customerInfo truncate addressLine1Fld" data-bind="text : address1, attr : { title : address1() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Address line 2:</label> <span class="customerInfo truncate addressLine2Fld" data-bind="text : address2, attr : { title : address2() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Town/City:</label> <span class="customerInfo truncate townFld" data-bind="text : city, attr : { title : city() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Postcode:</label> <span class="customerInfo postcodeFld" data-bind="text : postcode"></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Telephone:</label> <span class="customerInfo truncate telephoneFld" data-bind="text : telephone, attr : { title : telephone() }" title=""></span>
+		</fieldset>
+	</div>
+	
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Email:</label> <span class="customerInfo truncate emailFld" data-bind="text : email, attr : { title : email() }" title=""></span>
+		</fieldset>
+	</div>
+
+	<div class="modalCol">
+		<fieldset>		
+			<label class="sideBySide">Lead source:</label><span class="customerInfo truncate contactLeadSourceFld" data-bind="text : customerLeadSourceValue"></span>
+		</fieldset>
+	</div>
+
+	<div class="cb cbSeperator"></div>
+	
+	<div class="modalCol">
+		<fieldset class="fr">
+			<label class="sideBySide excludeMarketing">Exclude from my dealership marketing</label><input type="checkbox" class="customerInfo excludeFromMyDealershipMarketing" data-bind="disable : true, booleanChecked: receiveMarketing" disabled=""> 
+		</fieldset>
+	</div>
+
+</div>
+</div>
+</div>
+			</div>
+
+			<div class="fl contactLookupPlaceHolder modalRightPanel infoPanel infoPanelSm" data-bind="visible: displayLookup() === false">
+				<div class="selectedUpgradedMsg iconNotBox infoNotBox">
+					<span class="infoNotIcon"></span><span class="infoNotIcon__text" data-bind="text: infoMessage">Enter your contact name or add a new contact on the left</span>
+				</div>
+			</div>
+
+			<div class="fl" data-bind="visible: displayLookup() === true" style="display: none;">
+				<div data-component="dialogs/enquiries/components/itemCustomerLookup" class="bgGrey" data-bind="visible: visible" style=""><div id="itemCustomerLookup" data-htmlinclude="dialogs/components/customerLookup"><div class="customerLookupPanel modalRightPanel infoPanel fl" data-bind="visible: isDisplayed" style="display: none;">
+		<p>Are you entering one of these contacts?
+			<a href="#" title="Close contact list" data-bind="click : clickCloseButton, visible : hasCloseButton">
+				<span class="closeContactSearch bold fr">X</span>
+			</a>
+		</p>
+		<ul class="sassiVehicleList">
+			<!-- ko foreach: customerList --><!-- /ko -->
+		</ul>
+</div>
+</div>
+</div>
+			</div>
+
+
+			<div class="fr" data-bind="visible: displayLookup() === false">
+				<label>Notes:</label>
+				<textarea data-hj-masked="" name="notes" class="formTxt modalTextArea" data-bind="value: notes, valueUpdate: &#39;afterkeydown&#39;"></textarea><div class="validationMessage" style="display: none;"></div>
+			</div>
+		</div>
+		
+        <div class="errDialog newContactSystemFailure" data-bind="visible : displaySystemError, text: errorMessage" style="display: none;"></div>
+
+		<div class="cb"></div>
+
+		<div class="fl dialogFooter">
+			<div class="fr">
+				<div data-bind="visible : savingProgress" class="saveContactProgress" style="display: none;"></div>
+				<button name="saveContactBtn" data-bind="enable: isValidToSave, css:{disabled: !isValidToSave()}, click: done" class="associateContactVehicle fl modal-close blueBut disabled" disabled="">Done</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</div>
+<div data-component="dialogs/enquiries/enquiriesFeedback" data-bind="visible: visible" style=""><div id="feedBackOverlay" class="dialogComponent" data-bind="visible: displayed" style="display: none;">
+    <div class="closeOverlay">
+        <span data-bind="click: close" class="cloneSassiBut fr dialogCloseBtn"></span>
+    </div>
+	<div class="dialogHeader">
+		<span class="dialogTitle"> Your Feedback on Enquiries</span>
+	</div>
+
+    <div class="overlayBg feedbackPage" data-bind="visible: !isSubmitted()">
+
+        <form>
+            <div class="rmContent">
+            <div class="cb cbSeperator"></div>
+
+            <p>
+             <strong>Help us make Enquiries better for you!</strong>
+            </p>
+            <p>Your thoughts and opinions are of great value to us. Let us know what you think of Enquiries and help us to build an amazing product that makes converting leads easier.</p>
+
+
+            <div class="cb cbSeperator"></div>
+
+            <div class="fl mtTen">
+                <label class=" input3 fl"><strong>Is the design intuitive?</strong></label>
+                <input type="radio" data-bind="checked: intuitiveDesign" name="checkLike" value="yes" class="mrTen"><span class=" ">Yes</span>
+                <input type="radio" data-bind="checked: intuitiveDesign" name="checkLike" value="no" class="mlTen"><span class=" ">No</span>
+            </div>
+
+            <div class="cb cbSeperator"></div>
+
+            <div class="fl mtTen">
+                <label class=" input3 fl"><strong>Have you been able to use the Enquiries area to read your emails?</strong></label>
+                <input type="radio" data-bind="checked: usable" name="clear" value="yes" class="mrTen"><span class=" ">Yes</span>
+                <input type="radio" data-bind="checked: usable" name="clear" value="no" class="mlTen"><span class=" ">No</span>
+            </div>
+
+            <div class="cb cbSeperator"></div>
+
+            <div class="fl  mtTen feedBackBox">
+                <label><strong>What do you like about the page?</strong></label>
+                <textarea type="text" name="comments" data-bind="value: positiveComments, valueUpdate: &#39;afterkeydown&#39;"></textarea>
+            </div>
+
+            <div class="cb"></div>
+
+            <div class="fl  mtTen feedBackBox">
+                <label><strong>What don't you like about the page?</strong></label>
+                <textarea type="text" name="comments" data-bind="value: negativeComments, valueUpdate: &#39;afterkeydown&#39;"></textarea>
+            </div>
+
+            <div class="cb "></div>
+
+            </div>
+
+        </form>
+            <div class="saveSeperator">
+                <div class="fr">
+                    <button class="fl greyBut closeFeedback" data-bind="click: close">Cancel</button>
+                    <button class="blueBut noMargin feedBackButton disabled" type="button" value="Send Feedback" data-bind="enable: enableSend, css: {&#39;disabled&#39;: !enableSend() }, click: sendFeedback" disabled="">Send Feedback</button>
+                </div>
+            </div>
+
+
+    </div>
+    <div data-bind="visible: isSubmitted" style="display: none;">
+        <div class="overlayBg feedbackPage">
+        	<h3>Thanks for submitting feedback.</h3>
+
+	        <div class="saveSeperator">
+	            <div class="fr">
+	                <button class="fl blueBut noMargin closeFeedback" data-bind="click: close">Done</button>
+	
+	            </div>
+	        </div>
+	        
+    	</div>
+    	
+    </div>
+    
+</div></div>
+<div data-component="dialogs/enquiries/archiveEnquiry" data-bind="visible: visible" style=""><div id="#archivedOverlay" class="dialogComponent warningMessage overlay deleteWarning" data-bind="visible: displayed" style="display: none;">
+    <div class="closeOverlay">
+		<span data-bind="click: close" class="cloneSassiBut fr dialogCloseBtn"></span>
+    </div>
+
+   	<div class="dialogHeader">
+		<span class="dialogTitle">Warning</span>
+	</div>
+
+    <div class="overlayBg">
+        <p data-bind="text: archived() ? &#39;Are you sure you want to Archive this enquiry?&#39; : &#39;Are you sure you want to Activate this enquiry?&#39;">Are you sure you want to Activate this enquiry?</p>
+
+        <div class="saveSeperator">
+            <div class="fr">
+                <button class="blueBut fr" data-bind="click: archiveEnquiry" title="" target="_blank" href="#">Yes</button>
+                <button class="greyBut fl" data-bind="click: close" title="" target="_blank" href="#">No</button>
+            </div>
+        </div>
+
+    </div>
+</div></div>
+<div data-component="dialogs/enquiries/addVehicleDialog" data-bind="visible: visible" style=""><!-- Modal for Enquiries -->
+<div data-bind="visible: addVehicleDialogDisplayed" class="dialogComponent addVehicleEnquiry" style="display: none;">
+
+	<div class="dialogHeader">
+		<span class="dialogTitle">Add a Vehicle to the enquiry</span> 
+		<span data-bind="click: closeEnquiryDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+	</div>
+		
+	<div class="modalInnerContainer">
+	    <div class="cloneModalContents">
+	    <div class="cb"></div>
+		
+
+    <div class="infoBox infoPanel modalEnquiry fl">
+   		<div class="cb mbTen vehicleSearch">
+	        <p>Filter by vehicle: </p>
+	        <input id="searchBox" class="formTxt input2" type="text" data-bind="value: vehicleFilterValue, valueUpdate: &#39;afterkeydown&#39;, event: { keyup: searchKeyboardCmd}">
+	        <div class="cb"></div>
+        </div>
+    	<div data-bind="visible : loadingVehiclesProgress" class="loadVehiclesEnquiryProgress" style="display: none;"></div>
+		<ul class="sassiVehicleList" data-bind="foreach: stockItems"></ul>
+ 	</div><!-- end of fl -->
+	    
+    <div class="fl">
+	    <div class="fl modalRightPanel infoPanel">
+	    
+	    	<div class="infoSmall" data-bind="visible: !vehicleSelected()">Please select a vehicle from the left</div>
+			<div class="vehicleHeaderWrap" data-bind="visible: vehicleSelected() " style="display: none;">
+			
+	            <div class="vehicleHeaderImg fl">
+	                <img data-bind="attr: {&#39;src&#39; : vehicle().mainImageUrl}, visible: vehicle().mainImageUrl" width="145" height="120" class="fl" alt="vehicle Image" src="#" style="display: none;">
+	                <div class="vehicleEditSprite noImage fl" width="145" height="120" data-bind="visible: !vehicle().mainImageUrl"></div>
+	            </div>
+				<div class="fr">
+                    <div class="fr vehicleInfoRight">
+                        <div class="vehiclePriceAndMileage fl tl">
+                            <div class="infoSpace vehMMP" data-bind="visible: vehicle().formattedPrice, html: vehicle().formattedPrice">£unspecified</div>
+                            <div class="infoSpace lightTxt cb tr" data-bind="visible: vehicle().formattedMileage, html: vehicle().formattedMileage">unspecified</div>
+                        </div>
+                    </div>
+				</div>
+				
+                <div class="vehicleInfoWrap cb">
+                    <div class="vehicleInfoLeft">
+                        <span class="vehMMP block" data-bind="text: vehicle().makeModel"></span>
+                        <span class="vehDM lightTxt block" data-bind="text: vehicle().makeModelDerivative"></span>
+                    </div>
+                </div>
+
+                <div class="regType fl" data-bind="visible: vehicle().registration" style="display: none;">
+                    <div class="fl vehicleEditSprite vrmIcon ukNumberPlate tc" data-bind="text: vehicle().registration"></div>
+                    <div class="fl vehicleEditSprite carIcon"></div>
+                </div>
+				
+        	</div>
+	    </div>
+	    
+	    <div class="cb"></div>
+    </div> <!-- end of fl-->
+	    
+    <div class="errDialog newEnquirySystemFailure" data-bind="visible : displaySystemError" style="display: none;">
+		There has been an error creating the contact. Please try again later.
+	</div>
+		
+    <div class="cb"></div>
+    </div><!-- end of clone -->
+    
+    <div class="fl dialogFooter">
+	    <div class="fr">
+			<button data-bind="click: closeEnquiryDialog" class="fl modal-close greyBut">Cancel</button>
+	    	<div data-bind="visible : savingProgress" class="saveEnquiryProgress" style="display: none;"></div>
+	    	<button data-bind="enable: vehicleSelected(), css:{disabled: !vehicleSelected()}, click: saveNewEnquiry" id="goToSassiFullContact" class="fl blueBut disabled" style="display:initial; margin:0;" disabled="">Add vehicle to enquiry</button>
+	    </div>
+    </div>
+   
+    </div><!-- end of modalInnerContainer -->
+</div></div>
+<div data-component="dialogs/enquiries/deleteCallRecording" data-bind="visible: visible" style=""><div id="#archivedOverlay" class="dialogComponent warningMessage overlay deleteWarning" data-bind="visible: displayed" style="display: none;">
+    <div class="closeOverlay">
+		<span data-bind="click: close" class="cloneSassiBut fr dialogCloseBtn"></span>
+    </div>
+
+   	<div class="dialogHeader">
+		<span class="dialogTitle">Warning</span>
+	</div>
+
+    <div class="overlayBg">
+        <p data-bind="text: &#39;You are about to permanently delete the call recording from this enquiry. Are you sure you wish to delete this recording?&#39;">You are about to permanently delete the call recording from this enquiry. Are you sure you wish to delete this recording?</p>
+
+        <div class="saveSeperator">
+            <div class="fr">
+                <button class="blueBut fr" data-bind="click: deleteCallRecording" title="" target="_blank" href="#">Yes</button>
+                <button class="greyBut fl" data-bind="click: close" title="" target="_blank" href="#">No</button>
+            </div>
+        </div>
+
+    </div>
+</div></div>
+<div data-component="dialogs/dealer/dealerRating" data-bind="visible: visible" style=""><div data-bind="visible: dealerRatingDialogDisplayed" id="dealerRatingDialog" class="dialogComponent" style="display: none;">
+
+    <div data-bind="visible: requestFormDisplayed">
+
+        <div class="dealerReviews dialogHeader">
+            <span class="dialogTitle">Ask this buyer to review their experience:</span>
+            <span data-bind="click: closeDealerRatingDialog" class="cloneSassiBut fr dialogCloseBtn"></span>
+        </div>
+
+        <div class="modalInnerContainer ">
+
+            <div class="cb"></div>
+            <div class="dealerReviews modalVehicleHeader">
+                <span class="vehMMP block"></span>
+                <div class="vehicleRegNum fl" data-bind="text:registration"></div>
+                <div class="truncate" data-bind="text:mmd"></div>
+            </div>
+
+            <div class="fl">
+
+
+
+                <div class="fl">
+                    <div data-component="dialogs/dealer/components/dealerRatingCustomerDetails" data-bind="visible: visible" style=""><div id="dealerRatingCustomer" data-htmlinclude="dialogs/components/ratingRequestCustomerDetails"><div class="dealerReviews CustomerDetailsPanel">
+
+
+    <p>Enter the buyer's details:</p>
+
+    <div class="modalCol">
+        <fieldset>
+            <label class="sideBySide modal">First name:</label> <input data-bind="value: forename, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal forenameFld"><div class="validationMessage" style="display: none;"></div>
+        </fieldset>
+    </div>
+
+    <div class="modalCol">
+        <fieldset>
+            <label class="sideBySide modal">Last Name:</label> <input data-bind="value: surname, valueUpdate: &#39;afterkeydown&#39;" type="text" class="findMyName sideBySideSelect formSel modal surnameFld"><div class="validationMessage" style="display: none;"></div>
+        </fieldset>
+    </div>
+
+
+    <div class="modalCol">
+        <fieldset>
+            <label class="sideBySide modal">Email:</label> <input data-bind="value: email, valueUpdate: &#39;afterkeydown&#39;" type="text" class="sideBySideSelect formSel modal emailFld"><div class="validationMessage" style="display: none;"></div>
+        </fieldset>
+    </div>
+
+
+</div>
+</div></div>
+                </div>
+
+            </div>
+
+
+            <div class="fl dealerReviews dialogFooter">
+
+                <button data-bind="click: closeDealerRatingDialog" class="fl modal-close greyBut closeReviewBtn">Cancel</button>
+                <button id="requestDealerRatingBtn" data-bind="enable: isValid, css:{disabled: !isValid()}, click: send" class="fl modal-close blueBut sendReviewBtn disabled" style="display: initial; margin: 0;" disabled="">Send request</button>
+            </div>
+
+            <span name="dealerReviewsMessage" class="notification-box notification-box--info">
+                <span class="infoNotIcon notification-box__icon notification-box__info "></span>
+                Reviews completed on your premises will not be published
+                <a style="float: right" data-bind="attr: {href: dealerRatingsModerationRulesHref}" target="_blank" href="#">View Moderation Rules</a>
+            </span>
+
+            <div data-bind="visible: showErrorMessage" style="display: none;">
+                <span class="errDialog dealerReviewsError" data-bind="visible: showStandardErrorMessage" style="display: none;">There was an error submitting this request.</span>
+                <span class="errDialog dealerReviewsError" data-bind="visible: showDuplicateRequestErrorMessage" style="display: none;">A request for this customer has already been submitted.</span>
+            </div>
+
+            <p class="agreementFooter">We'll email the customer asking them to review their experience.  By selecting 'Send Request', you <br>confirm the customer has given permission for us to contact them.</p>
+
+        </div>
+
+    </div>
+
+    <div data-bind="visible: !requestFormDisplayed()" style="display: none;">
+
+        <div class="dealerReviews dialogHeader">
+            <span class="dialogTitle">Review Requested</span>
+            <span data-bind="click: closeDealerRatingDialog" class="cloneSassiBut dialogCloseBtn"></span>
+        </div>
+
+        <div class="modalInnerContainer ">
+
+            <div class="cb"></div>
+
+            <div class="successBox">
+                <p class="fl">We've sent an email to the buyer asking for a review.</p>
+            </div>
+
+            <div class="fl dealerReviews dialogFooter successPage">
+                <button data-bind="click: closeDealerRatingDialog" class="associateContactVehicle modal-close blueBut">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<div class="blkOver" data-bind="visible: dialogDisplayed" style="display: none;"></div>
+
+
+<!-- Interrupters--></div>
+<div data-component="footer/footer" data-bind="visible: visible" style=""><div class="footerContainer">
+    <footer>
+        <div class="footer">
+            <div class="footerLogo">
+
+            </div>
+            <div class="fr">
+                <ul class="fr">
+                    <!-- ko if: user !== undefined && user !== null && user.isPayGoUser --><!-- /ko -->
+                    <li><a data-bind="attr: {href: getSecurityHref()}" href="#">Security</a></li>
+                    <li>|</li>
+                    <li><a target="_blank" data-bind="attr: {href: getTermsAndConditionsHref()}" id="termsandconditions" href="#">Terms &amp; Conditions</a></li>
+                    <li>|</li>
+                    <li><a data-bind="attr: {href: getPrivacyHref()}" href="#">Privacy Policy</a></li>
+                    <!-- ko if: !isUserNonClub() -->
+                    <li>|</li>
+                    <li><a target="_blank" data-bind="attr: {href: getContactHref()}" href="#">Contact</a></li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div></div>
+</body></html>

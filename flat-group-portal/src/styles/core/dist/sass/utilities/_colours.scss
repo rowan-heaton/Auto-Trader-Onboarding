@@ -1,0 +1,99 @@
+///== Colours
+@mixin generate-foreground-colours($palette) {
+  @each $color-name, $color in $palette {
+    .u-at-color-#{$color-name} {
+      color: $color;
+    }
+  }
+}
+
+@mixin generate-background-colours($palette) {
+  @each $color-name, $color in $palette {
+    .u-at-bg-#{$color-name} {
+      background-color: $color;
+    }
+  }
+}
+
+// Text colour helpers
+@include generate-foreground-colours($at-text-palette);
+
+// Old background colours
+.u-at-bg {
+  &--primary {
+    background-color:  $atPrimary;
+  }
+
+  &--inactive {
+    background-color:  $atInactive;
+  }
+
+  &--highlight {
+    background-color:  $atHighlight;
+  }
+
+  &--dark {
+    background-color:  $atDark;
+  }
+
+  &--white {
+    background-color:  $atWhite;
+  }
+
+  &--background {
+    background-color:  $atBackground;
+  }
+
+  &--borders-lines {
+    background-color:  $atBordersLines;
+  }
+
+  &--light-text {
+    background-color:  $atLightText;
+  }
+
+  &--dark-text {
+    background-color:  $atDarkText;
+  }
+
+  &--success {
+    background-color:  $atSuccess;
+  }
+
+  &--danger {
+    background-color:  $atErrorDelete;
+  }
+
+  &--reg-plate {
+    background-color:  $atRegPlate;
+  }
+
+  &--at-warning {
+    background-color:  $atWarning;
+  }
+
+  &--at-info {
+    background-color:  $atInfo;
+  }
+
+  &--disabled {
+    background-color:  $atDisabled;
+  }
+}
+
+
+
+
+// text colours
+
+.u-at-color {
+  &--success {
+    color:  $atSuccess;
+  }
+  &--positive {
+    color:  $atPositive;
+  }
+  &--light-text {
+    color:  $atLightText;
+  }
+}

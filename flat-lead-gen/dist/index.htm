@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Lead generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+<link href="./assets/main.df54b9e1f9145b31b0b7.css" rel="stylesheet"></head>
+
+<body class="overflow-x"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0"><symbol viewBox="0 0 22 22" id="close-icon"><path d="M.65 1.35l20 20c.2.2.5.2.7 0 .2-.2.2-.5 0-.7l-20-20c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7zm20-.7l-20 20c-.2.2-.2.5 0 .7.2.2.5.2.7 0l20-20c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0z"></path></symbol><symbol viewBox="0 0 18 20" id="date"><path d="M2 3c-.55 0-1 .45-1 1v14c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H2zm13-1h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h1V0h2v2h8V0h2v2zM1 7h16V6H1v1zm3 6h3v-3H4v3zM3 9h5v5H3V9z"></path></symbol></svg>
+  <div style="max-width: 1366px; margin: 0 auto;">
+
+ 
+  <main ng-version="4.2.4"><router-outlet></router-outlet><performance><div class="performance c-at-performance">
+
+    <h1 class="c-at-performance__title">Lead Gen Performance</h1>
+
+    <section class="c-at-performance__filters-section">
+
+        <report-selector><div class="report-selector c-at-report-selector">
+    <p class="c-at-report-selector__label">Show me report:</p>
+    <div class="u-at-clearfix">
+        <div class="c-at-report-selector__filter">
+            <div class="o-at-form-element o-at-radio-button">
+                <label class="o-at-label">
+                    <input atanalyticscategory="standard-link" atanalyticslabel="By day" atanalyticson="click" name="reportType" type="radio" value="daily">
+                    <span class="o-at-radio-button__label o-at-radio-button-list__label is-selected">By day</span>
+                </label>
+            </div>
+        </div>
+        <div class="c-at-report-selector__filter">
+            <div class="o-at-form-element o-at-radio-button">
+                <label class="o-at-label">
+                    <input atanalyticscategory="standard-link" atanalyticslabel="By vehicle" atanalyticson="click" name="reportType" type="radio" value="adverts">
+                    <span class="o-at-radio-button__label o-at-radio-button-list__label">By vehicle</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+</report-selector>
+
+        <div class="c-at-performance__filters-container u-at-clearfix">
+            <div class="c-at-performance__filter">
+                <date-picker><div class="date-picker c-at-date-picker">
+    <div class="o-form-element-container c-at-date-picker__filter">
+        <div class="o-at-form-element">
+            <label class="o-at-label c-at-date-picker__input-field">
+                <span class="c-at-date-picker__input-label">Date from</span>
+                <div class="o-at-input o-at-input--full-width">
+                    2018-01-11
+                    <span class="c-at-date-picker__input-icon">
+                        <svg>
+                            <use xlink:href="#date"></use>
+                        </svg>
+                    </span>
+                </div>
+            </label>
+        </div>
+        <div class="c-at-date-picker__calendar-container is-hidden" id="dateCalendar">
+            <div class="c-at-date-picker__opacity-layer"></div>
+            <div class="c-at-date-picker__calendar-modal">
+                <div class="c-at-date-picker__calendar">
+                    <span class="c-at-date-picker__calendar-close-icon">
+                        <svg>
+                            <use xlink:href="#close-icon"></use>
+                        </svg>
+                    </span>
+                    <span class="c-at-date-picker__calendar-label">Date from</span>
+                    <ngb-datepicker class="c-at-datepicker d-inline-block rounded ng-untouched ng-pristine ng-valid" ngmodule="" _nghost-c0="">
+    <!---->
+    
+    <div _ngcontent-c0="" class="ngb-dp-header bg-faded pt-1 rounded-top" style="height: 4.25rem; margin-bottom: -4rem;">
+      <!----><ngb-datepicker-navigation _ngcontent-c0="" class="d-flex justify-content-between collapsed" _nghost-c2="">
+    <button _ngcontent-c2="" class="btn-link" type="button">
+      <span _ngcontent-c2="" class="ngb-dp-navigation-chevron"></span>    
+    </button>
+    
+    <!---->
+    
+    <button _ngcontent-c2="" class="btn-link" type="button" disabled="">
+      <span _ngcontent-c2="" class="ngb-dp-navigation-chevron right"></span>
+    </button>
+  </ngb-datepicker-navigation>
+    </div>
+
+    <div _ngcontent-c0="" class="ngb-dp-months d-flex px-1 pb-1">
+      <!---->
+        <div _ngcontent-c0="" class="ngb-dp-month d-block ml-3">            
+          <!----><div _ngcontent-c0="" class="ngb-dp-month-name text-center">
+            January 2018
+          </div>
+          <ngb-datepicker-month-view _ngcontent-c0="" class="d-block" _nghost-c3="">
+    <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+      <!---->
+      <!----><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Su
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Mo
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Tu
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        We
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Th
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Fr
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Sa
+      </div>
+    </div>
+    <!---->
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside btn-secondary">31</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">1</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">2</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">3</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">4</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">5</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">6</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">7</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">8</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">9</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">10</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="bg-primary text-white btn-secondary">11</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">12</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">13</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">14</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">15</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">16</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">17</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">18</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">19</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">20</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">21</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">22</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">23</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">24</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">25</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">26</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">27</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">28</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">29</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">30</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">31</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">1</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">2</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">3</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">4</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">5</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">6</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">7</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">8</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">9</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">10</div>
+    
+          
+        </div>
+      </div>
+    
+  </ngb-datepicker-month-view>
+        </div>
+      
+    </div>
+  </ngb-datepicker>
+                    <div>
+                        <button class="c-at-btn c-at-btn--primary-ghost">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</date-picker>
+            </div>
+            <div class="c-at-performance__filter">
+                <date-picker><div class="date-picker c-at-date-picker">
+    <div class="o-form-element-container c-at-date-picker__filter">
+        <div class="o-at-form-element">
+            <label class="o-at-label c-at-date-picker__input-field">
+                <span class="c-at-date-picker__input-label">Date to</span>
+                <div class="o-at-input o-at-input--full-width">
+                    2018-01-18
+                    <span class="c-at-date-picker__input-icon">
+                        <svg>
+                            <use xlink:href="#date"></use>
+                        </svg>
+                    </span>
+                </div>
+            </label>
+        </div>
+        <div class="c-at-date-picker__calendar-container is-hidden" id="dateCalendar">
+            <div class="c-at-date-picker__opacity-layer"></div>
+            <div class="c-at-date-picker__calendar-modal">
+                <div class="c-at-date-picker__calendar">
+                    <span class="c-at-date-picker__calendar-close-icon">
+                        <svg>
+                            <use xlink:href="#close-icon"></use>
+                        </svg>
+                    </span>
+                    <span class="c-at-date-picker__calendar-label">Date to</span>
+                    <ngb-datepicker class="c-at-datepicker d-inline-block rounded ng-untouched ng-pristine ng-valid" ngmodule="" _nghost-c0="">
+    <!---->
+    
+    <div _ngcontent-c0="" class="ngb-dp-header bg-faded pt-1 rounded-top" style="height: 4.25rem; margin-bottom: -4rem;">
+      <!----><ngb-datepicker-navigation _ngcontent-c0="" class="d-flex justify-content-between collapsed" _nghost-c2="">
+    <button _ngcontent-c2="" class="btn-link" type="button">
+      <span _ngcontent-c2="" class="ngb-dp-navigation-chevron"></span>    
+    </button>
+    
+    <!---->
+    
+    <button _ngcontent-c2="" class="btn-link" type="button" disabled="">
+      <span _ngcontent-c2="" class="ngb-dp-navigation-chevron right"></span>
+    </button>
+  </ngb-datepicker-navigation>
+    </div>
+
+    <div _ngcontent-c0="" class="ngb-dp-months d-flex px-1 pb-1">
+      <!---->
+        <div _ngcontent-c0="" class="ngb-dp-month d-block ml-3">            
+          <!----><div _ngcontent-c0="" class="ngb-dp-month-name text-center">
+            January 2018
+          </div>
+          <ngb-datepicker-month-view _ngcontent-c0="" class="d-block" _nghost-c3="">
+    <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+      <!---->
+      <!----><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Su
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Mo
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Tu
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        We
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Th
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Fr
+      </div><div _ngcontent-c3="" class="ngb-dp-weekday small text-center text-info font-italic">
+        Sa
+      </div>
+    </div>
+    <!---->
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">31</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">1</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">2</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">3</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">4</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">5</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">6</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">7</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">8</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">9</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">10</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">11</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">12</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">13</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">14</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">15</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">16</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="btn-secondary">17</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="bg-primary text-white btn-secondary">18</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">19</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">20</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">21</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">22</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">23</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">24</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">25</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">26</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">27</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">28</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">29</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">30</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">31</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">1</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">2</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">3</div>
+    
+          
+        </div>
+      </div>
+    
+      <!----><div _ngcontent-c3="" class="ngb-dp-week d-flex">
+        <!---->
+        <!----><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">4</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">5</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">6</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">7</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">8</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">9</div>
+    
+          
+        </div><div _ngcontent-c3="" class="ngb-dp-day disabled">
+          <!---->
+            <!---->
+       <div _ngcontent-c0="" ngbdatepickerdayview="" _nghost-c1="" class="text-muted outside">10</div>
+    
+          
+        </div>
+      </div>
+    
+  </ngb-datepicker-month-view>
+        </div>
+      
+    </div>
+  </ngb-datepicker>
+                    <div>
+                        <button class="c-at-btn c-at-btn--primary-ghost">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</date-picker>
+            </div>
+            <div class="c-at-performance__dates-cta">
+                <button atanalyticscategory="standard-link" atanalyticslabel="Run report" atanalyticson="click" class="c-at-btn c-at-btn--primary c-at-performance__apply-dates">
+                    Run report
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="c-at-performance__reports-section">
+        <div class="c-at-performance__tables-container">
+
+            <div class="c-at-performance__export-csv">
+                <!---->
+            </div>
+
+            <!----><div>
+
+                <!---->
+
+                <!----><div>
+                    <!----><div>
+                        <!---->
+                            <div class="c-at-performance__no-results">
+                                There are no results for this search criteria.
+                            </div>
+                        
+                        <!---->
+                    </div>
+                    <!---->
+                </div>
+            </div>
+        </div>
+        <!---->
+    </section>
+</div>
+</performance></main>
+</div>
+</body></html>

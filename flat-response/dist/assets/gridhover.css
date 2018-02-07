@@ -1,0 +1,15 @@
+table.sassiSubTable th span:hover {
+	padding: 7px 0 5px 0;
+}
+
+table.stockGrid a.asc:hover, 
+table.sassiSubTable span.asc:hover {
+    background: url('../img/desc.gif') no-repeat center 95% ;
+    text-decoration: none;
+}
+
+table.stockGrid th a:hover, 
+table.sassiSubTable th span:hover, 
+table.sassiSubTable span.desc:hover {
+    background: url('../img/asc.gif') no-repeat center 5% ;
+}

@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Performance</title>
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#fff">
+        <meta name="application-name" content="AutoTrader">
+
+        <link href="./assets/main.5243fed94805e3fb8af1.css" rel="stylesheet">
+    </head>
+    <body class="loaded">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0">
+            <symbol viewBox="0 0 22 22" id="close-icon">
+                <path d="M.65 1.35l20 20c.2.2.5.2.7 0 .2-.2.2-.5 0-.7l-20-20c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7zm20-.7l-20 20c-.2.2-.2.5 0 .7.2.2.5.2.7 0l20-20c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0z"></path>
+            </symbol>
+            <symbol viewBox="0 0 20 20" id="satisfied">
+                <path d="M10 19A9 9 0 1 0 9.999.999 9 9 0 0 0 10 19zm0 1C4.48 20 0 15.52 0 10S4.48 0 10 0s10 4.48 10 10-4.48 10-10 10zM6 8c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0 1c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm8-1c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0 1c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm1 3h1c0 2.2-2.7 4-6 4s-6-1.8-6-4h1c0 1.55 2.17 3 5 3s5-1.45 5-3z"></path>
+            </symbol>
+            <symbol viewBox="0 0 20 20" id="dissatisfied">
+                <path d="M10 19A9 9 0 1 0 9.999.999 9 9 0 0 0 10 19zm0 1C4.48 20 0 15.52 0 10S4.48 0 10 0s10 4.48 10 10-4.48 10-10 10zM6 8c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0 1c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm8-1c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0 1c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm2 6c0-2.2-2.7-4-6-4s-6 1.8-6 4h1c0-1.55 2.17-3 5-3s5 1.45 5 3h1z"></path>
+            </symbol>
+        </svg>
+
+        <div class="outer-container u-at-relative">
+            <div class="c-at-header"> 
+                <div> 
+                    <div class="o-at-container u-at-relative"> 
+                        <a class="c-at-header__logo-container" href="http://localhost.autotrader.co.uk:8404/stock-overview/#/"> 
+                            <svg height="18" viewBox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M23.029 7.155H4.073L5.59 3.33C6.38 1.384 8.224.045 10.316 0h15.559L23.04 7.155h-.011zm-7.425 10.091H0l2.88-7.143h18.945l-1.519 3.824c-.787 1.936-2.587 3.263-4.702 3.32z" fill="#00D7D2"></path><title>Auto Trader</title></svg> 
+                        </a> 
+                        <button aria-label="Menu Button" class="c-at-header__toggle" type="button">
+                            <div class="c-at-header__mobile-menu-icon"> 
+                                <span></span> 
+                                <span></span> 
+                                <span></span> 
+                            </div> 
+                        </button> 
+                        <nav aria-label="autotrader portal" class="c-at-navbar" role="navigation">
+                            <at-header-navigation class="c-at-navbar__nav c-at-navbar__nav--left">
+                                <ul class="c-at-navbar__sub-nav"> 
+                                    <li class="c-at-navbar__item"> 
+                                        <a class="c-at-navbar__link" href="http://localhost.autotrader.co.uk:8404/performance/#/home" target="_self"> Group View </a> 
+                                    </li>
+                                    <li class="c-at-navbar__item"> 
+                                        <a class="c-at-navbar__link" href="https://performancedashboard-qa.autotrader.co.uk/auth/details?did=80" target="_blank"> Performance Dashboard </a> 
+                                    </li> 
+                                </ul> 
+                            </at-header-navigation> 
+                            <at-header-navigation class="c-at-navbar__nav c-at-navbar__nav--right visible-md visible-lg">
+                                <ul class="c-at-navbar__sub-nav"> 
+                                    <li class="c-at-navbar__item"> 
+                                        <a class="c-at-navbar__link" href="https://explore.autotrader.co.uk/news" target="_blank"> News &amp; Explore </a> 
+                                    </li>
+                                    <li class="c-at-navbar__item"> 
+                                        <a class="c-at-navbar__link" href="https://portal.autotrader.co.uk/stock-overview/#/contact" target="_blank"> Contact </a> 
+                                    </li> 
+                                </ul> 
+                            </at-header-navigation>  
+                            <div class="c-at-navbar__nav c-at-navbar__nav--full"> 
+                                <div class="c-at-navbar__nav--scroll"> 
+                                    <div class="u-at-relative"> 
+                                        <at-header-navigation class="c-at-navbar__small-medium--left">
+                                            <ul class="c-at-navbar__sub-nav"> 
+                                                <li class="c-at-navbar__item"> 
+                                                    <a class="c-at-navbar__link" href="http://localhost.autotrader.co.uk:8404/performance/#/home" target="_self"> Group View </a> 
+                                                </li>
+                                                <li class="c-at-navbar__item"> 
+                                                    <a class="c-at-navbar__link" href="https://performancedashboard-qa.autotrader.co.uk/auth/details?did=80" target="_blank"> Performance Dashboard </a> 
+                                                </li> 
+                                            </ul> 
+                                        </at-header-navigation> 
+                                        <at-header-navigation class="c-at-navbar__small-medium--right">
+                                            <ul class="c-at-navbar__sub-nav"> 
+                                                <li class="c-at-navbar__item"> 
+                                                    <a class="c-at-navbar__link" href="https://explore.autotrader.co.uk/news" target="_blank"> News &amp; Explore </a> 
+                                                </li>
+                                                <li class="c-at-navbar__item"> 
+                                                    <a class="c-at-navbar__link" href="https://portal.autotrader.co.uk/stock-overview/#/contact" target="_blank"> Contact </a> 
+                                                </li> 
+                                            </ul> 
+                                        </at-header-navigation> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </nav> 
+                    </div> 
+                </div> 
+            </div> 
+
+            <div class="o-at-content-container o-at-content-container--grey has-fixed-header h-at-gutter-padding">
+                <div class="o-at-container">
+                    <div>
+                        <div class="row u-at-mb-20 u-at-mt-20">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button class="c-at-btn c-at-btn--tertiary visible-lg" id="desktopFilterButton" type="button">
+                                    Hide filters
+                                </button>
+                                <button class="c-at-btn c-at-btn--tertiary hidden-lg hidden-xs" id="tabletFilterButton" type="button">
+                                    Show filter
+                                </button>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button class="c-at-btn c-at-btn--tertiary u-at-pull-right">Export leads</button>
+                            </div>
+                        </div>
+
+                        <div class="u-at-relative" id="wrapper">
+                            <filter class="hidden-xs">
+                                <div class="side-filter col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <section class="c-at-card c-at-card--shadow">
+                                        <div class="c-at-card--padding">
+
+                                            <h2 class="side-filter__title">Filter results
+                                                <a class="pull-right hidden-xs hidden-lg" title="Close Filter section">
+                                                    <img alt="Close Filter section" class="table-container__help-section__icon" src="./assets/icon-close-grey.png" style="position: absolute; top: 15px; right: 15px;">
+                                                </a>
+                                            </h2>
+
+                                            <input class="o-at-input o-at-input__search-box u-at-full-width" placeholder="Dealership, franchise or DID">
+
+                                            <div class="checkbox-filter">
+
+                                                <div class="u-at-mb-20">
+                                                    <div class="c-at-checkbox">
+                                                        <label class="u-at-full-width" for="all_franchises">
+                                                            <input id="all_franchises" type="checkbox">
+                                                            <span class="c-at-checkbox__label">All</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                <div class="checkbox-filter__parent">
+
+                    <div class="c-at-checkbox">
+                        <label class="u-at-full-width" for="franchise_NISSAN">
+                            <input  type="checkbox" id="franchise_NISSAN" >
+                            <span class="c-at-checkbox__label">NISSAN</span>
+                        </label>
+                    </div>
+
+                    <a class="checkbox-filter__parent__link">
+                        <!----><span class="checkbox-filter__parent__link">Show all</span>
+                        <!---->
+                    </a>
+
+                    <div class="checkbox-filter__child collapse" aria-expanded="false" aria-hidden="true" style="display: none;">
+
+                        <!----><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_280278">
+                                <input  type="checkbox" id="dealer_280278" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497167<span class="customSplitter js-customSplitter">DID 280278</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_284061">
+                                <input  type="checkbox" id="dealer_284061" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497169<span class="customSplitter js-customSplitter">DID 284061</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_422391">
+                                <input  type="checkbox" id="dealer_422391" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497171<span class="customSplitter js-customSplitter">DID 422391</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_422392">
+                                <input  type="checkbox" id="dealer_422392" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497173<span class="customSplitter js-customSplitter">DID 422392</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_649292">
+                                <input  type="checkbox" id="dealer_649292" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497177<span class="customSplitter js-customSplitter">DID 649292</span>
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div><div class="checkbox-filter__parent">
+
+                    <div class="c-at-checkbox">
+                        <label class="u-at-full-width" for="franchise_RENAULT">
+                            <input  type="checkbox" id="franchise_RENAULT" >
+                            <span class="c-at-checkbox__label">RENAULT</span>
+                        </label>
+                    </div>
+
+                    <a class="checkbox-filter__parent__link">
+                        <!----><span class="checkbox-filter__parent__link">Show all</span>
+                        <!---->
+                    </a>
+
+                    <div class="checkbox-filter__child collapse" aria-expanded="false" aria-hidden="true" style="display: none;">
+
+                        <!----><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_81">
+                                <input  type="checkbox" id="dealer_81" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497129<span class="customSplitter js-customSplitter">DID 81</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_2550">
+                                <input  type="checkbox" id="dealer_2550" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497131<span class="customSplitter js-customSplitter">DID 2550</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_4430">
+                                <input  type="checkbox" id="dealer_4430" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497135<span class="customSplitter js-customSplitter">DID 4430</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_5975">
+                                <input  type="checkbox" id="dealer_5975" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497139<span class="customSplitter js-customSplitter">DID 5975</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_8865">
+                                <input  type="checkbox" id="dealer_8865" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497141<span class="customSplitter js-customSplitter">DID 8865</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21083">
+                                <input  type="checkbox" id="dealer_21083" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497143<span class="customSplitter js-customSplitter">DID 21083</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21087">
+                                <input  type="checkbox" id="dealer_21087" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497145<span class="customSplitter js-customSplitter">DID 21087</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21090">
+                                <input  type="checkbox" id="dealer_21090" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497149<span class="customSplitter js-customSplitter">DID 21090</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21486">
+                                <input  type="checkbox" id="dealer_21486" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497151<span class="customSplitter js-customSplitter">DID 21486</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21487">
+                                <input  type="checkbox" id="dealer_21487" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497153<span class="customSplitter js-customSplitter">DID 21487</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21747">
+                                <input  type="checkbox" id="dealer_21747" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497155<span class="customSplitter js-customSplitter">DID 21747</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_21749">
+                                <input  type="checkbox" id="dealer_21749" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497157<span class="customSplitter js-customSplitter">DID 21749</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_22052">
+                                <input  type="checkbox" id="dealer_22052" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497159<span class="customSplitter js-customSplitter">DID 22052</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_77502">
+                                <input  type="checkbox" id="dealer_77502" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497161<span class="customSplitter js-customSplitter">DID 77502</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_90546">
+                                <input  type="checkbox" id="dealer_90546" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497163<span class="customSplitter js-customSplitter">DID 90546</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_122243">
+                                <input  type="checkbox" id="dealer_122243" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497165<span class="customSplitter js-customSplitter">DID 122243</span>
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div><div class="checkbox-filter__parent">
+
+                    <div class="c-at-checkbox">
+                        <label class="u-at-full-width" for="franchise_MULTI_FRANCHISE">
+                            <input  type="checkbox" id="franchise_MULTI_FRANCHISE" >
+                            <span class="c-at-checkbox__label">MULTI_FRANCHISE</span>
+                        </label>
+                    </div>
+
+                    <a class="checkbox-filter__parent__link">
+                        <!----><span class="checkbox-filter__parent__link">Show all</span>
+                        <!---->
+                    </a>
+
+                    <div class="checkbox-filter__child collapse" aria-expanded="false" aria-hidden="true" style="display: none;">
+
+                        <!----><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_5939">
+                                <input  type="checkbox" id="dealer_5939" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497137<span class="customSplitter js-customSplitter">DID 5939</span>
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div><div class="checkbox-filter__parent">
+
+                    <div class="c-at-checkbox">
+                        <label class="u-at-full-width" for="franchise_Unknown">
+                            <input  type="checkbox" id="franchise_Unknown" >
+                            <span class="c-at-checkbox__label">Unknown</span>
+                        </label>
+                    </div>
+
+                    <a class="checkbox-filter__parent__link">
+                        <!----><span class="checkbox-filter__parent__link">Show all</span>
+                        <!---->
+                    </a>
+
+                    <div class="checkbox-filter__child collapse" aria-expanded="false" aria-hidden="true" style="display: none;">
+
+                        <!----><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_3276">
+                                <input  type="checkbox" id="dealer_3276" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497133<span class="customSplitter js-customSplitter">DID 3276</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_643503">
+                                <input  type="checkbox" id="dealer_643503" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 497175<span class="customSplitter js-customSplitter">DID 643503</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_10008796">
+                                <input  type="checkbox" id="dealer_10008796" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 541259<span class="customSplitter js-customSplitter">DID 10008796</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_10009047">
+                                <input  type="checkbox" id="dealer_10009047" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 541796<span class="customSplitter js-customSplitter">DID 10009047</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_10009745">
+                                <input  type="checkbox" id="dealer_10009745" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 541798<span class="customSplitter js-customSplitter">DID 10009745</span>
+                                </span>
+                            </label>
+                        </div><div class="c-at-checkbox">
+                            <label class="u-at-full-width" placement="top" for="dealer_10009048">
+                                <input  type="checkbox" id="dealer_10009048" >
+                                <span class="truncate c-at-checkbox__label">
+                                    Dealer 541801<span class="customSplitter js-customSplitter">DID 10009048</span>
+                                </span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="side-filter--done hidden-lg hidden-xs">
+        <button class="c-at-btn c-at-btn--primary u-at-full-width">
+            Done
+        </button>&nbsp;
+    </div>
+
+</div></filter>
+
+            <div id="page-content-wrapper">
+                <results><div class="row results-container">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <section class="table-container">
+            <p class="table-container__heading">
+                <span class="js-headOfficeName">Head Office 497127</span>
+            </p>
+            <div class="mobile-sorting form-inline visible-xs-block">
+                <dropdown-results-sorter><div class="o-at-form-group">
+    <div class="o-at-form-element">
+        <label class="o-at-label">Sort by:</label>
+        <!----><div>
+            <select class="o-at-input o-at-input__select-box u-at-full-width " id="overviewSelectId">
+                <!----><option value="0: Object">
+                    Dealership A-Z
+                </option><option value="1: Object">
+                    Ranked best
+                </option><option value="2: Object">
+                    Ranked worst
+                </option><option value="3: Object">
+                    Ad views (Lowest %)
+                </option><option value="4: Object">
+                    Ad views (Highest %)
+                </option><option value="5: Object">
+                    Least advertised stock
+                </option><option value="6: Object">
+                    Most advertised stock
+                </option><option value="7: Object">
+                    Least low quality ads
+                </option><option value="8: Object">
+                    Most low quality ads
+                </option><option value="9: Object">
+                    Least stock over 45 days
+                </option><option value="10: Object">
+                    Most stock over 45 days
+                </option><option value="11: Object">
+                    Well priced (Lowest %)
+                </option><option value="12: Object">
+                    Well priced (Highest %)
+                </option><option value="13: Object">
+                    Lowest days to turn
+                </option><option value="14: Object">
+                    Highest days to turn
+                </option>
+            </select>
+        </div>
+        <!---->
+    </div>
+</div></dropdown-results-sorter>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <button-group> <div class="c-at-toggle u-at-mb-20">
+     <ul attoggle="" class="c-at-toggle__wrapper">
+         <!----><li class="c-at-toggle__item">
+             <button  class="c-at-toggle__btn c-at-toggle--selected c-at-toggle--first" type="button" id="group_button_overview">
+                 Overview
+             </button>
+         </li><li class="c-at-toggle__item">
+             <button  class="c-at-toggle__btn c-at-toggle--last" type="button" id="group_button_priceIndicator">
+                 Price indicator view
+             </button>
+         </li>
+         <li class="c-at-toggle__selected-border" style="left:0px; width: 108px; " data-origleft="0" data-origwidth="108"></li>
+    </ul>
+</div></button-group>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="table-container__help-section relative">
+                        <!---->
+                        <!----><a  class="table-container__help-section__link" id="help-section-open-icon">
+                            <span class="table-container__help-section__text u-at-text-link hidden-xs">Understanding this page</span>
+                            <img class="table-container__help-section__icon" src="./assets/icon-question-grey.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <!---->
+
+            <!----><div>
+
+                <!----><div>
+
+                    <!----><div>
+                        <overview-results><table class="table table-hover" id="overviewResultsTable">
+    <thead>
+        <tr>
+            <th class="groupHomeDealershipHeader">
+                <div class="sorting">
+                    <a >
+                        Dealership
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+
+            <th class="groupHomeRankHeader">
+                <div class="sorting">
+                    <a >
+                        Rank
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+
+            <th class="groupHomeAdViewsHeader text-left">
+                <div class="sorting sorting--active">
+                    <a >
+                        Daily ad views (Cars)<br>
+                        vs similar ads
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret sorting__icons--active"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+
+            <th class="groupHomeAdvertisedStockHeader text-left">
+                <div class="sorting">
+                    <a >
+                        Advertised stock
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+
+            <th class="groupHomeLowQualityAdHeader">
+                <div class="sorting">
+                    <a >
+                        Low quality ads
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+            
+             <th class="groupHomeOverageStockHeader">
+                <div class="sorting">
+                    <a >
+                        Stock over 45 days
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th> 
+
+            <th class="groupHomePricingHeader">
+                <div class="sorting">
+                    <a >
+                        Well priced
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+
+            <th class="groupHomeDaysToTurnHeader">
+                <div class="sorting">
+                    <a >
+                        Days to turn
+                        <span class="sorting__icons">
+                            <span class="caret"></span>
+                            <span class="dropup">
+                                <span class="caret"></span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <!----><tr id="dealerPerformance_10009047">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 541796</span>
+                <p class="dealerId">DID 10009047</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">26th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">5%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">0</p>
+        </td>
+    </tr><tr id="dealerPerformance_284061">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497169</span>
+                <p class="dealerId">DID 284061</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">25th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">11%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">113</p>
+        </td>
+    </tr><tr id="dealerPerformance_2550">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497131</span>
+                <p class="dealerId">DID 2550</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!----><div class="starRating__container starRating--small">
+        <div class="starRating__base">
+            ★★★★★
+            <div class="starsRating__filled--gold" style="width: 100%;">
+                ★★★★★
+            </div>
+        </div>
+        <div class="starRating__number">
+            <strong class="js-averageRating">5.0</strong>
+            <span>(<span class="js-numberOfReviews">1</span> review<!---->) </span>
+        </div>
+        <!---->
+        <!---->
+    </div>
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">24th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">12%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">71</p>
+        </td>
+    </tr><tr id="dealerPerformance_10009745">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 541798</span>
+                <p class="dealerId">DID 10009745</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">23rd</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">15%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">109</p>
+        </td>
+    </tr><tr id="dealerPerformance_122243">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497165</span>
+                <p class="dealerId">DID 122243</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">22nd</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">18%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">85</p>
+        </td>
+    </tr><tr id="dealerPerformance_21090">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497149</span>
+                <p class="dealerId">DID 21090</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">21st</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">23%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">104</p>
+        </td>
+    </tr><tr id="dealerPerformance_22052">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497159</span>
+                <p class="dealerId">DID 22052</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">20th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">24%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">99</p>
+        </td>
+    </tr><tr id="dealerPerformance_21083">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497143</span>
+                <p class="dealerId">DID 21083</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">19th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">30%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">88</p>
+        </td>
+    </tr><tr id="dealerPerformance_81">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497129</span>
+                <p class="dealerId">DID 81</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">18th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">33%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">77</p>
+        </td>
+    </tr><tr id="dealerPerformance_21486">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497151</span>
+                <p class="dealerId">DID 21486</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">17th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">35%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">82</p>
+        </td>
+    </tr><tr id="dealerPerformance_21087">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497145</span>
+                <p class="dealerId">DID 21087</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">16th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">37%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">69</p>
+        </td>
+    </tr><tr id="dealerPerformance_422391">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497171</span>
+                <p class="dealerId">DID 422391</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">15th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">45%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">65</p>
+        </td>
+    </tr><tr id="dealerPerformance_21749">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497157</span>
+                <p class="dealerId">DID 21749</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">14th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">51%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">62</p>
+        </td>
+    </tr><tr id="dealerPerformance_4430">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497135</span>
+                <p class="dealerId">DID 4430</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">13th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">54%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">58</p>
+        </td>
+    </tr><tr id="dealerPerformance_5975">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497139</span>
+                <p class="dealerId">DID 5975</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">12th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">57%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">120</p>
+        </td>
+    </tr><tr id="dealerPerformance_21487">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497153</span>
+                <p class="dealerId">DID 21487</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">11th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">61%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">96</p>
+        </td>
+    </tr><tr id="dealerPerformance_21747">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497155</span>
+                <p class="dealerId">DID 21747</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">10th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">64%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">57</p>
+        </td>
+    </tr><tr id="dealerPerformance_77502">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497161</span>
+                <p class="dealerId">DID 77502</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">9th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">68%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">54</p>
+        </td>
+    </tr><tr id="dealerPerformance_649292">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497177</span>
+                <p class="dealerId">DID 649292</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">8th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">76%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">83</p>
+        </td>
+    </tr><tr id="dealerPerformance_280278">
+        <th class="groupHomeDealership" scope="row">
+            <!---->
+            <!----><span>
+                <span class="js-dealerName">Dealer 497167</span>
+                <p class="dealerId">DID 280278</p>
+            </span>
+            <dealer-reviews>
+<div atdidswitch="" class="dealerReviewsSummary__container">
+    <!---->
+    <!---->
+</div></dealer-reviews>
+        </th>
+
+        <td class="groupHomeRank text-center" data-title="Rank">
+            <!----><p class="stat">7th</p>
+            <!---->
+        </td>
+
+        <td data-title="Daily ad views (Cars)" class="groupHomeAdViews status status--success">
+            <span class="divider divider--success">
+                <!----><div>
+                    <p class="stat">87%</p>
+                </div>
+                <!---->
+            </span>
+            <p class="stat-benchmark">(total price search)</p>
+        </td>
+
+        <td class="groupHomeAdvertisedStock text-center" data-title="Advertised stock">
+            <span class="divider">
+                <!----><div>
+                    <p class="stat">0</p>
+                    <!---->
+                </div>
+                <!---->
+            </span>
+        </td>
+
+        <td class="groupHomeLowQualityAd text-center" data-title="Low quality ads">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeOverageStock text-center" data-title="Stock over 45 days">
+            <!----><p class="stat">0</p>
+            <!---->
+        </td>
+
+        <td class="groupHomePricing text-center" data-title="Well priced">
+            <!----><p class="stat">0%</p>
+            <!---->
+        </td>
+
+        <td class="groupHomeDaysToTurn text-center" data-title="Days to turn">
+            <p class="stat">72</p>
+        </td>
+    </tr>
+    </tbody>
+</table></overview-results>
+                    </div>
+
+                    <!---->
+
+                </div>
+
+                
+                <!---->
+
+            </div>
+
+            <!----><pagination class="c-at-pagination u-at-text-center ">
+  <ul class="pagination c-at-pagination u-at-text-center">
+    <!----><li class="pagination-first page-item disabled">
+      <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">First</a>
+    </li>
+
+    <!----><li class="pagination-prev page-item disabled">
+      <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">Previous</a>
+      </li>
+
+    <!----><li class="pagination-page page-item active">
+      <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">1</a>
+    </li><li class="pagination-page page-item">
+      <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">2</a>
+    </li>
+
+    <!----><li class="pagination-next page-item">
+      <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">Next</a></li>
+
+    <!----><li class="pagination-last page-item">
+      <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">Last</a></li>
+  </ul>
+  </pagination>
+        </section>
+    </div>
+</div>
+</results>
+                <mobile-filter-button>
+<!----><div class="sticky-filter-bar visible-xs">
+    <button class="sticky-filter-bar--btn c-at-btn c-at-btn--primary u-at-full-width">
+        Filter dealerships
+    </button>
+</div>
+
+
+<!----></mobile-filter-button>
+            </div>
+
+            <div class="filter-overlay hidden-lg hidden-xs"></div>
+        </div>
+    </div>
+
+    <!---->
+</div>
+
+</group-home>
+    </div>
+
+    <div class="c-at-footer">
+        <ul class="c-at-footer__list">
+            <!----><li class="c-at-footer__list-item">
+                <a atanalyticscategory="standard-link" atanalyticslabel="group-footer" atanalyticson="click" class="u-at-link c-at-footer__list-item-link" href="https://explore.autotrader.co.uk/information-hub/safety-center/protecting-you" target="_self">
+                    Security
+                </a>
+            </li><li class="c-at-footer__list-item">
+                <a atanalyticscategory="standard-link" atanalyticslabel="group-footer" atanalyticson="click" class="u-at-link c-at-footer__list-item-link" href="https://trade.autotrader.co.uk/terms-conditions/" target="_blank">
+                    Terms &amp; Conditions
+                </a>
+            </li><li class="c-at-footer__list-item">
+                <a atanalyticscategory="standard-link" atanalyticslabel="group-footer" atanalyticson="click" class="u-at-link c-at-footer__list-item-link" href="https://explore.autotrader.co.uk/privacy-policy-and-cookie-use" target="_self">
+                    Privacy Policy
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body></html>

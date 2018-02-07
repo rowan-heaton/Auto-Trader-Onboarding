@@ -1,0 +1,40 @@
+.c-at-toggle {
+  overflow: hidden;
+  &__wrapper {
+    float: left;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $at-grey;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+  &__item {
+    display: inline-block;
+  }
+  &__btn {
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: transparent;
+    font-size: $at-font-size-14;
+    padding: 0 24px;
+    color: $at-copy-light;
+    cursor: pointer;
+    outline: none;
+  }
+  &__selected-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 40px;
+    background: transparent;
+    box-shadow: inset 0 0 0 2px $at-blue-lighter;
+    color: $at-blue;
+    border-radius: 20px;
+    transition: left .2s ease-in-out,  width .2s ease-in;
+  }
+}

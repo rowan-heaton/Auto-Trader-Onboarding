@@ -1,0 +1,289 @@
+.at-radio-button {
+  display: block;
+
+  [type="radio"]:checked,
+  [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &:hover {
+    span:before {
+      box-shadow: 0 0 2px 0 #1899DB;
+      border-color: $atPrimary;
+    }
+    span:after {
+      color: $atPrimary;
+    }
+  }
+
+  &__label {
+    @extend .u-at-sm-font;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    display: inline-block;
+    color: $atDarkText;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $atLightText;
+      border-radius: 100%;
+      background: $atWhite;
+    }
+
+    &:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: $atPrimary;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+  }
+
+  &--disabled {
+    // Disabled State for Checkbox and Radio Buttons
+    [disabled="disabled"] + span {
+      cursor: not-allowed;
+      color: $at-btn-disabled;
+      &:before, &:after {
+        border-color: $at-btn-disabled;
+        box-shadow: 0 0 0;
+
+        &:hover {
+          color: $at-btn-disabled;
+          border-color: $at-btn-disabled;
+          box-shadow: 0 0 0;
+        }
+      }
+
+      &:hover {
+        color: $at-btn-disabled;
+        border-color: $at-btn-disabled;
+        box-shadow: 0 0 0;
+      }
+    }
+
+    &-count {
+      color: $at-btn-disabled;
+    }
+  }
+
+
+
+
+  [type="radio"]:checked + span:after,
+  [type="radio"]:not(:checked) + span:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $atPrimary;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+  }
+
+
+  [type="radio"]:checked + span:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+
+  [type="radio"]:not(:checked) + span:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+
+  &__count {
+    @extend .u-at-xs-font;
+    font-weight: $at-regular-font;
+    font-style: italic;
+    color: $atPrimary;
+
+  }
+
+  // Large
+  &--lg {
+
+    [type="radio"]:checked + span:before,
+    [type="radio"]:not(:checked) + span:before {
+      width: 30px;
+      height: 30px;
+    }
+
+
+    [type="radio"]:checked + span:after,
+    [type="radio"]:not(:checked) + span:after {
+      width: 20px;
+      height: 20px;
+      top: 5px;
+      left: 5px;
+    }
+
+    [type="radio"]:checked+span,
+    [type="radio"]:not(:checked)+span {
+      padding-left: 40px;
+      line-height: 30px;
+    }
+  }
+
+
+  // List version.
+
+  &-list {
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    @include respond-to('phone') {
+      padding: 5px;
+    }
+    & .c-at-preloader {
+      position: absolute;
+      top: 9px;
+      right: 10px;
+    }
+    &__wrapper {
+      position: relative;
+    }
+    &__wrapper,
+    &__divider {
+      display: block;
+      float: left;
+      width: 100%;
+      &--col-6 {
+        width: 50%;
+      }
+    }
+
+    &__header {
+      margin: 20px 0;
+      float: left;
+      @include respond-to('phone') {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+
+    &__title {
+      font-size: 1em;
+      margin: 0;
+      line-height: 0.8em;
+      @include respond-to('phone') {
+        text-transform: capitalize;
+      }
+    }
+
+    &__sub-title {
+      color: $at-aqua;
+      font-size: 0.8em;
+    }
+
+    &__divider {
+      padding: 5px 15px;
+      background: $atBordersLines;
+      font-weight: $at-semibold-font;
+    }
+
+    & input[type='radio'] {
+      display: none;
+      &:checked + .at-radio-button-list__label {
+        background-color: $at-aqua;
+        color: $atWhite;
+        &:hover {
+          background-color: $at-aqua;
+          color: $atWhite;
+        }
+        &-add-tick {
+          background: url('images/svgs/tick.svg') 95% center no-repeat;
+          fill: $at-aqua;
+          background-size: 22px;
+        }
+      }
+      & + .at-radio-button-list__label {
+        margin: 0;
+        font-weight: $at-light-font;
+        clear: both;
+        float: left;
+        width: 100%;
+        padding: 10px 15px;
+        cursor: pointer;
+        background: none;
+        background-color: $atWhite;
+        border-radius: 5px;
+        &:hover {
+          background-color: $at-grey-light;
+        }
+      }
+      // Disabled state for Radio button
+      &:disabled + .at-radio-button-list__label,
+      &:disabled + .at-radio-button-list__label:hover {
+        background-color: $atWhite;
+        color: $atBordersLines;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+
+// Scroll box
+
+// Animation when revealing new boxes media query - just for mobile? http://jsfiddle.net/SO_AMK/VV2ek/
+
+.c-at-scroll-box {
+  background: $atWhite;
+  overflow-y: auto;
+  border-radius: $default-radius;
+  height: auto;
+  @include respond-to('phone') {
+    background: $atWhite;
+    border-radius: 5px;
+    clear: both;
+    margin-top: 15px;
+    float: left;
+  }
+  &--no-padding {
+    @include respond-to('phone') {
+      padding: 0;
+    }
+  }
+  &--md {
+    min-height: 375px;
+    max-height: 375px;
+    @include respond-to('phone') {
+      min-height: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+// not needed, move icon into forms
+//.o-at-form-control {
+//  &-transparent {
+//    background-color: transparent;
+//    font-size: $at-body-font;
+//    font-weight: $at-semibold-font;
+//    display: block;
+//    text-align: center;
+//    width: 50%;
+//    appearance: none;
+//    padding: 5px 10px;
+//    border: 1px solid $atBordersLines;
+//    background: transparent url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat 95% center;
+//  }
+//}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class=" js rgba backgroundsize borderimage borderradius boxshadow textshadow opacity fontface generatedcontent bgpositionshorthand bgpositionxy no-bgrepeatround no-bgrepeatspace bgsizecover lastchild boxsizing display-table mediaqueries no-overflowscrolling placeholder pointerevents no-ie8compat" style="">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no">
+
+        <title>Dealer Portal Login | Auto Trader UK</title>
+
+        <meta name="description" content="At Auto Trader we’re passionate about helping our customers to become more successful every day. Dealer Portal provides one log in point for all trade customers to access any of our products.">
+
+        <link href="./assets/favicon.ico" rel="shortcut icon">
+
+        <!-- Bootstrap core CSS -->
+        <link href="./assets/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap fonts -->
+        <link href="./assets/glyphicons-halflings-regular.svg" rel="stylesheet">
+        <link href="./assets/glyphicons-halflings-regular.ttf" rel="stylesheet">
+        <link href="./assets/glyphicons-halflings-regular.woff" rel="stylesheet">
+
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="./assets/portal.min.3f81d5a9.css">
+
+        <link href="./assets/slick.min.css" rel="stylesheet">
+        <link href="./assets/loading-bar.min.css" rel="stylesheet">
+        <link href="./assets/resetField.css" rel="stylesheet">
+        <link href="./assets/ladda-themeless.min.css" rel="stylesheet">
+        <link href="./assets/nsPopover.css" rel="stylesheet">
+        <link href="./assets/ng-scrollbar.min.css" rel="stylesheet">
+        <link href="./assets/isteven-multi-select-4.0.0.css" rel="stylesheet">
+    </head>
+    <body class="bgWhite">
+        <div>
+            <div class="topHeader noNav">
+                <div class="container headLogo">
+                    <span class="logo-container">Auto Trader Portal</span>
+                </div>
+            </div>
+        </div>
+        <div class="o-at-content-container">
+            <div>
+                <div class="container container-login">
+                    <div class="row">
+                        <section class="panel">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 formArea">
+                                    <div class="o-at-form-group o-at-form-group--padding is-inverted">
+                                        <h1 class="mainHeading">Enter memorable word</h1>
+                                        <p>Please enter the following characters from your memorable word</p>
+                                        <div class="formInner">
+                                            <form autocomplete="on" class="form-horizontal" role="form" name="memorableWordForm" novalidate="">
+                                                <h2 class="subHeading">Memorable word</h2>
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-xs-4">
+                                                        <label class="memWordChar o-at-label">1st Character</label>
+                                                        <input type="password" class="o-at-input u-at-full-width text-center" name="firstCharacter" maxlength="1" required="true">
+                                                    </div>
+                                                    <div class="col-sm-3 col-xs-4">
+                                                        <label class="memWordChar o-at-label">3rd Character</label>
+                                                        <input type="password" class="o-at-input u-at-full-width text-center" name="secondCharacter" maxlength="1" required="true">
+                                                    </div>
+                                                    <div class="col-sm-3 col-xs-4">
+                                                        <label class="memWordChar o-at-label">4th Character</label>
+                                                        <input type="password" class="o-at-input u-at-full-width text-center" name="thirdCharacter" maxlength="1" required="true">
+                                                    </div>
+                                                </div>
+                                                <div class="cb error-container">
+                                                    <span class="o-at-form-element__error-message"></span>
+                                                </div>
+                                                <div class="spacer-lg"></div>
+                                                <div>
+                                                    <a class="u-at-text-link">I have forgotten my memorable word</a>
+                                                </div>
+                                                <div class="spacer-lg"></div>
+                                                <button id="secondaryLoginBtn" type="submit" class="c-at-btn c-at-btn--primary mobileLogin goToDash">
+                                                    Login
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <div class="formAreaSidebar sidebarInner">
+                                        <h1 class="mainHeading sidebarTitle"><i class="fa fa-star"></i> Essential Security Tips</h1>
+                                        <ul class="list-tick greenbar">
+                                            <li class="bold">Always look out for the Green Bar and Auto Trader Ltd (GB) in the address bar before logging in to portal</li>
+                                        </ul>
+                                        <img src="./assets/securityBar.483fb496.png" class="securityBar">
+
+                                        <ul class="list-tick">
+                                            <li>We will never ask you to login to your account with your username and password via a link in an email or a text message</li>
+                                            <li><b>We will never ask for all of your memorable word only three characters</b></li>
+                                            <li>We will never ask for your email account's password or your security questions during login</li>
+                                            <li>Protect your account even further using the leading anti-phishing software 'Trusteer Rapport'</li>
+                                            <li>Visit the Security Centre regularly to read up to date information about staying safe online</li>
+                                            <li>Make sure your computer's software including anti-virus is up to date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ui-view="footer">
+            <div>
+                <div>
+                    <div logged-out-footer="">
+                        <div class="footerSpacer"></div>
+                        <div class="c-at-footer is-signed-out">
+                        <ul class="list-inline text-right pull-right listSeperator">
+                            <li target-blank=""><a target="_blank" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>          
+    </div>
+</body>
+</html>

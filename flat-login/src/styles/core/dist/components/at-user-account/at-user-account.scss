@@ -1,0 +1,65 @@
+.c-at-account-info {
+  color: $at-placeholder;
+  .c-at-nav-dropdown__link {
+    margin: 8px 0;
+  }
+  &__title {
+    font-size: $at-xs-font;
+  }
+}
+
+.c-at-user-info {
+  &__user-name {
+    display: block;
+    margin: 8px 16px 0 16px;
+    @include respond-to('medium-tablet-landscape') {
+      font-weight: $at-medium-font;
+      display: block!important;
+      color: $atWhite;
+      margin: 8px 16px 0 0;
+    }
+  }
+}
+
+.c-at-dealer-info {
+  &__dealership-name, &__did {
+    display: block;
+    margin: 0 16px 0 16px;
+    @include respond-to('medium-tablet-landscape') {
+      font-weight: $at-medium-font;
+      color: $atWhite;
+      margin: 0 16px 0 0;
+    }
+  }
+  &__switch {
+    margin: 8px 0 0 16px;
+    @include respond-to('medium-tablet-landscape') {
+      margin: 8px 0 0 0;
+    }
+  }
+}
+
+.c-at-account-info {
+  font-size: $at-sm-font;
+
+  &__log-out {
+    @include respond-to('small-tablet-landscape') {
+      display: none;
+    }
+
+    @include respond-to('medium-tablet-landscape') {
+      color: $atWhite;
+      display: block;
+      padding: 11px 0;
+      line-height: 28px;
+      font-size: $at-sm-font;
+      &:focus, &:active, &:hover {
+        color: $atWhite;
+      }
+    }
+  }
+
+  @include respond-to('small-tablet-landscape') {
+    display: block;
+  }
+}

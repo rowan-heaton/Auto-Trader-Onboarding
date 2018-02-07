@@ -1,0 +1,119 @@
+// Vendor prefixes
+
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  box-sizing: $boxmodel;
+}
+
+// Box Shadows
+// TODO: to Refactor box shadow mixin so one mixin across all.
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    box-shadow:inset $top $left $blur $spread $color;
+  } @else {
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+@mixin modal-box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+@mixin border($weight, $color) {
+  border: $weight solid $color;
+}
+
+// User select
+// For selecting text on the page
+
+@mixin user-select($select) {
+  user-select: $select;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin scrollbar() {
+  scrollbar-base-color: $at-nav-hover;
+  scrollbar-face-color: $at-sub-nav-hover;
+  scrollbar-3dlight-color: $at-nav-hover;
+  scrollbar-highlight-color: $at-sub-nav-hover;
+  scrollbar-track-color: $at-nav-hover;
+  scrollbar-arrow-color: $atWhite;
+  scrollbar-shadow-color: $at-nav-hover;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $at-sub-nav-hover;
+
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: $at-nav-hover;
+  }
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+// Transformations
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+}
+@mixin translate3d($x, $y, $z) {
+  transform: translate3d($x, $y, $z);
+}
+@mixin rotate($degrees) {
+  transform: rotate($degrees);
+}
+@mixin rotateX($degrees) {
+  transform: rotateX($degrees);
+}
+@mixin rotateY($degrees) {
+  transform: rotateY($degrees);
+}
+
+// Transitions
+@mixin transition($transition...) {
+  transition: $transition;
+}
+@mixin transition-property($transition-property...) {
+  transition-property: $transition-property;
+}
+@mixin transition-delay($transition-delay) {
+  transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration...) {
+  transition-duration: $transition-duration;
+}
+@mixin transition-timing-function($timing-function) {
+  transition-timing-function: $timing-function;
+}
+@mixin transition-transform($transition...) {
+  transition: transform $transition;
+}
