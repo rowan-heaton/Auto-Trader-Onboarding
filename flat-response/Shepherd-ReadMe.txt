@@ -5,16 +5,20 @@ Step 1.
 -Add 'index.html' and 'assets' folder to dist folder.
 
 Step 2.
+-Paste <link rel="stylesheet" href="bundle.css"> into the head tags of the html code
+-Paste <Script src="bundle.js"></Script> at the end of the body tags on the same page
+
+Step 3.
 -open 'index.js' in src folder
 -change the shepherd tour steps to match mockup designs
 -??'s need to be replaced with actual step numbers
 
-Step 3.
+Step 4.
 -open 'index.html' in dist folder
 -insert 'step-?' into the html element class tags*
 -*if multiple elements needed, create a new div tag with them inside
 
-Step 4.
+Step 5.
 -open the control panel
 -Navigate to the folder where you are storing your app
 - enter 'npm install' (wait for the files to be installed)
