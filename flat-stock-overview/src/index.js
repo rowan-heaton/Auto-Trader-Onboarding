@@ -12,12 +12,13 @@ let tour = new Shepherd.Tour({
   tour.addStep('step1', {
     title: 'Step 1',
     text: 'Here you can check all the latest news and contact information. You can also check your account and edit details. Also check notifications about your adverts. Also check vehicle information by clicking the yellow VRM button.',
-    attachTo: '.step1 left',
+    attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Proceed to Step 2',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -25,12 +26,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step2', {
     title: 'Step 2',
     text: 'Here you can check which one of your advertised vehicles was the most popular at getting at getting user attention.',
-    attachTo: '.step2 bottom',
+    attachTo: '.step-2 bottom',
     buttons: [{
+        text: 'Back to Step 1',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 3',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -38,12 +44,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step3', {
     title: 'Step 3',
     text: 'Here you can check a graph which displays how your adverts are doing compared to others of the same type of adverts. You can check your recent adverts by clicking the red button.',
-    attachTo: '.step3 left',
+    attachTo: '.step-3 left',
     buttons: [{
+        text: 'Back to Step 2',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 4',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -51,12 +62,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step4', {
     title: 'Step 4',
     text: 'Here you can check how many vehicles you have advertised and can view all of your advertised vehicles.',
-    attachTo: '.step4 top',
+    attachTo: '.step-4 top',
     buttons: [{
+        text: 'Back to Step 3',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 5',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -64,12 +80,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step5', {
     title: 'Step 5',
     text: 'Here you can check how many vehicles you have unadvertised and can view all of your unadvertised vehicles and advertise them.',
-    attachTo: '.step5 top',
+    attachTo: '.step-5 top',
     buttons: [{
+        text: 'Back to Step 4',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 6',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -77,12 +98,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step6', {
     title: 'Step 6',
     text: 'Here you can check how many adverts of yours are of low quality, you can click to make your adverts better and the gain attention of users.',
-    attachTo: '.step6 top',
+    attachTo: '.step-6 top',
     buttons: [{
+        text: 'Back to Step 5',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 7',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -90,12 +116,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step7', {
     title: 'Step 7',
     text: 'Here you can check how many vehicles you have had in stock for over 45 days. You can click and have your chosen vehicle advertised on the site.',
-    attachTo: '.step7 top',
+    attachTo: '.step-7 top',
     buttons: [{
+        text: 'Back to Step 6',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 8',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -103,12 +134,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step8', {
     title: 'Step 8',
     text: 'Here you can check the oldest vehicles and details that are in your stocklist.',
-    attachTo: '.step8 bottom',
+    attachTo: '.step-8 bottom',
     buttons: [{
+        text: 'Back to Step 7',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 9',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -116,12 +152,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step9', {
     title: 'Step 9',
     text: 'Here you can check the daily advert views for you oldest stock vehicles.',
-    attachTo: '.step9 bottom',
+    attachTo: '.step-9 bottom',
     buttons: [{
+        text: 'Back to Step 8',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 10',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -129,12 +170,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step10', {
     title: 'Step 10',
     text: 'Here you can check how long your vehicle has been in stock for.',
-    attachTo: '.step10 bottom',
+    attachTo: '.step-10 bottom',
     buttons: [{
+        text: 'Back to Step 9',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 11',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -142,12 +188,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step11', {
     title: 'Step 11',
     text: 'Here you can check the quality of your adverts, if it is not good, it may be a reason why your stock isn’t selling.',
-    attachTo: '.step11 bottom',
+    attachTo: '.step-11 bottom',
     buttons: [{
+        text: 'Back to Step 10',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 12',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -155,12 +206,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step12', {
     title: 'Step 12',
     text: 'Here you can check the price of your vehicle and check if the price is rightly priced.',
-    attachTo: '.step12 bottom',
+    attachTo: '.step-12 bottom',
     buttons: [{
+        text: 'Back to Step 11',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 13',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -168,12 +224,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step13', {
     title: 'Step 13',
     text: 'Here you can advertise your oldest stock by simply clicking the advertise button.',
-    attachTo: '.step13 bottom',
+    attachTo: '.step-13 bottom',
     buttons: [{
+        text: 'Back to Step 12',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 14',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -181,12 +242,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step14', {
     title: 'Step 14',
     text: 'Here you can view your full stocklist and get detailed information about your vehicles.',
-    attachTo: '.step14 left',
+    attachTo: '.step-14 left',
     buttons: [{
+        text: 'Back to Step 13',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 15',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -194,12 +260,17 @@ let tour = new Shepherd.Tour({
   tour.addStep('step15', {
     title: 'Step 15',
     text: 'Here you can view security, terms and conditions and privacy policy information.',
-    attachTo: '.step15 left',
+    attachTo: '.step-15 left',
     buttons: [{
+        text: 'Back to Step 14',
+        action: tour.back,
+        classes: 'o-link'
+      },{
         text: 'Proceed to Step 16',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -208,7 +279,7 @@ let tour = new Shepherd.Tour({
   tour.addStep('step16', {
     title: 'Step 16',
     text: 'Here you can check all of your cars that are available to look at on Portal. You can also check the performance of your adverts and see the rest of Portal.',
-    attachTo: '.step16 right',
+    attachTo: '.step-16 bottom',
     buttons: [{
         text: 'Back to Step 15',
         action: tour.back,
@@ -216,7 +287,6 @@ let tour = new Shepherd.Tour({
       },{
         text: 'Got it!',
         action: function() {
-            document.querySelector(".shepherd-launcher").classList.remove("u-at-hidden");
             return tour.hide();
         },
         classes: 'o-link o-link--primary'
@@ -225,10 +295,3 @@ let tour = new Shepherd.Tour({
   });
      
   tour.start();
-
-document.documentElement.addEventListener("click", function(event) {
-    if (event.target.classList.contains("shepherd-launcher")) {
-        document.querySelector(".shepherd-launcher").classList.add("u-at-hidden");
-        tour.start();
-    }
-});
