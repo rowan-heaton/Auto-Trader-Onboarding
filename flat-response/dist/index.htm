@@ -6,6 +6,7 @@
         <link rel="shortcut icon" href="./assets/favicon.ico">
         <title>Dealer Portal - response/home</title>
         <link href="./assets/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="bundle.css">
 
 		<!--[if IE 8]>
 			<link href="/portal/201801191022/css/ie8.css" rel="stylesheet" />
@@ -542,7 +543,7 @@
     </li>
 </ol></div>
 <div data-component="response/dashboard" data-bind="visible: visible" style=""><div class="topToolBar">
-	<div class="respFilterBox fullWidth">
+	<div class="respFilterBox fullWidth step-1">
 
 			<div class="col noBdr ">
 				<h4 class="fl mtFive mlTen">Showing Response for :</h4>
@@ -589,7 +590,7 @@
 </div>
 
 
-<div class="col2h by3h colTile noShdw noOverflow dataTile" data-component="tiles/response/adViewBenchmarking" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="background: #fff;">
+<div class="col2h by3h colTile noShdw noOverflow dataTile step-2" data-component="tiles/response/adViewBenchmarking" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="background: #fff;">
     <div class="dashTitle">
         <span class="responseIcons overview fl"></span>
         <span class="fl">Overview</span>
@@ -731,7 +732,7 @@
 		</div>
 	</div>
 </div></div></div>
-<div class="col5h by1h colTile dataTile" data-component="tiles/response/summary" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink">
+<div class="col5h by1h colTile dataTile step-3" data-component="tiles/response/summary" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink">
 	<div class="dashTitle">
 		<span class="col fl">
 			<span class="responseIcons adSummary fl"></span>
@@ -833,7 +834,7 @@
 	</div>
 </div>
 </div></div>
-<div class="col4h by2 colTile noBdr noShdw dataTile" data-component="tiles/response/responseGraphContainer" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div>
+<div class="col4h by2 colTile noBdr noShdw dataTile step-4" data-component="tiles/response/responseGraphContainer" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div>
 	<div class="noLink">
 		<div class="dashTitle floatHolder">
 			<span class="responseIcons adPerformance fl"></span>
@@ -857,7 +858,7 @@
 
 	</div>
 </div></div></div>
-<div class="col1 by2 colTile relative infoTile" data-component="tiles/response/pricing" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><span class="noLink">
+<div class="col1 by2 colTile relative infoTile step-5" data-component="tiles/response/pricing" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><span class="noLink">
    <span data-bind="click : goToStockListSortedByAdvertPrice,
    			attr : {&#39;class&#39; : !pricingInfoError() ? &#39;cursorPointer&#39; : &#39;&#39; },
    			analyticsOnClick: {
@@ -897,7 +898,7 @@
 </span>
 
 </div></div>
-<div class="col4 by1 colTile dataTile" data-component="tiles/response/leads" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="display: block;
+<div class="col4 by1 colTile dataTile step-6" data-component="tiles/response/leads" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="display: block;
 width: 934px;
 padding: 7px 7px 3px 7px;">
 	<div class="dashTitle">
@@ -2322,4 +2323,5 @@ padding: 7px 7px 3px 7px;">
         </div>
     </footer>
 </div></div>
+<Script src="bundle.js"></Script>
 </body></html>
