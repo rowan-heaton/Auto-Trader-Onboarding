@@ -542,8 +542,8 @@
       </a>
     </li>
 </ol></div>
-<div data-component="response/dashboard" data-bind="visible: visible" style=""><div class="topToolBar">
-	<div class="respFilterBox fullWidth step-1">
+<div data-component="response/dashboard" data-bind="visible: visible" style="" class="step-1"><div class="topToolBar">
+	<div class="respFilterBox fullWidth">
 
 			<div class="col noBdr ">
 				<h4 class="fl mtFive mlTen">Showing Response for :</h4>
@@ -908,7 +908,7 @@ padding: 7px 7px 3px 7px;">
 
 	<div class="cb cont iconLayout leads">
 		<ul class="floatHolder">
-			<li>
+			<li class="step-7">
 				<div data-bind="visible: userHasCallsProduct()" style="display: none;">
 					<a target="_blank" class="inlineLink" data-bind="visible: isCallStatsClickable(), attr: {href: leadsToolLocation.getCallTrackerUrl()}" href="#">
 						<div data-htmlinclude="tiles/response/leadsCallStats"><span>CALLS</span>
@@ -940,7 +940,7 @@ padding: 7px 7px 3px 7px;">
 				</a>
 			</li>
 
-			<li>
+			<li class="step-8">
 				<span>EMAILS</span>
 				<span>
 					<!-- ko if: email().status !== 'error' -->
@@ -952,7 +952,7 @@ padding: 7px 7px 3px 7px;">
 				</span>
 			</li>
 
-			<li>
+			<li class="step-9">
 				<a target="_blank" class="inlineLink" data-bind="visible: hasLiveChat,
 				   		attr: {href: leadsToolLocation.getLiveChatUrl()},
 						analyticsOnClick: {
@@ -983,7 +983,7 @@ padding: 7px 7px 3px 7px;">
 				</a>
 			</li>
 
-			<li>
+			<li class="step-10">
 				<span class="noPadding">CLICK TO CALL</span>
 				<span>
 					<!-- ko if: clickToCall().status !== 'error' -->
@@ -995,7 +995,7 @@ padding: 7px 7px 3px 7px;">
 				</span>
 			</li>
 
-			<li>
+			<li class="step-11">
 				<span class="noPadding">WEBSITE CLICKS</span>
 				<span class="floatHolder">
 					 <!-- ko if: websiteVisit().status !== 'error' -->
@@ -1007,7 +1007,7 @@ padding: 7px 7px 3px 7px;">
 				</span>
 			</li>
 
-			<li>
+			<li class="step-12">
 				<span class="noPadding">SAVES TO GARAGE</span>
 				<span class="floatHolder ">
 					<!-- ko if: saveToGarage().status !== 'error' -->
@@ -1019,7 +1019,7 @@ padding: 7px 7px 3px 7px;">
 				</span>
 			</li>
 
-			<li>
+			<li class="step-13">
 				<span>MAP VIEWS</span>
 				<span class="floatHolder ">
 					 <!-- ko if: mapView().status !== 'error' -->
@@ -1032,7 +1032,7 @@ padding: 7px 7px 3px 7px;">
 			</li>
 
 			<!-- ko ifnot: user.hasPartExProduct -->
-			<li class="printOuts">
+			<li class="printOuts step-14">
 				<span>PRINT OUTS</span>
 				<span>
 					<!-- ko if: printOut().status !== 'error' -->
