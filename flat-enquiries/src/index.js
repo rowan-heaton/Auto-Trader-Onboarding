@@ -9,12 +9,12 @@ let tour = new Shepherd.Tour({
   });
   
   //example step 1
-  tour.addStep('step??', {
-    title: 'Step ??',
-    text: 'This is some example text. blah blah blah',
-    attachTo: '.step-?? bottom',
+  tour.addStep('step1', {
+    title: 'Step 1',
+    text: 'This is where your previously set memorable word comes into use',
+    attachTo: '.step-1 bottom',
     buttons: [{
-        text: 'Proceed to Step ??',
+        text: 'Proceed to Step 2',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }]
@@ -22,18 +22,17 @@ let tour = new Shepherd.Tour({
   });
 
 //example last step
-  tour.addStep('step??', {
-    title: 'Step ??',
-    text: 'This is some example text. blah blah blah',
-    attachTo: '.step-?? bottom',
+  tour.addStep('step2', {
+    title: 'Step 2',
+    text: 'Enter the 1st character of the word, or whichever character it asks you to enter, then login.',
+    attachTo: '.step-2 bottom',
     buttons: [{
-        text: 'Back to Step ??',
+        text: 'Back to Step 1',
         action: tour.back,
         classes: 'o-link'
       },{
         text: 'Got it!',
         action: function() {
-            document.querySelector(".shepherd-launcher").classList.remove("u-at-hidden");
             return tour.hide();
         },
         classes: 'o-link o-link--primary'
@@ -42,10 +41,3 @@ let tour = new Shepherd.Tour({
   });
      
   tour.start();
-
-document.documentElement.addEventListener("click", function(event) {
-    if (event.target.classList.contains("shepherd-launcher")) {
-        document.querySelector(".shepherd-launcher").classList.add("u-at-hidden");
-        tour.start();
-    }
-});
