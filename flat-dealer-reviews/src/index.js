@@ -31,10 +31,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: 'Responce Dashboard',
         action: function() {
-            document.querySelector(".shepherd-launcher").classList.remove("u-at-hidden");
-            return tour.hide();
+            window.location.href("../../flat-group-portal/dist/index.htm")
         },
         classes: 'o-link o-link--primary'
     }]

@@ -140,9 +140,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: '2FA Page',
         action: function() {
-            return tour.hide();
+            window.location.href("../../flat-two-factor/dist/index.htm")
         },
         classes: 'o-link o-link--primary'
     }]

@@ -248,9 +248,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: 'Advertising/VRM',
         action: function() {
-        return tour.hide();
+        	window.location.href("../../flat-advertising/dist/??")
       },
         classes: 'o-link o-link--primary'
     }],

@@ -285,9 +285,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: 'Response Page',
         action: function() {
-            return tour.hide();
+            window.location.href("../../flat-response/dist/index.htm")
         },
         classes: 'o-link o-link--primary'
     }]
