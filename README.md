@@ -76,8 +76,8 @@ Step 1.
 + Add 'index.html' and 'assets' folder into dist folder.
 
 Step 2.
-+ Paste <link rel="stylesheet" href="bundle.css"> into the head tags of the html code
-+ Paste <Script src="bundle.js"></Script> at the end of the body tags on the same page
++ Paste < link rel="stylesheet" href="bundle.css" > into the head tags of the html code
++ Paste < Script src="bundle.js" >< /Script > at the end of the body tags on the same page
 
 Step 3.
 + open 'index.js' in src folder
