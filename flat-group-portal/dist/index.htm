@@ -10,6 +10,7 @@
         <meta name="application-name" content="AutoTrader">
 
         <link href="./assets/main.5243fed94805e3fb8af1.css" rel="stylesheet">
+        <link rel="stylesheet" href="bundle.css">
     </head>
     <body class="loaded">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0">
@@ -25,7 +26,7 @@
         </svg>
 
         <div class="outer-container u-at-relative">
-            <div class="c-at-header"> 
+            <div class="c-at-header Step-1 bottom"> 
                 <div> 
                     <div class="o-at-container u-at-relative"> 
                         <a class="c-at-header__logo-container" href="http://localhost.autotrader.co.uk:8404/stock-overview/#/"> 
@@ -95,19 +96,19 @@
                     <div>
                         <div class="row u-at-mb-20 u-at-mt-20">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <button class="c-at-btn c-at-btn--tertiary visible-lg" id="desktopFilterButton" type="button">
+                                <button class="c-at-btn c-at-btn--tertiary visible-lg Step-8 right" id="desktopFilterButton" type="button">
                                     Hide filters
                                 </button>
-                                <button class="c-at-btn c-at-btn--tertiary hidden-lg hidden-xs" id="tabletFilterButton" type="button">
+                                <button class="c-at-btn c-at-btn--tertiary hidden-lg hidden-xs Step-8 right" id="tabletFilterButton" type="button">
                                     Show filter
                                 </button>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <button class="c-at-btn c-at-btn--tertiary u-at-pull-right">Export leads</button>
+                                <button class="c-at-btn c-at-btn--tertiary u-at-pull-right Step-5 left">Export leads</button>
                             </div>
                         </div>
 
-                        <div class="u-at-relative" id="wrapper">
+                        <div class="u-at-relative Step-7 right" id="wrapper">
                             <filter class="hidden-xs">
                                 <div class="side-filter col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <section class="c-at-card c-at-card--shadow">
@@ -421,7 +422,7 @@
                 <results><div class="row results-container">
     <div class="col-lg-12 col-md-12 col-sm-12">
 
-        <section class="table-container">
+        <section class="table-container Step-2 top">
             <p class="table-container__heading">
                 <span class="js-headOfficeName">Head Office 497127</span>
             </p>
@@ -471,7 +472,7 @@
 
             <div class="clearfix"></div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 Step-4 bottom">
                     <button-group> <div class="c-at-toggle u-at-mb-20">
      <ul attoggle="" class="c-at-toggle__wrapper">
          <!----><li class="c-at-toggle__item">
@@ -488,7 +489,7 @@
 </div></button-group>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="table-container__help-section relative">
+                    <div class="table-container__help-section relative Step-6 left">
                         <!---->
                         <!----><a  class="table-container__help-section__link" id="help-section-open-icon">
                             <span class="table-container__help-section__text u-at-text-link hidden-xs">Understanding this page</span>
@@ -505,7 +506,7 @@
 
                 <!----><div>
 
-                    <!----><div>
+                    <!----><div class="Step-3 top">
                         <overview-results><table class="table table-hover" id="overviewResultsTable">
     <thead>
         <tr>
@@ -1792,7 +1793,7 @@
 
             </div>
 
-            <!----><pagination class="c-at-pagination u-at-text-center ">
+            <!----><pagination class="c-at-pagination u-at-text-center Step-9 top">
   <ul class="pagination c-at-pagination u-at-text-center">
     <!----><li class="pagination-first page-item disabled">
       <a class="page-link" href="http://localhost.autotrader.co.uk:8404/performance/">First</a>
@@ -1858,4 +1859,6 @@
         </ul>
     </div>
 </div>
-</body></html>
+</body>
+<script src="bundle.js"></script>
+</html>

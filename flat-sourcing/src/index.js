@@ -7,44 +7,155 @@ let tour = new Shepherd.Tour({
       scrollTo: true
     }
   });
-  
-  //example step 1
-  tour.addStep('step??', {
-    title: 'Step ??',
-    text: 'This is some example text. blah blah blah',
-    attachTo: '.step-?? bottom',
+
+  tour.addStep('step 1', {
+    title: 'Step 1',
+    text: 'This is the Sourcing page. It can be used to filter listed cars on the AutoTrader website to a particular make or model and much more',
+    attachTo: '.step-1 top',
     buttons: [{
-        text: 'Proceed to Step ??',
+        text: 'Proceed to Step 2',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
 
-//example last step
-  tour.addStep('step??', {
-    title: 'Step ??',
-    text: 'This is some example text. blah blah blah',
-    attachTo: '.step-?? bottom',
+  tour.addStep('step 2', {
+    title: 'Step 2',
+    text: 'Here is the Stack source, where you can change the type of listing you want to see',
+    attachTo: '.step-2 bottom',
     buttons: [{
-        text: 'Back to Step ??',
+        text: 'Back to Step 1',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Enquiries Page',
-        action: function() {
-        	window.location.href("../../flat-enquiries/dist/index.htm")
-        },
+        text: 'Proceed to Step 3',
+        action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
-     
-  tour.start();
 
-document.documentElement.addEventListener("click", function(event) {
-    if (event.target.classList.contains("shepherd-launcher")) {
-        document.querySelector(".shepherd-launcher").classList.add("u-at-hidden");
-        tour.start();
-    }
-});
+  tour.addStep('step 3', {
+    title: 'Step 3',
+    text: 'Here you can change the vehicle type',
+    attachTo: '.step-3 bottom',
+    buttons: [{
+        text: 'Back to Step 2',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Proceed to Step 4',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+    //advanceOn: '.docs-link click'
+  });
+
+  tour.addStep('step 4', {
+    title: 'Step 4',
+    text: 'And also change the make and model of the vehicle type you selected',
+    attachTo: '.step-4 bottom',
+    buttons: [{
+        text: 'Back to Step 3',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Proceed to Step 5',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+    //advanceOn: '.docs-link click'
+  });
+
+  tour.addStep('step 5', {
+    title: 'Step 5',
+    text: 'You can even search for a particular dealer and see their selection of vehicles',
+    attachTo: '.step-5 right',
+    buttons: [{
+        text: 'Back to Step 4',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Proceed to Step 6',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+    //advanceOn: '.docs-link click'
+  });
+
+  tour.addStep('step 6', {
+    title: 'Step 6',
+    text: 'You can filter by how recently a vehicle has been listed',
+    attachTo: '.step-6 top',
+    buttons: [{
+        text: 'Back to Step 5',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Proceed to Step 7',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+    //advanceOn: '.docs-link click'
+  });
+
+  tour.addStep('step 7', {
+    title: 'Step 7',
+    text: 'The various filters here can be selected to refine your search to your preference',
+    attachTo: '.step-7 bottom',
+    buttons: [{
+        text: 'Back to Step 6',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Proceed to Step 8',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+    //advanceOn: '.docs-link click'
+  });
+
+  tour.addStep('step 8', {
+    title: 'Step 8',
+    text: 'You can highlight a vehicle if you want to save it to view it later',
+    attachTo: '.step-8 bottom',
+    buttons: [{
+        text: 'Back to Step 7',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Proceed to Step9',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+    //advanceOn: '.docs-link click'
+  });
+
+  tour.addStep('step 9', {
+    title: 'Step 9',
+    text: 'Or view further details of a particular vehicle that interests you',
+    attachTo: '.step-9 bottom',
+    buttons: [{
+        text: 'Back to Step 8',
+        action: tour.back,
+        classes: 'o-link'
+      },{
+        text: 'Enquiries',
+        action: function() {
+        window.location.href("../../flat-enquiries/dist/index.htm")
+        },
+        classes: 'o-link o-link--primary'
+    }],
+        showCancelLink: true
+    });
+    //advanceOn: '.docs-link click'
+  tour.start();
