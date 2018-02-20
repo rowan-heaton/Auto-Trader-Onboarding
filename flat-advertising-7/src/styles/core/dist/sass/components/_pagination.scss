@@ -1,0 +1,110 @@
+.c-at-pagination {
+  clear: both;
+  margin: 15px 0;
+  &__item {
+    display: inline;
+    &:first-child .c-at-pagination__page-link {
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+    &:last-child .c-at-pagination__page-link {
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    // Disabled and Active states for sourcing pagination
+    &.disabled .c-at-pagination__page-link {
+      color: $atBackground;
+      border-color: $atBordersLines;
+      cursor: not-allowed;
+      background: $atWhite;
+      &:hover {
+        color: #edf1f5;
+        background-color: $atWhite;
+        border-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+    &.active .c-at-pagination__page-link {
+      background-color: $atPrimary;
+      border-color: $atPrimary;
+      color: $atWhite;
+      cursor: default;
+      &:hover {
+        background-color: $atPrimary;
+        border-color: $atPrimary;
+        color: $atWhite;
+        cursor: default;
+      }
+    }
+  }
+  &__page-link {
+    cursor: pointer;
+    position: relative;
+    float: left;
+    padding: 6px 15px;
+    line-height: 1.4em;
+    text-decoration: none;
+    color: $atPrimary;
+    background-color: $atWhite;
+    border: 1px solid $atBordersLines;
+    margin-left: -1px;
+    &:hover {
+      color: $atDark;
+      background-color: #eee;
+      border-color: #ddd;
+      cursor: pointer;
+    }
+    &--active {
+      background-color: $atPrimary;
+      border-color: $atPrimary;
+      color: $atWhite;
+      cursor: default;
+      &:hover {
+        background-color: $atPrimary;
+        border-color: $atPrimary;
+        color: $atWhite;
+        cursor: default;
+      }
+    }
+    &--disabled {
+      color: $atBackground;
+      border-color: $atBordersLines;
+      cursor: not-allowed;
+      background: $atWhite;
+      &:hover {
+        color: $atBackground;
+        background-color: $atWhite;
+        border-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.c-at-pager {
+  list-style: none;
+  text-align: center;
+  &__item {
+    display: inline;
+    & .disabled {
+      color: $atBackground;
+      background-color: $atWhite;
+      cursor: not-allowed;
+    }
+  }
+  &__page-link {
+    color: $atPrimary;
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: $atWhite;
+    border: 1px solid $atBordersLines;
+    border-radius: 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    &--disabled {
+      color: $atBackground;
+      background-color: $atWhite;
+      cursor: not-allowed;
+    }
+  }
+}

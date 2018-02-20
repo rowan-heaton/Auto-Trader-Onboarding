@@ -1,0 +1,54 @@
+hr {
+  border-top: 1px solid $atBordersLines;
+  border-bottom: none;
+  margin: 20px 0;
+  &.hr--sm {
+    margin: 10px 0;
+  }
+  &.hr--md {
+    margin: 30px 0;
+  }
+  &.hr--lg {
+    margin: 40px 0;
+  }
+  &.hr--xl {
+    margin: 60px 0;
+  }
+  &.dashed {
+    border-top: 1px dashed $atBordersLines;
+    border-bottom: none;
+  }
+  &.dotted {
+    border-top: 1px dotted $atBordersLines;
+    border-bottom: none;
+  }
+  &.dotted-thick {
+    background-color: $atWhite;
+    border-top: 2px dotted $atBordersLines;
+    border-bottom: none;
+  }
+  &.shadow {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px $atBordersLines inset;
+  }
+  &.faded {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f9f9f9, $atBordersLines, #f9f9f9);
+    background-image: -moz-linear-gradient(left, #f9f9f9, $atBordersLines, #f9f9f9);
+    background-image: -ms-linear-gradient(left, #f9f9f9, $atBordersLines, #f9f9f9);
+    background-image: -o-linear-gradient(left, #f9f9f9, $atBordersLines, #f9f9f9);
+  }
+  &.shadow-thick {
+    border: none;
+    height: 20px;
+    height: 50px;
+    border-bottom: 1px solid $atBordersLines;
+    box-shadow: 0 20px 20px -15px $atLightText;
+    margin: -20px auto 20px;
+  }
+}
+
+
+

@@ -1,0 +1,30 @@
+@lost flexbox flex;
+@lost gutter 24px;
+@lost rounder 100;
+
+$at-base-margin-bottom: 16px;
+
+@mixin row-setup() {
+  lost-flex-container: row;
+  lost-utility: clearfix;
+  > *  {
+    width: 100%; // this is for any angular selectors, otherwise flex box doesn't work
+  }
+}
+
+@mixin grid-setup() {
+  [data-grid="container"] {
+    lost-center: 90%;
+    @include row-setup();
+    @include bp('xl') {
+      lost-center: $at-bp-xl;
+    }
+  }
+
+  [data-grid="row"] {
+    @include row-setup();
+    margin-bottom: $at-base-margin-bottom;
+  }
+}
+
+@include grid-setup();

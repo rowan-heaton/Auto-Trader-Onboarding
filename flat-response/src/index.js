@@ -250,7 +250,7 @@ let tour = new Shepherd.Tour({
       },{
         text: 'Advertising/VRM',
         action: function() {
-        	window.location.href("../../flat-advertising/dist/??")
+        	window.location.href("../../flat-advertising-1/dist/index.htm")
       },
         classes: 'o-link o-link--primary'
     }],

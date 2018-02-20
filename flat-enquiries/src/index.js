@@ -17,7 +17,8 @@ let tour = new Shepherd.Tour({
         text: 'Proceed to Step 2',
         action: tour.next,
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelIcon: true
     //advanceOn: '.docs-link click'
   });
 
@@ -36,7 +37,8 @@ let tour = new Shepherd.Tour({
             window.location.href("../../flat-dealer-reviews/dist/index.htm")
         },
         classes: 'o-link o-link--primary'
-    }]
+    }],
+    showCancelIcon: true
     //advanceOn: '.docs-link click'
   });
      

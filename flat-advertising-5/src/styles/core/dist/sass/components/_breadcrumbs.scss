@@ -1,0 +1,88 @@
+// Breadcrumb
+.c-at-breadcrumb-wrapper {
+  &--blue {
+    background-color: $at-blue;
+    .c-at-breadcrumb {
+      margin: 16px 0;
+      &__active {
+        color: $atWhite;
+      }
+      &__icon {
+        fill: $atWhite;
+      }
+    }
+  }
+}
+
+.c-at-breadcrumb {
+  font-size: $at-xs-font;
+  margin: 15px 30px;
+
+  @include respond-to('medium-tablet-landscape') {
+    margin: 10px;
+  }
+
+
+  &--lg {
+    font-size: 16px;
+    & .c-at-breadcrumb__icon,
+    & .c-at-breadcrumb__icon--chevron-left {
+      width: 18px;
+      height: 26px;
+    }
+  }
+  &__link {
+    float: left;
+  }
+  &__icon {
+    position: relative;
+    float: left;
+    width: 12px;
+    height: 18px;
+    fill: $atDarkText;
+    display: inline;
+    margin: 0 5px;
+    &--chevron-left {
+      transform: rotate(180deg);
+    }
+  }
+  &__active {
+    color: $atDarkText;
+  }
+}
+
+// Go Back link
+.c-at-go-back {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  &.is-inverted {
+    .c-at-go-back__icon {
+      fill: $at-white;
+    }
+  }
+
+  &:hover {
+    &.is-inverted {
+      .c-at-go-back__icon {
+        fill: $at-aqua-light;
+      }
+    }
+  }
+
+  &--relative {
+    position: relative;
+    top: auto;
+  }
+  &__icon {
+    position: relative;
+    float: left;
+    width: 18px;
+    height: 18px;
+    fill: $at-blue;
+    transform: rotate(180deg);
+  }
+  &__text {
+    margin-left: 5px;
+  }
+}

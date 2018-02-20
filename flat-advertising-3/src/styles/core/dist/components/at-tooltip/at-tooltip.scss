@@ -1,0 +1,255 @@
+
+$tooltip-width: 288;
+$tooltip-shadow-width: 4;
+
+
+.c-at-tooltip {
+  position: relative;
+  display: inline-block;
+
+
+  &__container {
+    padding: $at-base-unit*2;
+    z-index: 1;
+    position: absolute;
+    font-size: $at-sm-font;
+    @include box-shadow( 0, $tooltip-shadow-width+px, $at-base-unit/2, 0, rgba(0, 0, 0, 0.12));
+    min-height: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    width: $tooltip-width +px;
+    text-align: left;
+    background-color: $at-blue;
+    color: $at-white;
+    left: calc(50% - (#{$tooltip-width/2}px + #{$tooltip-shadow-width}px));
+
+    @include bp('md' ) {
+      padding: $at-base-unit*2 $at-base-unit*4 $at-base-unit*2 $at-base-unit*2;
+      &[data-placement="left"] {
+        left: 0;
+      }
+      &[data-placement="center"] {
+        left: calc(50% - (#{$tooltip-width/2}px + #{$tooltip-shadow-width}px));
+      }
+      &[data-placement="right"] {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    &:after, &[data-placement="left"]:after {
+      border-bottom-color: $at-blue;
+    }
+
+    &[data-placement="right"]:after {
+      right: 20px;
+      left: auto;
+    }
+
+    &[data-placement="center"]:after {
+      right: auto;
+      left: 50%;
+      margin-left: -($at-base-unit/2);
+    }
+
+    //== Positioning
+    &:after, &[data-placement="left"]:after {
+      content: '';
+      position: absolute;
+      top: -$at-base-unit;
+      right: auto;
+      left: 50%;
+      margin-left: -($at-base-unit/2);
+      border: solid transparent $at-base-unit;
+      border-bottom-color: $at-blue;
+      border-top-width: 0;
+    }
+    @include bp('md' ) {
+      &[data-placement="right"]:after {
+        right: 20px;
+        left: auto;
+        margin-left: 0;
+      }
+      &[data-placement="left"]:after {
+        top: -$at-base-unit;
+        left: 20px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__icon {
+    &-info {
+      width: 20px;
+      height: 16px;
+      position: relative;
+      fill: $at-white;
+      display: inline-block;
+      cursor: pointer;
+      &--inverted {
+        fill: $at-blue;
+      }
+    }
+  }
+
+  &--inverted {
+    .c-at-tooltip__container {
+      background-color: $at-grey-light;
+      color: $at-blue;
+
+      &:after, &[data-placement]:after {
+        border-bottom-color: $at-grey-light;
+      }
+
+      & .c-at-tooltip__close {
+        fill: $at-blue;
+      }
+    }
+  }
+
+  &__content {
+    display:inline-block;
+    line-height: 1.45;
+  }
+
+  &__close {
+    position:absolute;
+    top: 18px;
+    right: 20px;
+    fill: $at-white;
+    width: 15px;
+    height: 20px;
+    cursor: pointer;
+    padding: 0;
+    display: none;
+    &.c-at-btn {
+      display: inline-block;
+      position: static;
+      margin-top: $at-base-unit*2;
+      width: 100%;
+      @include bp('md') {
+        display: none;
+      }
+    }
+    &:hover, &:visited, &:focus {
+      padding: 0;
+    }
+    @include bp('md') {
+      fill: $at-white;
+      cursor: pointer;
+      position: absolute;
+      display: block;
+      margin: 0;
+      top: $at-base-unit;
+      right: $at-base-unit;
+      width: 16px;
+      height: 16px;
+      &:hover, &:visited, &:focus {
+        position: absolute;
+        margin: 0;
+      }
+    }
+  }
+
+
+  // As data tooltip
+  &[data-tooltip] {
+    position: relative;
+    &::before,
+    &::after {
+      position: absolute;
+      display: none;
+      opacity: $default-opacity;
+    }
+    &::before {
+      content: attr(data-tooltip);
+      background: $at-blue;
+      color: $at-white;
+      font-size: $at-font--sm;
+      padding: $at-base-unit;
+      border-radius: $default-radius;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    &::after {
+      width: 0;
+      height: 0;
+      border: $at-base-unit solid transparent;
+      content: '';
+    }
+
+    &:hover {
+      &:before, &:after {
+        display: block;
+      }
+    }
+
+    // Positioning
+    &[data-placement="left"] {
+      &::before {
+        top: -25%;
+        right: 100%;
+        margin-right: 8px;
+      }
+
+      &::after {
+        border-left-color: $at-blue;
+        border-right: none;
+        top: 50%;
+        right: 100%;
+      }
+    }
+
+
+    &[data-placement="right"] {
+      &::before {
+        top: -25%;
+        left: 100%;
+        margin-left: 10px;
+      }
+
+      &::after {
+        margin-top: -6px;
+        margin-left: 2px;
+        border-right-color: $at-blue;
+        border-left: none;
+        top: 50%;
+        left: 100%;
+      }
+
+    }
+
+    &[data-placement="top"] {
+      &::before {
+        bottom: 100%;
+        left: 0;
+        margin-bottom: 10px;
+      }
+
+      &::after {
+        border-top-color: $at-blue;
+        border-bottom: none;
+        bottom: 100%;
+        left: 10px;
+        margin-bottom: 2px;
+      }
+
+    }
+
+    &[data-placement="bottom"] {
+      &::before {
+        top: 100%;
+        left: 0;
+        margin-top: 10px;
+      }
+
+      &::after {
+        border-bottom-color: $at-blue;
+        border-top: none;
+        top: 100%;
+        left: 10px;
+        margin-top: 2px;
+      }
+    }
+  }
+}
