@@ -13,7 +13,7 @@ let tour = new Shepherd.Tour({
     text: 'This is the Sourcing page. It can be used to filter listed cars on the AutoTrader website to a particular make or model and much more',
     attachTo: '.step-1 top',
     buttons: [{
-        text: 'Proceed to Step 2',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -26,11 +26,11 @@ let tour = new Shepherd.Tour({
     text: 'Here is the Stack source, where you can change the type of listing you want to see',
     attachTo: '.step-2 bottom',
     buttons: [{
-        text: 'Back to Step 1',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 3',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -43,11 +43,11 @@ let tour = new Shepherd.Tour({
     text: 'Here you can change the vehicle type',
     attachTo: '.step-3 bottom',
     buttons: [{
-        text: 'Back to Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 4',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -60,11 +60,11 @@ let tour = new Shepherd.Tour({
     text: 'And also change the make and model of the vehicle type you selected',
     attachTo: '.step-4 bottom',
     buttons: [{
-        text: 'Back to Step 3',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 5',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -77,11 +77,11 @@ let tour = new Shepherd.Tour({
     text: 'You can even search for a particular dealer and see their selection of vehicles',
     attachTo: '.step-5 right',
     buttons: [{
-        text: 'Back to Step 4',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 6',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -94,11 +94,11 @@ let tour = new Shepherd.Tour({
     text: 'You can filter by how recently a vehicle has been listed',
     attachTo: '.step-6 top',
     buttons: [{
-        text: 'Back to Step 5',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 7',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -111,11 +111,11 @@ let tour = new Shepherd.Tour({
     text: 'The various filters here can be selected to refine your search to your preference',
     attachTo: '.step-7 bottom',
     buttons: [{
-        text: 'Back to Step 6',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 8',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -128,11 +128,11 @@ let tour = new Shepherd.Tour({
     text: 'You can highlight a vehicle if you want to save it to view it later',
     attachTo: '.step-8 bottom',
     buttons: [{
-        text: 'Back to Step 7',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step9',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -145,13 +145,13 @@ let tour = new Shepherd.Tour({
     text: 'Or view further details of a particular vehicle that interests you',
     attachTo: '.step-9 bottom',
     buttons: [{
-        text: 'Back to Step 8',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
         text: 'Enquiries',
         action: function() {
-        window.location.href("../../flat-enquiries/dist/index.htm")
+        window.location.href="../../flat-enquiries/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

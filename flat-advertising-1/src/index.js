@@ -14,11 +14,11 @@ let tour = new Shepherd.Tour({
     text: 'Enter regestration of the vehicle',
     attachTo: '.step-1 bottom',
     buttons: [{
-        text: 'Proceed to Step 2',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
 tour.addStep('step2', {
@@ -26,15 +26,15 @@ tour.addStep('step2', {
     text: 'Enter the milage of the vehicle',
     attachTo: '.step-2 bottom',
     buttons: [{
-        text: 'Proceed to Step 3',
-        action: tour.next,
-        classes: 'o-link o-link--primary'
-    },{
-         text: 'Back to Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link o-link--primary'
+    },{
+         text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
 });
 //example last step
   tour.addStep('step3', {
@@ -42,17 +42,17 @@ tour.addStep('step2', {
     text: 'Next press button to find vehicle',
     attachTo: '.step-3 bottom',
     buttons: [{
-        text: 'Back to Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
         text: 'Advertising #2',
         action: function() {
-            window.location.href("../../flat-advertising-2/dist/index.htm");
+            window.location.href="../../flat-advertising-2/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
      

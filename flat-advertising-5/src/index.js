@@ -14,11 +14,11 @@ let tour = new Shepherd.Tour({
     text: 'You can add spec and upgrades on the car',
     attachTo: '.step-1 bottom',
     buttons: [{
-        text: 'Proceed to Step 2',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
 tour.addStep('step2', {
@@ -26,45 +26,45 @@ tour.addStep('step2', {
     text: 'You can skip to price',
     attachTo: '.step-2 bottom',
     buttons: [{
-        text: 'Proceed to Step 3',
-        action: tour.next,
-        classes: 'o-link o-link--primary'
-    },{
-         text: 'Back to Step 1',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link o-link--primary'
+    },{
+         text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
 });
 tour.addStep('step3', {
     title: 'Step 3',
     text: 'You can manually search for specs.',
     attachTo: '.step-3 bottom',
     buttons: [{
-        text: 'Proceed to Step 4',
-        action: tour.next,
-        classes: 'o-link o-link--primary'
-    },{
-         text: 'Back to Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link o-link--primary'
+    },{
+         text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
 });
 tour.addStep('step4', {
     title: 'Step 4',
     text: 'Next you can add it',
     attachTo: '.step-4 bottom',
     buttons: [{
-        text: 'Proceed to Step 5',
-        action: tour.next,
-        classes: 'o-link o-link--primary'
-    },{
-         text: 'Back to Step 3',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link o-link--primary'
+    },{
+         text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
 });
 
 
@@ -74,17 +74,17 @@ tour.addStep('step4', {
     text: 'Enter the milage of the vehicle',
     attachTo: '.step-5 bottom',
     buttons: [{
-        text: 'Back to Step 4',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: 'Advertising #6',
         action: function() {
-            window.location.href("../../flat-advertising-6/dist/index.htm")
+            window.location.href="../../flat-advertising-6/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],
-    showCancelIcon: true
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
      

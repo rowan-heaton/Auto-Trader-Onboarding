@@ -14,7 +14,7 @@ let tour = new Shepherd.Tour({
     text: 'Response time frame is set here. Defaults to last 7 days.',
     attachTo: '.step-1 top',
     buttons: [{
-        text: 'Step 2',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -28,11 +28,11 @@ let tour = new Shepherd.Tour({
     text: 'How many ad views youre getting vs youre competitors. RED - lower response rate & GREEN - higher responce rate.',
     attachTo: '.step-2 bottom',
     buttons: [{
-        text: 'Step 1',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 3',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -46,11 +46,11 @@ let tour = new Shepherd.Tour({
     text: 'Summative figures of the response from your adverts.',
     attachTo: '.step-3 right',
     buttons: [{
-        text: 'Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 4',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -64,11 +64,11 @@ let tour = new Shepherd.Tour({
     text: 'Visual representation of advert views in the response time frame.',
     attachTo: '.step-4 bottom',
     buttons: [{
-        text: 'Step 3',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 5',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -82,11 +82,11 @@ let tour = new Shepherd.Tour({
     text: 'Indicates how we think youre vehicles are priced. Guidence on what is above, below and at market values.',
     attachTo: '.step-5 left',
     buttons: [{
-        text: 'Step 4',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 6',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -100,11 +100,11 @@ let tour = new Shepherd.Tour({
     text: 'These are all the different types of interactions consumers have with youre advert.',
     attachTo: '.step-6 top',
     buttons: [{
-        text: 'Step 5',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 7',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -118,11 +118,11 @@ let tour = new Shepherd.Tour({
     text: 'Everytime the number on an advert is called, it will update this figure.',
     attachTo: '.step-7 bottom',
     buttons: [{
-        text: 'Step 6<',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 8',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -136,11 +136,11 @@ let tour = new Shepherd.Tour({
     text: 'Each emial sent to youre self is recorded and dispayed here.',
     attachTo: '.step-8 bottom',
     buttons: [{
-        text: 'Step 7',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 9',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -154,11 +154,11 @@ let tour = new Shepherd.Tour({
     text: '????????',
     attachTo: '.step-9 bottom',
     buttons: [{
-        text: 'Step 8',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 10',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -172,11 +172,11 @@ let tour = new Shepherd.Tour({
     text: 'On mobile devices, when a consumer clicks the number on an advert and brings up thier dialer to enquire about the car.',
     attachTo: '.step-10 bottom',
     buttons: [{
-        text: 'Step 9',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 11',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -190,11 +190,11 @@ let tour = new Shepherd.Tour({
     text: 'Everytime youre website is directly visited from the link on the advert.',
     attachTo: '.step-11 bottom',
     buttons: [{
-        text: 'Step 10',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 12',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -208,11 +208,11 @@ let tour = new Shepherd.Tour({
     text: 'Consumers can save youre advert to their gararge, for later use if they are intereted',
     attachTo: '.step-12 bottom',
     buttons: [{
-        text: 'Step 11',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 13',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -226,11 +226,11 @@ let tour = new Shepherd.Tour({
     text: 'On mobile devices, consumers can bring up the location of your dealership location to find out where it is.',
     attachTo: '.step-13 bottom',
     buttons: [{
-        text: 'Step 12<',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Step 14',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -244,13 +244,13 @@ let tour = new Shepherd.Tour({
     text: 'Consumers can print off each advert and each time they do its recorded here.',
     attachTo: '.step-14 bottom',
     buttons: [{
-        text: 'Step 13',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
         text: 'Advertising/VRM',
         action: function() {
-        	window.location.href("../../flat-advertising-1/dist/index.htm")
+        	window.location.href="../../flat-advertising-1/dist/index.htm";
       },
         classes: 'o-link o-link--primary'
     }],

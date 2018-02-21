@@ -14,7 +14,7 @@ let tour = new Shepherd.Tour({
     text: 'To begin logging into your account, you must insert the email address you registered your account with.',
     attachTo: '.step-1 top',
     buttons: [{
-        text: 'Proceed to Step 2',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -28,11 +28,11 @@ let tour = new Shepherd.Tour({
     text: 'After entering your email address, you must insert your registered password, that’s used to log into the account with.',
     attachTo: '.step-2 top',
     buttons: [{
-        text: 'Back to Step 1',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 3',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -46,11 +46,11 @@ let tour = new Shepherd.Tour({
     text: 'Once your email and password is entered, you can click the log in button to gain access to your account.',
     attachTo: '.step-3 right',
     buttons: [{
-        text: 'Back to Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 4',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -64,11 +64,11 @@ let tour = new Shepherd.Tour({
     text: 'If you have forgotten your email address or password, simply click this text and you will be redirected to gain back access to your account.',
     attachTo: '.step-4 bottom',
     buttons: [{
-        text: 'Back to Step 3',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 5',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -82,11 +82,11 @@ let tour = new Shepherd.Tour({
     text: 'If you are new to AutoTrader, you can create an account and place your adverts by clicking this button.',
     attachTo: '.step-5 bottom',
     buttons: [{
-        text: 'Back to Step 4',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 6',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -100,11 +100,11 @@ let tour = new Shepherd.Tour({
     text: 'For more advice on products and help from experts, click this link.',
     attachTo: '.step-6 right',
     buttons: [{
-        text: 'Back to Step 5',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 7',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -118,11 +118,11 @@ let tour = new Shepherd.Tour({
     text: 'Here you can read information regarding the security of your account and how to prevent fraudulent use of your account.',
     attachTo: '.step-7 bottom',
     buttons: [{
-        text: 'Back to Step 6',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 8',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -136,13 +136,13 @@ let tour = new Shepherd.Tour({
     text: 'For information about privacy, click this link to be directed to AutoTrader’s Privacy Policy.',
     attachTo: '.step-8 left',
     buttons: [{
-        text: 'Back to Step 7',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
         text: '2FA Page',
         action: function() {
-            window.location.href("../../flat-two-factor/dist/index.htm")
+            window.location.href="../../flat-two-factor/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }]

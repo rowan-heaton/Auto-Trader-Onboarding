@@ -14,7 +14,7 @@ let tour = new Shepherd.Tour({
     text: 'This is the performance dashboard. This shows a list of other dealers, which allows you to compare yourself to others who have similar ads.',
     attachTo: '.Step-1 bottom',
     buttons: [{
-        text: 'Proceed to Step 2',
+        text: 'next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -27,11 +27,11 @@ let tour = new Shepherd.Tour({
     text: 'Here is list of all other dealers. With corresponding information such as their rank, daily ad views, stocks etc.',
     attachTo: '.Step-2 top',
     buttons: [{
-        text: 'Back to Step 1',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 3',
+        text: 'next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -39,36 +39,37 @@ let tour = new Shepherd.Tour({
     //advanceOn: '.docs-link click'
   });
 
-    tour.addStep('Step-3', {
+	tour.addStep('Step-3', {
     title: 'Step 3',
-    text: 'You can sort the list by ascending/descending order here.',
-    attachTo: '.Step-3 top',
+    text: 'Here you can choose to show the Overview or Price indicator view.',
+    attachTo: '.Step-3 bottom',
     buttons: [{
-        text: 'Back to Step 2',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 4',
+        text: 'next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
 	showCancelLink: true
     //advanceOn: '.docs-link click'
   });
-	tour.addStep('Step-4', {
+
+    tour.addStep('Step-4', {
     title: 'Step 4',
-    text: 'Here you can choose to show the Overview or Price indicator view.',
-    attachTo: '.Step-4 bottom',
+    text: 'You can sort the list by ascending/descending order here.',
+    attachTo: '.Step-4 top',
     buttons: [{
-        text: 'Back to Step 3',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 5',
+        text: 'next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
-	showCancelLink: true
+    showCancelLink: true
     //advanceOn: '.docs-link click'
   });
   
@@ -77,11 +78,11 @@ let tour = new Shepherd.Tour({
     text: 'You can export leads using this button.',
     attachTo: '.Step-5 left',
     buttons: [{
-        text: 'Back to Step 4',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 6',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -94,11 +95,11 @@ let tour = new Shepherd.Tour({
     text: 'If there\'s something you don\'t understand about the table, click here.',
     attachTo: '.Step-6 left',
     buttons: [{
-        text: 'Back to Step 5',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 7',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -111,11 +112,11 @@ let tour = new Shepherd.Tour({
     text: 'You can search through different dealers by using this filter, e.g., by Dealership or Franchise.',
     attachTo: '.Step-7 right',
     buttons: [{
-        text: 'Back to Step 6',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 8',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -128,11 +129,11 @@ let tour = new Shepherd.Tour({
     text: 'You can press this button to show/hide the filter.',
     attachTo: '.Step-8 right',
     buttons: [{
-        text: 'Back to Step 7',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Proceed to Step 9',
+        text: 'Next',
         action: tour.next,
         classes: 'o-link o-link--primary'
     }],
@@ -145,13 +146,12 @@ let tour = new Shepherd.Tour({
     text: 'You can navigate through different pages of the other dealers here.',
     attachTo: '.Step-9 top',
     buttons: [{
-        text: 'Back to Step 8',
+        text: 'Back',
         action: tour.back,
         classes: 'o-link'
       },{
         text: 'Got it!',
         action: function() {
-            //document.querySelector(".shepherd-launcher").classList.remove("u-at-hidden");
             return tour.hide();
         },
         classes: 'o-link o-link--primary'
@@ -162,10 +162,3 @@ let tour = new Shepherd.Tour({
   });
      
   tour.start();
-
-document.documentElement.addEventListener("click", function(event) {
-    if (event.target.classList.contains("shepherd-launcher")) {
-        document.querySelector(".shepherd-launcher").classList.add("u-at-hidden");
-        tour.start();
-    }
-});
