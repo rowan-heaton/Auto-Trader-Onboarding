@@ -108,66 +108,278 @@
             </div>
         </div>
     </header>
+    <div class="contents__holder"></div>
     <div class="outer-container u-at-relative">
         <a class="c-at-header__skip" href="#content">Skip to content</a>
         <header>
-            <div class="c-at-header" id="nav">
-                <div>
-                    <div class="o-at-container u-at-relative">
-                        <a class="c-at-header__logo-container" href="./"><svg height="18" viewbox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg">
-						<path d="M23.029 7.155H4.073L5.59 3.33C6.38 1.384 8.224.045 10.316 0h15.559L23.04 7.155h-.011zm-7.425 10.091H0l2.88-7.143h18.945l-1.519 3.824c-.787 1.936-2.587 3.263-4.702 3.32z" fill="#00D7D2"></path>
-						<title>Auto Trader</title></svg></a> <button aria-label="Menu Button" class="c-at-header__toggle has-vrm-button" type="button">
-						<div class="c-at-header__mobile-menu-icon">
-							<span></span> <span></span> <span></span>
-						</div></button>
-                        <nav aria-label="autotrader portal" class="c-at-navbar" role="navigation">
-                            <div class="c-at-navbar__nav c-at-navbar__nav--left">
-                                <ul class="c-at-navbar__sub-nav">
-                                    <li class="c-at-navbar__item">
-                                        <div class="dropdown step-16">
-                                            <a aria-expanded="false" aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript:void(0);"><span>Stock</span> <span class="svg-icon c-at-nav-dropdown__dropdown-arrow hidden-lg hidden-md"><svg height="512" viewbox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
-											<path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
-											<title>Chevron icon</title></svg></span></a>
-                                        </div>
-                                    </li>
-                                    <li class="c-at-navbar__item">
-                                        <div class="dropdown">
-                                            <a aria-expanded="false" aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="../../flat-group-portal/dist/index.htm"><span>Performance</span> <span class="svg-icon c-at-nav-dropdown__dropdown-arrow hidden-lg hidden-md"><svg height="512" viewbox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
-											<path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
-											<title>Chevron icon</title></svg></span></a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="c-at-navbar__nav c-at-navbar__nav--right">
-                                <div class="c-at-navbar__nav--right-nav visible-md-inline-block visible-lg-inline-block step-1">
-                                    <ul class="c-at-navbar__sub-nav">
-                                        <li class="c-at-navbar__item">
-                                            <a class="c-at-navbar__link" href="./" target="_self">News &amp; Explore</a>
-                                        </li>
-                                        <li class="c-at-navbar__item">
-                                            <a class="c-at-navbar__link" href="./" target="_self">Contact</a>
-                                        </li>
-                                        <li class="c-at-navbar__item">
-                                            <div class="dropdown">
-                                                <a aria-expanded="false" aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript:void(0);"><span>Account</span> <span class="svg-icon c-at-nav-dropdown__dropdown-arrow hidden-lg hidden-md"><svg height="512" viewbox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
-												<path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
-												<title>Chevron icon</title></svg></span></a>
+                       <div class="c-at-header" id="nav">
+                          <div>
+                             <div class="o-at-container u-at-relative">
+                                <a  class="c-at-header__logo-container" href="">
+                                   <svg height="18" viewBox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M23.029 7.155H4.073L5.59 3.33C6.38 1.384 8.224.045 10.316 0h15.559L23.04 7.155h-.011zm-7.425 10.091H0l2.88-7.143h18.945l-1.519 3.824c-.787 1.936-2.587 3.263-4.702 3.32z" fill="#00D7D2">
+                                      </path>
+                                      <title>Auto Trader</title>
+                                   </svg>
+                                </a>
+                                <button aria-label="Menu Button" class="c-at-header__toggle has-vrm-button" type="button">
+                                   <div class="c-at-header__mobile-menu-icon">
+                                      <span></span> 
+                                      <span></span> 
+                                      <span></span> 
+                                   </div>
+                                </button>
+                                <nav aria-label="autotrader portal" class="c-at-navbar" role="navigation">
+                                   <div class="c-at-navbar__nav c-at-navbar__nav--left">
+                                      <ul class="c-at-navbar__sub-nav">
+
+
+                                         <li class="c-at-navbar__item">
+                                            <div>
+                                               <div>
+                                                  <div class="dropdown">
+                                                     <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                        Stock
+                                                     </a>
+                                                     <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                        <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                           <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                              <span class="svg-icon c-at-navbar__back-arrow">
+                                                                 <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z">
+                                                                    </path>
+                                                                    <title>Chevron icon</title>
+                                                                 </svg>
+                                                              </span>
+                                                              Back 
+                                                           </a>
+                                                        </li>
+                                                        <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                           <ul class="c-at-nav-dropdown">
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Advertise</a></li>
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Stock &amp; ads</a></li>
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Sold vehicles</a></li>
+                                                           </ul>
+                                                        </li>
+                                                     </ul>
+                                                  </div>
+                                               </div>
                                             </div>
-                                        </li>
-                                        <li class="c-at-navbar__item"><span class="c-at-navbar__link" tabindex="0">Notifications <span class="o-at-badge o-at-badge--white-dark-text">1</span></span>
-                                        </li>
-                                    </ul>
-                                </div><button class="c-at-vrm-lookup__lookup-button"><span class="c-at-vrm-lookup__lookup-button-text">Vehicle look up</span> <span class="c-at-vrm-lookup__lookup-button-icon"><svg height="25" viewbox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
-								<title>Artboard</title>
-								<path d="M22.461 17.011v4.939c0 .57-.47 1.04-1.04 1.04h-2.88c-.57 0-1.04-.47-1.04-1.04V21h-10v.96c0 .57-.47 1.04-1.04 1.04h-2.88c-.57 0-1.04-.47-1.04-1.04v-6.12c0-.67.2-1.3.58-1.83-.55-.14-.95-.4-1.07-.8-.3-.96.76-1.85 2.2-2.13.4-.08.98-.04 1.48.1l.3-1.7C6.471 7.9 7.241 7 8.581 7H11v1H8.571c-.78 0-1.25.55-1.56 1.7l-.58 3.25-.68-.74c-.1-.08-.97-.2-1.3-.15-.5.1-.94.3-1.2.52-.2.16-.25.28-.24.33.02.04.57.23 1.17.25l1.4.07-1.12.84c-.57.42-.9 1.07-.9 1.78v6.12c0 .02 0 .04.03.04h2.88c.02 0 .04-.02.04-.04V20h12v1.96c0 .02.02.04.04.04h2.88c.02 0 .04-.02.04-.04v-5.92l.99.971zm-.97-6.433l3.337 3.336a.5.5 0 1 1-.707.707l-3.416-3.416A5.002 5.002 0 0 1 13 7c0-2.76 2.24-5 5-5a5.002 5.002 0 0 1 3.492 8.578zM7.502 17c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h10c.28 0 .5.22.5.5s-.22.5-.5.5h-10zM18 11c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4z"></path>
-								<title>Vehicle Lookup Icon</title></svg></span></button>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
+                                         </li>
+
+
+                                         <li class="c-at-navbar__item">
+                                            <div>
+                                               <div>
+                                                  <div class="dropdown">
+                                                     <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                        Performance
+                                                     </a>
+                                                     <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                        <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                           <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                              <span class="svg-icon c-at-navbar__back-arrow">
+                                                                 <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+                                                                    <title>Chevron icon</title>
+                                                                 </svg>
+                                                              </span>
+                                                              Back 
+                                                           </a>
+                                                        </li>
+                                                        <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                           <ul class="c-at-nav-dropdown">
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Response</a></li>
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Dealer Reviews</a></li>
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Lead generator</a></li>
+                                                              <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Enquiries</a></li>
+                                                           </ul>
+                                                        </li>
+                                                     </ul>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </li>
+
+                                         <li class="c-at-navbar__item">
+                                                <div>
+                                                   <div>
+                                                      <div class="dropdown">
+                                                         <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                            Sourcing
+                                                         </a>
+                                                         <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                            <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                               <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                                  <span class="svg-icon c-at-navbar__back-arrow">
+                                                                     <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z">
+                                                                        </path>
+                                                                        <title>Chevron icon</title>
+                                                                     </svg>
+                                                                  </span>
+                                                                  Back 
+                                                               </a>
+                                                            </li>
+                                                            <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                               <ul class="c-at-nav-dropdown">
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Advertise to trade</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Search vehicles</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">My advertised vehicles</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Highlighted vehicles</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Recent vehicle alerts</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Favourite sellers</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Stock profiler</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Requested vehicles</a></li>
+                                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Create a requested vehicle</a></li>
+                                                               </ul>
+                                                            </li>
+                                                         </ul>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </li>
+
+
+                                             <li class="c-at-navbar__item">
+                                                    <div>
+                                                       <div>
+                                                          <div class="dropdown">
+                                                             <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                                i-Control
+                                                             </a>
+                                                             <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                                <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                                   <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                                      <span class="svg-icon c-at-navbar__back-arrow">
+                                                                         <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z">
+                                                                            </path>
+                                                                            <title>Chevron icon</title>
+                                                                         </svg>
+                                                                      </span>
+                                                                      Back 
+                                                                   </a>
+                                                                </li>
+                                                                <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                                   <ul class="c-at-nav-dropdown">
+                                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">i-Control dashboard</a></li>
+                                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Appraisals</a></li>
+                                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Forecourt</a></li>
+                                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Rules and settings</a></li>
+                                                                   </ul>
+                                                                </li>
+                                                             </ul>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </li>
+
+                                                 <li class="c-at-navbar__item">
+                                                        <div>
+                                                           <div>
+                                                              <div class="dropdown">
+                                                                 <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                                    My website
+                                                                 </a>
+                                                              </div>
+                                                           </div>
+                                                        </div>
+                                                     </li>
+                                      </ul>
+                                   </div>
+                                   <div class="c-at-navbar__nav c-at-navbar__nav--right step-1 down-shep" data-step-title="Step 1 title">
+                                      <div class="c-at-navbar__nav--right-nav visible-md-inline-block visible-lg-inline-block">
+                                         <ul class="c-at-navbar__sub-nav">
+                                            <li class="c-at-navbar__item">
+                                               <a  class="c-at-navbar__link" href="javascript: void(0)"> 
+                                                    News &amp; Explore 
+                                                </a> 
+                                            </li>
+                                            <li class="c-at-navbar__item">
+                                               <a  class="c-at-navbar__link" href="javascript: void(0)"> 
+                                                    Contact 
+                                                </a> 
+                                            </li>
+                                            <li class="c-at-navbar__item">
+                                                <div>
+                                                    <div class="dropdown">
+                                                    <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                        <span>Account</span>
+                                                        <span class="svg-icon c-at-nav-dropdown__dropdown-arrow hidden-lg hidden-md">
+                                                            <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+                                                                <title>Chevron icon</title>
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                        <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                            <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                                <span class="svg-icon c-at-navbar__back-arrow">
+                                                                <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+                                                                    <title>Chevron icon</title>
+                                                                </svg>
+                                                                </span>
+                                                                Back 
+                                                            </a>
+                                                        </li>
+                                                        <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                            <ul class="c-at-nav-dropdown">
+                                                                <div class="c-at-account-info visible-md-block visible-lg-block">
+                                                                    <span class="c-at-user-info__user-name">stuart ridgway</span>
+                                                                    <div>
+                                                                        <span class="c-at-dealer-info__dealership-name">Ange's Stock Export Dealer</span> <span class="c-at-dealer-info__did">DID: 20380</span>
+                                                                        <div class="c-at-nav-dropdown__footer-link-item">
+                                                                            <a class="c-at-nav-dropdown__link visible-md visible-lg" tabindex="0">Switch my DID</a> 
+                                                                            <div class="visible-xs visible-sm"> <a class="c-at-dealer-info__switch c-at-btn c-at-btn--secondary" tabindex="0">Switch my DID</a> </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Sourcing preferences</a></li>
+                                                                <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Approved partner logos</a></li>
+                                                                <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Live chat sign up</a></li>
+                                                                <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Sourcing sign up</a></li>
+                                                                <li class="c-at-nav-dropdown__item c-at-nav-dropdown__footer-link-item visible-md-block visible-lg-block">
+                                                                    <a class="c-at-nav-dropdown__link" tabindex="0"><span> Not stuart? </span>Log out</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="c-at-navbar__item">
+                                                  <span class="c-at-navbar__link" tabindex="0">
+                                                     Notifications
+                                                  </span>
+                                                    <div class="ng-sidebar-container--animate">
+                                                    <div arialabel="Notifications Sidebar" atnoscroll="" mode="over" position="right" sidebarclass="c-at-sidebar">
+                                                        <aside role="complementary" class="ng-sidebar ng-sidebar--closed ng-sidebar--right ng-sidebar--over c-at-sidebar ng-sidebar--inert" aria-hidden="true" aria-label="Notifications Sidebar" style="transform: translateX(100%);">
+                                                        </aside>
+                                                    </div>
+                                                    <div class="ng-sidebar__content" style="margin: 0px;"></div>
+                                                </div>
+                                            </li>
+                                         </ul>
+                                      </div>
+                                        <button class="c-at-vrm-lookup__lookup-button">
+                                        <span class="c-at-vrm-lookup__lookup-button-icon">
+                                            <svg height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
+                                                <title>Artboard</title>
+                                                <path d="M22.461 17.011v4.939c0 .57-.47 1.04-1.04 1.04h-2.88c-.57 0-1.04-.47-1.04-1.04V21h-10v.96c0 .57-.47 1.04-1.04 1.04h-2.88c-.57 0-1.04-.47-1.04-1.04v-6.12c0-.67.2-1.3.58-1.83-.55-.14-.95-.4-1.07-.8-.3-.96.76-1.85 2.2-2.13.4-.08.98-.04 1.48.1l.3-1.7C6.471 7.9 7.241 7 8.581 7H11v1H8.571c-.78 0-1.25.55-1.56 1.7l-.58 3.25-.68-.74c-.1-.08-.97-.2-1.3-.15-.5.1-.94.3-1.2.52-.2.16-.25.28-.24.33.02.04.57.23 1.17.25l1.4.07-1.12.84c-.57.42-.9 1.07-.9 1.78v6.12c0 .02 0 .04.03.04h2.88c.02 0 .04-.02.04-.04V20h12v1.96c0 .02.02.04.04.04h2.88c.02 0 .04-.02.04-.04v-5.92l.99.971zm-.97-6.433l3.337 3.336a.5.5 0 1 1-.707.707l-3.416-3.416A5.002 5.002 0 0 1 13 7c0-2.76 2.24-5 5-5a5.002 5.002 0 0 1 3.492 8.578zM7.502 17c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h10c.28 0 .5.22.5.5s-.22.5-.5.5h-10zM18 11c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4z"></path>
+                                                <title>Vehicle Lookup Icon</title>
+                                            </svg>
+                                        </span>
+                                        <span class="c-at-vrm-lookup__lookup-button-label"> VRM </span> 
+                                        </button>
+                                   </div>
+                                </nav>
+                             </div>
+                          </div>
+                       </div>
+                    </header>
         <a id="content" name="content"></a>
         <div class="o-at-content-container o-at-content-container--grey has-fixed-header h-at-gutter-padding has-footer">
             <div class="c-at-breadcrumb-wrapper--blue theme--dark">
@@ -184,11 +396,11 @@
                     <div class="row is-finance-view u-at-mt-20">
                         <div class="col-lg-6 col-md-6 col-sm-12 c-at-greeting u-at-relative theme--dark">
                             <h2 class="c-at-fluid-hero__overview-title c-at-greeting__title"></h2>
-                            <div class="c-at-greeting__hello step-2">
+                            <div class="c-at-greeting__hello step-2 down-shep" data-step-title="Step 2 title">
                                 <h2 class="c-at-fluid-hero__overview-title c-at-greeting__title">Hello <span class="u-at-title-case">Dave</span>. Yesterday, the <a class="o-link o-link--primary" href="./">Volkswagen Golf GTi</a> was your most popular vehicle.</h2>
                             </div>
                         </div>
-                        <div class="col-lg-push-1 col-md-push-1 col-lg-5 col-md-5 col-sm-12 step-3">
+                        <div class="col-lg-push-1 col-md-push-1 col-lg-5 col-md-5 col-sm-12 step-3 down-shep" data-step-title="Step 3 title">
                             <div class="c-at-performance-overview">
                                 <div class="row">
                                     <div class="col-sm-12 c-at-performance-overview__description">
@@ -256,7 +468,7 @@
             <div class="c-at-fluid-hero--blue theme--dark">
                 <div class="o-at-container">
                     <div class="row row--extend row--no-padding">
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-4">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-4 down-shep" data-step-title="Step 4 title">
                             <div class="c-at-stat">
                                 <h3 class="c-at-stat__title">Advertised stock</h3>
                                 <div>
@@ -268,7 +480,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-5">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-5 down-shep" data-step-title="Step 5 title">
                             <div class="c-at-stat">
                                 <h3 class="c-at-stat__title">Unadvertised stock</h3>
                                 <div>
@@ -280,7 +492,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-6">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-6 down-shep" data-step-title="Step 6 title">
                             <div class="c-at-stat">
                                 <h3 class="c-at-stat__title">Low quality ads</h3>
                                 <div>
@@ -292,7 +504,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-7">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-7 down-shep" data-step-title="Step 7 title">
                             <div class="c-at-stat">
                                 <h3 class="c-at-stat__title">Stock over 45 days</h3>
                                 <div>
@@ -312,7 +524,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <h2 class="c-at-overview-stocklist__title">Your oldest stock item on Auto Trader</h2>
-                            <table class="e-at-table e-at-table__extend step-8 step-9 step-10 step-11 step-12 step-13">
+                            <table class="e-at-table e-at-table__extend step-8 step-9 step-10 step-11 step-12 step-13 down-shep" data-step-title="Step 8 title" data-step-title="Step 9 title" data-step-title="Step 10 title" data-step-title="Step 11 title" data-step-title="Step 12 title" data-step-title="Step 13 title">
                                 <thead class="e-at-table-table-head">
                                     <tr class="e-at-table-row e-at-table-row--light-grey">
                                         <th class="e-at-table-table-head__header" scope="col"><span>Vehicle details</span></th>
@@ -364,14 +576,14 @@
                 <div class="o-at-container">
                     <div class="row">
                         <div class="col-lg-12 u-at-text-center u-at-gutter-padding">
-                            <a class="c-at-btn c-at-btn--tertiary step-14" href="./">View your stock list</a>
+                            <a class="c-at-btn c-at-btn--tertiary step-14 down-step" data-step-title="Step 14 title" href="./">View your stock list</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="c-at-footer">
-            <ul class="c-at-footer__list step-15">
+            <ul class="c-at-footer__list step-15 down-step" data-step-title="Step 15 title">
                 <li class="c-at-footer__list-item">
                     <a class="u-at-link c-at-footer__list-item-link" href="./" target="_self">Security</a>
                 </li>

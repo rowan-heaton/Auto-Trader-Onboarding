@@ -149,3 +149,38 @@ let tour = new Shepherd.Tour({
   });
      
   tour.start();
+
+  document.documentElement.addEventListener("click", function(event) {
+    if (event.target.classList.contains("c-at-navbar__link")) {
+      
+      var subMenu = event.target.nextElementSibling;
+      var allDropdowns = document.querySelectorAll(".is-open");
+
+      for (var i = 0; i < allDropdowns.length; i++) {
+        allDropdowns[i].classList.remove("is-open");
+        allDropdowns[i].classList.add("is-closed");
+      }
+
+      if (subMenu !== null) {
+        if (subMenu.classList.contains("is-closed")) {
+          subMenu.classList.remove("is-closed");
+          subMenu.classList.add("is-open");
+        } else {
+          subMenu.classList.remove("is-open");
+          subMenu.classList.add("is-closed");
+        }
+      }
+    }
+    
+  }, false);
+
+  for (var el of document.querySelectorAll(".c-at-nav-dropdown")) {
+    el.addEventListener("mouseleave", function() {
+      var allDropdowns = document.querySelectorAll(".is-open");
+
+      for (var i = 0; i < allDropdowns.length; i++) {
+        allDropdowns[i].classList.remove("is-open");
+        allDropdowns[i].classList.add("is-closed");
+      }
+    })
+  }
