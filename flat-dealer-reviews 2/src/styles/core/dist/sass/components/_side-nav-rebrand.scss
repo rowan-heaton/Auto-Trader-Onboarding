@@ -1,0 +1,82 @@
+.c-at-side-nav {
+  padding: 0;
+  border-right: 1px solid $at-grey;
+
+  &__main-title {
+    font-size: 22px;
+    margin:0;
+    border-bottom: 1px solid $at-grey;
+    padding-bottom: 16px;
+  }
+  &__list {
+    padding: 5px 0 16px;
+    margin: 0;
+    &-child {
+      border-bottom: 1px solid $at-grey;
+      &-title {
+        font-size: 12px;
+        list-style: none;
+        padding: 16px 0 8px;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      // Disable all link states for loading
+      &--disabled .c-at-side-nav__link--completed,
+      &--disabled .c-at-side-nav__link--active,
+      &--disabled .c-at-side-nav__link--disabled {
+        cursor: not-allowed;
+        color: $at-grey-light;
+        opacity: 0.8;
+      }
+    }
+  }
+  &__list-item {
+    list-style: none;
+  }
+  &__link {
+    @include at-link('sub');
+    color: $at-blue-light;
+    padding: 8px;
+    position: relative;
+    display: block;
+    margin-bottom: 1px;
+    text-decoration: none;
+
+    &--sm {
+      padding: 8px 16px;
+    }
+    &--active {
+      border-right: 3px solid $at-blue;
+      background: $at-grey-light;
+      cursor: default;
+      color: $at-blue-dark;
+      font-weight: $at-medium-font;
+    }
+    &--completed {
+      font-weight: $at-light-font;
+      cursor: pointer;
+    }
+    &--disabled {
+      color: $at-placeholder;
+      cursor: not-allowed;
+      &:hover {
+        background: transparent;
+        border-right: none;
+        color: $at-placeholder;
+      }
+    }
+    .o-at-badge--blue {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__content {
+    padding: 0 24px 24px;
+    &-main-title {
+      font-size: 26px;
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
