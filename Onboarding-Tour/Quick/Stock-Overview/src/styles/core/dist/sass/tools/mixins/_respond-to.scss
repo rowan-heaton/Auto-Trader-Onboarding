@@ -1,0 +1,142 @@
+
+///== respond to media queries
+
+
+/// Media query merger
+/// Create a single media condition out of a map of queries
+/// @param {Map} $queries - Map of media queries
+@mixin media($queries) {
+  @if length($queries) == 0 {
+    @content;
+  } @else {
+    $first-key: nth(map-keys($queries), 1);
+    @media ($first-key: map-get($queries, $first-key)) {
+      $queries: map-remove($queries, $first-key);
+
+      @include media($queries) {
+        @content;
+      }
+    }
+  }
+}
+
+
+@mixin bp($at-breakpoint) {
+  // Get the query map for $breakpoints map
+  $queries: map-get($at-breakpoints, $at-breakpoint);
+
+  // If there is no query called $breakpoint in map, throw an error
+  @if not $queries {
+    @error "No value could be retrieved from `#{$breakpoint}`. "
+    + "Please make sure it is defined in `$breakpoints` map.";
+  }
+
+  // Include the media mixin with $queries
+  @include media($queries) {
+    @content;
+  }
+}
+
+
+
+
+//== Legacy
+@mixin respond-to($size) {
+  @if $size == 'all' {
+    @media (min-width: $screen-lg-desktop) {
+      @content
+    }
+  } @else if $size == 'desktop' {
+    @media (min-width: $screen-lg-desktop) {
+      @content
+    }
+  } @else if $size == 'tablet-landscape' {
+    @media (max-width: $screen-lg) and (min-width: $screen-desktop) {
+      @content
+    }
+  } @else if $size == 'tablet-portrait' {
+    @media (max-width: $screen-tablet) {
+      @content
+    }
+  } @else if $size == 'medium-tablet-landscape' {
+    @media (max-width: $screen-sm-max) {
+      @content
+    }
+  } @else if $size == 'small-tablet-landscape' {
+    @media (max-height: 600px) and (max-width: $screen-md) {
+      @content
+    }
+  } @else if $size == 'small-tablet' {
+    @media (max-width: $small-tablet) {
+      @content
+    }
+  } @else if $size == 'phone-landscape' {
+    @media (max-width: $screen-tablet) and (max-height: $small-phone) {
+      @content
+    }
+  } @else if $size == 'phone' {
+    @media (max-width: $screen-phone) {
+      @content
+    }
+  } @else if $size == 'small-phone' {
+    @media (max-width: $small-phone) {
+      @content
+    }
+  } @else if $size == 'large-phone-landscape' {
+    @media (max-width: $screen-lg) and (min-width: $screen-tablet) {
+      @content
+    }
+  } @else if $size == 'large-phone' {
+    @media (max-width: $screen-tablet) and (max-height: 666px) and (min-height: 569px) {
+      @content
+    }
+  } @else if $size == 'small-phone-landscape' {
+    @media (max-height: 320px) and (max-width: $screen-tablet) {
+      @content
+    }
+  } @else if $size == 'touch-device' {
+    @media (pointer: none) {
+      @content
+    }
+  } @else if $size == 'semi-touch-device' {
+    @media (pointer: coarse) {
+      @content
+    }
+  }
+}
+
+
+//== Devices
+@mixin device($device) {
+  // Safari only
+  @if $device == 'safari' {
+    _::-webkit-full-page-media, _:future, :root & {
+      @content
+    }
+  }
+  @else {
+    @error 'Device not recognised';
+  }
+}
+
+
+// Responsive utilities
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block!important;
+  }
+  table#{$parent}  { display: table; }
+  tr#{$parent}     { display: table-row; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell; }
+}
+
+// [converter] $parent hack
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none!important;
+  }
+}
+
+
+
