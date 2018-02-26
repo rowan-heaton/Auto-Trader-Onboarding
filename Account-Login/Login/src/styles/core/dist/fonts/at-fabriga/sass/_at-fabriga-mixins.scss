@@ -1,8 +1,0 @@
-@mixin fontdef($FabrigaPath, $FabrigaVersion, $FontType:"Regular") {
-  src:  url('https://c.atcdn.co.uk/fonts/ATFabriga-#{$FontType}.eot?v=#{$FabrigaVersion}');
-  src:  url('https://c.atcdn.co.uk/fonts/ATFabriga-#{$FontType}.eot?#iefix&v=#{$FabrigaVersion}') format('embedded-opentype'),
-  url('https://c.atcdn.co.uk/fonts/ATFabriga-#{$FontType}.woff2?v=#{$FabrigaVersion}') format('woff2'),
-  url('https://c.atcdn.co.uk/fonts/ATFabriga-#{$FontType}.woff?v=#{$FabrigaVersion}') format('woff'),
-  url('https://c.atcdn.co.uk/fonts/ATFabriga-#{$FontType}.ttf?v=#{$FabrigaVersion}') format('truetype'),
-  url('https://c.atcdn.co.uk/fonts/ATFabriga-#{$FontType}.svg?v=#{$FabrigaVersion}##{$FontType}') format('svg');
-}
