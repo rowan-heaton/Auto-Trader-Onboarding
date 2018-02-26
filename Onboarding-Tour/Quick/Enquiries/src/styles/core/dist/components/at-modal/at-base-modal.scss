@@ -1,0 +1,243 @@
+.c-at-modal-window {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $at-modal-zindex;
+
+  &.show {
+    .modal-dialog {
+      animation: default-modal-animation .25s 1;
+      animation-fill-mode: forwards;
+      background-color: $at-grey-light;
+      min-height: 100vh;
+      width: 100%;
+
+      @include bp('md') {
+        background-color: transparent;
+        lost-column: 12/16 auto;
+        lost-offset: 2/16 auto;
+        max-width: $at-modal-max-width;
+        min-height: 0;
+
+        &:first-child {
+          lost-offset: clear;
+        }
+      }
+
+      @at-root .modal--transparent & {
+        background-color: transparent;
+      }
+    }
+  }
+
+  @at-root .modal-open & {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  @at-root .modal-open {
+    overflow: hidden;
+  }
+}
+
+.c-at-modal-backdrop,
+.modal-backdrop {
+  background-color: $at-modal-backdrop;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $at-modal-backdrop-zindex;
+
+  // Fade for backdrop
+  &.fade {
+    @include opacity(0);
+  }
+
+  &.show {
+    @include opacity($at-modal-backdrop-opacity);
+  }
+}
+
+.c-at-modal {
+  background-color: transparent;
+  border-radius: 0;
+  position: relative;
+  width: auto;
+
+  @media screen and (orientation:landscape) {
+    min-height: $at-bp-sm * 1.3;  // needed so that content is scrollable if you flip your device to landscape.
+  }
+
+  @include bp('md') {
+    @include modal-box-shadow($at-modal-shadow);
+    border-radius: $default-radius;
+    height: auto;
+    margin: 5% auto 0;
+
+    @media screen and (orientation:landscape) {
+      min-height: 0;
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 90%;
+
+    @include bp('sm') {
+      lost-column: 10/12;
+      lost-offset: 1/12;
+    }
+
+    @include bp('md') {
+      lost-column: 8/12;
+      lost-offset: 2/12;
+    }
+  }
+
+  &__header {
+    background-color: $at-blue;
+    color: $at-white;
+    font-size: $at-font-size-32;
+    margin: 0;
+    padding: $at-base-unit * 4 0 $at-base-unit * 3;
+    text-align: center;
+
+    :first-child {
+      margin: $at-base-unit auto 0;
+    }
+
+    :last-child {
+      margin: 0 auto;
+    }
+
+    @include bp('md') {
+      border-top-left-radius: $default-radius;
+      border-top-right-radius: $default-radius;
+      min-height: 56px; // min-height to force height if no title(s) are in the modal design, so the close icon is aligned, Modals without a title should be an edge case.
+      padding-top: $at-base-unit * 2;
+    }
+
+    &-icon {
+      fill: $at-white;
+      position: relative;
+      transform: translate(0, -50%);
+
+      &--x {
+        cursor: pointer;
+        fill: $at-white;
+        height: 21px;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        transform: none;
+        width: 21px;
+        z-index: 1050;
+
+        @at-root .is-inverted & {
+          fill: $at-white;
+        }
+      }
+    }
+
+    &-img {
+      display: block;
+      height: 100px;
+      margin: 0 auto;
+      text-align: center;
+      width: 400px;
+    }
+
+
+    &-title {
+      font-size: $at-font-size-24;
+      font-weight: $at-medium-font;
+      line-height: 1.33;
+
+      @include bp('md') {
+        margin: 0;
+      }
+    }
+
+    &-sub-title {
+      font-size: $at-sm-font;
+      font-weight: $at-regular-font;
+      line-height: 1.71;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    background-color: $at-grey-light;
+    border-radius: 0;
+    color: $at-copy-light;
+    padding: $at-base-unit * 2 0 0;
+
+    @include bp('md') {
+      height: 100%;
+    }
+
+    &-message {
+      margin: 0;
+    }
+
+    &:last-child {
+      padding-bottom: $at-base-unit * 4;
+
+      @include bp('md') {
+        border-bottom-left-radius: $default-radius;
+        border-bottom-right-radius: $default-radius;
+      }
+    }
+  }
+
+  &__form-group {
+    margin-bottom: 0;
+  }
+
+  &__btn-group {
+    clear: both;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__footer {
+    background-color: $at-grey-light;
+    padding: $at-base-unit * 3 0 $at-base-unit * 4;
+    text-align: center;
+
+    @include bp('md') {
+      border-bottom-left-radius: $default-radius;
+      border-bottom-right-radius: $default-radius;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include bp('md') {
+      lost-column: 6/8;
+    }
+
+    @include bp('lg') {
+      lost-column: 4/8;
+    }
+  }
+
+  &__footer-button {
+    @include btn-base-styles();
+
+    &--secondary {
+      @include btn-base-styles();
+    }
+  }
+}

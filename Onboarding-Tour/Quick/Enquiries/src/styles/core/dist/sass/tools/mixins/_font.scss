@@ -1,0 +1,19 @@
+@mixin font($font, $style: normal, $weight: normal, $size: $base-font-size ) {
+  font-family: $font, Helvetica, Arial, sans-serif;
+  font-style:  $style;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+// For Grid
+@mixin type-setting($level: 1) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+
+@mixin type($size, $height, $bold: false) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: 400;
+}

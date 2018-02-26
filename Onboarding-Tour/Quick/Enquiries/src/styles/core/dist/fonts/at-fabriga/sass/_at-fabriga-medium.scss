@@ -1,0 +1,8 @@
+// BEGIN Medium
+@font-face {
+  font-family: 'ATFabriga';
+  @include fontdef($FabrigaPath, $FabrigaVersion, "Medium");
+  font-weight: 500;
+  font-style: normal;
+}
+// END Medium
