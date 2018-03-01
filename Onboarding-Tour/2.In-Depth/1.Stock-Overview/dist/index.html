@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Stock Overview</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="Pragma">
+    <meta content="0" http-equiv="Expires">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="#313C53" name="theme-color">
+    <link href="./index_files/main.css" rel="stylesheet">
+    <link href="./index_files/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="bundle.css">
+</head>
+
+<body class="overflow-x">
+    <svg style="position: absolute; width: 0; height: 0" xmlns="http://www.w3.org/2000/svg">
+	<symbol id="magnifying-glass" viewbox="0 0 48 48">
+		<title>magnifying-glass (2)</title>
+		<path d="M47.585 45.552L35.917 33.887a20.381 20.381 0 0 0 5.025-13.42C40.942 9.174 31.755 0 20.472 0 9.175 0 0 9.185 0 20.467c0 11.281 9.187 20.466 20.471 20.466 5.131 0 9.826-1.894 13.424-5.023l11.667 11.664c.277.277.65.426 1.012.426.361 0 .734-.138 1.01-.426a1.439 1.439 0 0 0 0-2.022zM2.864 20.467c0-9.707 7.898-17.593 17.596-17.593 9.709 0 17.597 7.897 17.597 17.593 0 9.695-7.888 17.603-17.597 17.603-9.698 0-17.596-7.897-17.596-17.603z" fill="#27475A" fill-rule="nonzero"></path>
+	</symbol>
+	<symbol id="car" viewbox="0 0 33.001 33.001">
+		<path d="M22.438 22.133h-11.43a.5.5 0 0 1 0-1h11.43a.5.5 0 0 1 0 1z"></path>
+		<path d="M8.288 24.854c-1.776 0-3.221-1.444-3.221-3.221s1.444-3.221 3.221-3.221 3.221 1.444 3.221 3.221-1.445 3.221-3.221 3.221zm0-5.442c-1.225 0-2.221.996-2.221 2.221s.996 2.221 2.221 2.221 2.221-.996 2.221-2.221-.996-2.221-2.221-2.221zM25.159 24.854c-1.776 0-3.221-1.444-3.221-3.221s1.444-3.221 3.221-3.221 3.221 1.444 3.221 3.221-1.445 3.221-3.221 3.221zm0-5.442c-1.225 0-2.221.996-2.221 2.221s.996 2.221 2.221 2.221 2.221-.996 2.221-2.221-.996-2.221-2.221-2.221z"></path>
+		<path d="M22.442 22.133H11.01a.5.5 0 0 1 0-1h11.433a.5.5 0 1 1-.001 1z"></path>
+		<path d="M30.281 22.133h-2.404a.5.5 0 0 1 0-1h2.404a1.24 1.24 0 0 0 1.232-1.056l.472-3.017a1.239 1.239 0 0 0-.243-.953 1.24 1.24 0 0 0-.855-.48l-7.261-.787a.508.508 0 0 1-.268-.114l-6.057-5.091a2.086 2.086 0 0 0-1.338-.487H5.988c-.457 0-.883.225-1.142.602l-3.628 5.289a1.238 1.238 0 0 0-.203.898l.646 4.141a1.243 1.243 0 0 0 1.233 1.056h2.668a.5.5 0 0 1 0 1H2.895c-1.115 0-2.05-.8-2.222-1.901l-.646-4.141a2.24 2.24 0 0 1 .367-1.619l3.628-5.289a2.383 2.383 0 0 1 1.966-1.035h9.976c.724 0 1.427.256 1.98.722l5.94 4.993 7.109.771a2.226 2.226 0 0 1 1.542.866c.377.492.533 1.102.438 1.716l-.472 3.017a2.235 2.235 0 0 1-2.22 1.899z"></path>
+		<path d="M19.266 15.229H4.798a.5.5 0 0 1 0-1h14.468a.5.5 0 0 1 0 1z"></path>
+	</symbol>
+	<symbol id="performance-benchmark-error" viewbox="0 0 396 148">
+		<title>Graph</title>
+		<defs></defs>
+		<g fill="none" fill-rule="evenodd" id="performance-benchmark-error_Loading" stroke="none" stroke-width="1">
+			<g id="performance-benchmark-error_When-things-go-awry" transform="translate(-905.000000, -164.000000)">
+				<g id="performance-benchmark-error_Hero" transform="translate(0.000000, 50.000000)">
+					<g id="performance-benchmark-error_Graph-block" transform="translate(903.000000, 114.000000)">
+						<g id="performance-benchmark-error_Graph">
+							<path d="M11,56.0815424 C11,56.0815424 29.2539439,132.650778 79.4052316,124.374324 C117.86209,118.027966 111.653564,90.4019222 121.145775,62.6357293 C124.032607,54.191295 131.855294,36.3726572 143.208633,30.867326 C170.041839,4.49355725 195.682459,15.2828263 208.800915,21.8762685 C221.919371,28.4697107 251.670788,65.5091961 270.219143,79.4190366 C290.894974,94.9243217 310.767099,104.593998 337.004012,98.5999594 C363.240924,92.605921 378,56.0815424 360,38 C342,19.9184576 317.648137,10.9408208 287,18 C256.351863,25.0591792 221.301864,69.5993774 194.267817,71 C153.820059,73.0955812 87.4477576,6.90441878 47,9 C6.55224244,11.0955812 11,56.0815424 11,56.0815424 Z" id="performance-benchmark-error_graph-line-2" stroke="#E8E8E2" stroke-width="3"></path>
+							<path d="M46,114 C32,91 48,57.1660069 82,57.1660069 C116,57.1660069 134,93.9444962 145,100.576228 C156,107.207959 187.77378,114.933876 209.192051,107.207959 C231.134368,99.2930103 235.401833,72.5270081 269.951091,61.1660069 C304.500349,49.8050058 322,57.3320138 333,61.1660069 C344,65 391,91 359,123 C327,155 272.430838,141.231772 246,114 C180,46 152,130 122,142 C92,154 60,137 46,114 Z" id="performance-benchmark-error_graph-line-1" stroke="#E8E8E2" stroke-width="3"></path>
+							<circle cx="82" cy="56" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="269" cy="131" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="208" cy="108" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<ellipse cx="302" cy="56" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" rx="5" ry="5" stroke="#E8E8E2" stroke-width="2"></ellipse>
+							<circle cx="97" cy="118" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="54" cy="9" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="12" cy="56" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="260" cy="32" fill="#E8E8E2" id="performance-benchmark-error_Oval-3-Copy" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="144" cy="32" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="208" cy="20" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="271" cy="79" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="337" cy="99" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="342" cy="25" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<circle cx="159" cy="61" fill="#E8E8E2" id="performance-benchmark-error_Oval-3" r="5" stroke="#E8E8E2" stroke-width="2"></circle>
+							<path d="M385.659792,70.0948352 L385.447251,64.0019971 L385.730639,63.7186093 C386.368265,63.6949935 386.964554,63.6300511 387.519525,63.5237801 C388.074495,63.4175092 388.558611,63.2403936 388.971887,62.992428 C389.385163,62.7444624 389.703971,62.4079427 389.928321,61.9828589 C390.152671,61.557775 390.264844,61.0146205 390.264844,60.3533789 C390.264844,59.526827 390.010978,58.8596915 389.503239,58.3519525 C388.9955,57.8442134 388.257519,57.5903477 387.289272,57.5903477 C386.226562,57.5903477 385.447254,57.8973481 384.951322,58.5113581 C384.455391,59.1253681 384.231045,59.8456383 384.278276,60.6721902 L380.24,60.6721902 L380.24,60.3179555 C380.24,59.2788616 380.428923,58.3696681 380.806776,57.5903477 C381.184628,56.8110273 381.698263,56.1616034 382.347697,55.6420565 C382.997131,55.1225095 383.752824,54.7269513 384.614799,54.45537 C385.476775,54.1837886 386.391872,54.048 387.360119,54.048 C388.328365,54.048 389.249367,54.1837886 390.12315,54.45537 C390.996934,54.7269513 391.764435,55.1225095 392.425676,55.6420565 C393.086918,56.1616034 393.612361,56.7992196 394.002021,57.5549242 C394.391681,58.3106289 394.586508,59.1725915 394.586508,60.1408381 L394.586508,60.4242259 C394.586508,61.2271621 394.45072,61.9533361 394.179138,62.6027697 C393.907557,63.2522034 393.541518,63.8248772 393.08101,64.3208084 C392.620503,64.8167395 392.083252,65.241817 391.469242,65.5960536 C390.855232,65.9502901 390.205808,66.2454828 389.520951,66.4816405 L389.414681,70.0948352 L385.659792,70.0948352 Z M390.264844,75.3729333 C390.264844,76.1994852 389.981459,76.8252937 389.414681,77.2503776 C388.847902,77.6754614 388.174863,77.8880002 387.395542,77.8880002 C386.592606,77.8880002 385.913663,77.6754614 385.358692,77.2503776 C384.803722,76.8252937 384.526241,76.1994852 384.526241,75.3729333 L384.526241,75.1958159 C384.526241,74.369264 384.803722,73.7375516 385.358692,73.3006599 C385.913663,72.8637681 386.592606,72.6453255 387.395542,72.6453255 C388.174863,72.6453255 388.847902,72.8637681 389.414681,73.3006599 C389.981459,73.7375516 390.264844,74.369264 390.264844,75.1958159 L390.264844,75.3729333 Z" fill="#E8E8E2" id="performance-benchmark-error_?" transform="translate(387.413254, 65.968000) rotate(30.000000) translate(-387.413254, -65.968000)"></path>
+							<path d="M117.419792,16.0468352 L117.207251,9.95399709 L117.490639,9.67060927 C118.128265,9.6469935 118.724554,9.58205111 119.279525,9.47578015 C119.834495,9.36950919 120.318611,9.19239357 120.731887,8.94442799 C121.145163,8.69646241 121.463971,8.35994274 121.688321,7.93485889 C121.912671,7.50977504 122.024844,6.96662049 122.024844,6.30537894 C122.024844,5.47882701 121.770978,4.81169152 121.263239,4.30395248 C120.7555,3.79621343 120.017519,3.54234772 119.049272,3.54234772 C117.986562,3.54234772 117.207254,3.84934812 116.711322,4.46335813 C116.215391,5.07736813 115.991045,5.7976383 116.038276,6.62419024 L112,6.62419024 L112,6.26995546 C112,5.2308616 112.188923,4.32166811 112.566776,3.54234772 C112.944628,2.76302732 113.458263,2.1136034 114.107697,1.59405647 C114.757131,1.07450954 115.512824,0.678951337 116.374799,0.407369988 C117.236775,0.135788638 118.151872,0 119.120119,0 C120.088365,0 121.009367,0.135788638 121.88315,0.407369988 C122.756934,0.678951337 123.524435,1.07450954 124.185676,1.59405647 C124.846918,2.1136034 125.372361,2.75121962 125.762021,3.50692424 C126.151681,4.26262887 126.346508,5.12459153 126.346508,6.09283808 L126.346508,6.3762259 C126.346508,7.17916206 126.21072,7.90533608 125.939138,8.55476974 C125.667557,9.20420341 125.301518,9.77687723 124.84101,10.2728084 C124.380503,10.7687395 123.843252,11.193817 123.229242,11.5480536 C122.615232,11.9022901 121.965808,12.1974828 121.280951,12.4336405 L121.174681,16.0468352 L117.419792,16.0468352 Z M122.024844,21.3249333 C122.024844,22.1514852 121.741459,22.7772937 121.174681,23.2023776 C120.607902,23.6274614 119.934863,23.8400002 119.155542,23.8400002 C118.352606,23.8400002 117.673663,23.6274614 117.118692,23.2023776 C116.563722,22.7772937 116.286241,22.1514852 116.286241,21.3249333 L116.286241,21.1478159 C116.286241,20.321264 116.563722,19.6895516 117.118692,19.2526599 C117.673663,18.8157681 118.352606,18.5973255 119.155542,18.5973255 C119.934863,18.5973255 120.607902,18.8157681 121.174681,19.2526599 C121.741459,19.6895516 122.024844,20.321264 122.024844,21.1478159 L122.024844,21.3249333 Z" fill="#E8E8E2" id="performance-benchmark-error_?"></path>
+							<path d="M11.419792,119.046835 L11.2072511,112.953997 L11.490639,112.670609 C12.1282647,112.646994 12.724554,112.582051 13.2795246,112.47578 C13.8344951,112.369509 14.3186112,112.192394 14.7318871,111.944428 C15.1451631,111.696462 15.4639712,111.359943 15.688321,110.934859 C15.9126708,110.509775 16.024844,109.96662 16.024844,109.305379 C16.024844,108.478827 15.7709783,107.811692 15.2632393,107.303952 C14.7555002,106.796213 14.0175185,106.542348 13.049272,106.542348 C11.9865623,106.542348 11.2072536,106.849348 10.7113225,107.463358 C10.2153913,108.077368 9.99104486,108.797638 10.0382764,109.62419 L6,109.62419 L6,109.269955 C6,108.230862 6.18892332,107.321668 6.56677564,106.542348 C6.94462795,105.763027 7.45826323,105.113603 8.10769689,104.594056 C8.75713056,104.07451 9.51282385,103.678951 10.3747994,103.40737 C11.236775,103.135789 12.1518724,103 13.1201189,103 C14.0883655,103 15.0093667,103.135789 15.8831501,103.40737 C16.7569336,103.678951 17.5244346,104.07451 18.1856762,104.594056 C18.8469177,105.113603 19.3723607,105.75122 19.7620209,106.506924 C20.1516811,107.262629 20.3465083,108.124592 20.3465083,109.092838 L20.3465083,109.376226 C20.3465083,110.179162 20.2107196,110.905336 19.9391383,111.55477 C19.6675569,112.204203 19.301518,112.776877 18.8410105,113.272808 C18.380503,113.76874 17.8432523,114.193817 17.2292423,114.548054 C16.6152323,114.90229 15.9658083,115.197483 15.280951,115.43364 L15.1746806,119.046835 L11.419792,119.046835 Z M16.024844,124.324933 C16.024844,125.151485 15.7414591,125.777294 15.1746806,126.202378 C14.6079021,126.627461 13.9348628,126.84 13.1555424,126.84 C12.3526062,126.84 11.673663,126.627461 11.1186925,126.202378 C10.5637219,125.777294 10.2862407,125.151485 10.2862407,124.324933 L10.2862407,124.147816 C10.2862407,123.321264 10.5637219,122.689552 11.1186925,122.25266 C11.673663,121.815768 12.3526062,121.597326 13.1555424,121.597326 C13.9348628,121.597326 14.6079021,121.815768 15.1746806,122.25266 C15.7414591,122.689552 16.024844,123.321264 16.024844,124.147816 L16.024844,124.324933 Z" fill="#E8E8E2" id="performance-benchmark-error_?" transform="translate(13.173254, 114.920000) rotate(-40.000000) translate(-13.173254, -114.920000)"></path>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</symbol>
+	<symbol id="updating-icon" viewbox="0 0 322.447 322.447">
+		<path d="M321.832 230.327c-2.133-6.565-9.184-10.154-15.75-8.025l-16.254 5.281C299.785 206.991 305 184.347 305 161.224c0-84.089-68.41-152.5-152.5-152.5C68.411 8.724 0 77.135 0 161.224s68.411 152.5 152.5 152.5c6.903 0 12.5-5.597 12.5-12.5 0-6.902-5.597-12.5-12.5-12.5-70.304 0-127.5-57.195-127.5-127.5 0-70.304 57.196-127.5 127.5-127.5 70.305 0 127.5 57.196 127.5 127.5 0 19.372-4.371 38.337-12.723 55.568l-5.553-17.096c-2.133-6.564-9.186-10.156-15.75-8.025-6.566 2.134-10.16 9.186-8.027 15.751l14.74 45.368c1.715 5.283 6.615 8.642 11.885 8.642a12.52 12.52 0 0 0 3.865-.614l45.369-14.738c6.565-2.134 10.159-9.185 8.026-15.753z"></path>
+	</symbol>
+	<symbol id="email-outline" viewbox="0 0 50 41">
+		<defs>
+			<path d="M43.168 28.627v19.127c0 1.06-.378 1.967-1.132 2.722-.755.755-1.663 1.132-2.723 1.132H3.854c-1.06 0-1.967-.377-2.722-1.132C.377 49.721 0 48.814 0 47.754V28.627a12.775 12.775 0 0 0 2.433 2.096c5.814 3.95 9.804 6.72 11.972 8.31a56.99 56.99 0 0 0 2.229 1.579c.57.377 1.328.762 2.276 1.156.947.393 1.83.59 2.65.59h.048c.819 0 1.702-.197 2.65-.59.947-.394 1.706-.78 2.276-1.156a56.99 56.99 0 0 0 2.228-1.578c2.73-1.976 6.73-4.746 11.997-8.311a13.287 13.287 0 0 0 2.409-2.096zm0-7.082c0 1.269-.394 2.481-1.18 3.637a11.453 11.453 0 0 1-2.94 2.963 19451.36 19451.36 0 0 0-11.273 7.83c-.16.112-.502.357-1.024.734-.522.378-.956.683-1.3.915-.346.233-.764.494-1.253.783-.49.29-.952.506-1.386.65a3.828 3.828 0 0 1-1.204.218h-.048c-.37 0-.771-.073-1.205-.217a7.297 7.297 0 0 1-1.385-.65c-.49-.29-.907-.55-1.252-.784a50.409 50.409 0 0 1-1.301-.915c-.522-.377-.863-.622-1.024-.735a1193.359 1193.359 0 0 0-6.311-4.396 1110.732 1110.732 0 0 1-4.939-3.433c-.995-.674-1.935-1.602-2.818-2.782S0 23.087 0 22.075c0-1.253.333-2.297 1-3.132.666-.835 1.618-1.252 2.854-1.252h35.46c1.043 0 1.947.377 2.71 1.132.762.755 1.144 1.662 1.144 2.722z" id="email-outline_a"></path>
+			<mask height="39.918" id="email-outline_b" width="49.168" x="-3" y="-3">
+				<path d="M-3 14.691h49.168v39.918H-3z" fill="#fff"></path>
+				<use xlink:href="#email-outline_a"></use>
+			</mask>
+		</defs>
+		<use fill="none" fill-rule="evenodd" mask="url(#email-outline_b)" stroke-width="6" transform="translate(3 -14)" xlink:href="#email-outline_a"></use>
+	</symbol>
+	<symbol id="phone-outline" viewbox="0 0 53 53">
+		<defs>
+			<path d="M47 51.12c0 .6-.111 1.385-.334 2.353-.222.968-.456 1.73-.7 2.286-.468 1.113-1.826 2.292-4.073 3.539C39.8 60.433 37.73 61 35.683 61c-.6 0-1.184-.039-1.752-.117a14.428 14.428 0 0 1-1.919-.417c-.712-.2-1.24-.362-1.586-.484-.344-.123-.962-.35-1.852-.684a71.121 71.121 0 0 0-1.636-.601c-2.18-.78-4.128-1.703-5.841-2.77-2.849-1.759-5.792-4.157-8.83-7.194-3.037-3.038-5.435-5.981-7.193-8.83-1.068-1.713-1.992-3.66-2.77-5.841-.067-.2-.268-.746-.602-1.636-.333-.89-.561-1.508-.684-1.852a27.212 27.212 0 0 1-.484-1.586c-.2-.712-.34-1.352-.417-1.92A12.877 12.877 0 0 1 0 25.317c0-2.047.567-4.117 1.702-6.209 1.247-2.247 2.426-3.605 3.539-4.072.556-.245 1.318-.479 2.286-.701C8.495 14.11 9.28 14 9.881 14c.311 0 .545.033.7.1.401.134.991.98 1.77 2.537.245.423.578 1.024 1.001 1.803.423.779.813 1.485 1.169 2.12.356.634.7 1.229 1.034 1.785.067.09.262.367.585.835.322.467.561.862.717 1.185.156.322.234.64.234.951 0 .445-.317 1.001-.951 1.67a16.272 16.272 0 0 1-2.07 1.835 20.103 20.103 0 0 0-2.07 1.77c-.634.622-.951 1.134-.951 1.535 0 .2.056.45.167.75.111.301.206.53.284.685.078.156.233.423.467.801.234.379.362.59.384.634 1.691 3.05 3.627 5.664 5.808 7.845 2.181 2.18 4.796 4.117 7.845 5.808.044.022.255.15.634.384.378.234.645.39.8.467.157.078.385.173.685.284.3.111.551.167.751.167.4 0 .913-.317 1.536-.951a20.103 20.103 0 0 0 1.769-2.07 16.272 16.272 0 0 1 1.836-2.07c.668-.634 1.224-.95 1.669-.95.312 0 .629.077.951.233.323.156.718.395 1.185.717.468.323.746.518.835.585.556.333 1.151.678 1.786 1.034.634.356 1.34.746 2.12 1.169.778.423 1.38.756 1.802 1.001 1.558.779 2.403 1.369 2.537 1.77.067.155.1.389.1.7z" id="phone-outline_a"></path>
+			<mask height="53" id="phone-outline_b" width="53" x="-3" y="-3">
+				<path d="M-3 11h53v53H-3z" fill="#fff"></path>
+				<use xlink:href="#phone-outline_a"></use>
+			</mask>
+		</defs>
+		<use fill="none" fill-rule="evenodd" mask="url(#phone-outline_b)" stroke-width="6" transform="translate(3 -11)" xlink:href="#phone-outline_a"></use>
+	</symbol>
+	<symbol id="arrow-icon" viewbox="0 0 13 12">
+		<path d="M9.586 5H1a1 1 0 0 0 0 2h8.586l-3.293 3.293a1 1 0 0 0 1.414 1.414l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 1.414L9.586 5z"></path>
+	</symbol>
+	<symbol id="contact" viewbox="0 0 593 593">
+		<title>Group</title>
+		<g fill="none" fill-rule="evenodd">
+			<circle cx="296.5" cy="296.5" fill="#313C53" r="296.5"></circle>
+			<path d="M199.75934082 123.00000004l347.1685387 61.21518022-41.92787935 237.78481988-347.1685387-61.21518023z" fill="#00D7D2"></path>
+			<path d="M199.75934128 122.99999978l347.1685377 61.21518005-197.810692 106.9176329" fill="#06A09D"></path>
+			<path d="M120.603516 291.399414c-4.695964-15.436849-1.931967-26.951172 8.291992-34.542969 15.335937-11.387695 29.987305-23.370117 31.53418-30.791992s.560235-25.892578-10.305665-43.960937c-10.8659-18.06836-27.127929-43.427735-37.429687-45.376953-10.301758-1.949219-21.0156251-.75-33.1923829 11.861328-12.1767578 12.611328-37.383789 44.596679-41.1542968 76.432617-3.7705079 31.835937-3.8447266 57.881836 21.6201171 98.987304 25.4648438 41.105469 49.9765626 72.950196 74.4023436 94.152344 24.425781 21.202149 55.794922 46.813477 85.336914 54.291992 29.541992 7.478516 61.595703 6.785157 82.056641-3.964843 20.460937-10.75 42.490234-28.96875 49.50293-41.765625 7.012695-12.796875-7.387696-30.581055-17.275391-38.865235-9.887695-8.284179-32.62793-32.0625-49.123047-34.666015-16.495117-2.603516-27.985351 12.723632-38.123047 21.499023-10.137695 8.775391-31.05957 24.938477-63.041015 0-21.320964-16.625651-42.354493-44.388997-63.100586-83.290039z" fill="#FFD5D1"></path>
+		</g>
+	</symbol></svg>
+    <header>
+        <div class="c-at-header">
+            <div>
+                <div class="o-at-container u-at-relative">
+                    <div class="c-at-header__logo-container">
+                        <svg height="18" viewbox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg">
+						<path d="M23.029 7.155H4.073L5.59 3.33C6.38 1.384 8.224.045 10.316 0h15.559L23.04 7.155h-.011zm-7.425 10.091H0l2.88-7.143h18.945l-1.519 3.824c-.787 1.936-2.587 3.263-4.702 3.32z" fill="#00D7D2"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="contents__holder"></div>
+    <div class="outer-container u-at-relative">
+        <a class="c-at-header__skip" href="#content">Skip to content</a>
+        <header>
+           <div class="c-at-header" id="nav">
+              <div>
+                 <div class="o-at-container u-at-relative">
+                    <a  class="c-at-header__logo-container" href="">
+                       <svg height="18" viewBox="0 0 26 18" width="26" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M23.029 7.155H4.073L5.59 3.33C6.38 1.384 8.224.045 10.316 0h15.559L23.04 7.155h-.011zm-7.425 10.091H0l2.88-7.143h18.945l-1.519 3.824c-.787 1.936-2.587 3.263-4.702 3.32z" fill="#00D7D2">
+                          </path>
+                          <title>Auto Trader</title>
+                       </svg>
+                    </a>
+                    <button aria-label="Menu Button" class="c-at-header__toggle has-vrm-button" type="button">
+                       <div class="c-at-header__mobile-menu-icon">
+                          <span></span> 
+                          <span></span> 
+                          <span></span> 
+                       </div>
+                    </button>
+                    <nav aria-label="autotrader portal" class="c-at-navbar" role="navigation">
+                       <div class="c-at-navbar__nav c-at-navbar__nav--left">
+                          <ul class="c-at-navbar__sub-nav">
+
+
+                             <li class="c-at-navbar__item">
+                                <div>
+                                   <div>
+                                      <div class="dropdown">
+                                         <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                            Stock
+                                         </a>
+                                         <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                            <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                               <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                  <span class="svg-icon c-at-navbar__back-arrow">
+                                                     <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z">
+                                                        </path>
+                                                        <title>Chevron icon</title>
+                                                     </svg>
+                                                  </span>
+                                                  Back 
+                                               </a>
+                                            </li>
+                                            <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                               <ul class="c-at-nav-dropdown">
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Advertise</a></li>
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Stock &amp; ads</a></li>
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Sold vehicles</a></li>
+                                               </ul>
+                                            </li>
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                             </li>
+
+
+                             <li class="c-at-navbar__item">
+                                <div>
+                                   <div>
+                                      <div class="dropdown">
+                                         <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                            Performance
+                                         </a>
+                                         <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                            <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                               <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                  <span class="svg-icon c-at-navbar__back-arrow">
+                                                     <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+                                                        <title>Chevron icon</title>
+                                                     </svg>
+                                                  </span>
+                                                  Back 
+                                               </a>
+                                            </li>
+                                            <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                               <ul class="c-at-nav-dropdown">
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Response</a></li>
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Dealer Reviews</a></li>
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Lead generator</a></li>
+                                                  <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Enquiries</a></li>
+                                               </ul>
+                                            </li>
+                                         </ul>
+                                      </div>
+                                   </div>
+                                </div>
+                             </li>
+
+                             <li class="c-at-navbar__item">
+                                    <div>
+                                       <div>
+                                          <div class="dropdown">
+                                             <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                Sourcing
+                                             </a>
+                                             <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                   <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                      <span class="svg-icon c-at-navbar__back-arrow">
+                                                         <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z">
+                                                            </path>
+                                                            <title>Chevron icon</title>
+                                                         </svg>
+                                                      </span>
+                                                      Back 
+                                                   </a>
+                                                </li>
+                                                <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                   <ul class="c-at-nav-dropdown">
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Advertise to trade</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Search vehicles</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">My advertised vehicles</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Highlighted vehicles</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Recent vehicle alerts</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Favourite sellers</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Stock profiler</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Requested vehicles</a></li>
+                                                      <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Create a requested vehicle</a></li>
+                                                   </ul>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </li>
+
+
+                                 <li class="c-at-navbar__item">
+                                        <div>
+                                           <div>
+                                              <div class="dropdown">
+                                                 <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                    i-Control
+                                                 </a>
+                                                 <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                                    <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                       <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                          <span class="svg-icon c-at-navbar__back-arrow">
+                                                             <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z">
+                                                                </path>
+                                                                <title>Chevron icon</title>
+                                                             </svg>
+                                                          </span>
+                                                          Back 
+                                                       </a>
+                                                    </li>
+                                                    <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                       <ul class="c-at-nav-dropdown">
+                                                          <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">i-Control dashboard</a></li>
+                                                          <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Appraisals</a></li>
+                                                          <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Forecourt</a></li>
+                                                          <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="">Rules and settings</a></li>
+                                                       </ul>
+                                                    </li>
+                                                 </ul>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </li>
+
+                                     <li class="c-at-navbar__item">
+                                            <div>
+                                               <div>
+                                                  <div class="dropdown">
+                                                     <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                                        My website
+                                                     </a>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </li>
+                          </ul>
+                       </div>
+                       <div class="c-at-navbar__nav c-at-navbar__nav--right step-1 down-shep" data-step-title="Step 1 title">
+                          <div class="c-at-navbar__nav--right-nav visible-md-inline-block visible-lg-inline-block">
+                             <ul class="c-at-navbar__sub-nav">
+                                <li class="c-at-navbar__item">
+                                   <a  class="c-at-navbar__link" href="javascript: void(0)"> 
+                                        News &amp; Explore 
+                                    </a> 
+                                </li>
+                                <li class="c-at-navbar__item">
+                                   <a  class="c-at-navbar__link" href="javascript: void(0)"> 
+                                        Contact 
+                                    </a> 
+                                </li>
+                                <li class="c-at-navbar__item">
+                                    <div>
+                                        <div class="dropdown">
+                                        <a aria-haspopup="true" class="c-at-navbar__link dropdown-toggle" href="javascript: void(0)" aria-expanded="false">
+                                            <span>Account</span>
+                                            <span class="svg-icon c-at-nav-dropdown__dropdown-arrow hidden-lg hidden-md">
+                                                <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+                                                    <title>Chevron icon</title>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul class="c-at-nav-dropdown__sub-menu is-closed">
+                                            <li class="c-at-nav-dropdown__item hidden-md hidden-lg">
+                                                <a class="c-at-navbar__link c-at-navbar__link-back">
+                                                    <span class="svg-icon c-at-navbar__back-arrow">
+                                                    <svg height="512" viewBox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+                                                        <title>Chevron icon</title>
+                                                    </svg>
+                                                    </span>
+                                                    Back 
+                                                </a>
+                                            </li>
+                                            <li class="c-at-nav-dropdown__item c-at-nav-dropdown__item-top-nav-item">
+                                                <ul class="c-at-nav-dropdown">
+                                                    <div class="c-at-account-info visible-md-block visible-lg-block">
+                                                        <span class="c-at-user-info__user-name">stuart ridgway</span>
+                                                        <div>
+                                                            <span class="c-at-dealer-info__dealership-name">Ange's Stock Export Dealer</span> <span class="c-at-dealer-info__did">DID: 20380</span>
+                                                            <div class="c-at-nav-dropdown__footer-link-item">
+                                                                <a class="c-at-nav-dropdown__link visible-md visible-lg" tabindex="0">Switch my DID</a> 
+                                                                <div class="visible-xs visible-sm"> <a class="c-at-dealer-info__switch c-at-btn c-at-btn--secondary" tabindex="0">Switch my DID</a> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Sourcing preferences</a></li>
+                                                    <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Approved partner logos</a></li>
+                                                    <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Live chat sign up</a></li>
+                                                    <li class="c-at-nav-dropdown__item"><a class="c-at-nav-dropdown__link" href="javascript: void(0)">Sourcing sign up</a></li>
+                                                    <li class="c-at-nav-dropdown__item c-at-nav-dropdown__footer-link-item visible-md-block visible-lg-block">
+                                                        <a class="c-at-nav-dropdown__link" tabindex="0"><span> Not stuart? </span>Log out</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="c-at-navbar__item">
+                                      <span class="c-at-navbar__link" tabindex="0">
+                                         Notifications
+                                      </span>
+                                        <div class="ng-sidebar-container--animate">
+                                        <div arialabel="Notifications Sidebar" atnoscroll="" mode="over" position="right" sidebarclass="c-at-sidebar">
+                                            <aside role="complementary" class="ng-sidebar ng-sidebar--closed ng-sidebar--right ng-sidebar--over c-at-sidebar ng-sidebar--inert" aria-hidden="true" aria-label="Notifications Sidebar" style="transform: translateX(100%);">
+                                            </aside>
+                                        </div>
+                                        <div class="ng-sidebar__content" style="margin: 0px;"></div>
+                                    </div>
+                                </li>
+                             </ul>
+                          </div>
+                            <button class="c-at-vrm-lookup__lookup-button">
+                            <span class="c-at-vrm-lookup__lookup-button-icon">
+                                <svg height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Artboard</title>
+                                    <path d="M22.461 17.011v4.939c0 .57-.47 1.04-1.04 1.04h-2.88c-.57 0-1.04-.47-1.04-1.04V21h-10v.96c0 .57-.47 1.04-1.04 1.04h-2.88c-.57 0-1.04-.47-1.04-1.04v-6.12c0-.67.2-1.3.58-1.83-.55-.14-.95-.4-1.07-.8-.3-.96.76-1.85 2.2-2.13.4-.08.98-.04 1.48.1l.3-1.7C6.471 7.9 7.241 7 8.581 7H11v1H8.571c-.78 0-1.25.55-1.56 1.7l-.58 3.25-.68-.74c-.1-.08-.97-.2-1.3-.15-.5.1-.94.3-1.2.52-.2.16-.25.28-.24.33.02.04.57.23 1.17.25l1.4.07-1.12.84c-.57.42-.9 1.07-.9 1.78v6.12c0 .02 0 .04.03.04h2.88c.02 0 .04-.02.04-.04V20h12v1.96c0 .02.02.04.04.04h2.88c.02 0 .04-.02.04-.04v-5.92l.99.971zm-.97-6.433l3.337 3.336a.5.5 0 1 1-.707.707l-3.416-3.416A5.002 5.002 0 0 1 13 7c0-2.76 2.24-5 5-5a5.002 5.002 0 0 1 3.492 8.578zM7.502 17c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h10c.28 0 .5.22.5.5s-.22.5-.5.5h-10zM18 11c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4z"></path>
+                                    <title>Vehicle Lookup Icon</title>
+                                </svg>
+                            </span>
+                            <span class="c-at-vrm-lookup__lookup-button-label"> VRM </span> 
+                            </button>
+                       </div>
+                    </nav>
+                 </div>
+              </div>
+           </div>
+        </header>
+        <a id="content" name="content"></a>
+        <div class="o-at-content-container o-at-content-container--grey has-fixed-header h-at-gutter-padding has-footer">
+            <div class="c-at-breadcrumb-wrapper--blue theme--dark">
+                <div class="o-at-container">
+                    <div class="c-at-breadcrumb">
+                        <span><a class="c-at-breadcrumb__link o-link o-link--primary" href="./" target="_self" title="Go back to Group View">Group View</a> <span aria-label="Breadcrumb chevron icon" class="c-at-breadcrumb__icon"><svg class="u-at-svg-icon" height="512" viewbox="0 0 129 129" width="512" xmlns="http://www.w3.org/2000/svg">
+						<path d="M40.4 121.3c-.8.8-1.8 1.2-2.9 1.2s-2.1-.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8 0l53.9 53.9c1.6 1.6 1.6 4.2 0 5.8l-53.9 53.9z"></path>
+						<title>Breadcrumb Icon</title></svg></span></span> <span><span class="c-at-breadcrumb__active">Dealer 471487</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-at-fluid-hero c-at-fluid-hero--top-section c-at-fluid-hero--top-section-blue theme--dark">
+                <div class="o-at-container">
+                    <div class="row is-finance-view u-at-mt-20">
+                        <div class="col-lg-6 col-md-6 col-sm-12 c-at-greeting u-at-relative theme--dark">
+                            <h2 class="c-at-fluid-hero__overview-title c-at-greeting__title"></h2>
+                            <div class="c-at-greeting__hello step-2 down-shep" data-step-title="Step 2 title">
+                                <h2 class="c-at-fluid-hero__overview-title c-at-greeting__title">Hello <span class="u-at-title-case">Dave</span>. Yesterday, the <a class="o-link o-link--primary" href="./">Volkswagen Golf GTi</a> was your most popular vehicle.</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-push-1 col-md-push-1 col-lg-5 col-md-5 col-sm-12 step-3 down-shep" data-step-title="Step 3 title">
+                            <div class="c-at-performance-overview">
+                                <div class="row">
+                                    <div class="col-sm-12 c-at-performance-overview__description">
+                                        <h3 class="c-at-performance-overview__title u-at-text-left u-at-no-margin u-at-line-height--normal">Take a look.</h3>
+                                        <div class="c-at-performance-overview__most-views-txt">
+                                            <p>Your ads aren't getting enough views.<br> You had 2,561 ad views in the last 7 days.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row u-at-mt-20 u-at-mb-20">
+                                    <div class="col-sm-12 c-at-performance-overview__line-graph">
+                                        <div>
+                                            <svg class="c-at-chart" height="100%" preserveaspectratio="xMinYMin slice" style="width: 100%; height: 100%;" viewbox="45 10 800 140" width="100%" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+											<g class="c-at-chart__grids">
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="50" x2="50" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="116.1640625" x2="116.1640625" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="182.328125" x2="182.328125" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="248.4921875" x2="248.4921875" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="314.65625" x2="314.65625" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="380.8203125" x2="380.8203125" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__horizontal" x1="446.984375" x2="446.984375" y1="15" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__vertical" x1="50" x2="446.984375" y1="115" y2="115"></line>
+												<line class="c-at-chart__grid c-at-chart__vertical" x1="50" x2="446.984375" y1="90" y2="90"></line>
+												<line class="c-at-chart__grid c-at-chart__vertical" x1="50" x2="446.984375" y1="65" y2="65"></line>
+												<line class="c-at-chart__grid c-at-chart__vertical" x1="50" x2="446.984375" y1="40" y2="40"></line>
+												<line class="c-at-chart__grid c-at-chart__vertical" x1="50" x2="446.984375" y1="15" y2="15"></line>
+											</g>
+											<g>
+												<g class="c-at-chart__series c-at-chart__series-a">
+													<path class="c-at-chart__line" d="M50,103.987C72.055,104.954,94.109,106.889,116.164,106.889C138.219,106.889,160.273,94.056,182.328,94.056C204.383,94.056,226.438,94.493,248.492,94.493C270.547,94.493,292.602,94.382,314.656,94.178C336.711,93.974,358.766,83.108,380.82,83.108C402.875,83.108,424.93,100.193,446.984,108.736"></path>
+													<line class="c-at-chart__point" ct:value="3.4405286600417497" x1="50" x2="50.01" y1="103.98678349895626" y2="103.98678349895626"></line>
+													<line class="c-at-chart__point" ct:value="3.3244582168965398" x1="116.1640625" x2="116.1740625" y1="106.8885445775865" y2="106.8885445775865"></line>
+													<line class="c-at-chart__point" ct:value="3.837746254602108" x1="182.328125" x2="182.338125" y1="94.0563436349473" y2="94.0563436349473"></line>
+													<line class="c-at-chart__point" ct:value="3.820266362640146" x1="248.4921875" x2="248.5021875" y1="94.49334093399635" y2="94.49334093399635"></line>
+													<line class="c-at-chart__point" ct:value="3.83287777975154" x1="314.65625" x2="314.66625" y1="94.17805550621149" y2="94.17805550621149"></line>
+													<line class="c-at-chart__point" ct:value="4.275696388146228" x1="380.8203125" x2="380.8303125" y1="83.1075902963443" y2="83.1075902963443"></line>
+													<line class="c-at-chart__point" ct:value="3.2505702050031773" x1="446.984375" x2="446.994375" y1="108.73574487492057" y2="108.73574487492057"></line>
+												</g>
+												<g class="c-at-chart__series c-at-chart__series-b">
+													<path class="c-at-chart__line" d="M50,59.828C72.055,64.021,94.109,72.407,116.164,72.407C138.219,72.407,160.273,60.536,182.328,60.536C204.383,60.536,226.438,67.586,248.492,67.586C270.547,67.586,292.602,48.802,314.656,44.31C336.711,39.819,358.766,34.828,380.82,34.828C402.875,34.828,424.93,84.253,446.984,108.966"></path>
+													<line class="c-at-chart__point" ct:value="5.206896551724138" x1="50" x2="50.01" y1="59.827586206896555" y2="59.827586206896555"></line>
+													<line class="c-at-chart__point" ct:value="4.703703703703703" x1="116.1640625" x2="116.1740625" y1="72.40740740740742" y2="72.40740740740742"></line>
+													<line class="c-at-chart__point" ct:value="5.178571428571429" x1="182.328125" x2="182.338125" y1="60.53571428571428" y2="60.53571428571428"></line>
+													<line class="c-at-chart__point" ct:value="4.896551724137931" x1="248.4921875" x2="248.5021875" y1="67.58620689655174" y2="67.58620689655174"></line>
+													<line class="c-at-chart__point" ct:value="5.827586206896552" x1="314.65625" x2="314.66625" y1="44.310344827586206" y2="44.310344827586206"></line>
+													<line class="c-at-chart__point" ct:value="6.206896551724138" x1="380.8203125" x2="380.8303125" y1="34.827586206896555" y2="34.827586206896555"></line>
+													<line class="c-at-chart__point" ct:value="3.2413793103448274" x1="446.984375" x2="446.994375" y1="108.96551724137932" y2="108.96551724137932"></line>
+												</g>
+											</g></svg>
+                                            <ul class="ct-legend c-at-chart-legend">
+                                                <li class="ct-series-0 c-at-chart-legend__label-0" data-legend="0">Your views</li>
+                                                <li class="ct-series-1 c-at-chart-legend__label-1" data-legend="1">Similar ad views</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <a class="c-at-btn c-at-btn--primary c-at-performance-overview__button" href="./">Search your recent ads</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-at-fluid-hero--blue theme--dark">
+                <div class="o-at-container">
+                    <div class="row row--extend row--no-padding">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-4 down-shep" data-step-title="Step 4 title">
+                            <div class="c-at-stat">
+                                <h3 class="c-at-stat__title">Advertised stock</h3>
+                                <div>
+                                    <div>
+                                        <a class="u-at-block o-link o-link--primary" href="./" target="_self"><span class="c-at-stat__number-value">25</span></a> <a class="stat__link o-link o-link--primary" href="./" target="_self">View your ads <svg class="u-at-svg--inline u-at-svg--inline-right">
+										<title>arrow icon</title>
+										<use xlink:href="#arrow-icon"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-5 down-shep" data-step-title="Step 5 title">
+                            <div class="c-at-stat">
+                                <h3 class="c-at-stat__title">Unadvertised stock</h3>
+                                <div>
+                                    <div>
+                                        <a class="u-at-block o-link o-link--primary" href="./" target="_self"><span class="c-at-stat__number-value">15</span></a> <a class="stat__link o-link o-link--primary" href="./" target="_self">Advertise your stock <svg class="u-at-svg--inline u-at-svg--inline-right">
+										<title>arrow icon</title>
+										<use xlink:href="#arrow-icon"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-6 down-shep" data-step-title="Step 6 title">
+                            <div class="c-at-stat">
+                                <h3 class="c-at-stat__title">Low quality ads</h3>
+                                <div>
+                                    <div>
+                                        <a class="u-at-block o-link o-link--primary" href="./" target="_self"><span class="c-at-stat__number-value">0</span></a> <a class="stat__link o-link o-link--primary" href="./" target="_self">Your ads are looking good <svg class="u-at-svg--inline u-at-svg--inline-right">
+										<title>arrow icon</title>
+										<use xlink:href="#arrow-icon"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 step-7 down-shep" data-step-title="Step 7 title">
+                            <div class="c-at-stat">
+                                <h3 class="c-at-stat__title">Stock over 45 days</h3>
+                                <div>
+                                    <div>
+                                        <a class="u-at-block o-link o-link--primary" href="./" target="_self"><span class="c-at-stat__number-value">10</span></a> <a class="stat__link o-link o-link--primary" href="./" target="_self">Advertise to trade, it's free! <svg class="u-at-svg--inline u-at-svg--inline-right">
+										<title>arrow icon</title>
+										<use xlink:href="#arrow-icon"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-at-fluid-hero c-at-fluid-hero--grey c-at-overview-stocklist">
+                <div class="o-at-container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="c-at-overview-stocklist__title">Your oldest stock item on Auto Trader</h2>
+                            <table class="e-at-table e-at-table__extend step-8 step-9 step-10 step-11 step-12 step-13 down-shep" data-step-title="Step 8 title" data-step-title="Step 9 title" data-step-title="Step 10 title" data-step-title="Step 11 title" data-step-title="Step 12 title" data-step-title="Step 13 title">
+                                <thead class="e-at-table-table-head">
+                                    <tr class="e-at-table-row e-at-table-row--light-grey">
+                                        <th class="e-at-table-table-head__header" scope="col"><span>Vehicle details</span></th>
+                                        <th class="e-at-table-table-head__header" scope="col"><span>Daily ad views</span></th>
+                                        <th class="e-at-table-table-head__header" scope="col"><span>Days in stock</span></th>
+                                        <th class="e-at-table-table-head__header" scope="col"><span>Ad quality</span></th>
+                                        <th class="e-at-table-table-head__header" scope="col"><span>Price</span></th>
+                                        <th class="e-at-table-table-head__header" scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="e-at-table-row e-at-table-row e-at-table-row--lg-spacing e-at-table-row--light-grey">
+                                        <th aria-label="Details of the vehicle" class="e-at-table-table-body__header" scope="row">
+                                            <h3 class="e-at-table__title"><a class="e-at-table__link u-at-link" href="./"><span class="u-at-block" id="derivative-0">BMW 3 Series 3.0 330i SE 4dr</span> <span class="u-at-block" id="registration-0">ALEC001</span></a></h3>
+                                        </th>
+                                        <td aria-label="Daily advert views total" class="e-at-table-table-body__cell" data-title="Daily ad views total" id="advert-views-total-0"><span class="e-at-table__stat-note e-at-table__stat-note--no-data">---</span></td>
+                                        <td aria-label="Days in stock" class="e-at-table-table-body__cell" data-title="Days in stock" id="days-in-stock-0"><span class="e-at-table__stat">90</span></td>
+                                        <td aria-label="Advert quality" class="e-at-table-table-body__cell" data-title="Advert quality" id="ad-quality-0"><span class="e-at-table__stat">Good</span></td>
+                                        <td aria-label="Price" class="e-at-table-table-body__cell" data-title="Price"><span class="e-at-table__stat u-at-semibold-font has-price-indicator" id="price-0">£10,040</span> <span class="o-at-badge is-price-indicator is-price-indicator--above-market">Above market</span></td>
+                                        <td aria-label="What would you like to do next" class="e-at-table-table-body__cell e-at-table-table-body__cell-center" data-title=""><button class="c-at-btn c-at-btn--primary-ghost">Avertise to trade</button></td>
+                                    </tr>
+                                    <tr class="e-at-table-row e-at-table-row e-at-table-row--lg-spacing e-at-table-row--light-grey">
+                                        <th aria-label="Details of the vehicle" class="e-at-table-table-body__header" scope="row">
+                                            <h3 class="e-at-table__title"><a class="e-at-table__link u-at-link" href="./"><span class="u-at-block" id="derivative-0">Ford Focus RS</span> <span class="u-at-block" id="registration-0">ALEC002</span></a></h3>
+                                        </th>
+                                        <td aria-label="Daily advert views total" class="e-at-table-table-body__cell" data-title="Daily ad views total" id="advert-views-total-0"><span class="e-at-table__stat-note e-at-table__stat-note--no-data">---</span></td>
+                                        <td aria-label="Days in stock" class="e-at-table-table-body__cell" data-title="Days in stock" id="days-in-stock-0"><span class="e-at-table__stat">48</span></td>
+                                        <td aria-label="Advert quality" class="e-at-table-table-body__cell" data-title="Advert quality" id="ad-quality-0"><span class="e-at-table__stat">Good</span></td>
+                                        <td aria-label="Price" class="e-at-table-table-body__cell" data-title="Price"><span class="e-at-table__stat u-at-semibold-font has-price-indicator" id="price-0">£7,000</span> <span class="o-at-badge is-price-indicator is-price-indicator--above-market">Above market</span></td>
+                                        <td aria-label="What would you like to do next" class="e-at-table-table-body__cell e-at-table-table-body__cell-center" data-title=""><button class="c-at-btn c-at-btn--primary-ghost">Avertise to trade</button></td>
+                                    </tr>
+                                    <tr class="e-at-table-row e-at-table-row e-at-table-row--lg-spacing e-at-table-row--light-grey">
+                                        <th aria-label="Details of the vehicle" class="e-at-table-table-body__header" scope="row">
+                                            <h3 class="e-at-table__title"><a class="e-at-table__link u-at-link" href="./"><span class="u-at-block" id="derivative-0">Toyota Supra Twin Turbo</span> <span class="u-at-block" id="registration-0">ALEC003</span></a></h3>
+                                        </th>
+                                        <td aria-label="Daily advert views total" class="e-at-table-table-body__cell" data-title="Daily ad views total" id="advert-views-total-0"><span class="e-at-table__stat-note e-at-table__stat-note--no-data">---</span></td>
+                                        <td aria-label="Days in stock" class="e-at-table-table-body__cell" data-title="Days in stock" id="days-in-stock-0"><span class="e-at-table__stat">47</span></td>
+                                        <td aria-label="Advert quality" class="e-at-table-table-body__cell" data-title="Advert quality" id="ad-quality-0"><span class="e-at-table__stat">Good</span></td>
+                                        <td aria-label="Price" class="e-at-table-table-body__cell" data-title="Price"><span class="e-at-table__stat u-at-semibold-font has-price-indicator" id="price-0">£6,500</span> <span class="o-at-badge is-price-indicator is-price-indicator--above-market">Above market</span></td>
+                                        <td aria-label="What would you like to do next" class="e-at-table-table-body__cell e-at-table-table-body__cell-center" data-title=""><button class="c-at-btn c-at-btn--primary-ghost">Avertise to trade</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-at-fluid-hero--grey">
+                <div class="o-at-container">
+                    <div class="row">
+                        <div class="col-lg-12 u-at-text-center u-at-gutter-padding">
+                            <a class="c-at-btn c-at-btn--tertiary step-14 down-step" data-step-title="Step 14 title" href="./">View your stock list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-at-footer">
+            <ul class="c-at-footer__list step-15 down-step" data-step-title="Step 15 title">
+                <li class="c-at-footer__list-item">
+                    <a class="u-at-link c-at-footer__list-item-link" href="./" target="_self">Security</a>
+                </li>
+                <li class="c-at-footer__list-item">
+                    <a class="u-at-link c-at-footer__list-item-link" href="./" target="_blank">Terms &amp; Conditions</a>
+                </li>
+                <li class="c-at-footer__list-item">
+                    <a class="u-at-link c-at-footer__list-item-link" href="./" target="_self">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <Script src="bundle.js"></Script>
+</body>
+
+</html>
