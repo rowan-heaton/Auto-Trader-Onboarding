@@ -1,0 +1,83 @@
+.c-at-sidebar {
+  &.ng-sidebar {
+    background-color: $atMushroomGray;
+    box-shadow: -1px 0 2.5px 0 rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    position: fixed;
+    z-index: 99999999;
+    width: 470px;
+    padding: 0;
+
+    @at-root at-sudo-banner ~ at-header .c-at-header & {
+      top: 40px;
+    }
+
+    @include respond-to('phone') {
+      width: 100%;
+
+      // safari only
+      @include device('safari') {
+        min-height: 100vh;
+      }
+    }
+
+    &--animate {
+
+      @include respond-to('phone') {
+        @include device('safari') {
+          transition: none;
+        }
+      }
+    }
+  }
+  &__header {
+    padding: 35px 85px 10px 40px;
+  }
+  &__close-icon {
+    position: absolute;
+    transform: none;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    z-index: 1050;
+    top: 20px;
+    right: 20px;
+    fill: $at-blue-dark;
+  }
+
+  // Custom table for preferences
+  &__table .e-at-table-table-body__cell {
+    padding: 20px;
+    @include respond-to('phone') {
+      clear: none;
+      display: table-cell;
+      float: none;
+      text-align: left;
+      margin-bottom: 15px;
+      border-radius: 0;
+      border-bottom: 10px solid $atWhite;
+    }
+  }
+  &__table .e-at-table-row {
+    @include respond-to('phone') {
+      float: none;
+    }
+  }
+
+  // Not Found 404
+  &__not-found {
+    color: #464751;
+    margin: 50px auto;
+    width: 340px;
+    text-align: center;
+    &-refresh {
+      cursor: pointer;
+      width: 14px;
+      height: 14px;
+      fill: $atPrimary;
+      position: relative;
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+}

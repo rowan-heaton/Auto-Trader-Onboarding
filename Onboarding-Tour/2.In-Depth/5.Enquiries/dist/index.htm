@@ -18,6 +18,7 @@
 			<link href="/portal/201801191022/css/ie7.css" rel="stylesheet" />
 		<![endif]-->
 <body data-bind="css: {smallScreen: bodyClasses.smallScreenMode, touchDevice: bodyClasses.isTouch}" class="">
+<div class="contents__holder"></div>
 <div data-component="header/header" data-bind="visible: visible" style=""><div data-component="tola/header/sudo" data-bind="visible: visible" style=""><div class="sudoBanner alertMessage" data-bind="visible: user.isSudoLogin" style="display: none;">
 
 	<h3>YOU ARE LOGGED IN AS:</h3>
@@ -523,7 +524,7 @@
     <!-- ko if: showFooter --><!-- /ko -->
 </div>
 </div>
-<div class="content step-1" data-component="mainContent" data-bind="visible: visible" style="margin-bottom: 20px;"><div class="step-3" data-component="enquiries/home" data-bind="visible: visible" style=""><!-- ko if: !user.isPayGoUser -->
+<div class="content step-1 down-shep" data-step-title="Step 1 Title" data-component="mainContent" data-bind="visible: visible" style="margin-bottom: 20px;"><div data-component="enquiries/home" data-bind="visible: visible" style=""><!-- ko if: !user.isPayGoUser -->
 <div class="topTitle">
 	<ol class="secondaryNav">
 		<li data-bind="css: {selected: selectedItem() === &#39;dashboard&#39;}" class="selected">
@@ -668,7 +669,7 @@
 </div>
 
 <div class="messageList fl colTile col2h by4h clearTile stepOne">
-	<span id="enquiryList" class="noLink noPadding mCustomScrollbar _mCS_1"><div class="mCustomScrollBox mCS-dark" id="mCSB_1" style="position:relative; height:100%; overflow:hidden; max-width:100%;"><div class="mCSB_container mCS_no_scrollbar" style="position:relative; top:0;">
+	<span id="enquiryList" class="noLink noPadding mCustomScrollbar _mCS_1"><div class="mCustomScrollBox mCS-dark" id="mCSB_1" style="position:relative; height:100%; overflow:hidden; max-width:100%;"><div class="mCSB_container mCS_no_scrollbar step-2 down-shep" data-step-title="Step 2 Title" style="position:relative; top:0;">
 		<span data-bind="foreach: enquiryList">
 			<span class="row read selected" data-bind="attr: {id: $index() }, click: $parent.selectEnquiry.bind($data, $parent, $index()),
 			analyticsOnClick: {
@@ -781,7 +782,7 @@
 			</ul>
 
 
-			<div class="cb vehicleHeaderWrap stepThree step-2" data-bind="visible : vehicle().available" style="">
+			<div class="cb vehicleHeaderWrap stepThree step-3 down-shep" data-step-title="Step 3 Title" data-bind="visible : vehicle().available" style="">
 				<div class="vehicleHeaderImg">
 					<img data-bind="attr: {&#39;src&#39; : vehicle().mainImage}, visible: vehicle().mainImage" width="104" height="80" class="fl" alt="" src="https://dealerportal-qa.autotrader.co.uk/portal/" style="display: none;">
 					<div class="vehicleEditSprite noImage fl" width="104" height="80" alt="" data-bind="visible: !vehicle().mainImage"></div>
@@ -1277,7 +1278,7 @@
                 </div>
 			  </span>
 
-            <div class="messageActions floatHolder stepFour step-4">
+            <div class="messageActions floatHolder stepFour step-4 down-shep" data-step-title="Step 4 Title">
 
 
 

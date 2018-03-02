@@ -1,0 +1,60 @@
+.c-at-tabs {
+  position: relative;
+  min-height: 200px;
+  clear: both;
+  margin: 35px 20px 20px;
+  background: $atWhite;
+  &-tab {
+    float: left;
+    &__label {
+      background: $atBackground;
+      cursor: pointer;
+      display: inline;
+      padding: 10px 20px;
+      border: 1px solid $atBordersLines;
+      margin-left: -2px;
+      position: relative;
+      left: 2px;
+      top: -29px;
+      transition: background-color .17s linear;
+      &:hover {
+        background: darken($atBackground, 5%);
+      }
+    }
+    &__has-icon .c-at-tabs-tab__label {
+      padding: 10px 20px 10px 40px;
+    }
+    & [type=radio] {
+      display: none;
+    }
+    & [type=radio]:checked ~ .c-at-tabs-tab__label {
+      background: $atWhite;
+      border-bottom: 1px solid $atWhite;
+      z-index: 2;
+    }
+    & [type=radio]:checked ~ .c-at-tabs-tab__label ~ .c-at-tabs__content {
+      z-index: 1;
+      opacity: 1;
+    }
+    &__icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 13px;
+      top: 9px;
+      fill: $atPrimary;
+    }
+  }
+  &__content {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background: $atWhite;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    border: 1px solid $atBordersLines;
+    transition: opacity .6s linear;
+    opacity: 0;
+  }
+}
