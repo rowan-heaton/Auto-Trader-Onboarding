@@ -1,153 +1,489 @@
 import Shepherd from 'tether-shepherd';
 import './styles/main.scss';
 
-let tour = new Shepherd.tour({
+
+
+let tour = new Shepherd.Tour({
     defaults: {
       classes: 'shepherd-theme-default',
       scrollTo: true
     }
   });
+ 
   
-//Step 1
-tour.addStep('Step-1', {
-  title: 'Step 1',
-  text: 'You can export the queried results into a ??? file using this button.',
-  attachTo: '.Step-1 left',
-  buttons: [{
-      text: 'next',
-      action: tour.next,
-      classes: 'o-link o-link--primary'
-  }],
-  showCancelLink: true
-});
-
-//Step 2
-tour.addStep('Step-2', {
-  title: 'Step 2',
-  text: 'This box allows you to refine the output in the adjacent table, by use of filters. You can search for specifc dealers or show groups of related dealers.',
-  attachTo: '.Step-2 right',
-  buttons: [{
-      text: 'Back',
-      action: tour.back,
-      classes: 'o-link'
+  //Step 1
+    tour.addStep('Step-1', {
+    title: 'Step 1',
+    text: 'This is the performance dashboard. This shows a list of other dealers, which allows you to compare yourself to others who have similar ads.',
+    attachTo: '.Step-1 bottom',
+    buttons: [{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'o-link o-link--primary',
     },{
-      text: 'next',
-      action: tour.next,
-      classes: 'o-link o-link--primary'
-  }],
-  showCancelLink: true
-});
-
-//Step 3
-tour.addStep('Step-3', {
-  title: 'Step 3',
-  text: 'This table holds all the information to compare similar dealers and a rank is given to them. All collums are filterable by the small arrows next to each heading.',
-  attachTo: '.Step-3 left',
-  buttons: [{
-      text: 'Back',
-      action: tour.back,
-      classes: 'o-link'
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'o-link',
     },{
-      text: 'Got it!',
-      action: function() {
-          return tour.hide();
-      },
-      classes: 'o-link o-link--primary'
-  }],
-  showCancelLink: true
-});
-   
-tour.start();
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'o-link'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'o-link'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'o-link'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'o-link'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
 
-function generateContents() {
-  var totalSteps = document.querySelectorAll(".down-shep");
-  var contentsBuilder = '<div class="contents__wrapper">' + 
-  '<button class="contents__toggle c-at-btn c-at-btn--primary">' +
-  '<span class="contents__toggle-icon"></span>' +
-  '</button>' + 
-  '<div class="contents c-at-card c-at-card--shadow c-at-card--padding">' +
-  '<h2 class="contents__title">Help sections</h2>' +
-  '<ul class="contents__items">';
+  //Step 2
+    tour.addStep('Step-2', {
+    title: 'Step 2',
+    text: 'Here is list of all other dealers. With corresponding information such as their rank, daily ad views, stocks etc.',
+    attachTo: '.Step-2 top',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'o-link o-link--primary',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'o-link'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'o-link'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'o-link'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+		classes: 'o-link'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
 
-  for (var i = 0; i < totalSteps.length ; i++) {
-    var stepNo = i + 1;
-    contentsBuilder += '<li class="contents__item">' + 
-      '<button class="contents__section o-button-link" data-step-id="step' + stepNo + '">' + totalSteps[i].getAttribute('data-step-title') + '</button>' + 
-      '</li>';
-  }
+  //Step 3
+	tour.addStep('Step-3', {
+    title: 'Step 3',
+    text: 'Here you can choose to show the Overview or Price indicator view.',
+    attachTo: '.Step-3 bottom',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'o-link o-link--primary'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'o-link'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'o-link'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'o-link'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
 
-  contentsBuilder += '</ul>' + '</div>' +'</div>';
-
-  return contentsBuilder;
-}
-
- function insertContents() {
-  document.querySelector(".contents__holder").innerHTML = generateContents();
-}
-
-insertContents();
-
-document.documentElement.addEventListener("click", function(event) {
-  if (event.target.classList.contains("shepherd-launcher")) {
-      document.querySelector(".shepherd-launcher").classList.add("u-at-hidden");
-      tour.start();
-  }
-
-  if (event.target.classList.contains("contents__toggle")) {
-    var contentsSection = document.querySelector(".contents__wrapper");
-
-    if (contentsSection.classList.contains("contents__wrapper--open")) {
-      contentsSection.classList.remove("contents__wrapper--open");
-      document.querySelector(".contents__section--current").classList.remove("contents__section--current");
-    } else {
-      contentsSection.classList.add("contents__wrapper--open");
-      document.querySelector('[data-step-id="' + tour.getCurrentStep().id + '"]').classList.add("contents__section--current");
-    }
-  }
-
-  if (event.target.classList.contains("contents__section")) {
-    var tourId = event.target.getAttribute('data-step-id').replace("step", "");
-    tour.show([tourId-1]);
-
-    document.querySelector(".contents__section--current").classList.remove("contents__section--current");
-    document.querySelector('[data-step-id="' + tour.getCurrentStep().id + '"]').classList.add("contents__section--current");
-  }
-
-  if (event.target.classList.contains("shepherd-button")) {
-    document.querySelector(".contents__section--current").classList.remove("contents__section--current");
-    document.querySelector('[data-step-id="' + tour.getCurrentStep().id + '"]').classList.add("contents__section--current");
-  }
-
-  if (event.target.classList.contains("c-at-navbar__link")) {
-    
-    var subMenu = event.target.nextElementSibling;
-    var allDropdowns = document.querySelectorAll(".is-open");
-
-    for (var i = 0; i < allDropdowns.length; i++) {
-      allDropdowns[i].classList.remove("is-open");
-      allDropdowns[i].classList.add("is-closed");
-    }
-
-    if (subMenu !== null) {
-      if (subMenu.classList.contains("is-closed")) {
-        subMenu.classList.remove("is-closed");
-        subMenu.classList.add("is-open");
-      } else {
-        subMenu.classList.remove("is-open");
-        subMenu.classList.add("is-closed");
-      }
-    }
-  }
+  //Step 4
+    tour.addStep('Step-4', {
+    title: 'Step 4',
+    text: 'You can sort the list by ascending/descending order here.',
+    attachTo: '.Step-4 top',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'c-at-button-group'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'o-link o-link--primary'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'o-link'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'o-link'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+    showCancelLink: true
+  });
   
-}, false);
+  //Step 5
+    tour.addStep('Step-5', {
+    title: 'Step 5',
+    text: 'You can export leads using this button.',
+    attachTo: '.Step-5 left',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'c-at-button-group'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'c-at-button-group'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'o-link o-link--primary'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'o-link'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
+  
+  //Step 6
+    tour.addStep('Step-6', {
+    title: 'Step 6',
+    text: 'If there\'s something you don\'t understand about the table, click here.',
+    attachTo: '.Step-6 left',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'c-at-button-group'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'c-at-button-group'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'c-at-button-group'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'o-link o-link--primary'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
+  
+  //Step 7
+    tour.addStep('Step-7', {
+    title: 'Step 7',
+    text: 'You can search through different dealers by using this filter, e.g., by Dealership or Franchise.',
+    attachTo: '.Step-7 right',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'c-at-button-group'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'c-at-button-group'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'c-at-button-group'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'c-at-button-group'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'o-link o-link--primary'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
+  
+  //Step 8
+    tour.addStep('Step-8', {
+    title: 'Step 8',
+    text: 'You can press this button to show/hide the filter.',
+    attachTo: '.Step-8 right',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+    },{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'c-at-button-group'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'c-at-button-group'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'c-at-button-group'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'c-at-button-group'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'c-at-button-group'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'o-link o-link--primary'
+    },{
+        text: '9',
+        action: function() { tour.show(8); },
+        classes: 'o-link'
+    },{
+        text: 'Next',
+        action: tour.next,
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true
+  });
+  
+  //Step 9
+	tour.addStep('Step-9', {
+    title: 'Step 9',
+    text: 'You can navigate through different pages of the other dealers here.',
+    attachTo: '.Step-9 top',
+    buttons: [{
+        text: 'Back',
+        action: tour.back,
+        classes: 'o-link o-link--primary'
+	},{
+		text: '1',
+        action: function() { tour.show(0); },
+		classes: 'c-at-button-group',
+    },{
+        text: '2',
+        action: function() { tour.show(1); },
+		classes: 'c-at-button-group',
+    },{
+        text: '3',
+        action: function() { tour.show(2); },
+		classes: 'c-at-button-group'
+    },{
+        text: '4',
+        action: function() { tour.show(3); },
+		classes: 'c-at-button-group'
+    },{
+        text: '5',
+        action: function() { tour.show(4); },
+		classes: 'c-at-button-group'
+    },{
+        text: '6',
+        action: function() { tour.show(5); },
+        classes: 'c-at-button-group'
+    },{
+        text: '7',
+        action: function() { tour.show(6); },
+        classes: 'c-at-button-group'
+    },{
+        text: '8',
+        action: function() { tour.show(7); },
+        classes: 'c-at-button-group'
+    },{
+        text: 'Got it!',
+        action: function() { return tour.hide(); },
+        classes: 'o-link o-link--primary'
+    }],
+	showCancelLink: true,
+	scrollTo: true
+  });
+     
+  tour.start();
 
-for (var el of document.querySelectorAll(".c-at-nav-dropdown")) {
-  el.addEventListener("mouseleave", function() {
-    var allDropdowns = document.querySelectorAll(".is-open");
-
-    for (var i = 0; i < allDropdowns.length; i++) {
-      allDropdowns[i].classList.remove("is-open");
-      allDropdowns[i].classList.add("is-closed");
-    }
-  })
-}
+  function jumpTo(step)
+  {
+	tour.show(step);
+  }
