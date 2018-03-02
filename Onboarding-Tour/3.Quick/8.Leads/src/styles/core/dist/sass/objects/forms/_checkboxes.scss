@@ -1,0 +1,211 @@
+// Checkboxes
+
+.form-inline {
+  float: left;
+  display: inline;
+  margin-right: 25px;
+  width: 100%;
+}
+
+.at-checkbox input[type=checkbox] {
+  display:none;
+}
+
+.at-checkbox input[type=checkbox]+label {
+  display: block;
+  position: relative;
+  font-weight: 500;
+  clear: both;
+  width: 100%;
+  cursor: pointer;
+  padding: 7px 0 8px 28px;
+}
+
+.at-checkbox input[type=checkbox]+label:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: solid 1px #b7c0c7;
+  background: #fff url(https://portal.autotrader.co.uk/img/icon-check-white.7b2a59b4.png) 50% -100% no-repeat;
+  background-size: 13px auto;
+}
+
+// Large Checkbox
+.at-checkbox--lg input[type=checkbox]+label:before {
+  background-size: 20px auto;
+  width: 30px;
+  height: 30px;
+}
+
+.at-checkbox--lg input[type=checkbox] + label {
+  padding: 10px 0px 8px 40px;
+  font-size: 16px;
+}
+
+.at-checkbox input[type=checkbox]+label:hover {
+  color: #267ec8;
+}
+
+.at-checkbox input[type=checkbox]+label:hover:before {
+  -webkit-box-shadow: 0 0 2px 0 #1899DB;
+  -moz-box-shadow: 0 0 2px 0 #1899DB;
+  box-shadow: 0 0 2px 0 #1899DB;
+  border-color: #267ec8;
+}
+
+.at-checkbox input[type=checkbox]:checked+label:before {
+  background-position: 50% 50%;
+  background-color: #267ec8;
+}
+
+.at-checkbox input[type=checkbox]:checked+label:hover:before {
+  background-color: #1899db;
+  border-color: #1899db;
+}
+
+.at-checkbox .count {
+  font-weight: 500;
+  font-style: italic;
+  color: #267EC8;
+  font-size: 12px;
+}
+
+// Disabled State for Checkbox and Radio Buttons
+
+.at-checkbox input[type=checkbox][disabled=disabled] + label,
+.at-checkbox input[type=checkbox][disabled=disabled] + label:before {
+  cursor: not-allowed !important;
+}
+
+.at-checkbox input[type=checkbox][disabled=disabled] + label {
+  color: #999999  !important;
+}
+
+.at-checkbox input[type=checkbox][disabled=disabled] + label:before {
+  background-color: #dfdfdf !important;
+  border-color: #dfdfdf !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.at-checkbox input[disabled=disabled]+label .count {
+  color: #999999;
+}
+
+
+// UI Toggle switch - ON / OFF
+
+.input-switch {
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  height: 27px;
+  width: 81px;
+  border: 1px solid #495a67;
+  border-radius: 13.5px;
+
+  & input[type="checkbox"] {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    left: -1px;
+    top: -1px;
+    height: 27px;
+    width: 27px;
+    padding: 0;
+    margin: 0;
+    background: $atWhite;
+    border: 1px solid #495a67;
+    border-radius: 13.5px;
+    -webkit-appearance: none;
+    -webkit-transition: all 0.2s ease;
+    &:active:not([disabled]) {
+      background-image: -webkit-linear-gradient(top, #cccccc, #cecece);
+    }
+    &:checked {
+      left: 53px;
+    }
+    &:before, &:after {
+      position: absolute;
+      z-index: -1;
+      top: -1px;
+      height: 27px;
+      width: 68.5px;
+      font-size: 16.2px;
+      line-height: 27px;
+      text-align: center;
+      font-weight: $at-light-font;
+    }
+    &:before {
+      right: 13.5px;
+      color: $atWhite;
+      content: 'ON';
+      background-color: #495a67;
+      border-top-left-radius: 13.5px;
+      border-bottom-left-radius: 13.5px;
+    }
+    &:after {
+      left: 13.5px;
+      color: #495a67;
+      content: 'OFF';
+      background-color: $atWhite;
+      border-top-right-radius: 13.5px;
+      border-bottom-right-radius: 13.5px;
+    }
+
+    // Disabled states - TO DO
+    &[disabled] {
+      background-image: -webkit-linear-gradient(top, #e6e6e6, #ffffff);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      &:before {
+        background-color: #495a67;
+        opacity: 0.8;
+      }
+      &:after {
+        color: #c8c8c8;
+        background-color: #f7f7f7;
+        box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.33), inset -6.75px 13.5px #f7f7f7;
+      }
+    }
+  }
+}
+
+
+// Pill button checkboxes
+.at-checkbox-pill {
+  & input[type=checkbox] {
+    display: none;
+    &:checked + .at-checkbox-pill__text {
+      border: 1px solid $atPrimary;
+      background-color:$atPrimary;
+      background:$atPrimary url(images/svgs/tick.svg) no-repeat 90% center;
+      background-size:15px 13px;
+    }
+  }
+  &__text {
+    background-color: $atDarkBg;
+    border: 1px solid $atPrimary;
+    border-radius: 30px;
+    color: $atWhite;
+    font-size: 14px;
+    text-decoration:none;
+    text-align:center;
+    width: 100%;
+    padding: 15px 0;
+    cursor: pointer;
+    display:block;
+    transition:background-color 150ms ease-in;
+    &:hover {
+      background-color: lighten($atDarkBg, 10%);
+    }
+  }
+}

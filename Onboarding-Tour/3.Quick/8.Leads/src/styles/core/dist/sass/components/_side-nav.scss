@@ -1,0 +1,90 @@
+.c-at-side-nav {
+  padding: 0;
+  border-right: 1px solid $atBordersLines;
+  &--no-border {
+    border-right: none;
+  }
+
+  &__main-title {
+    font-size: 22px;
+    margin:0;
+    border-bottom: 1px solid $atBordersLines;
+    padding-bottom: 15px;
+  }
+  &__list {
+    padding: 5px 0 15px;
+    margin: 0;
+    &-child {
+      border-bottom: 1px solid $atBordersLines;
+      &-title {
+        font-size: 12px;
+        list-style: none;
+        padding: 15px 0 5px;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      // Disable all link states for loading
+      &--disabled .c-at-side-nav__link--completed,
+      &--disabled .c-at-side-nav__link--active,
+      &--disabled .c-at-side-nav__link--disabled {
+        cursor: not-allowed;
+        color: $atBordersLines;
+        opacity: 0.8;
+      }
+    }
+  }
+  &__list-item {
+    list-style: none;
+  }
+  &__link {
+    color: $at-aqua;
+    padding: 10px;
+    position: relative;
+    display: block;
+    margin-bottom: 1px;
+    text-decoration: none;
+
+    &--sm {
+      padding: 5px 10px;
+    }
+    &--active {
+      border-right: 3px solid $at-aqua;
+      background: $atBackground;
+      cursor: default;
+      color: $atDarkText;
+    }
+    &:hover {
+      background: $atBackground;
+      color: $at-aqua-light;
+    }
+    &--completed {
+      font-weight: $at-semibold-font;
+      cursor: pointer;
+      @include respond-to('phone') {
+        font-weight: $at-regular-font;
+      }
+      }
+    &--disabled {
+      color: $atBordersLines;
+      cursor: not-allowed;
+      &:hover {
+        background: transparent;
+        border-right: none;
+        color: $atBordersLines;
+      }
+    }
+    .o-at-badge--blue {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__content {
+    padding: 0 25px 25px;
+    &-main-title {
+      font-size: 26px;
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
