@@ -1,0 +1,216 @@
+.c-at-stat {
+  padding: 32px;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  &__hover {
+    &--top {
+      padding: 24px 32px 0 32px;
+    }
+    &--bottom {
+      padding: 24px 32px;
+    }
+    &:hover {
+      background: $at-aqua-dark;
+      color: $at-blue-dark;
+      .c-at-stat__number-value{
+        color: $at-blue-dark;
+      }
+      .c-at-stat__link {
+        color: $at-blue-dark;
+      }
+      .c-at-stat__icon--lg {
+        fill: $at-blue-dark;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    font-size: $at-font-size-16 ;
+    line-height: $at-line-height-24;
+    font-weight: $at-light-font;
+
+    @include respond-to('tablet-landscape') {
+      min-height: 50px;
+    }
+    @include respond-to('medium-tablet-landscape') {
+      font-size: $at-font-size-18;
+      line-height: $at-font-size-18;
+    }
+    @include respond-to('phone') {
+      min-height: 40px;
+    }
+  }
+  &__number {
+    display: block;
+    text-decoration: none;
+    color: $at-aqua;
+    transition: 0.15s ease-in-out;
+    &-value {
+      font-size: $at-font-size-72;
+      padding: 16px 0;
+    }
+    &:hover {
+      color: $at-aqua-dark;
+    }
+  }
+  &__number-value {
+    font-size: $at-font-size-72;
+    font-weight: 400;
+    padding: 32px 0 0 0;
+  }
+  &__circle {
+    border-radius: 50%;
+    border: 2px solid $at-stat-default-state;
+    display: block;
+    text-decoration: none;
+    width: 115px;
+    height: 115px;
+    margin: 15px auto;
+    padding: 30px 0;
+    background: $atPrimary;
+    color: $atWhite;
+    &:hover {
+      background: $atHighlight;
+      outline: none;
+      border-color: $atHighlight;
+      box-shadow: 0 0 10px $atHighlight;
+    }
+    &-value {
+      font-size: $at-font-size-34;
+      font-weight: $at-light-font;
+    }
+    &-icon {
+      width: auto;
+      height: 40px;
+      display: block;
+      position: relative;
+      margin-top: 5px;
+      &--lg {
+        height: 80px;
+        top: -15px;
+        position: relative;
+        width: auto;
+        display: block;
+      }
+    }
+  }
+  &__icon--lg {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    display: block;
+    fill: $at-placeholder;
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $at-aqua;
+    font-size: $at-body-font;
+    line-height: $at-font-size-22;
+    font-weight: $at-light-font;
+    transition: 0.15s ease-in-out;
+    &:hover {
+      text-decoration: none;
+      font-weight: $at-light-font;
+    }
+    svg {
+      fill: $at-aqua;
+    }
+
+    @include respond-to('medium-tablet-landscape') {
+      font-size: $at-font-size-18;
+    }
+    &:hover {
+      color: $at-aqua-dark;
+      svg {
+        fill: $at-aqua-dark;
+      }
+    }
+  }
+
+  // Success State
+  &--success .c-at-stat__circle {
+    border-color: $at-stat-success-state;
+    background-color: $at-stat-success-state;
+    color: $atWhite;
+    &:hover {
+      background-color: $at-stat-success-state;
+      outline: none;
+      border-color: $at-stat-success-state;
+      box-shadow: 0 0 10px $at-stat-success-state;
+    }
+  }
+
+  &--success .c-at-stat__circle-icon {
+    fill: $atStatSuccess;
+  }
+
+  &--success .c-at-stat__number-value {
+    color: $at-aqua;
+    &:hover {
+      color: $at-aqua-dark;
+    }
+  }
+
+  // Waiting State
+  &--waiting .c-at-stat__circle {
+    border-color: $at-stat-error-state;
+    background: $atWhite;
+    color: $at-stat-error-state-txt;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $atWhite;
+      outline: none;
+      border-color: $at-stat-error-state;
+      box-shadow: none;
+    }
+  }
+  &--waiting .c-at-stat__link {
+    color: $at-stat-error-state-txt;
+    cursor: not-allowed;
+    &:hover {
+      color: $at-stat-error-state-txt;
+      text-decoration: none;
+    }
+  }
+
+  &--waiting .c-at-stat__circle-icon {
+    fill: $at-stat-error-state;
+  }
+
+  &--waiting .c-at-stat__circle-icon--lg {
+    fill: $at-stat-error-state;
+  }
+
+  &-inline {
+    list-style: none;
+    &__item {
+      &--pipe {
+        border-right: 1px solid $atBordersLines;
+        min-height: 80px;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      &-value {
+        display: block;
+        font-size: $at-font-size-34;
+        font-weight: $at-light-font;
+      }
+      &-note {
+        font-size: $at-sm-font;
+        font-weight: $at-light-font;
+      }
+      // displays as message without circle
+      &-message {
+        display: block;
+        padding: 32px 0 0 0;
+        font-size: $at-font-size-18;
+        line-height: $at-font-size-18;
+        font-weight: $at-light-font;
+      }
+    }
+  }
+  @include respond-to('medium-tablet-landscape') {
+    text-align: center;
+  }
+}
