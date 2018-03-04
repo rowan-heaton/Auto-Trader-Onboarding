@@ -333,7 +333,7 @@
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
             <div class="row">
                 <!-- why is Paul a sticky class? -->
-                <section class="dealer-reviews-filter panel step-1 down-shep" data-step-title="Step 1 Tile">
+                <section class="dealer-reviews-filter panel step-1 down-shep" data-step-title="Sort Results">
                     <div class="panel-body">
                         <at-dealer-reviews-status-filter class="ng-isolate-scope"><div class="customCheckBox">
     <span>Show:</span>
@@ -360,7 +360,7 @@
                 </section>
                 <!-- // End of Filter -->
 
-                <section class="dealer-reviews-help panel step-5 down-shep" data-step-title="Step 5 title">
+                <section class="dealer-reviews-help panel step-5 down-shep" data-step-title="Helpful Info">
                     <div class="panel-body">
                         <at-dealer-reviews-helpful-info><p class="panel__title">Helpful Info<i class="panel__icon"></i></p>
 <a class="btn btn__outline--blue" href="https://trade.autotrader.co.uk/articles/dealer-reviews-best-practice-guide-doc/" target="_blank">View Best Practice Guide</a>
@@ -373,13 +373,13 @@
             </div>
         </div>
 
-        <div class="dealer-reviews col-lg-9 col-md-9 col-sm-8 col-xs-12 step-2 down-shep" data-step-title="Step 2 title">
+        <div class="dealer-reviews col-lg-9 col-md-9 col-sm-8 col-xs-12 step-2 down-shep" data-step-title="Customer Review">
             <at-dealer-reviews-results class="ng-isolate-scope"><!-- ngRepeat: review in dealerReviewsResultsCtrl.reviews --><section class="panel ng-scope" ng-repeat="review in dealerReviewsResultsCtrl.reviews">
     <!-- Rating Content -->
     <!-- ngIf: ::!review.isOpen --><div ng-if="::!review.isOpen" class="ng-scope">
         <div at-dealer-review="" review="review" class="ng-isolate-scope"><div class="panel-body">
 
-    <div class="dealer-reviews__header step-3 down-shep" data-step-title="Step 3 title">
+    <div class="dealer-reviews__header step-3 down-shep" data-step-title="Review Header">
         <h2 class="dealer-reviews__header__title ng-binding" ng-bind="::dealerReviewCtrl.vrm">EA14YDZ</h2>
 
         <!-- ngIf: ::dealerReviewCtrl.reviewStatus !== 'Invite Sent' --><div at-dealer-review-stars="" number="::dealerReviewCtrl.overallRating" ng-if="::dealerReviewCtrl.reviewStatus !== &#39;Invite Sent&#39;" class="js-reviewOverallRating ng-scope ng-isolate-scope"><span class="dealer-reviews__star-rating dealer-reviews__star-rating__grey-star-background">
@@ -395,7 +395,7 @@
 
     <!-- ngIf: ::dealerReviewCtrl.reviewHasBeenLeft -->
 
-    <!-- ngIf: !dealerReviewCtrl.reviewHasBeenLeft --><div class="dealer-reviews__content ng-scope step-4 down-shep" data-step-title="Step 4 title" ng-if="!dealerReviewCtrl.reviewHasBeenLeft">
+    <!-- ngIf: !dealerReviewCtrl.reviewHasBeenLeft --><div class="dealer-reviews__content ng-scope step-4 down-shep" data-step-title="Review Body" ng-if="!dealerReviewCtrl.reviewHasBeenLeft">
         <p class="dealer-reviews__status dealer-reviews__status--invite-sent" at-dealer-review-status="" review="::dealerReviewCtrl.review" content-class="js-reviewStatus">
     <span tooltip-placement="bottom" uib-tooltip="We&#39;ve invited this buyer to write a review. If they respond, you&#39;ll see their review here.">
         <span class="status-title">Status:</span><span class="js-reviewStatus" ng-bind="dealerReviewStatusCtrl.status">Invite Sent</span>

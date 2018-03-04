@@ -8,9 +8,12 @@
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-<link href="./assets/main.df54b9e1f9145b31b0b7.css" rel="stylesheet"></head>
+<link href="./assets/main.df54b9e1f9145b31b0b7.css" rel="stylesheet">
+<link href="bundle.css" rel="Stylesheet"></head>
 
-<body class="overflow-x"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0"><symbol viewBox="0 0 22 22" id="close-icon"><path d="M.65 1.35l20 20c.2.2.5.2.7 0 .2-.2.2-.5 0-.7l-20-20c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7zm20-.7l-20 20c-.2.2-.2.5 0 .7.2.2.5.2.7 0l20-20c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0z"></path></symbol><symbol viewBox="0 0 18 20" id="date"><path d="M2 3c-.55 0-1 .45-1 1v14c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H2zm13-1h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h1V0h2v2h8V0h2v2zM1 7h16V6H1v1zm3 6h3v-3H4v3zM3 9h5v5H3V9z"></path></symbol></svg>
+<body class="overflow-x">
+<div class="contents__holder"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0"><symbol viewBox="0 0 22 22" id="close-icon"><path d="M.65 1.35l20 20c.2.2.5.2.7 0 .2-.2.2-.5 0-.7l-20-20c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7zm20-.7l-20 20c-.2.2-.2.5 0 .7.2.2.5.2.7 0l20-20c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0z"></path></symbol><symbol viewBox="0 0 18 20" id="date"><path d="M2 3c-.55 0-1 .45-1 1v14c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H2zm13-1h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h1V0h2v2h8V0h2v2zM1 7h16V6H1v1zm3 6h3v-3H4v3zM3 9h5v5H3V9z"></path></symbol></svg>
   <div style="max-width: 1366px; margin: 0 auto;">
 
  
@@ -22,7 +25,7 @@
 
         <report-selector><div class="report-selector c-at-report-selector">
     <p class="c-at-report-selector__label">Show me report:</p>
-    <div class="u-at-clearfix">
+    <div class="u-at-clearfix step-1 down-shep" data-step-title="Report Selector">
         <div class="c-at-report-selector__filter">
             <div class="o-at-form-element o-at-radio-button">
                 <label class="o-at-label">
@@ -44,22 +47,23 @@
 </report-selector>
 
         <div class="c-at-performance__filters-container u-at-clearfix">
+            <div class="step-2 down-shep" data-step-title="Date Range">
             <div class="c-at-performance__filter">
                 <date-picker><div class="date-picker c-at-date-picker">
-    <div class="o-form-element-container c-at-date-picker__filter">
-        <div class="o-at-form-element">
-            <label class="o-at-label c-at-date-picker__input-field">
-                <span class="c-at-date-picker__input-label">Date from</span>
-                <div class="o-at-input o-at-input--full-width">
-                    2018-01-11
-                    <span class="c-at-date-picker__input-icon">
-                        <svg>
-                            <use xlink:href="#date"></use>
-                        </svg>
-                    </span>
-                </div>
-            </label>
-        </div>
+                <div class="o-form-element-container c-at-date-picker__filter">
+                  <div class="o-at-form-element">
+                    <label class="o-at-label c-at-date-picker__input-field">
+                      <span class="c-at-date-picker__input-label">Date from</span>
+                        <div class="o-at-input o-at-input--full-width">
+                          2018-01-11
+                          <span class="c-at-date-picker__input-icon">
+                            <svg>
+                                <use xlink:href="#date"></use>
+                            </svg>
+                          </span>
+                      </div>
+                    </label>
+                  </div>
         <div class="c-at-date-picker__calendar-container is-hidden" id="dateCalendar">
             <div class="c-at-date-picker__opacity-layer"></div>
             <div class="c-at-date-picker__calendar-modal">
@@ -780,8 +784,9 @@
 </div>
 </date-picker>
             </div>
+          </div>
             <div class="c-at-performance__dates-cta">
-                <button atanalyticscategory="standard-link" atanalyticslabel="Run report" atanalyticson="click" class="c-at-btn c-at-btn--primary c-at-performance__apply-dates">
+                <button atanalyticscategory="standard-link" atanalyticslabel="Run report" atanalyticson="click" class="c-at-btn c-at-btn--primary c-at-performance__apply-dates step-3 down-shep" data-step-title="Run Report">
                     Run report
                 </button>
             </div>
@@ -789,7 +794,7 @@
 
     </section>
 
-    <section class="c-at-performance__reports-section">
+    <section class="c-at-performance__reports-section step-4 down-shep" data-step-title="Report Results">
         <div class="c-at-performance__tables-container">
 
             <div class="c-at-performance__export-csv">
@@ -818,4 +823,5 @@
 </div>
 </performance></main>
 </div>
-</body></html>
+</body>
+<Script src="bundle.js"></Script></html>

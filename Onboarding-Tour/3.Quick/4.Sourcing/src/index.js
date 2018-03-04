@@ -9,7 +9,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 1', {
-    title: 'Step 1',
+    title: 'Vehicle Source Categories',
     text: 'These dropdowns define the source, type and make of the vehicles returned in the query below. ',
     attachTo: '.step-1 bottom',
     buttons: [{
@@ -22,7 +22,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 2', {
-    title: 'Step 2',
+    title: 'Refine Results',
     text: 'Of the vehicles returned, this menu allows further customisation in what vehicles are shown.',
     attachTo: '.step-2 right',
     buttons: [{
@@ -38,8 +38,8 @@ let tour = new Shepherd.Tour({
     });
 
   tour.addStep('step 3', {
-    title: 'Step 3',
-    text: 'Every vehicle that meets all the selected criteria will be sonw in this list. Each entry containing all the details from that vehiclas advert.',
+    title: 'Results List',
+    text: 'Every vehicle that meets all the selected criteria will be shown in this list. Each entry containing all the details from that vehiclas advert.',
     attachTo: '.step-3 left',
     buttons: [{
         text: 'Back',

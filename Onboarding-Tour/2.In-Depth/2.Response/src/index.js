@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //step 1
   tour.addStep('step 1', {
-    title: 'Step 1',
+    title: 'Time Frame',
     text: 'Response time frame is set here. Defaults to last 7 days.',
     attachTo: '.step-1 top',
     buttons: [{
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
 
   //step 2
   tour.addStep('step 2', {
-    title: 'Step 2',
+    title: 'Overview',
     text: 'How many ad views youre getting vs youre competitors. RED - lower response rate & GREEN - higher responce rate.',
     attachTo: '.step-2 bottom',
     buttons: [{
@@ -42,7 +42,7 @@ let tour = new Shepherd.Tour({
 
   //step 3
   tour.addStep('step 3', {
-    title: 'Step 3',
+    title: 'Ad Summary',
     text: 'Summative figures of the response from your adverts.',
     attachTo: '.step-3 right',
     buttons: [{
@@ -60,7 +60,7 @@ let tour = new Shepherd.Tour({
 
   //step 4
   tour.addStep('step 4', {
-    title: 'Step 4',
+    title: 'Ad Performance',
     text: 'Visual representation of advert views in the response time frame.',
     attachTo: '.step-4 bottom',
     buttons: [{
@@ -78,7 +78,7 @@ let tour = new Shepherd.Tour({
 
   //step 5
   tour.addStep('step 5', {
-    title: 'Step 5',
+    title: 'Pricing',
     text: 'Indicates how we think youre vehicles are priced. Guidence on what is above, below and at market values.',
     attachTo: '.step-5 left',
     buttons: [{
@@ -96,7 +96,7 @@ let tour = new Shepherd.Tour({
 
   //step 6
   tour.addStep('step 6', {
-    title: 'Step 6',
+    title: 'Leads',
     text: 'These are all the different types of interactions consumers have with youre advert.',
     attachTo: '.step-6 top',
     buttons: [{
@@ -114,7 +114,7 @@ let tour = new Shepherd.Tour({
 
   //step 7
   tour.addStep('step 7', {
-    title: 'Step 7: Auto Trader Calls',
+    title: 'Leads: Auto Trader Calls',
     text: 'Everytime the number on an advert is called, it will update this figure.',
     attachTo: '.step-7 bottom',
     buttons: [{
@@ -132,7 +132,7 @@ let tour = new Shepherd.Tour({
 
   //step 8
   tour.addStep('step 8', {
-    title: 'Step 8: Emails',
+    title: 'Leads: Emails',
     text: 'Each emial sent to youre self is recorded and dispayed here.',
     attachTo: '.step-8 bottom',
     buttons: [{
@@ -150,7 +150,7 @@ let tour = new Shepherd.Tour({
 
   //step 9
   tour.addStep('step 9', {
-    title: 'Step 9: Answerable Chats',
+    title: 'Leads: Answerable Chats',
     text: '????????',
     attachTo: '.step-9 bottom',
     buttons: [{
@@ -168,7 +168,7 @@ let tour = new Shepherd.Tour({
 
   //step 10
   tour.addStep('step 10', {
-    title: 'Step 10: Click To Call',
+    title: 'Leads: Click To Call',
     text: 'On mobile devices, when a consumer clicks the number on an advert and brings up thier dialer to enquire about the car.',
     attachTo: '.step-10 bottom',
     buttons: [{
@@ -186,7 +186,7 @@ let tour = new Shepherd.Tour({
 
   //step 11
   tour.addStep('step 11', {
-    title: 'Step 11: Website Clicks',
+    title: 'Leads: Website Clicks',
     text: 'Everytime youre website is directly visited from the link on the advert.',
     attachTo: '.step-11 bottom',
     buttons: [{
@@ -204,7 +204,7 @@ let tour = new Shepherd.Tour({
 
   //step 12
   tour.addStep('step 12', {
-    title: 'Step 12: Saves To Gararge',
+    title: 'Leads: Saves To Gararge',
     text: 'Consumers can save youre advert to their gararge, for later use if they are intereted',
     attachTo: '.step-12 bottom',
     buttons: [{
@@ -222,7 +222,7 @@ let tour = new Shepherd.Tour({
 
   //step 13
   tour.addStep('step 13', {
-    title: 'Step 13: Map Views',
+    title: 'Leads: Map Views',
     text: 'On mobile devices, consumers can bring up the location of your dealership location to find out where it is.',
     attachTo: '.step-13 bottom',
     buttons: [{
@@ -240,7 +240,7 @@ let tour = new Shepherd.Tour({
 
 //step 14
   tour.addStep('step 14', {
-    title: 'Step 14: Print Outs',
+    title: 'Leads: Print Outs',
     text: 'Consumers can print off each advert and each time they do its recorded here.',
     attachTo: '.step-14 bottom',
     buttons: [{
@@ -250,7 +250,7 @@ let tour = new Shepherd.Tour({
       },{
         text: 'Advertising/VRM',
         action: function() {
-        	window.location.href="../../flat-advertising-1/dist/index.htm";
+        	window.location.href="../../3.Advertising/1.VRM-Search/dist/index.htm";
       },
         classes: 'o-link o-link--primary'
     }],

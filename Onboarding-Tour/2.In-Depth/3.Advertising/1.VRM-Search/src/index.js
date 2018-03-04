@@ -10,8 +10,8 @@ let tour = new Shepherd.Tour({
   
   //example step 1
   tour.addStep('step1', {
-    title: 'Step 1',
-    text: 'Enter regestration of the vehicle',
+    title: 'Enter Registration',
+    text: 'Enter registration of the vehicle',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Next',
@@ -22,7 +22,7 @@ let tour = new Shepherd.Tour({
     //advanceOn: '.docs-link click'
   });
 tour.addStep('step2', {
-    title: 'Step 2',
+    title: 'Enter Milage',
     text: 'Enter the milage of the vehicle',
     attachTo: '.step-2 bottom',
     buttons: [{
@@ -38,7 +38,7 @@ tour.addStep('step2', {
 });
 //example last step
   tour.addStep('step3', {
-    title: 'Step 3',
+    title: 'Find Vehicle',
     text: 'Next press button to find vehicle',
     attachTo: '.step-3 bottom',
     buttons: [{
@@ -46,9 +46,9 @@ tour.addStep('step2', {
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Advertising #2',
+        text: 'VRM Results',
         action: function() {
-            window.location.href="../../flat-advertising-2/dist/index.htm";
+            window.location.href="../../3.advertising/2.VRM-Results/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

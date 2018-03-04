@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //example step 1
   tour.addStep('step1', {
-    title: 'Step 1',
+    title: 'Search Results',
     text: 'The car you searched for should show up here',
     attachTo: '.step-1 bottom',
     buttons: [{
@@ -22,8 +22,8 @@ let tour = new Shepherd.Tour({
     //advanceOn: '.docs-link click'
   });
 tour.addStep('step2', {
-    title: 'Step 2',
-    text: 'Next you can do a full vehicle check',
+    title: 'Full Vehicle Check',
+    text: 'You can do a full vehicle check',
     attachTo: '.step-2 bottom',
     buttons: [{
         text: 'Back',
@@ -37,8 +37,8 @@ tour.addStep('step2', {
     showCancelLink: true
     });
 tour.addStep('step3', {
-    title: 'Step 3',
-    text: 'Next you can add this vehicle to teh forecourt',
+    title: 'Add To Forecourt',
+    text: 'You can add this vehicle to the forecourt',
     attachTo: '.step-3 bottom',
     buttons: [{
         text: 'Back',
@@ -54,7 +54,7 @@ tour.addStep('step3', {
 
 //example last step
   tour.addStep('step4', {
-    title: 'Step 4',
+    title: 'Search Again',
     text: 'ALso if this isnt the vehicle you were searching for you can search again or enter it manually',
     attachTo: '.step-4 bottom',
     buttons: [{
@@ -62,9 +62,9 @@ tour.addStep('step3', {
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Advertising #3',
+        text: 'Added To Forecourt',
         action: function() {
-            window.location.href="../../flat-advertising-3/dist/index.htm";
+            window.location.href="../../3.Advertising/3.Added-To-Forecourt/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

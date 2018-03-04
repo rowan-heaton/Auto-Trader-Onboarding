@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //example step 1
   tour.addStep('step1', {
-    title: 'Step 1',
+    title: 'Added To Forecourt',
     text: 'Once you have added the car to the forecourt you should get these options.',
     attachTo: '.step-1 bottom',
     buttons: [{
@@ -23,7 +23,7 @@ let tour = new Shepherd.Tour({
   });
 
 tour.addStep('step2', {
-    title: 'Step 2',
+    title: 'Create an Ad',
     text: 'You can create an advert for the car.',
     attachTo: '.step-2 bottom',
     buttons: [{
@@ -38,7 +38,7 @@ tour.addStep('step2', {
     showCancelLink: true
 });
 tour.addStep('step3', {
-    title: 'Step 3',
+    title: 'Add Another Vehicle',
     text: 'You can add another vehicle.',
     attachTo: '.step-3 bottom',
     buttons: [{
@@ -54,7 +54,7 @@ tour.addStep('step3', {
 });
 //example last step
   tour.addStep('step4', {
-    title: 'Step 4',
+    title: 'View Stock & Ads',
     text: 'You can go to stock & ads page.',
     attachTo: '.step-4 bottom',
     buttons: [{
@@ -62,9 +62,9 @@ tour.addStep('step3', {
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Advertising #4',
+        text: 'Upload Photos',
         action: function() {          
-            window.location.href="../../flat-advertising-4/dist/index.htm";
+            window.location.href="../../3.Advertising/4.Upload-Photos/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //step 1
   tour.addStep('step 1', {
-    title: 'Step 1',
+    title: 'Response Time Frame',
     text: 'Response time frame is set here. Defaults to last 7 days.',
     attachTo: '.step-1 top',
     buttons: [{
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
 
   //step 2
   tour.addStep('step 2', {
-    title: 'Step 2',
+    title: 'Overview',
     text: 'How many ad views youre getting vs youre competitors. RED - lower response rate & GREEN - higher responce rate.',
     attachTo: '.step-2 bottom',
     buttons: [{
@@ -42,7 +42,7 @@ let tour = new Shepherd.Tour({
 
   //step 3
   tour.addStep('step 3', {
-    title: 'Step 3',
+    title: 'Ad Performance Figures',
     text: 'Summative figures of the response from your adverts.',
     attachTo: '.step-3 right',
     buttons: [{
@@ -60,7 +60,7 @@ let tour = new Shepherd.Tour({
 
 //step 4
   tour.addStep('step 4', {
-    title: 'Step 4',
+    title: 'Leads',
     text: 'These are all the different types of interactions consumers have with youre advert.',
     attachTo: '.step-4 bottom',
     buttons: [{

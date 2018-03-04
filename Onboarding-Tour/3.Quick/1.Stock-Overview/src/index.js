@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //step 1
   tour.addStep('step1', {
-    title: 'Step 1',
+    title: 'Ad Performance',
     text: 'Here you can check which one of your advertised vehicles was the most popular at getting at getting user attention and also take a look at how your ads are doing by looking at the graph. You can check your recent adverts by clicking the red button.',
     attachTo: '.step-1 bottom',
     buttons: [{
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
   
   //step 2
   tour.addStep('step2', {
-    title: 'Step 2',
+    title: 'Ad Performance Figures',
     text: 'Here you can check how many vehicles you have advertised, unadvertised stock, check the quality of your ads and your stock over 45 days old.',
     attachTo: '.step-2 top',
     buttons: [{
@@ -43,7 +43,7 @@ let tour = new Shepherd.Tour({
   
   //step 3 
   tour.addStep('step3', {
-    title: 'Step 3',
+    title: 'Oldest Stock',
     text: 'Here you can check your oldest stock vehicles on AutoTrader, it displays your vehicle details, daily ad views, days in stock, ad quality and price of vehicle, you can view your whole stocklist by pressing the grey stocklist button. You can advertise stock by pressing the red advertise to stock button.',
     attachTo: '.step-3 bottom',
     buttons: [{

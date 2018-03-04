@@ -13,7 +13,7 @@ let tour = new Shepherd.Tour({
   
   //Step 1
     tour.addStep('Step-1', {
-    title: 'Step 1',
+    title: 'Export Results',
     text: 'You can export the queried results into a ??? file using this button.',
     attachTo: '.Step-1 bottom',
     buttons: [{
@@ -38,7 +38,7 @@ let tour = new Shepherd.Tour({
 
   //Step 2
     tour.addStep('Step-2', {
-    title: 'Step 2',
+    title: 'Refine Output',
     text: 'This box allows you to refine the output in the adjacent table, by use of filters. You can search for specifc dealers or show groups of related dealers.',
     attachTo: '.Step-2 top',
     buttons: [{
@@ -67,7 +67,7 @@ let tour = new Shepherd.Tour({
 
   //Step 3
 	tour.addStep('Step-3', {
-    title: 'Step 3',
+    title: 'Dealers Performance',
  	text: 'This table holds all the information to compare similar dealers and a rank is given to them. All collums are filterable by the small arrows next to each heading.',    
  	attachTo: '.Step-3 bottom',
     buttons: [{
@@ -87,8 +87,8 @@ let tour = new Shepherd.Tour({
         action: function() { tour.show(2); },
 		classes: 'o-link o-link--primary'
     },{
-       	text: 'Got it!',
-        action: function() { return tour.hide(); },
+       	text: 'Leads',
+        action: function() { window.location.href="../../8.Leads/dist/index.htm"; },
         classes: 'o-link o-link--primary'
     }],
 	showCancelLink: true

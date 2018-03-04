@@ -10,8 +10,8 @@ let tour = new Shepherd.Tour({
 
 //step 1
 tour.addStep('step1', {
-  title: 'Step 1',
-  text: 'This allows you to sort the results of your reviews to display it a specific order.',
+  title: 'Sort Results',
+  text: 'This allows you to sort the results of your reviews to display it in a specific order.',
   attachTo: '.step-1 right',
   buttons: [{
       text: 'Next',
@@ -24,8 +24,8 @@ tour.addStep('step1', {
 
 //step 2
 tour.addStep('step2', {
-  title: 'Step 2',
-  text: 'Each box on the page represent a different customer review.',
+  title: 'Customer Review',
+  text: 'Each box on the page represents a different customer review.',
   attachTo: '.step-2 bottom',
   buttons: [{
       text: 'Back',
@@ -42,7 +42,7 @@ tour.addStep('step2', {
 
 //step 3
 tour.addStep('step3', {
-  title: 'Step 3',
+  title: 'Review Header',
   text: 'The header of each review will include: Vehicle Registration, Star Rating, Customer Name & Email Address and Review Stage Date',
   attachTo: '.step-3 bottom',
   buttons: [{
@@ -62,7 +62,7 @@ tour.addStep('step3', {
 
 //step 4
 tour.addStep('step4', {
-  title: 'Step 4',
+  title: 'Review Body',
   text: 'The body of each review will include: the customer review text or an indicaton of when you sent the request to review invite and what the current status of the review.',
   attachTo: '.step-4 bottom',
   buttons: [{
@@ -80,7 +80,7 @@ tour.addStep('step4', {
 
 //step 6
 tour.addStep('step5', {
-  title: 'Step 5',
+  title: 'Helpful Info',
   text: 'The helpful info section contains Auto Traders best practice guide, a guide to how each review is moderated and the purpose of Dealer Reviews.',
   attachTo: '.step-5 right',
   buttons: [{
@@ -90,7 +90,7 @@ tour.addStep('step5', {
     },{
       text: 'Responce Dashboard',
       action: function() {
-          window.location.href("../../flat-group-portal/dist/index.htm")
+          window.location.href="../../7.Group-Portal/dist/index.htm";
       },
       classes: 'o-link o-link--primary'
   }],

@@ -9,8 +9,8 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 1', {
-    title: 'Step 1',
-    text: 'This is the Sourcing page. It can be used to filter listed cars on the AutoTrader website to a particular make or model and much more',
+    title: 'Filter Menu',
+    text: 'This can be used to filter listed cars on the AutoTrader website to a particular make or model and much more',
     attachTo: '.step-1 top',
     buttons: [{
         text: 'Next',
@@ -22,8 +22,8 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 2', {
-    title: 'Step 2',
-    text: 'Here is the Stack source, where you can change the type of listing you want to see',
+    title: 'Stock Source',
+    text: 'Here is the Stock source, where you can change the type of listing you want to see',
     attachTo: '.step-2 bottom',
     buttons: [{
         text: 'Back',
@@ -39,7 +39,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 3', {
-    title: 'Step 3',
+    title: 'Vehicle Type',
     text: 'Here you can change the vehicle type',
     attachTo: '.step-3 bottom',
     buttons: [{
@@ -56,7 +56,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 4', {
-    title: 'Step 4',
+    title: 'Make and Model',
     text: 'And also change the make and model of the vehicle type you selected',
     attachTo: '.step-4 bottom',
     buttons: [{
@@ -73,7 +73,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 5', {
-    title: 'Step 5',
+    title: 'Dealer Search',
     text: 'You can even search for a particular dealer and see their selection of vehicles',
     attachTo: '.step-5 right',
     buttons: [{
@@ -90,7 +90,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 6', {
-    title: 'Step 6',
+    title: 'Order Results',
     text: 'You can filter by how recently a vehicle has been listed',
     attachTo: '.step-6 top',
     buttons: [{
@@ -107,7 +107,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 7', {
-    title: 'Step 7',
+    title: 'Refine Search',
     text: 'The various filters here can be selected to refine your search to your preference',
     attachTo: '.step-7 bottom',
     buttons: [{
@@ -124,7 +124,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 8', {
-    title: 'Step 8',
+    title: 'Hightlight a Vehicle',
     text: 'You can highlight a vehicle if you want to save it to view it later',
     attachTo: '.step-8 bottom',
     buttons: [{
@@ -141,7 +141,7 @@ let tour = new Shepherd.Tour({
   });
 
   tour.addStep('step 9', {
-    title: 'Step 9',
+    title: 'Full Details',
     text: 'Or view further details of a particular vehicle that interests you',
     attachTo: '.step-9 bottom',
     buttons: [{
@@ -151,7 +151,7 @@ let tour = new Shepherd.Tour({
       },{
         text: 'Enquiries',
         action: function() {
-        window.location.href="../../flat-enquiries/dist/index.htm";
+        window.location.href="../../5.Enquiries/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //step 1
   tour.addStep('step1', {
-    title: 'Step 1',
+    title: 'Date Range',
     text: 'Here you can display all your enquiries dating from the last 7 days to a range of dates of your choice, as well as displaying what type of enquiries you would like it to display',
     attachTo: '.step-1 top',
     buttons: [{
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
   
 //last step
   tour.addStep('step2', {
-    title: 'Step 2',
+    title: 'Enquiy Contents',
     text: 'On the left you can see your enquiries which includes date, time and senders name. Towards the right, it displays the type of enquiry for a specific vehicle, highlighting the price and mileage. It will also display the contact information of the person that sent the enquiry',
     attachTo: '.step-2 left',
     buttons: [{

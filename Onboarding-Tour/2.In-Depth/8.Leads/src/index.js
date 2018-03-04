@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //example step 1
   tour.addStep('step1', {
-    title: 'Step 1',
+    title: 'Filter Leads',
     text: 'Use this to filter your leads by length of time',
     attachTo: '.step-1 bottom',
     buttons: [{
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
 
 //example last step
   tour.addStep('step2', {
-    title: 'Step 2',
+    title: 'Lead Details',
     text: 'This is where the details of each lead are, click on them to get more. ',
     attachTo: '.step-2 bottom',
     buttons: [{
@@ -32,9 +32,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: 'Lead Gen',
         action: function() {
-            return tour.hide();
+            window.location.href="../../9.Lead-Gen/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

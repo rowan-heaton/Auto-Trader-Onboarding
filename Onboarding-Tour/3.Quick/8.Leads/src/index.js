@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //example step 1
   tour.addStep('step1', {
-    title: 'Step 1',
+    title: 'Leads Timeframe',
     text: 'Use this to filter your leads by length of time',
     attachTo: '.step-1 bottom',
     buttons: [{
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
 
 //example last step
   tour.addStep('step2', {
-    title: 'Step 2',
+    title: 'Lead Content',
     text: 'This is where the details of each lead are, click on them to get more. ',
     attachTo: '.step-2 bottom',
     buttons: [{
