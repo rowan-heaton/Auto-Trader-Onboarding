@@ -34,7 +34,7 @@ let tour = new Shepherd.Tour({
       },{
         text: 'Got it!',
         action: function() {
-            return tour.hide();
+            window.location.href="../../9.Lead-Gen/dist/index.htm"
         },
         classes: 'o-link o-link--primary'
     }],

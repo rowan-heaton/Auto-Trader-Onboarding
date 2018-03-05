@@ -1,0 +1,512 @@
+// sass-lint:disable class-name-format
+
+// layout options
+
+.relative, .u-at-relative {
+  position: relative;
+}
+
+.u-at-fixed, .fixed {
+  position: fixed;
+  &--align-center {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.u-at-absolute, .absolute {
+  position: absolute;
+
+  &--align-center {
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.u-at-prevent-scroll {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  .overflow-x {
+    overflow: hidden;
+  }
+}
+
+// Floats
+.pull-left, .u-at-pull-left {
+  float: left;
+}
+
+.pull-right, .u-at-pull-right {
+  float: right;
+}
+
+.overflow-x, .u-at-overflow-x {
+  overflow-x: hidden;
+}
+
+.u-at-overflow-hidden {
+  overflow: hidden;
+}
+
+
+// display
+.hidden, .u-at-hidden {
+  display: none;
+}
+
+.inline, .u-at-inline {
+  display: inline;
+}
+
+.block, .u-at-block {
+  display: block;
+}
+
+.inline-block, .u-at-inline-block {
+  display: inline-block;
+}
+
+.u-at-visibility {
+
+  &-visible {
+    visibility: visible;
+  }
+
+  &-hidden {
+    visibility: hidden;
+  }
+}
+
+.u-at-flex {
+  display: flex;
+}
+
+
+// typography
+.text-left, .u-at-text-left {
+  text-align: left;
+}
+
+.text-right, .u-at-text-right {
+  text-align: right;
+}
+
+.text-center, .u-at-text-center {
+  text-align: center;
+}
+
+
+.u-at-semibold-font {
+  font-weight: $at-semibold-font;
+}
+
+.u-at-medium-font {
+  font-weight: $at-medium-font;
+}
+
+.u-at-regular-font {
+  font-weight: $at-regular-font;
+}
+
+.u-at-light-font {
+  font-weight: $at-light-font;
+}
+
+.u-at-line-height {
+  &--normal {
+    line-height: normal;
+  }
+}
+
+.u-at-title-case {
+  text-transform: capitalize;
+}
+
+.u-at-truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+
+// layout helpers
+.u-at-gutter-padding {
+  padding: $grid-gutter-width;
+
+  @include respond-to('phone') {
+    padding: $mobile-grid-gutter-width;
+  }
+}
+
+.u-at-clear {
+  clear:both;
+}
+
+.u-at-no-scrolling {
+  html#{&}, body#{&} {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.u-at-cursor {
+  &-pointer  {
+    cursor:pointer;
+  }
+
+  &-default {
+    cursor:default;
+  }
+}
+
+
+// background colour classes and placeholders
+.u-at-bg {
+  &--primary {
+    background-color:  $atPrimary;
+  }
+
+  &--inactive {
+    background-color:  $atInactive;
+  }
+
+  &--Highlight {
+    background-color:  $atHighlight;
+  }
+
+  &--dark {
+    background-color:  $atDark;
+  }
+
+  &--white {
+    background-color:  $atWhite;
+  }
+
+  &--background {
+    background-color:  $atBackground;
+  }
+
+  &--bordersLines {
+    background-color:  $atBordersLines;
+  }
+
+  &--LightText {
+    background-color:  $atLightText;
+  }
+
+  &--dark-text {
+    background-color:  $atDarkText;
+  }
+
+  &--success {
+    background-color:  $atSuccess;
+  }
+
+  &--danger {
+    background-color:  $atErrorDelete;
+  }
+
+  &--reg-plate {
+    background-color:  $atRegPlate;
+  }
+
+  &--at-warning {
+    background-color:  $atWarning;
+  }
+
+  &--at-info {
+    background-color:  $atInfo;
+  }
+
+  &--disabled {
+    background-color:  $atDisabled;
+  }
+}
+
+.u-at-color {
+  &--success {
+    color:  $atSuccess;
+  }
+  &--positive {
+    color:  $atPositive;
+  }
+  &--light-text {
+    color:  $atLightText;
+  }
+}
+
+
+@import "../utilities/colours";
+
+// Lists
+.u-at-list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.u-at-list-inline {
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+// Border helpers
+.u-at-default-radius {
+  border-radius: $default-radius;
+}
+
+.u-at-default-box-shadow {
+  @include box-shadow(0, 50px , 55px, 0, $atDarkText);
+}
+
+
+.u-at-default-border {
+  @include border( 1px, $atBordersLines);
+}
+
+.u-at-no-border {
+  @include border( 0px, transparent);
+}
+
+
+
+// Margin Helpers
+
+.u-at-margin {
+  margin: 10px;
+  &--bottom-margin {
+    margin-bottom: 20px;
+  }
+}
+
+
+.u-at-no-margin {
+  margin: 0;
+}
+
+.u-at-no-padding {
+  padding: 0;
+}
+
+.u-at-full-width {
+  width: 100%;
+}
+
+
+//== Margin Spacing //
+
+.u-at-mb {
+  &-0 {
+    margin-bottom: 0;
+  }
+
+  &-5 {
+    margin-bottom: 5px;
+  }
+
+  &-10 {
+    margin-bottom: 10px;
+  }
+
+  &-15 {
+    margin-bottom: 15px;
+  }
+
+  &-20{
+    margin-bottom: 20px;
+  }
+}
+
+
+.u-at-ml {
+  &-0 {
+    margin-left: 0;
+  }
+
+  &-5 {
+    margin-left: 5px;
+  }
+
+  &-10 {
+    margin-left: 10px;
+  }
+
+  &-15 {
+    margin-left: 15px;
+  }
+
+  &-20{
+    margin-left: 20px;
+  }
+}
+
+.u-at-mt {
+  &-0 {
+    margin-top: 0;
+  }
+
+  &-5 {
+    margin-top: 5px;
+  }
+
+  &-10 {
+    margin-top: 10px;
+  }
+
+  &-15 {
+    margin-top: 15px;
+  }
+
+  &-20{
+    margin-top: 20px;
+  }
+}
+
+.u-at-mr {
+  &-0 {
+    margin-right: 0;
+  }
+
+  &-5 {
+    margin-right: 5px;
+  }
+
+  &-10 {
+    margin-right: 10px;
+  }
+
+  &-15 {
+    margin-right: 15px;
+  }
+
+  &-20{
+    margin-right: 20px;
+  }
+}
+
+//== Padding Spacing //
+
+.u-at-pb {
+  &-0 {
+    padding-bottom: 0;
+  }
+
+  &-5 {
+    padding-bottom: 5px;
+  }
+
+  &-10 {
+    padding-bottom: 10px;
+  }
+
+  &-15 {
+    padding-bottom: 15px;
+  }
+
+  &-20{
+    padding-bottom: 20px;
+  }
+}
+
+
+.u-at-pl {
+  &-0 {
+    padding-left: 0;
+  }
+
+  &-5 {
+    padding-left: 5px;
+  }
+
+  &-10 {
+    padding-left: 10px;
+  }
+
+  &-15 {
+    padding-left: 15px;
+  }
+
+  &-20{
+    padding-left: 20px;
+  }
+}
+
+.u-at-pt {
+  &-0 {
+    padding-top: 0;
+  }
+
+  &-5 {
+    padding-top: 5px;
+  }
+
+  &-10 {
+    padding-top: 10px;
+  }
+
+  &-15 {
+    padding-top: 15px;
+  }
+
+  &-20{
+    padding-top: 20px;
+  }
+}
+
+.u-at-pr {
+  &-0 {
+    padding-right: 0;
+  }
+
+  &-5 {
+    padding-right: 5px;
+  }
+
+  &-10 {
+    padding-right: 10px;
+  }
+
+  &-15 {
+    padding-right: 15px;
+  }
+
+  &-20{
+    padding-right: 20px;
+  }
+}
+
+
+//Graphical helpers
+.o-at-circle {
+  border-radius: 50%;
+}
+
+
+.u-at-svg-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  &--inline {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    transition: 0.15s ease-in-out;
+  }
+}
+
