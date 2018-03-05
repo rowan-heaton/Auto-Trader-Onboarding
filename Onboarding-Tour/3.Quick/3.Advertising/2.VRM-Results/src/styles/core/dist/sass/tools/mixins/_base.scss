@@ -1,0 +1,121 @@
+//
+// Global Mixins
+//
+// @example scss - Basic Usage Sass
+//   .className {
+//       @include box-shadow(1px, 1px, 0, 2px, $at-gray)
+//    }
+//
+
+// If this function is imported, you can import scss files using:
+// @if not-imported("your-file") { @import "your-file"; }
+
+$imported-once-files: () !default;
+
+@function not-imported($name) {
+  $imported-once-files: $imported-once-files !global;
+  $module_index: index($imported-once-files, $name);
+  @if (($module_index == null) or ($module_index == false)) {
+    $imported-once-files: append($imported-once-files, $name);
+    @return true;
+  }
+  @return false;
+}
+
+@mixin background-image($name:false , $size:false) {
+  @if($name) {
+    background-image: url(#{$image-path}/svgs/icons/#{$name}.svg);
+    @if($size){
+      background-size: $size;
+    }
+  }
+  @else {
+    background-image: none;
+  }
+
+  &.is-fallback {
+    @if($name) {
+      background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+      @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+      }
+    }
+    @else {
+      background-image: none;
+    }
+  }
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin disabled-link() {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: $atWhite;
+  &:hover {
+    background: $atWhite;
+  }
+}
+
+@mixin at-link($link-type: 'default') {
+  @if($link-type == 'sub') { color: $at-blue-light;}
+  @else if ($link-type == 'inverted') {color: $at-white;}
+  @else if ($link-type == 'light') {color: $at-aqua;}
+  @else { color: $at-link; }
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    @if($link-type == 'sub') { color: $at-aqua-dark;}
+    @else if ($link-type == 'inverted') {color: $at-aqua-light;}
+    @else if ($link-type == 'light') {color: $at-aqua-dark;}
+    @else { color: $at-link-hover; }
+    text-decoration: none;
+  }
+  &:active, &:focus {
+    @if($link-type == 'sub') { color: $at-aqua-dark;}
+    @else if ($link-type == 'inverted') {color: $at-aqua;}
+    @else if ($link-type == 'light') {color: $at-aqua-dark;}
+    @else { color: $at-link-active; }
+    text-decoration: none;
+  }
+}
+
+@mixin at-text-link() {
+  font-size: $at-body-font;
+  font-weight: $at-regular-font;
+  color: $at-link-color;
+  svg {
+    fill: $at-link-color;
+    margin-left: 8px;
+  }
+  &--right {
+    text-align: right;
+  }
+  &:hover {
+    color: $at-aqua-dark;
+    text-decoration: none;
+    svg {
+      fill: $at-aqua-dark;
+    }
+  }
+}
+
+
+
+
+
+
+

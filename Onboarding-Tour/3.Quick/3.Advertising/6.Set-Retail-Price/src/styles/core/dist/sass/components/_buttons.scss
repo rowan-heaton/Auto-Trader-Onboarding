@@ -1,0 +1,476 @@
+@mixin  btn-settings($padding: 12px 20px, $fontSize: $at-body-font) {
+  padding: $padding;
+  font-size: $fontSize;
+  font-weight: $at-regular-font;
+  &:visited, &--visited,
+  &:focus, &--focus,
+  &:hover, &--hover {
+    padding: $padding;
+    font-size: $fontSize;
+  }
+}
+
+@mixin btn-base-styles() {
+  border: 1px solid;
+  border-radius: $at-btn-radius;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: none;
+  white-space: nowrap;
+  zoom: 1;
+  overflow: hidden;
+  border-color: $at-btn-secondary;
+  background-color: transparent;
+  color: $at-btn-secondary;
+  outline: none;
+  @include btn-settings();
+}
+
+
+
+
+.c-at-btn {
+  @include btn-base-styles();
+  @include respond-to("phone") {
+    padding: 8px 15px;
+    font-size: $at-sm-font;
+    @include btn-settings($padding: 8px 15px, $fontSize: $at-sm-font );
+  }
+
+  &-transparent {
+    @include btn-base-styles();
+    @include respond-to("phone") {
+      padding: 8px 15px;
+      font-size: $at-sm-font;
+      @include btn-settings($padding: 8px 15px, $fontSize: $at-sm-font );
+    }
+    background-color: transparent;
+    border-color: transparent;
+
+    &.has-icon {
+      line-height: 2.5;
+      color: $atDarkText;
+      font-weight: $at-light-font;
+      width: 100%;
+      position:relative;
+      //icon should be 24px with 6px spacing between text and icon
+      @include btn-settings($padding: 0 36px 0 0, $fontSize: $at-font-size-18 );
+    }
+
+    &.not-clickable {
+      cursor: default;
+    }
+  }
+
+  &-primary {
+    @include btn-base-styles();
+    border-color: $at-btn-primary;
+    background-color: $at-btn-primary;
+    color: $atWhite;
+
+
+    &:visited, &--visited {
+      background-color: $at-btn-primary;
+      color: $atWhite;
+      border-color: $at-btn-primary;
+    }
+
+    &:focus, &--focus {
+      background-color: $at-btn-primary-active;
+      color: $atWhite;
+      border-color: $at-btn-primary-active;
+    }
+
+    &:hover, &--hover {
+      background-color: $at-btn-primary-hover;
+      color: $atWhite;
+      border-color: $at-btn-primary-hover;
+    }
+
+    &--info {
+      @include btn-base-styles();
+      border-color: $at-btn-special-blue;
+      background-color: $at-btn-special-blue;
+      color: $atWhite;
+
+      &:visited, &--visited {
+        background-color: $at-btn-special-blue-active;
+        border-color: $at-btn-special-blue-active;
+        color: $atWhite;
+      }
+
+      &:focus, &--focus {
+        background-color: $at-btn-special-blue-active;
+        border-color: $at-btn-special-blue-active;
+        color: $atWhite;
+      }
+
+      &:hover, &--hover {
+        background-color: $at-btn-special-blue-hover;
+        border-color: $at-btn-special-blue-hover;
+        color: $atWhite;
+      }
+    }
+
+    &--special-nav {
+      @include btn-base-styles();
+      border-color: $at-btn-primary;
+      background-color: $at-btn-primary;
+      color: $atWhite;
+
+      &:visited, &--visited {
+        background-color: $at-btn-primary-active;
+        border-color: $at-btn-primary-active;
+        color: $atWhite;
+      }
+
+      &:focus, &--focus {
+        background-color: $at-btn-primary-active;
+        border-color: $at-btn-primary-active;
+        color: $atWhite;
+      }
+
+      &:hover, &--hover {
+        background-color: $at-btn-special-nav-hover;
+        border-color: $at-btn-special-nav-hover;
+        color: $atPrimary;
+      }
+    }
+
+
+    &--success {
+      @include btn-base-styles();
+      border-color: $at-btn-special-green;
+      background-color: $at-btn-special-green;
+      color: $atWhite;
+
+      &:visited, &--visited {
+        background-color: $at-btn-special-green-active;
+        border-color: $at-btn-special-green-active;
+        color: $atWhite;
+      }
+
+      &:focus, &--focus {
+        background-color: $at-btn-special-green-active;
+        border-color: $at-btn-special-green-active;
+        color: $atWhite;
+      }
+
+      &:hover, &--hover {
+        background-color: $at-btn-special-green-hover;
+        border-color: $at-btn-special-green-hover;
+        color: $atWhite;
+      }
+    }
+
+
+    &--warning {
+      @include btn-base-styles();
+      border-color: $at-btn-special-orange;
+      background-color: $at-btn-special-orange;
+      color: $atWhite;
+
+      &:visited, &--visited {
+        background-color: $at-btn-special-orange-active;
+        border-color: $at-btn-special-orange-active;
+        color: $atWhite;
+      }
+
+      &:focus, &--focus {
+        background-color: $at-btn-special-orange-active;
+        border-color: $at-btn-special-orange-active;
+        color: $atWhite;
+      }
+
+      &:hover, &--hover {
+        background-color: $at-btn-special-orange-hover;
+        border-color: $at-btn-special-orange-hover;
+        color: $atWhite;
+      }
+    }
+
+
+    &--danger {
+      @include btn-base-styles();
+      border-color: $at-btn-special-red;
+      background-color: $at-btn-special-red;
+      color: $atWhite;
+
+      &:visited, &--visited {
+        background-color: $at-btn-special-red-active;
+        border-color: $at-btn-special-red-active;
+        color: $atWhite;
+      }
+
+      &:focus, &--focus {
+        background-color: $at-btn-special-red-active;
+        border-color: $at-btn-special-red-active;
+        color: $atWhite;
+      }
+
+      &:hover, &--hover {
+        background-color: $at-btn-special-red-hover;
+        border-color: $at-btn-special-red-hover;
+        color: $atWhite;
+      }
+    }
+  }  // Primary
+
+
+  &-secondary {
+    @include btn-base-styles();
+    border-color: $at-btn-secondary;
+    color: $at-btn-secondary;
+
+
+    &:visited, &--visited {
+      color: $at-btn-secondary;
+      border-color: $at-btn-secondary;
+    }
+
+    &:focus, &--focus {
+      color: $at-btn-secondary-active;
+      border-color: $at-btn-secondary-active;
+    }
+
+    &:hover, &--hover {
+      border-color: $at-btn-secondary-hover;
+      color:  $at-btn-secondary-hover;
+    }
+
+    &--info {
+      @include btn-base-styles();
+      border-color: $at-btn-special-blue;
+      color: $at-btn-special-blue;
+
+      &:visited, &--visited {
+        color: $at-btn-special-blue;
+        border-color: $at-btn-special-blue;
+      }
+
+      &:focus, &--focus {
+        color: $at-btn-special-blue-active;
+        border-color: $at-btn-special-blue-active;
+      }
+
+      &:hover, &--hover {
+        border-color: $at-btn-special-blue-hover;
+        color: $at-btn-special-blue-hover;
+      }
+    }
+
+
+    &--success {
+      @include btn-base-styles();
+      border-color: $at-btn-special-green;
+      color: $at-btn-special-green;
+
+      &:visited, &--visited {
+        color: $at-btn-special-green;
+        border-color: $at-btn-special-green;
+      }
+
+      &:focus, &--focus {
+        color: $at-btn-special-green-active;
+        border-color: $at-btn-special-green-active;
+      }
+
+      &:hover, &--hover {
+        border-color: $at-btn-special-green-hover;
+        color: $at-btn-special-green-hover;
+      }
+    }
+
+
+    &--warning {
+      @include btn-base-styles();
+      border-color: $at-btn-special-orange;
+      color: $at-btn-special-orange;
+
+      &:visited, &--visited {
+        color: $at-btn-special-orange;
+        border-color: $at-btn-special-orange;
+      }
+
+      &:focus, &--focus {
+        color: $at-btn-special-orange-active;
+        border-color: $at-btn-special-orange-active;
+      }
+
+      &:hover, &--hover {
+        border-color: $at-btn-special-orange-hover;
+        color: $at-btn-special-orange-hover;
+      }
+    }
+
+
+    &--danger {
+      @include btn-base-styles();
+      border-color: $at-btn-special-red;
+      color: $at-btn-special-red;
+
+      &:visited, &--visited {
+        color: $at-btn-special-red-active;
+        border-color: $at-btn-special-orange-active;
+      }
+
+      &:focus, &--focus {
+        color: $at-btn-special-red-active;
+        border-color: $at-btn-special-red-active;
+      }
+
+      &:hover, &--hover {
+        border-color: $at-btn-special-red-hover;
+        color: $at-btn-special-red-hover;
+      }
+    }
+
+    &--white {
+      @include btn-base-styles();
+      border-color: $at-btn-special-white;
+      color: $at-btn-special-white;
+
+      &:visited, &--visited {
+        color: $at-btn-special-white;
+        border-color: $at-btn-special-white;
+      }
+
+      &:focus, &--focus {
+        color: $at-btn-special-white-active;
+        border-color: $at-btn-special-white-active;
+      }
+
+      &:hover, &--hover {
+        border-color: $at-btn-special-white-hover;
+        color: $at-btn-special-white-hover;
+      }
+    }
+
+  }  // Secondary
+
+
+  &-tertiary {
+    @include btn-base-styles();
+    border-color: $at-btn-tertiary;
+    color: $at-btn-tertiary-txt;
+
+    &:visited, &--visited {
+      color: $at-btn-tertiary;
+      border-color: $at-btn-tertiary;
+    }
+
+    &:focus, &--focus {
+      color: $at-btn-tertiary-active;
+      border-color: $at-btn-tertiary-active;
+    }
+
+    &:hover, &--hover {
+      border-color: $at-btn-tertiary-hover;
+      color: $at-btn-tertiary-hover;
+    }
+  }  // Tertiary
+
+  &--disabled {
+    @include btn-base-styles();
+    border-color: $at-btn-disabled;
+    background-color: $at-btn-disabled;
+    color: $at-btn-disabled-txt;
+    cursor: not-allowed;
+
+
+    &:visited, &--visited {
+      border-color: $at-btn-disabled;
+      background-color: $at-btn-disabled;
+      color: $at-btn-disabled-txt;
+      cursor: not-allowed;
+
+    }
+
+    &:focus, &--focus,
+    &:active, &--active {
+      border-color: $at-btn-disabled;
+      background-color: $at-btn-disabled;
+      color: $at-btn-disabled-txt;
+      cursor: not-allowed;
+
+    }
+
+    &:hover, &--hover {
+      border-color: $at-btn-disabled;
+      background-color: $at-btn-disabled;
+      color: $at-btn-disabled-txt;
+      cursor: not-allowed;
+    }
+  }
+
+  &--lg {
+    @include btn-settings($padding: 15px 30px, $fontSize: 18px );
+  }
+
+
+  &--sm {
+    @include btn-settings($padding: 8px 15px, $fontSize: $at-sm-font );
+  }
+
+  &--xs {
+    @include btn-settings($padding: 5px 15px, $fontSize: $at-xs-font );
+
+    &-lg-padding {
+      @include btn-settings($padding: 15px 12px, $fontSize: $at-sm-font);
+    }
+  }
+
+  &--white-bg {
+    background-color: $atWhite;
+  }
+}
+
+// Icon button
+.c-at-btn-icon {
+  display: block;
+  &--primary {
+    margin-left: 10px;
+    width: 25px;
+    height: 50px;
+    fill: $atDarkText;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__search {
+    fill: $atDarkText;
+    display: block;
+    width: 100%;
+    height: 100%;
+    svg {
+      width: 20px;
+    }
+  }
+}
+
+// Temp due to lots of references within Sourcing
+// TO DO: Add as a modifier and refactor later
+.btn-block {
+  width: 100%;
+}
+
+// Generic Disabled button state
+
+button[disabled],
+button[disabled]:hover,
+button[disabled]:focus,
+button[disabled=disabled],
+button[disabled=disabled]:hover,
+button[disabled=disabled]:focus,
+button[disabled].button.greenBtn:hover {
+  background-color: $at-btn-disabled;
+  color: $at-btn-disabled-txt;
+  border-color: $at-btn-disabled;
+  font-weight: $at-regular-font;
+  outline: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}

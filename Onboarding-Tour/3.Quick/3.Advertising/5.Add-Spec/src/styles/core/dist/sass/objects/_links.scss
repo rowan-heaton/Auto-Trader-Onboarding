@@ -1,0 +1,78 @@
+/*
+// This is Up for discussion still, just getting something in sooner rather than later.
+// Based on Paul B's Code pen: https://codepen.io/anon/pen/aLGojP?editors=1100
+
+// Common Link markup
+
+  <a href="#" class="o-at-link">Default link</a>
+
+  ** With An image **
+  <a class="o-link o-link--primary o-link--lg">
+        <svg class="u-at-svg-icon--inline u-at-svg--inline-left">
+            <use xlink:href="#edit" />
+        </svg>
+        With left Icon
+   </a>
+
+   <a class="o-link o-link--primary o-link--lg">
+        With right Icon
+        <svg class="u-at-svg-icon--inline u-at-svg--inline-left">
+            <use xlink:href="#edit" />
+        </svg>
+   </a>
+*/
+
+.o-link {
+  // Default colours for links
+  color: $at-blue-light;
+  cursor: pointer;
+  fill: $at-blue-light;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $at-aqua-dark;
+    fill: $at-aqua-dark;
+  }
+
+  svg {
+    height: 20px;
+    line-height: 1.45;
+    margin-right: $at-base-unit;
+    vertical-align: top;
+    width: 20px;
+  }
+
+  // Primary link
+  &--primary {
+    color: $at-aqua-dark;
+    fill: $at-aqua-dark;
+
+    &:hover,
+    &:focus {
+      color: $at-aqua;
+      fill: $at-aqua;
+    }
+  }
+
+  // Add margin between links
+  &--spacer {
+    float: left;
+    margin: $at-base-unit * 2 0 $at-base-unit * 4;
+  }
+
+  &--lg {
+    font-size: $at-body-font;
+    line-height: 1;
+  }
+
+  // Sub link
+  &--sub {
+    font-size: $at-sm-font;
+  }
+
+  // Rotate icon left 'for back arrow'
+  &--rotate-icon-left {
+    transform: rotate(180deg);
+  }
+}

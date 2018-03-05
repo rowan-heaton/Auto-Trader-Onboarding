@@ -1,0 +1,62 @@
+@import "../tools/placeholders";
+
+.o-button-link {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  color: $at-link-color;
+  font-weight: $at-medium-font;
+  &:hover,
+  &:focus {
+    color: $at-aqua-dark;
+  }
+  &:focus{
+    @extend %focus;
+  }
+
+  &--tooltip {
+    color: $at-blue;
+    font-weight: $at-regular-font;
+  }
+
+  &--tooltip-supporting {
+    color: $at-copy-light;
+    font-size: $at-font-size-14;
+    font-weight: $at-regular-font;
+    &:hover,
+    &:focus {
+      color: $at-placeholder;
+    }
+  }
+
+  &--tooltip,
+  &--tooltip-supporting {
+    border-bottom: 1px dashed;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      cursor: help;
+      border-bottom: 1px solid;
+    }
+  }
+
+  &--primary {
+    color: $at-aqua-dark;
+    &:hover,
+    &:focus {
+      color: $at-aqua;
+    }
+  }
+
+  &--formcontrol {
+    font-size: $at-font-size-14;
+    font-weight: $at-regular-font;
+    margin: $at-base-unit 0;
+    display: block;
+    &:hover,
+    &:focus {
+      color: $at-aqua-dark;
+    }
+  }
+}

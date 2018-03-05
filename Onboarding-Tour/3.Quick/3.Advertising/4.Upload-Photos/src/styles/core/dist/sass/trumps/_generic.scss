@@ -1,0 +1,51 @@
+
+// state overide
+.t-at-is-collapsed {
+  height: 0;
+  visibility:hidden;
+
+  &--for-mobile {
+    @include respond-to('phone') {
+      height: 0;
+      visibility:hidden;
+    }
+  }
+}
+
+.t-at-slide-left {
+  left: 0;
+}
+
+
+.t-at-slide-right {
+  right: 0;
+  @include respond-to('tablet-portrait') {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include respond-to('medium-tablet-landscape') {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+// sudo banner trumps
+at-sudo-banner + at-header .c-at-header {
+  top: 40px;
+  @include respond-to('tablet-portrait') {
+    z-index:999;
+    top: 0;
+  }
+}
+
+at-sudo-banner + at-header + .o-at-content-container {
+  &.has-fixed-header {
+    top: 90px;
+  }
+  &.has-footer {
+    padding-bottom: 240px;
+    margin-bottom: -90px;
+  }
+}
