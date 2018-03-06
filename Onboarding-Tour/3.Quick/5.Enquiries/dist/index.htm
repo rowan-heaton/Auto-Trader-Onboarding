@@ -183,7 +183,7 @@
 			<div class="header blueNav">
 		  		<ul class="pNav relative">
                     <li>
-                        <a data-bind="attr: {href: portalHomeHref}" href="https://portal-qa.autotrader.co.uk/"><span class="fa-icon"></span></a>
+                        <a data-bind="attr: {href: portalHomeHref}" href="../../1.Stock-Overview/dist/index.html"><span class="fa-icon"></span></a>
                     </li>
 
                     <li data-bind="css: {selected: lastNavigation() === &#39;home&#39;}" class="">
@@ -191,7 +191,7 @@
 		  			</li>
                     <!-- ko if: !user.isPayGoUser -->
                     <li data-bind="css: {selected: lastNavigation() === &#39;vehiclevaluation&#39;}, visible : appraisalTool() === &#39;nextGen&#39;" class="">
-						<a href="https://dealerportal-qa.autotrader.co.uk/portal/#!/valuation" data-bind="analyticsOnClick: {
+						<a href="../../3.Advertising/1.VRM-Search/dist/index.htm" data-bind="analyticsOnClick: {
            							category:&#39;standard-link&#39;,
            							label:&#39;header-nav-valuations&#39;,
            							trackingId:&#39;portal/header&#39;}">Valuation</a>
@@ -201,11 +201,11 @@
 		  			</li>
                     <!-- /ko -->
 		  			<li data-bind="css: {selected: lastNavigation() === &#39;stock&#39;}" class="">
-		  				<a data-bind="attr: {href: stockHref}" href="https://dealerportal-qa.autotrader.co.uk/portal/#!/stock/list">Stock &amp; Adverts</a>
+		  				<a data-bind="attr: {href: stockHref}" href="../../4.Sourcing/dist/index.htm">Stock &amp; Adverts</a>
 		  			</li>
 				    <li data-bind="css: {selected: lastNavigation() === &#39;enquiries&#39;}" class="selected">
 					    <!-- ko if: !user.isPayGoUser -->
-					    <a class="fl" href="https://dealerportal-qa.autotrader.co.uk/portal/#!/enquiries/dashboard">
+					    <a class="fl" href="../../5.Enquiries/dist/index.htm">
 					        <div class="fl">Enquiries</div>
                             <div class="fr" data-component="header/enquiriesNotifier" data-bind="visible: visible" style=""><span class="alertNotification badge bg-whiteBadge" data-bind="fadeVisible: hasUnreadEnquiries" style="opacity: 0; display: none;">
 	<span data-bind="number: unreadEnquiries">0</span>
@@ -215,11 +215,11 @@
 					    <!-- /ko -->
 				    </li>
 		  			<li data-bind="css: {selected: lastNavigation() === &#39;response&#39;}" class="">
-		  				<a href="https://dealerportal-qa.autotrader.co.uk/portal/#!/response/home">Response</a>
+		  				<a href="../../2.Response/dist/index.htm">Response</a>
 		  			</li>
 					<!-- ko if: !user.isPayGoUser -->
 					<li class="relative">
-						<a data-bind="attr: {href: dealerRatingsHref}" target="_blank" href="https://portal-qa.autotrader.co.uk/#/dealer-reviews">Dealer Reviews</a>
+						<a data-bind="attr: {href: dealerRatingsHref}" target="_blank" href="../../6.Dealer-Reviews/dist/index.htm">Dealer Reviews</a>
 					</li>
 					<!-- /ko -->
 					<li>
