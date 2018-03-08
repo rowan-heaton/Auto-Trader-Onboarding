@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   
   //step 1
   tour.addStep('step1', {
-    title: 'Date Range',
+    title: 'Enquiry Query Selector',
     text: 'Here you can display all your enquiries dating from the last 7 days to a range of dates of your choice, as well as displaying what type of enquiries you would like it to display',
     attachTo: '.step-1 top',
     buttons: [{
@@ -32,9 +32,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Group Portal',
+        text: 'Dealer Reviews',
         action: function() {
-            window.location.href="../../flat-group-portal/dist/index.htm";
+            window.location.href="../../6.dealer-reviews/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

@@ -43,7 +43,7 @@ let tour = new Shepherd.Tour({
   //step 3
   tour.addStep('step 3', {
     title: 'Ad Performance Figures',
-    text: 'Summative figures of the response from your adverts.',
+    text: 'Summative figures on the response from your adverts.',
     attachTo: '.step-3 right',
     buttons: [{
         text: 'Back',
@@ -70,7 +70,7 @@ let tour = new Shepherd.Tour({
       },{
         text: 'Advertising/VRM',
         action: function() {
-        	window.location.href="../../flat-advertising-1/dist/index.htm";
+        	window.location.href="../../3.advertising/1.vrm-search/dist/index.htm";
       },
         classes: 'o-link o-link--primary'
     }],

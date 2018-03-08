@@ -542,7 +542,7 @@
       </a>
     </li>
 </ol></div>
-<div data-component="response/dashboard" data-bind="visible: visible" style=""><div class="topToolBar step-1 down-shep" data-step-title="Response Time Frame">
+<div data-component="response/dashboard" data-bind="visible: visible" style=""><div class="topToolBar step-1 down-shep" data-step-title="Time Frame">
 	<div class="respFilterBox fullWidth">
 
 			<div class="col noBdr ">
@@ -732,8 +732,7 @@
 		</div>
 	</div>
 </div></div></div>
-<div class="step-3 down-shep" data-step-title="Ad Performance Figures>
-<div class="col5h by1h colTile dataTile step-3" data-component="tiles/response/summary" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink">
+<div class="col5h by1h colTile dataTile step-3 down-shep" data-step-title="Ad Performance Figures" data-component="tiles/response/summary" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink">
 	<div class="dashTitle">
 		<span class="col fl">
 			<span class="responseIcons adSummary fl"></span>
@@ -863,41 +862,41 @@
 </div></div></div>
 <div class="col1 by2 colTile relative infoTile" data-component="tiles/response/pricing" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><span class="noLink">
    <span data-bind="click : goToStockListSortedByAdvertPrice,
-   			attr : {&#39;class&#39; : !pricingInfoError() ? &#39;cursorPointer&#39; : &#39;&#39; },
-   			analyticsOnClick: {
-							category:&#39;standard-link&#39;,
-							label: &#39;response-pricing&#39;,
-							trackingId:&#39;response/dashboard&#39;}" class="">
-	    <div class="dashTitle transBg" data-bind="css : {&#39;transBg&#39;: pricingInfoError() }">
-	        <span class="responseIcons pricing fl"></span>
-	        <span>Pricing</span>
-	    </div>	    
-	     <div class="cb cont" data-bind="visible : !pricingInfoError()" style="display: none;">
-	        <span class="pricingBox">
-	            <span class="top">
-	                <span class="pricingBoxText" data-bind="style : { height : overPricedHeight() ? overPricedHeight() + &#39;px&#39; : 0}"><em>Over Priced </em></span>
-	                <span class="pricingBoxValue" data-bind="style : { height : overPricedHeight() ? overPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : overPricedPercentage() ? overPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
-	            </span>
-	            <span class="middle">
-	                <span class="pricingBoxText" data-bind="style : { height : neutrallyPricedHeight() ? neutrallyPricedHeight() + &#39;px&#39; : 0}"><em>Well Priced </em></span>
-	                <span class="pricingBoxValue" data-bind="style : { height : neutrallyPricedHeight() ? neutrallyPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : neutrallyPricedPercentage() ? neutrallyPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
-	            </span>
-	            <span class="bottom">
-	                <span class="pricingBoxText" data-bind="style : { height : underPricedHeight() ? underPricedHeight() + &#39;px&#39; : 0}"><em>Under Priced</em></span> <!---->
-	                <span class="pricingBoxValue" data-bind="style : { height : underPricedHeight() ? underPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : underPricedPercentage() ? underPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
-	            </span>
-	        </span>
-	        <span class="cb tileCav mtTen fr ">Your Stock</span>
-	    </div>
+            attr : {&#39;class&#39; : !pricingInfoError() ? &#39;cursorPointer&#39; : &#39;&#39; },
+            analyticsOnClick: {
+                            category:&#39;standard-link&#39;,
+                            label: &#39;response-pricing&#39;,
+                            trackingId:&#39;response/dashboard&#39;}" class="">
+        <div class="dashTitle transBg" data-bind="css : {&#39;transBg&#39;: pricingInfoError() }">
+            <span class="responseIcons pricing fl"></span>
+            <span>Pricing</span>
+        </div>      
+         <div class="cb cont" data-bind="visible : !pricingInfoError()" style="display: none;">
+            <span class="pricingBox">
+                <span class="top">
+                    <span class="pricingBoxText" data-bind="style : { height : overPricedHeight() ? overPricedHeight() + &#39;px&#39; : 0}"><em>Over Priced </em></span>
+                    <span class="pricingBoxValue" data-bind="style : { height : overPricedHeight() ? overPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : overPricedPercentage() ? overPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
+                </span>
+                <span class="middle">
+                    <span class="pricingBoxText" data-bind="style : { height : neutrallyPricedHeight() ? neutrallyPricedHeight() + &#39;px&#39; : 0}"><em>Well Priced </em></span>
+                    <span class="pricingBoxValue" data-bind="style : { height : neutrallyPricedHeight() ? neutrallyPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : neutrallyPricedPercentage() ? neutrallyPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
+                </span>
+                <span class="bottom">
+                    <span class="pricingBoxText" data-bind="style : { height : underPricedHeight() ? underPricedHeight() + &#39;px&#39; : 0}"><em>Under Priced</em></span> <!---->
+                    <span class="pricingBoxValue" data-bind="style : { height : underPricedHeight() ? underPricedHeight() + &#39;px&#39; : 0}"><em data-bind="text : underPricedPercentage() ? underPricedPercentage() + &#39;%&#39; : &#39;0%&#39;">0%</em></span>
+                </span>
+            </span>
+            <span class="cb tileCav mtTen fr ">Your Stock</span>
+        </div>
     
     </span>
     <span class="unAvail noInfoBox" data-bind="visible : pricingInfoError()" style="">
-		<span class="unAvail tileIcons mInfoDk"></span>							
-		<span class="unAvail cb bodyFontS tc">information <br>not available</span>
-	</span> 
+        <span class="unAvail tileIcons mInfoDk"></span>                         
+        <span class="unAvail cb bodyFontS tc">information <br>not available</span>
+    </span> 
 </span>
 
-</div></div></div>
+</div></div>
 <div class="col4 by1 colTile dataTile step-4 down-shep" data-step-title="Leads" data-component="tiles/response/leads" data-bind="css: {overageTile: tileColour() === &#39;overage&#39;, actionTile: tileColour() === &#39;action&#39;, dataTile: tileColour() === &#39;data&#39;, infoTile: tileColour() === &#39;info&#39;, mpuTile: tileColour() === &#39;mpu&#39;, clearTile: tileColour() === &#39;clear&#39;}"><div class="contentWrapper" style="opacity: 1;"><div class="noLink" style="display: block;
 width: 934px;
 padding: 7px 7px 3px 7px;">

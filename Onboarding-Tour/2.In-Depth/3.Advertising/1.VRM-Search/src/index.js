@@ -48,7 +48,7 @@ tour.addStep('step2', {
       },{
         text: 'VRM Results',
         action: function() {
-            window.location.href="../../3.advertising/2.VRM-Results/dist/index.htm";
+            window.location.href="../../2.VRM-Results/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

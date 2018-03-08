@@ -1,0 +1,35 @@
+body[data-shepherd-step="step1"] {
+    .c-at-header {
+        z-index: 9999;
+    }
+}
+
+.c-at-header {
+    height: 56px;
+    top: 0;
+    z-index: 10000;
+}
+
+.c-at-navbar__nav--right {
+    height: 56px;
+}
+
+.c-at-card {
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: #313c53;
+    float: left;
+    margin-bottom: 16px;
+    padding: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.contents__holder *{
+    box-sizing: border-box;
+}
+
+div[data-component="response/home"] {
+    overflow: visible;
+}

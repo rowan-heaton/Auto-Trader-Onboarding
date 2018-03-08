@@ -64,7 +64,7 @@ tour.addStep('step3', {
       },{
         text: 'Added To Forecourt',
         action: function() {
-            window.location.href="../../3.Advertising/3.Added-To-Forecourt/dist/index.htm";
+            window.location.href="../../3.Added-To-Forecourt/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],

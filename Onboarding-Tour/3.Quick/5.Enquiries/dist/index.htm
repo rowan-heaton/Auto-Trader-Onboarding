@@ -524,7 +524,7 @@
     <!-- ko if: showFooter --><!-- /ko -->
 </div>
 </div>
-<div class="content step-1 down-shep" data-step-title="Date Range" data-component="mainContent" data-bind="visible: visible" style="margin-bottom: 20px;"><div class="step-3" data-component="enquiries/home" data-bind="visible: visible" style=""><!-- ko if: !user.isPayGoUser -->
+<div class="content" data-component="mainContent" data-bind="visible: visible" style="margin-bottom: 20px;"><div data-component="enquiries/home" data-bind="visible: visible" style=""><!-- ko if: !user.isPayGoUser -->
 <div class="topTitle">
 	<ol class="secondaryNav">
 		<li data-bind="css: {selected: selectedItem() === &#39;dashboard&#39;}" class="selected">
@@ -580,7 +580,7 @@
 		</div>
 	</div>
 
-	<div data-component="enquiries/dashboard/enquiriesList" data-bind="visible: visible" style=""><div class="topPos fr">
+	<div class="step-1 down-shep" data-step-title="Enquiry Query Selector" data-component="enquiries/dashboard/enquiriesList" data-bind="visible: visible" style=""><div class="topPos fr">
 	<a id="export_link" class="bodyFontS export_enquiries" data-bind="attr: { href: enquiriesCSVUrl() },
 	   			analyticsOnClick: {
            		category:&#39;standard-link&#39;,
@@ -1278,7 +1278,7 @@
                 </div>
 			  </span>
 
-            <div class="messageActions floatHolder stepFour step-4">
+            <div class="messageActions floatHolder stepFour">
 
 
 

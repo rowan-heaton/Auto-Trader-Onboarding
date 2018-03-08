@@ -50,7 +50,13 @@ let tour = new Shepherd.Tour({
         text: 'Back',
         action: tour.back,
         classes: 'o-link o-link--primary'
-    }],
+    },{
+        text: 'Response',
+        action: function() {
+          window.location.href="../../2.response/dist/index.htm";
+        },
+    
+    classes: 'o-link o-link--primary'}],
     showCancelLink: true
     //advanceOn: '.docs-link click'
   });

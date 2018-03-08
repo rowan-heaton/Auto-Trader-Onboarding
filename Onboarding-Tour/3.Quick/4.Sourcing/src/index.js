@@ -46,9 +46,9 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Finish',
+        text: 'Enquiries',
         action: function() {
-          return tour.hide();
+          window.location.href="../../5.enquiries/dist/index.htm"
         },
         classes: 'o-link o-link--primary'
     }],

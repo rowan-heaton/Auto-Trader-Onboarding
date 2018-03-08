@@ -257,26 +257,26 @@
   }
 
 .shepherd-element.shepherd-open, .shepherd-target.shepherd-enabled {
-z-index: 10000000;
-position: relative;
+	z-index: 10000000;
+	position: relative;
 }
 
 .shepherd-active .shepherd-target.shepherd-enabled {
- position: relative;
- box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.3);
- z-index: 9999;
- pointer-events:  auto;
- transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    pointer-events:  auto;
+    transition: all 0.3s ease;
 }
 
 .shepherd-active .shepherd-step {
-  z-index: 9999;
+    z-index: 9999;
 }
 
 .contents__wrapper {
 position: fixed;
 top: 80px;
-left: 0px;
+left: -4px;
 z-index: 99999;
 width: 250px;
 transform: translateX(-250px);
@@ -349,7 +349,7 @@ padding: 5px 0; }
 width: 100%;
 display: block;
 text-align: left;
-padding: 8px 0; }
+padding: 5px 0; }
 
 .contents__section--current {
 color: #06a09d;

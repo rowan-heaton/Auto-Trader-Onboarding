@@ -64,7 +64,7 @@ tour.addStep('step3', {
       },{
         text: 'Upload Photos',
         action: function() {          
-            window.location.href="../../3.Advertising/4.Upload-Photos/dist/index.htm";
+            window.location.href="../../4.Upload-Photos/dist/index.htm";
         },
         classes: 'o-link o-link--primary'
     }],
