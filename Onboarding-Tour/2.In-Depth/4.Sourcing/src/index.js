@@ -125,7 +125,7 @@ let tour = new Shepherd.Tour({
 
   tour.addStep('step 8', {
     title: 'Hightlight a Vehicle',
-    text: 'You can highlight a vehicle if you want to save it to view it later',
+    text: 'You can highlight a vehicle if you want to save it for viewing later',
     attachTo: '.step-8 bottom',
     buttons: [{
         text: 'Back',

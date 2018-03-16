@@ -55,7 +55,7 @@ tour.addStep('step3', {
 //example last step
   tour.addStep('step4', {
     title: 'Search Again',
-    text: 'ALso if this isnt the vehicle you were searching for you can search again or enter it manually',
+    text: 'If this isn\'t the vehicle you were searching for, you can search again or enter it manually',
     attachTo: '.step-4 bottom',
     buttons: [{
         text: 'Back',

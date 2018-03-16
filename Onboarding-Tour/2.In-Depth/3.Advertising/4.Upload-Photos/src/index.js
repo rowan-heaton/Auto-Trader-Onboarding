@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
 
 tour.addStep('step1', {
     title: 'Skip To Spec',
-    text: 'If youre done on this page you can continue to spec',
+    text: 'If you\'re done on this page you can skip to specification',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Back',
@@ -42,7 +42,7 @@ tour.addStep('step2', {
 
 tour.addStep('step3', {
     title: 'Youtube Video Link',
-    text: 'You can add a YouTube video of your car as well',
+    text: 'You can add a link to a YouTube video of your car',
     attachTo: '.step-3 bottom',
     buttons: [{
         text: 'Back',
@@ -74,7 +74,7 @@ tour.addStep('step4', {
 //example last step
   tour.addStep('step5', {
     title: 'Continue To Spec',
-    text: 'Once your finished you can continue to spec',
+    text: 'Once your finished, you can continue to specification',
     attachTo: '.step-5 bottom',
     buttons: [{
         text: 'Back',

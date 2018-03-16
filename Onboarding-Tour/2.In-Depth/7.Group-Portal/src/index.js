@@ -10,28 +10,20 @@ let tour = new Shepherd.Tour({
     }
   });
  
-  
+
   //Step 1
     tour.addStep('Step-1', {
     title: 'Export Results',
     text: 'You can export the queried results into a ??? file using this button.',
     attachTo: '.Step-1 bottom',
     buttons: [{
-		text: '1',
-        action: function() { tour.show(0); },
-		classes: 'o-link o-link--primary',
-    },{
-        text: '2',
-        action: function() { tour.show(1); },
-		classes: 'o-link',
-    },{
-        text: '3',
-        action: function() { tour.show(2); },
-		classes: 'o-link'
-    },{
-        text: 'Next',
-        action: tour.next,
-        classes: 'o-link o-link--primary'
+    	text: 'Back',
+      action: tour.back,
+    	classes: 'o-link o-link--primary',
+      },{
+          text: 'Next',
+          action: tour.Next,
+    	classes: 'o-link',
     }],
 	showCancelLink: true
   });
@@ -41,26 +33,14 @@ let tour = new Shepherd.Tour({
     title: 'Refine Output',
     text: 'This box allows you to refine the output in the adjacent table, by use of filters. You can search for specifc dealers or show groups of related dealers.',
     attachTo: '.Step-2 top',
-    buttons: [{
-        text: 'Back',
-        action: tour.back,
-        classes: 'o-link o-link--primary'
-    },{
-		text: '1',
-        action: function() { tour.show(0); },
-		classes: 'c-at-button-group',
-    },{
-        text: '2',
-        action: function() { tour.show(1); },
-		classes: 'o-link o-link--primary',
-    },{
-        text: '3',
-        action: function() { tour.show(2); },
-		classes: 'o-link'
-    },{
-        text: 'Next',
-        action: tour.next,
-        classes: 'o-link o-link--primary'
+        buttons: [{
+      text: 'Back',
+      action: tour.back,
+      classes: 'o-link o-link--primary',
+      },{
+          text: 'Next',
+          action: tour.Next,
+      classes: 'o-link',
     }],
 	showCancelLink: true
   });
@@ -70,23 +50,11 @@ let tour = new Shepherd.Tour({
     title: 'Dealers Performance',
  	text: 'This table holds all the information to compare similar dealers and a rank is given to them. All collums are filterable by the small arrows next to each heading.',    
  	attachTo: '.Step-3 bottom',
-    buttons: [{
-        text: 'Back',
-        action: tour.back,
-        classes: 'o-link o-link--primary'
-    },{
-		text: '1',
-        action: function() { tour.show(0); },
-		classes: 'c-at-button-group',
-    },{
-        text: '2',
-        action: function() { tour.show(1); },
-		classes: 'c-at-button-group',
-    },{
-        text: '3',
-        action: function() { tour.show(2); },
-		classes: 'o-link o-link--primary'
-    },{
+        buttons: [{
+      text: 'Back',
+      action: tour.back,
+      classes: 'o-link o-link--primary',
+      },{
        	text: 'Leads',
         action: function() { window.location.href="../../8.Leads/dist/index.htm"; },
         classes: 'o-link o-link--primary'
@@ -95,11 +63,6 @@ let tour = new Shepherd.Tour({
   });
      
   tour.start();
-
-  function jumpTo(step)
-  {
-	tour.show(step);
-  }
 
 function generateContents() {
   var totalSteps = document.querySelectorAll(".down-shep");

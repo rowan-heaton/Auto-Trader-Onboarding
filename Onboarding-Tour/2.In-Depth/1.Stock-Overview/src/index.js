@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
   //step 1
   tour.addStep('step1', {
     title: 'Page Overview',
-    text: 'Here you can check all the latest news and contact information. You can also check your account and edit details. Also check notifications about your adverts. Also check vehicle information by clicking the yellow VRM button.',
+    text: 'Here you can check all the latest news and contact information. You can also check your account, edit details and notifications about your adverts. Also check vehicle information by clicking the yellow VRM button.',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Next',
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
   //step 2
   tour.addStep('step2', {
     title: 'Best Performaing Ad',
-    text: 'Here you can check which one of your advertised vehicles was the most popular at getting at getting user attention.',
+    text: 'Here you can check which one of your advertised vehicles was the most popular at getting user attention.',
     attachTo: '.step-2 bottom',
     buttons: [{
         text: 'Back',
@@ -78,7 +78,7 @@ let tour = new Shepherd.Tour({
   //step 5
   tour.addStep('step5', {
     title: 'Unadvertised Stock',
-    text: 'Here you can check how many vehicles you have unadvertised and can view them all and advertise them.',
+    text: 'Here you can check how many vehicles you have unadvertised and also view or advertise them.',
     attachTo: '.step-5 top',
     buttons: [{
         text: 'Back',
@@ -114,7 +114,7 @@ let tour = new Shepherd.Tour({
   //step 7
   tour.addStep('step7', {
     title: '45 days and over Stock',
-    text: 'Here you can check how many vehicles you have had in stock for over 45 days. You can click and have your chosen vehicle advertised on the site.',
+    text: 'Here you can check how many vehicles you\'ve had in stock for over 45 days. You can click to advertise it.',
     attachTo: '.step-7 top',
     buttons: [{
         text: 'Back',

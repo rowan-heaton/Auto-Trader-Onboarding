@@ -11,7 +11,7 @@ let tour = new Shepherd.Tour({
   //step 1
   tour.addStep('step 1', {
     title: 'Time Frame',
-    text: 'Response time frame is set here. Defaults to last 7 days.',
+    text: 'Response time frame is set here. (Defaults to last 7 days)',
     attachTo: '.step-1 top',
     buttons: [{
         text: 'Next',
@@ -25,7 +25,7 @@ let tour = new Shepherd.Tour({
   //step 2
   tour.addStep('step 2', {
     title: 'Overview',
-    text: 'How many ad views you\'re getting vs you\'re competitors. RED - lower response rate & GREEN - higher responce rate.',
+    text: 'How many ad views you\'re getting vs you\'re competitors. RED - lower response rate & GREEN - higher response rate.',
     attachTo: '.step-2 bottom',
     buttons: [{
         text: 'Back',
@@ -61,7 +61,7 @@ let tour = new Shepherd.Tour({
   //step 4
   tour.addStep('step 4', {
     title: 'Ad Performance',
-    text: 'Visual representation of advert views in the response time frame.',
+    text: 'Visual representation of advert views for the response time frame.',
     attachTo: '.step-4 bottom',
     buttons: [{
         text: 'Back',
@@ -97,7 +97,7 @@ let tour = new Shepherd.Tour({
   //step 6
   tour.addStep('step 6', {
     title: 'Leads',
-    text: 'These are all the different types of interactions consumers have with youre advert.',
+    text: 'These are all the different types of interactions consumers have with you\'re advert.',
     attachTo: '.step-6 top',
     buttons: [{
         text: 'Back',
@@ -133,7 +133,7 @@ let tour = new Shepherd.Tour({
   //step 8
   tour.addStep('step 8', {
     title: 'Leads: Emails',
-    text: 'Each emial sent to youre self is recorded and dispayed here.',
+    text: 'Each email sent to you is recorded and dispayed here.',
     attachTo: '.step-8 bottom',
     buttons: [{
         text: 'Back',
@@ -151,7 +151,7 @@ let tour = new Shepherd.Tour({
   //step 9
   tour.addStep('step 9', {
     title: 'Leads: Answerable Chats',
-    text: '????????',
+    text: 'Live chat conversation numbers',
     attachTo: '.step-9 bottom',
     buttons: [{
         text: 'Back',
@@ -169,7 +169,7 @@ let tour = new Shepherd.Tour({
   //step 10
   tour.addStep('step 10', {
     title: 'Leads: Click To Call',
-    text: 'On mobile devices, when a consumer clicks the number on an advert and brings up thier dialer to enquire about the car.',
+    text: 'On mobile devices, when a consumer clicks the number on an advert and brings up their dialer to enquire about the car.',
     attachTo: '.step-10 bottom',
     buttons: [{
         text: 'Back',
@@ -187,7 +187,7 @@ let tour = new Shepherd.Tour({
   //step 11
   tour.addStep('step 11', {
     title: 'Leads: Website Clicks',
-    text: 'Everytime youre website is directly visited from the link on the advert.',
+    text: 'Everytime you\'re website is directly visited from the link on the advert.',
     attachTo: '.step-11 bottom',
     buttons: [{
         text: 'Back',
@@ -205,7 +205,7 @@ let tour = new Shepherd.Tour({
   //step 12
   tour.addStep('step 12', {
     title: 'Leads: Saves To Gararge',
-    text: 'Consumers can save youre advert to their gararge, for later use if they are intereted',
+    text: 'Consumers can save you\'re advert to their gararge, for later use if they are interested',
     attachTo: '.step-12 bottom',
     buttons: [{
         text: 'Back',
@@ -223,7 +223,7 @@ let tour = new Shepherd.Tour({
   //step 13
   tour.addStep('step 13', {
     title: 'Leads: Map Views',
-    text: 'On mobile devices, consumers can bring up the location of your dealership location to find out where it is.',
+    text: 'On mobile devices, consumers can bring up the location of your dealership location, to find out where it is.',
     attachTo: '.step-13 bottom',
     buttons: [{
         text: 'Back',

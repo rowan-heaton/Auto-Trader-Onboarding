@@ -43,7 +43,7 @@ tour.addStep('step2', {
 //step 3
 tour.addStep('step3', {
   title: 'Review Header',
-  text: 'The header of each review will include: Vehicle Registration, Star Rating, Customer Name & Email Address and Review Stage Date',
+  text: 'The header of each review will include: Vehicle Registration, Star Rating, Customer Name & Email and Review Stage Date',
   attachTo: '.step-3 bottom',
   buttons: [{
       text: 'Back',
@@ -63,7 +63,7 @@ tour.addStep('step3', {
 //step 4
 tour.addStep('step4', {
   title: 'Review Body',
-  text: 'The body of each review will include: the customer review text or an indicaton of when you sent the request to review invite and what the current status of the review.',
+  text: 'The body of each review will include: the customer review text or a date of when you sent the request to review and what the current status of the review is.',
   attachTo: '.step-4 bottom',
   buttons: [{
       text: 'Back',
@@ -81,7 +81,7 @@ tour.addStep('step4', {
 //step 6
 tour.addStep('step5', {
   title: 'Helpful Info',
-  text: 'The helpful info section contains Auto Traders best practice guide, a guide to how each review is moderated and the purpose of Dealer Reviews.',
+  text: 'The helpful info section contains Auto Trader\'s best practice guide, a guide to how each review is moderated and the purpose of Dealer Reviews.',
   attachTo: '.step-5 right',
   buttons: [{
       text: 'Back',

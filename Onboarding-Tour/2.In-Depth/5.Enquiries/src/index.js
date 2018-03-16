@@ -11,7 +11,7 @@ let tour = new Shepherd.Tour({
   //example step 1
   tour.addStep('step1', {
     title: 'Overview',
-    text: 'This is the Enquiries Page it gathers all enquiries from customers •A copy of emails will be sent here  •A copy of calls will come here to listen to  •Part exchange leads will be sent here',
+    text: 'The Enquiries Page gathers all enquiries from customers: A copy of emails will be sent here, A copy of calls will come here to listen to and Part exchange leads will be sent here',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'next',
@@ -61,7 +61,7 @@ let tour = new Shepherd.Tour({
 //example last step
   tour.addStep('step4', {
     title: 'Reply to an Enquiry',
-    text: 'To reply to a cusotmer enquiry use this sbutton to launch your default email client. Only the original enquiry will be logged in the enquiries tab. Or see their contact details below',
+    text: 'To reply to a customer enquiry use this button to launch your default email client. Only the original enquiry will be logged in the enquiries tab, no email chains will be shown here.',
     attachTo: '.step-4 bottom',
     buttons: [{
         text: 'Back',

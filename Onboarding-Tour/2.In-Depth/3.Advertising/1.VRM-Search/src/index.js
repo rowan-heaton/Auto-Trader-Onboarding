@@ -11,7 +11,7 @@ let tour = new Shepherd.Tour({
   //example step 1
   tour.addStep('step1', {
     title: 'Enter Registration',
-    text: 'Enter registration of the vehicle',
+    text: 'Enter registration of the vehicle.',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Next',
@@ -23,7 +23,7 @@ let tour = new Shepherd.Tour({
   });
 tour.addStep('step2', {
     title: 'Enter Milage',
-    text: 'Enter the milage of the vehicle',
+    text: 'Enter the milage of the vehicle.',
     attachTo: '.step-2 bottom',
     buttons: [{
         text: 'Back',
@@ -39,7 +39,7 @@ tour.addStep('step2', {
 //example last step
   tour.addStep('step3', {
     title: 'Find Vehicle',
-    text: 'Next press button to find vehicle',
+    text: 'Find vehicle button',
     attachTo: '.step-3 bottom',
     buttons: [{
         text: 'Back',

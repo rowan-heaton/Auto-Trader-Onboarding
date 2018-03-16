@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
 //step 2
   tour.addStep('step2', {
     title: 'Date Range',
-    text: 'Choose the date raneg for the report data',
+    text: 'Choose the date range for the report data',
     attachTo: '.step-2 top',
     buttons: [{
         text: 'Back',
@@ -65,7 +65,7 @@ let tour = new Shepherd.Tour({
         action: tour.back,
         classes: 'o-link'
       },{
-        text: 'Got it!',
+        text: 'Finish Feedback',
         action: function() {
             window.location.href="../../../4.Feedback-Page/index.htm"
         },
