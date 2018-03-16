@@ -11,7 +11,7 @@ let tour = new Shepherd.Tour({
 //example last step
   tour.addStep('step1', {
     title: 'Adding Vehicle Spec',
-    text: 'You can add spec and upgrades on the car.',
+    text: 'You can add specs and upgrades on the car.',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Back',
