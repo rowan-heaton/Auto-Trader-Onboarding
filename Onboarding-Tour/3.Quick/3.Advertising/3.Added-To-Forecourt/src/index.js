@@ -10,7 +10,7 @@ let tour = new Shepherd.Tour({
 //example last step
   tour.addStep('step1', {
     title: 'Vehicle Options',
-    text: 'These options allow you to create an advert for the vehicle or add another vehicles and view your stock&ads.',
+    text: 'These options allow you to create an advert for the vehicle or add another vehicle and view your stock & ads.',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Back',
