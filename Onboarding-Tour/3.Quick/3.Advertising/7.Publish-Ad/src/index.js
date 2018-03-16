@@ -12,7 +12,7 @@ let tour = new Shepherd.Tour({
 //example last step
   tour.addStep('step1', {
     title: 'Ad Overview',
-    text: 'Here you can see all the details of your advert before you make it live, and add any extra information.',
+    text: 'Here you can see all the details of your advert before you make it live, and you can add any extra information.',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Back',
