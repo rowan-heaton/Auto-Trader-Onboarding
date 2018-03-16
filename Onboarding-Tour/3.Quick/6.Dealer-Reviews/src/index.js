@@ -25,7 +25,7 @@ let tour = new Shepherd.Tour({
 //step 2
   tour.addStep('step2', {
     title: 'Review Content',
-    text: 'Each box displays a different review completed by a customer. A start rating is provided and also the date at which it was created is shown.',
+    text: 'Each box displays a different review completed by a customer. A star rating is provided and also the date at which it was created is shown.',
     attachTo: '.step-2 left',
     buttons: [{
         text: 'Back',
