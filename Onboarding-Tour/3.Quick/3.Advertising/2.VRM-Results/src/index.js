@@ -11,7 +11,7 @@ let tour = new Shepherd.Tour({
 //example last step
   tour.addStep('step1', {
     title: 'Result Actions',
-    text: 'The car you have searched for should show up here and here you can choose wether to do a complete full vehicle check or add it to the forecourt.',
+    text: 'The car you have searched for should show up here and here you can choose whether to do a complete full vehicle check or add it to the forecourt.',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Back',
