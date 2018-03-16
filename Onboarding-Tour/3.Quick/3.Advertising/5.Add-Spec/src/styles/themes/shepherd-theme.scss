@@ -263,7 +263,7 @@
 
 .shepherd-active .shepherd-target.shepherd-enabled {
     position: relative;
-    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.7);
     z-index: 9999;
     pointer-events:  auto;
     transition: all 0.3s ease;
@@ -272,7 +272,6 @@
 .shepherd-active .shepherd-step {
     z-index: 9999;
 }
-
 
 .contents__wrapper {
 position: fixed;

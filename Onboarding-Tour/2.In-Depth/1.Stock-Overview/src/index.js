@@ -3,8 +3,7 @@ import './styles/main.scss';
 
 let tour = new Shepherd.Tour({
     defaults: {
-      classes: 'shepherd-theme-default',
-      scrollTo: true
+      classes: 'shepherd-theme-default'
     }
   });
   
