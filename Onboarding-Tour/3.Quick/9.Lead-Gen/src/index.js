@@ -11,7 +11,7 @@ let tour = new Shepherd.Tour({
   //step 1
   tour.addStep('step1', {
     title: 'Report Selector',
-    text: 'Select the grouping catagory of the report',
+    text: 'Select the grouping category of the report',
     attachTo: '.step-1 bottom',
     buttons: [{
         text: 'Next',
@@ -24,7 +24,7 @@ let tour = new Shepherd.Tour({
 //step 2
   tour.addStep('step2', {
     title: 'Date Range',
-    text: 'Choose the date raneg for the report data',
+    text: 'Choose the date range for the report data',
     attachTo: '.step-2 top',
     buttons: [{
         text: 'Back',
@@ -41,7 +41,7 @@ let tour = new Shepherd.Tour({
   //step 3
   tour.addStep('step3', {
     title: 'Run Report',
-    text: 'Click this button to generate a report with the selected criteria',
+    text: 'Click this button to generate a report within the selected criteria',
     attachTo: '.step-3 right',
     buttons: [{
         text: 'Back',
@@ -58,7 +58,7 @@ let tour = new Shepherd.Tour({
   //example last step
   tour.addStep('step4', {
     title: 'Report Results',
-    text: 'This is where the results of the report are shown',
+    text: 'This is where the results of the report are displayed',
     attachTo: '.step-4 bottom',
     buttons: [{
         text: 'Back',
