@@ -25,7 +25,7 @@ let tour = new Shepherd.Tour({
   //step 2
   tour.addStep('step 2', {
     title: 'Overview',
-    text: 'How many ad views youre getting vs youre competitors. RED - lower response rate & GREEN - higher responce rate.',
+    text: 'How many ad views you are getting vs youre competitors. RED = lower response rate & GREEN = higher response rate.',
     attachTo: '.step-2 bottom',
     buttons: [{
         text: 'Back',
@@ -61,7 +61,7 @@ let tour = new Shepherd.Tour({
 //step 4
   tour.addStep('step 4', {
     title: 'Leads',
-    text: 'These are all the different types of interactions consumers have with youre advert.',
+    text: 'These are all the different types of interactions consumers have with your advert.',
     attachTo: '.step-4 bottom',
     buttons: [{
         text: 'Back',
