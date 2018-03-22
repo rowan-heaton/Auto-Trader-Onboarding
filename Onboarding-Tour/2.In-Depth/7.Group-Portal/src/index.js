@@ -22,7 +22,7 @@ let tour = new Shepherd.Tour({
     	classes: 'o-link o-link--primary',
       },{
           text: 'Next',
-          action: tour.Next,
+          action: tour.next,
     	classes: 'o-link',
     }],
 	showCancelLink: true
@@ -39,7 +39,7 @@ let tour = new Shepherd.Tour({
       classes: 'o-link o-link--primary',
       },{
           text: 'Next',
-          action: tour.Next,
+          action: tour.next,
       classes: 'o-link',
     }],
 	showCancelLink: true

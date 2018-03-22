@@ -147,7 +147,7 @@ let tour = new Shepherd.Tour({
     //advanceOn: '.docs-link click'
   });
   
-  //step 14
+  //step 9
   tour.addStep('step9', {
     title: 'View Full Stocklist',
     text: 'Here you can view your full stocklist and get detailed information about your vehicles.',

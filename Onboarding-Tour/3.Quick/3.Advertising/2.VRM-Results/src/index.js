@@ -14,10 +14,6 @@ let tour = new Shepherd.Tour({
     text: 'The car you have searched for should show up here and here you can choose whether to do a complete full vehicle check or add it to the forecourt.',
     attachTo: '.step-1 bottom',
     buttons: [{
-        text: 'Back',
-        action: tour.back,
-        classes: 'o-link'
-      },{
         text: 'Added to Forecourt',
         action: function() {
             window.location.href="../../3.Added-To-Forecourt/dist/index.htm";

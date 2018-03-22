@@ -204,7 +204,7 @@ let tour = new Shepherd.Tour({
 
   //step 12
   tour.addStep('step 12', {
-    title: 'Leads: Saves To Gararge',
+    title: 'Leads: Saves To Garage',
     text: 'Consumers can save you\'re advert to their gararge, for later use if they are interested',
     attachTo: '.step-12 bottom',
     buttons: [{

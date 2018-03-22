@@ -13,10 +13,6 @@ let tour = new Shepherd.Tour({
     text: 'On this page you can enter the registration and mileage of the vehicle you want to search for',
     attachTo: '.step-1 bottom',
     buttons: [{
-        text: 'Back',
-        action: tour.back,
-        classes: 'o-link'
-      },{
         text: 'VRM Results',
         action: function() {
             window.location.href="../../2.VRM-Results/dist/index.htm";

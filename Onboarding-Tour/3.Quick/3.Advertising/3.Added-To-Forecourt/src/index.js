@@ -13,10 +13,6 @@ let tour = new Shepherd.Tour({
     text: 'These options allow you to create an advert for the vehicle or add another vehicle and view your stock & ads.',
     attachTo: '.step-1 bottom',
     buttons: [{
-        text: 'Back',
-        action: tour.back,
-        classes: 'o-link'
-      },{
         text: 'Upload Photos',
         action: function() {          
             window.location.href="../../4.Upload-Photos/dist/index.htm";

@@ -1,10 +1,9 @@
 import Shepherd from 'tether-shepherd';
 import './styles/main.scss';
   
-let tour = new Shepherd.tour({
+let tour = new Shepherd.Tour({
     defaults: {
-      classes: 'shepherd-theme-default',
-      scrollTo: false
+      classes: 'shepherd-theme-default'
     }
   });
   
